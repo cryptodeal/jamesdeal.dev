@@ -9,3 +9,7 @@ html {
 html.dark {
   background-color: #111827;
 }
+
+*:focus:not(.focus-visible) {
+  outline: none;
+}

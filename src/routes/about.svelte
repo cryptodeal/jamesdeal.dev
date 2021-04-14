@@ -1,3 +1,29 @@
+<script>
+  import Pill from '$lib/Pill.svelte'
+  let languages = [
+    `Javascript`,
+    `Typescript`,
+    `NoSQL`,
+    `Bash`
+  ]
+  let frameworks = [
+    `Node`,
+    `Svelte`,
+    `Sapper`,
+    `SvelteKit`,
+    `TailwindCSS`,
+    `WindiCSS`,
+    `Rollup`,
+    `Vite`,
+    `Express`,
+    `uWebsockets.js`
+  ]
+  let graphics = [
+    'SVG',
+    'D3.js',
+    'LayerCake'
+  ]
+</script>
 <svelte:head>
   <title>My Resume - James Deal</title>
 
@@ -26,25 +52,23 @@
   </div>
   <div class='text-center'>
     <h3 class='inline-block items-center w-1/2 text-xl text-center sm:text-2xl md:(text-left w-3/4) font-thin text-white dark:text-green-400'>Languages</h3>
-    <ul class="inline-block items-center w-1/2 md:w-3/4 list-disc list-inside text-left text-sm font-thin text-white dark:text-gray-200">
-        <li>Javascript/Node.js</li>
-        <li>HTML5</li>
-    </ul>
-    <h3 class='inline-block items-center w-1/2 text-xl text-center sm:text-2xl md:(text-left w-3/4) font-thin text-white dark:text-green-400'>Frameworks</h3>
-    <ul class="inline-block items-center w-1/2 md:w-3/4  list-disc list-inside text-left text-sm font-thin text-white dark:text-gray-200">
-      <li>Svelte</li>
-    </ul>
-    <h3 class='inline-block items-center w-1/2 text-xl text-center sm:text-2xl md:(text-left w-3/4) font-thin text-white dark:text-green-400'>Styling</h3>
-    <ul class="inline-block items-center w-1/2 md:w-3/4  list-disc list-inside text-left text-sm font-thin text-white dark:text-gray-200">
-      <li>Windi Css (Current Favorite)</li>
-      <li>CSS</li>
-      <li>TailwindCSS</li>
-    </ul>
+    <div class='inline-block w-3/4 text-center md:text-left'>
+      {#each languages as text}
+        <Pill {text}/>
+      {/each}
+    </div>
+    <h3 class='inline-block items-center w-1/2 text-xl text-center sm:text-2xl md:(text-left w-3/4) font-thin text-white dark:text-green-400'>Frameworks/Libraries</h3>
+    <div class='inline-block w-3/4 text-center md:text-left'>
+      {#each frameworks as text}
+        <Pill {text}/>
+      {/each}
+    </div>
     <h3 class='inline-block items-center w-1/2 text-xl text-center sm:text-2xl md:(text-left w-3/4) font-thin text-white dark:text-green-400'>Graphics/Data Viz</h3>
-    <ul class="inline-block items-center w-1/2 md:w-3/4 list-disc list-inside text-left text-sm font-thin text-white dark:text-gray-200">
-      <li>SVG (Server and Client Side Rendered)</li>
-      <li>D3.js</li>
-    </ul>
+    <div class='inline-block w-3/4 text-center md:text-left'>
+      {#each graphics as text}
+        <Pill {text}/>
+      {/each}
+    </div>
   </div>
   <div class='flex px-5 lg:px-15 justify-center items-top md:justify-end'>
     <h2 class='uppercase text-3xl sm:text-5xl font-thin text-white dark:text-green-400'>My Stack</h2>
