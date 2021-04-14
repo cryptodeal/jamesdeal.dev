@@ -1,0 +1,97 @@
+---
+---
+
+<svelte:head>
+  <title>Integrating vite-imagetools and SvelteKit</title>
+
+  <meta name="description" content="Article detailing how to successfully integrate vite-imagetools with SvelteKit.">
+  <meta name="keywords" content="vite, sveltekit, svelte, sharp, image-transformations, vite-imagetools">
+
+  <meta property="og:title" content="SvelteKit with vite-imagetools" />
+  <meta property="og:description" content="Successfully integrate vite-imagetools library with SvelteKit" />
+</svelte:head>
+<script>
+  import Lazy from 'svelte-lazy';
+  import NahNahNah from '$static/NahNahNah.jpeg?webp&meta'  
+  import NahNahNahBlur from '$static/NahNahNah.jpeg?blur=100'
+  import Logo from '$static/NahNahNah.jpeg?w=300;400;500&format=webp&srcset'
+  $: console.log(Logo)
+  //$: createSizeMap(Logo)
+</script>
+<style>
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+<h1>TODO: Finish Lazy Loading Component And Publish to NPM</h1>
+<img class='center' src={NahNahNah.src} alt="NahNahNah Test!!!">
+<img class='center' src={NahNahNahBlur} alt="NahNahNah Test!!!">
+
+
+<br/>
+<img srcset={Logo} type="image/webp" alt="your alt attribute here"/>
+
+
+
+<h1 itemprop="name"> Integrating vite-imagetools and SvelteKit </h1>
+
+## Installing vite-imagetools
+
+Install vite-imagetools@next as a devDependency in your SvelteKit application (use the package manager of your choice, npm is used for the sake of examples)
+
+```bash
+npm install --save-dev vite-imagetools@next
+```
+
+## Configure Your App's svelte.config.cjs
+
+After installing [vite-imagetools](https://github.com/JonasKruckenberg/vite-imagetools), edit your svelte.config.cjs to include the following:
+
+```javascript
+const node = require('@sveltejs/adapter-node');
+const pkg = require('./package.json');
+const {imagetools} = require('vite-imagetools')
+const path = require('path')
+
+/** @type {import('@sveltejs/kit').Config} */
+module.exports = {
+  kit: {
+    files: {
+      assets: 'src/static',
+    },
+    vite: {
+      resolve: {
+        alias: {
+          $static: path.resolve('src/static')
+        }
+      },
+      ssr: {
+        noExternal: Object.keys(pkg.dependencies || {})
+      },
+      plugins: [imagetools({force: true})]
+    }
+  },
+};
+```
+
+N.B. the above creates the $static alias for the src/static folder; you can place static assets in this folder and import them using the $static alias
+
+## Example 1: Import .png and Convert to .webp
+
+```html
+<script>
+  import Logo from '$static/title.png?webp&meta'
+</script>
+  <img src={Logo.src} alt="your alt attribute here">
+```
+
+## Example 2: Import .png, Transforming to 3 Sizes, Formatted and Rendered as srcset
+
+```html
+<script>
+  import Logo from '$static/title.png?w=300;400;500&format=webp&srcset'
+</script>
+<img srcset={Logo} type="image/webp" alt="your alt attribute here"/>
+```
