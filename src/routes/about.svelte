@@ -1,5 +1,9 @@
 <script>
   import Pill from '$lib/Pill.svelte'
+  import Subtitle from '$lib/about/Subtitle.svelte'
+  import SectionTitle from '$lib/about/SectionTitle.svelte'
+
+
   let languages = [
     `Javascript`,
     `Typescript`,
@@ -35,11 +39,9 @@
 </svelte:head>
 
 <div class="grid auto-rows-min break-words grid-cols-1 my-5 h-full mx-10 py-5 rounded-lg gap-2 bg-opacity-80 bg-blue-600 dark:(bg-purple-900 bg-opacity-30) md:(gap-4 grid-cols-2 mx-20) lg:mx-30 xl:mx-40 2xl:mx-60">
-  <div class='flex px-5 lg:px-15 justify-center items-top md:justify-end'>
-    <h2 class='uppercase text-3xl sm:text-5xl font-thin text-white dark:text-green-400'>Education</h2>
-  </div>
+  <SectionTitle title={'Education'}/>
   <div class='text-center'>
-    <h3 class='inline-block items-center w-3/4 text-xl sm:(w-1/2 text-2xl) text-center md:(text-left w-3/4) font-thin text-white dark:text-green-400'>Texas A&M University</h3>
+    <Subtitle title={'Texas A&M University'}/>
     <p class='text-xs inline-block items-center w-3/4 sm:w-1/2 text-center md:(text-left w-3/4) font-extralight text-gray-700 dark:text-gray-300'>AUG 2015 - DEC 2018, TX</p>
     <ul class="inline-block items-center w-3/4 sm:w-1/2 md:w-3/4 list-disc list-inside text-left text-sm font-thin text-white dark:text-gray-200">
       <li>Bachelor of Arts in Philosophy</li>
@@ -47,23 +49,21 @@
       <li>Undergraduate research into Nietzsche’s conception of ressentiment with Prof. <a href='https://liberalarts.tamu.edu/philosophy/profile/robert-burch/'>Robert Burch</a></li>
     </ul>
   </div>
-  <div class='flex px-5 lg:px-15 justify-center items-top md:justify-end'>
-    <h2 class='uppercase text-3xl sm:text-5xl font-thin text-white dark:text-green-400'>Skills</h2>
-  </div>
+  <SectionTitle title={'Skills'}/>
   <div class='text-center'>
-    <h3 class='inline-block items-center w-1/2 text-xl text-center sm:text-2xl md:(text-left w-3/4) font-thin text-white dark:text-green-400'>Languages</h3>
+    <Subtitle title={'Languages'}/>
     <div class='inline-block w-3/4 text-center md:text-left'>
       {#each languages as text}
         <Pill {text}/>
       {/each}
     </div>
-    <h3 class='inline-block items-center w-1/2 text-xl text-center sm:text-2xl md:(text-left w-3/4) font-thin text-white dark:text-green-400'>Frameworks/Libraries</h3>
+    <Subtitle title={'Frameworks/Libraries'}/>
     <div class='inline-block w-3/4 text-center md:text-left'>
       {#each frameworks as t}
         <Pill text={t[0]} href={t[1]}/>
       {/each}
     </div>
-    <h3 class='inline-block items-center w-1/2 text-xl text-center sm:text-2xl md:(text-left w-3/4) font-thin text-white dark:text-green-400'>Graphics/Data Viz</h3>
+    <Subtitle title={'Graphics/Data Viz'}/>
     <div class='inline-block w-3/4 text-center md:text-left'>
       {#each graphics as t}
         {#if Array.isArray(t)}
@@ -74,27 +74,23 @@
       {/each}
     </div>
   </div>
-  <div class='flex px-5 lg:px-15 justify-center items-top md:justify-end'>
-    <h2 class='uppercase text-3xl sm:text-5xl font-thin text-white dark:text-green-400'>My Stack</h2>
-  </div>
+  <SectionTitle title={'My Stack'}/>
   <div class='text-center'>
-    <h3 class='inline-block items-center w-3/4 text-xl sm:(w-1/2 text-2xl) text-center md:(text-left w-3/4) font-thin text-white dark:text-green-400'>Frontend</h3>
+    <Subtitle title={'Frontend'}/>
     <ul class="inline-block items-center w-3/4 sm:w-1/2 md:w-3/4 list-disc list-inside text-left text-sm font-thin text-white dark:text-gray-200">
       <li>Current Stack: SvelteKit (Vite + Windi Css)</li>
       <li>Previously: Sapper (Rollup)</li>
     </ul>
-    <h3 class='inline-block items-center w-3/4 text-xl sm:(w-1/2 text-2xl) text-center md:(text-left w-3/4) font-thin text-white dark:text-green-400'>Backend</h3>
+    <Subtitle title={'Backend'}/>
     <ul class="inline-block items-center w-3/4 sm:w-1/2 md:w-3/4 list-disc list-inside text-left text-sm font-thin text-white dark:text-gray-200">
       <li>Node.js</li>
       <li>uWebsockets.js (REST, Websockets, and Pub/Sub Support)</li>
       <li>MongoDb (Native & Mongoose)</li>
     </ul>
   </div>
-  <div class='flex px-5 lg:px-15 justify-center items-top text-right md:justify-end'>
-    <h2 class='uppercase text-3xl sm:text-5xl font-thin text-white dark:text-green-400'>Experience</h2>
-  </div>
+  <SectionTitle title={'Experience'}/>
   <div class='text-center'>
-    <h3 class='inline-block items-center w-3/4 text-xl sm:(w-1/2 text-2xl) text-center md:(text-left w-3/4) font-thin text-white dark:text-green-400'><a href='https://www.unaliwear.com/'>UnaliWear</a> / UX, Customer Success & Acquisition</h3>
+    <Subtitle title={'UnaliWear'} href={'https://www.unaliwear.com/'} role={'UX, Customer Success & Acquisition'}/>
     <p class='text-xs inline-block items-center w-3/4 sm:w-1/2 text-center md:(text-left w-3/4) font-extralight text-gray-700 dark:text-gray-300'>May 2020 - PRESENT, AUSTIN, TX</p>
     <ul class="inline-block items-center w-3/4 sm:w-1/2 md:w-3/4 list-disc list-inside text-left text-sm font-thin text-white dark:text-gray-200">
       <li>Worked to train new customers</li>
@@ -103,21 +99,21 @@
       <li>Helped automate our workflow</li>
       <li>Worked with developers to create tools enabling us to better support our user base</li>
     </ul>
-    <h3 class='inline-block items-center w-3/4 text-xl sm:(w-1/2 text-2xl) text-center md:(text-left w-3/4) font-thin text-white dark:text-green-400'><a href='https://www.reyrey.com/'>Reynolds and Reynolds</a> / Software Consultant</h3>
+    <Subtitle title={'Reynolds and Reynolds'} href={'https://www.reyrey.com/'} role={'Software Consultant'}/>
     <p class='text-xs inline-block items-center w-3/4 sm:w-1/2 text-center md:(text-left w-3/4) font-extralight text-gray-700 dark:text-gray-300'>DEC 2018 - MAY 2019, TX</p>
     <ul class="inline-block items-center w-3/4 sm:w-1/2 md:w-3/4 list-disc list-inside text-left text-sm font-thin text-white dark:text-gray-200">
       <li>Managed ~15 accounts with major car dealerships</li>
       <li>Resolved customer issues with the software</li>
       <li>Submitted bug reports to development team</li>
     </ul>
-    <h3 class='inline-block items-center w-3/4 text-xl sm:(w-1/2 text-2xl) text-center md:(text-left w-3/4) font-thin text-white dark:text-green-400'><a href='https://www.coss.io/'>Cryptocurrency One Stop Solution ($COSS)</a> / Contract Developer</h3>
+    <Subtitle title={'Cryptocurrency One Stop Solution ($COSS)'} href={'https://www.coss.io/'} role={'Contract Developer'}/>
     <p class='text-xs inline-block items-center w-3/4 sm:w-1/2 text-center md:(text-left w-3/4) font-extralight text-gray-700 dark:text-gray-300'>OCT 2018 - DEC 2018, REMOTE</p>
     <ul class="inline-block items-center w-3/4 sm:w-1/2 md:w-3/4 list-disc list-inside text-left text-sm font-thin text-white dark:text-gray-200">
       <li>Contracted to write official Node.Js <a href='https://github.com/coss-exchange/trading-api-wrapper-node-js'>API wrapper</a></li>
       <li>Worked with COSS's backend head dev to flesh API requirements</li>
       <li>Reported bugs/security vulnerabilities to dev team during beta testing under NDA</li>
     </ul>
-    <h3 class='inline-block items-center w-3/4 text-xl sm:(w-1/2 text-2xl) text-center md:(text-left w-3/4) font-thin text-white dark:text-green-400'><a href='https://www.reyrey.com/'>Reynolds and Reynolds</a> / IT Consultant (Part Time)</h3>
+    <Subtitle title={'Reynolds and Reynolds'} href={'https://www.reyrey.com/'} role={'IT Consultant (Part Time)'}/>
     <p class='text-xs inline-block items-center w-3/4 sm:w-1/2 text-center md:(text-left w-3/4) font-extralight text-gray-700 dark:text-gray-300'>OCT 2017 - DEC 2018, TX</p>
     <ul class="inline-block items-center w-3/4 sm:w-1/2 md:w-3/4 list-disc list-inside text-left text-sm font-thin text-white dark:text-gray-200">
       <li>Handled incoming calls and emails to provide IT support for contracted UK clients</li>
