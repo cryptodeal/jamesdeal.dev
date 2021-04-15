@@ -10,15 +10,14 @@
 <script>
 	import Typewriter from 'svelte-typewriter';
 </script>
-<main>
-  <div class="flex flex-col text-center mx-auto">
-    <div class='py-1 relative'>
-      <Typewriter cursor={false}>
-        <h1 class='uppercase text-7xl font-thin text-orange-500 dark:text-green-400'>Meet James Deal</h1>
-      </Typewriter>
-    </div>
+
+<div class="flex flex-col text-center">
+  <div class='py-1 relative'>
+    <Typewriter cursor={false}>
+      <h1 class='uppercase text-7xl font-thin text-orange-500 dark:text-green-400'>Meet James Deal</h1>
+    </Typewriter>
   </div>
-</main>
+</div>
 
 <style>
 	:root {

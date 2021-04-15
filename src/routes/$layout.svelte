@@ -10,10 +10,8 @@
   let ParticlesComponent
   onMount(async () => {
     const module = await import("svelte-particles");
-
     ParticlesComponent = module.default;
   });
-  let particlesUrl = "http://foo.bar/particles.json";
   let particlesConfig = {
     fpsLimit: 60,
     particles: {
@@ -70,6 +68,6 @@
   <PreloadingIndicator/>
 {/if}
 
-<slot></slot>
+<slot/>
 
 

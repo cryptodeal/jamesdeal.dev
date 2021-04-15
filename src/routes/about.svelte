@@ -3,30 +3,8 @@
   import Subtitle from '$lib/about/Subtitle.svelte'
   import SectionTitle from '$lib/about/SectionTitle.svelte'
   import Dates from '$lib/about/Dates.svelte'
-
-  let languages = [
-    `Javascript`,
-    `Typescript`,
-    `NoSQL`,
-    `Bash`
-  ]
-  let frameworks = [
-    [`Node`, `https://nodejs.org/en/`],
-    [`Svelte`, `https://svelte.dev/`],
-    [`Sapper`, `https://sapper.svelte.dev/`],
-    [`SvelteKit`, `https://kit.svelte.dev/`],
-    [`TailwindCSS`, `https://tailwindcss.com/`],
-    [`WindiCSS`, `https://windicss.org/`],
-    [`Rollup`, `https://rollupjs.org`],
-    [`Vite`, `https://vitejs.dev/`],
-    [`Express`, `https://expressjs.com/`],
-    [`uWebsockets.js`, `https://github.com/uNetworking/uWebSockets.js`]
-  ]
-  let graphics = [
-    'SVG',
-    ['D3.js', `https://d3js.org/`],
-    [`Layer Cake`, `https://layercake.graphics/`]
-  ]
+  import BulletedList from '$lib/about/BulletedList.svelte'
+  import {languages, frameworks, graphics, education, frontend, backend, unaliwear, reyReyPSC, COSS, reyReyIT} from '$lib/about/ResumeContent'
 </script>
 <svelte:head>
   <title>My Resume - James Deal</title>
@@ -41,11 +19,7 @@
   <div class='text-center'>
     <Subtitle title={'Texas A&M University'}/>
     <Dates dates={'AUG 2015 - DEC 2018, TX'}/>
-    <ul class="inline-block items-center w-3/4 sm:w-1/2 md:w-3/4 list-disc list-inside text-left text-sm font-thin text-white dark:text-gray-200">
-      <li>Bachelor of Arts in Philosophy</li>
-      <li>Business Minor</li>
-      <li>Undergraduate research into Nietzsche’s conception of ressentiment with Prof. <a href='https://liberalarts.tamu.edu/philosophy/profile/robert-burch/'>Robert Burch</a></li>
-    </ul>
+    <BulletedList bulletItems={education}/>
   </div>
   <SectionTitle title={'Skills'}/>
   <div class='text-center'>
@@ -75,47 +49,26 @@
   <SectionTitle title={'My Stack'}/>
   <div class='text-center'>
     <Subtitle title={'Frontend'}/>
-    <ul class="inline-block items-center w-3/4 sm:w-1/2 md:w-3/4 list-disc list-inside text-left text-sm font-thin text-white dark:text-gray-200">
-      <li>Current Stack: SvelteKit (Vite + Windi Css)</li>
-      <li>Previously: Sapper (Rollup)</li>
-    </ul>
+    <BulletedList bulletItems={frontend}/>
     <Subtitle title={'Backend'}/>
-    <ul class="inline-block items-center w-3/4 sm:w-1/2 md:w-3/4 list-disc list-inside text-left text-sm font-thin text-white dark:text-gray-200">
-      <li>Node.js</li>
-      <li>uWebsockets.js (REST, Websockets, and Pub/Sub Support)</li>
-      <li>MongoDb (Native & Mongoose)</li>
-    </ul>
+    <BulletedList bulletItems={backend}/>
   </div>
   <SectionTitle title={'Experience'}/>
   <div class='text-center'>
     <Subtitle title={'UnaliWear'} href={'https://www.unaliwear.com/'} role={'UX, Customer Success & Acquisition'}/>
     <Dates dates={'May 2020 - PRESENT, AUSTIN, TX'}/>
-    <ul class="inline-block items-center w-3/4 sm:w-1/2 md:w-3/4 list-disc list-inside text-left text-sm font-thin text-white dark:text-gray-200">
-      <li>Worked to train new customers</li>
-      <li>Fleshed out data aggregation pipelines to gather accelerometer data for on the wrist fall detection (responsible for doubling our dataset)</li>
-      <li>Oversaw 500% increase in month to month sales rate</li>
-      <li>Helped automate our workflow</li>
-      <li>Worked with developers to create tools enabling us to better support our user base</li>
-    </ul>
+    <BulletedList bulletItems={unaliwear}/>
+
     <Subtitle title={'Reynolds and Reynolds'} href={'https://www.reyrey.com/'} role={'Software Consultant'}/>
     <Dates dates={'DEC 2018 - MAY 2019, TX'}/>
-    <ul class="inline-block items-center w-3/4 sm:w-1/2 md:w-3/4 list-disc list-inside text-left text-sm font-thin text-white dark:text-gray-200">
-      <li>Managed ~15 accounts with major car dealerships</li>
-      <li>Resolved customer issues with the software</li>
-      <li>Submitted bug reports to development team</li>
-    </ul>
+    <BulletedList bulletItems={reyReyPSC}/>
+
     <Subtitle title={'Cryptocurrency One Stop Solution ($COSS)'} href={'https://www.coss.io/'} role={'Contract Developer'}/>
     <Dates dates={'OCT 2018 - DEC 2018, REMOTE'}/>
-    <ul class="inline-block items-center w-3/4 sm:w-1/2 md:w-3/4 list-disc list-inside text-left text-sm font-thin text-white dark:text-gray-200">
-      <li>Contracted to write official Node.Js <a href='https://github.com/coss-exchange/trading-api-wrapper-node-js'>API wrapper</a></li>
-      <li>Worked with COSS's backend head dev to flesh API requirements</li>
-      <li>Reported bugs/security vulnerabilities to dev team during beta testing under NDA</li>
-    </ul>
+    <BulletedList bulletItems={COSS}/>
+
     <Subtitle title={'Reynolds and Reynolds'} href={'https://www.reyrey.com/'} role={'IT Consultant (Part Time)'}/>
     <Dates dates={'OCT 2017 - DEC 2018, TX'}/>
-    <ul class="inline-block items-center w-3/4 sm:w-1/2 md:w-3/4 list-disc list-inside text-left text-sm font-thin text-white dark:text-gray-200">
-      <li>Handled incoming calls and emails to provide IT support for contracted UK clients</li>
-      <li>Dispatched an Engineer to manage the problem when appropriate</li>
-    </ul>
+    <BulletedList bulletItems={reyReyIT}/>
   </div>
 </div>
