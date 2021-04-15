@@ -2,7 +2,7 @@
   import Pill from '$lib/Pill.svelte'
   import Subtitle from '$lib/about/Subtitle.svelte'
   import SectionTitle from '$lib/about/SectionTitle.svelte'
-
+  import Dates from '$lib/about/Dates.svelte'
 
   let languages = [
     `Javascript`,
@@ -30,10 +30,8 @@
 </script>
 <svelte:head>
   <title>My Resume - James Deal</title>
-
   <meta name="description" content="My academic and profession experience, skills, and interests.">
   <meta name="keywords" content="James Deal">
-
   <meta property="og:title" content="My Resume - James Deal" />
   <meta property="og:description" content="My academic and profession experience, skills, and interests." />
 </svelte:head>
@@ -42,7 +40,7 @@
   <SectionTitle title={'Education'}/>
   <div class='text-center'>
     <Subtitle title={'Texas A&M University'}/>
-    <p class='text-xs inline-block items-center w-3/4 sm:w-1/2 text-center md:(text-left w-3/4) font-extralight text-gray-700 dark:text-gray-300'>AUG 2015 - DEC 2018, TX</p>
+    <Dates dates={'AUG 2015 - DEC 2018, TX'}/>
     <ul class="inline-block items-center w-3/4 sm:w-1/2 md:w-3/4 list-disc list-inside text-left text-sm font-thin text-white dark:text-gray-200">
       <li>Bachelor of Arts in Philosophy</li>
       <li>Business Minor</li>
@@ -91,7 +89,7 @@
   <SectionTitle title={'Experience'}/>
   <div class='text-center'>
     <Subtitle title={'UnaliWear'} href={'https://www.unaliwear.com/'} role={'UX, Customer Success & Acquisition'}/>
-    <p class='text-xs inline-block items-center w-3/4 sm:w-1/2 text-center md:(text-left w-3/4) font-extralight text-gray-700 dark:text-gray-300'>May 2020 - PRESENT, AUSTIN, TX</p>
+    <Dates dates={'May 2020 - PRESENT, AUSTIN, TX'}/>
     <ul class="inline-block items-center w-3/4 sm:w-1/2 md:w-3/4 list-disc list-inside text-left text-sm font-thin text-white dark:text-gray-200">
       <li>Worked to train new customers</li>
       <li>Fleshed out data aggregation pipelines to gather accelerometer data for on the wrist fall detection (responsible for doubling our dataset)</li>
@@ -100,21 +98,21 @@
       <li>Worked with developers to create tools enabling us to better support our user base</li>
     </ul>
     <Subtitle title={'Reynolds and Reynolds'} href={'https://www.reyrey.com/'} role={'Software Consultant'}/>
-    <p class='text-xs inline-block items-center w-3/4 sm:w-1/2 text-center md:(text-left w-3/4) font-extralight text-gray-700 dark:text-gray-300'>DEC 2018 - MAY 2019, TX</p>
+    <Dates dates={'DEC 2018 - MAY 2019, TX'}/>
     <ul class="inline-block items-center w-3/4 sm:w-1/2 md:w-3/4 list-disc list-inside text-left text-sm font-thin text-white dark:text-gray-200">
       <li>Managed ~15 accounts with major car dealerships</li>
       <li>Resolved customer issues with the software</li>
       <li>Submitted bug reports to development team</li>
     </ul>
     <Subtitle title={'Cryptocurrency One Stop Solution ($COSS)'} href={'https://www.coss.io/'} role={'Contract Developer'}/>
-    <p class='text-xs inline-block items-center w-3/4 sm:w-1/2 text-center md:(text-left w-3/4) font-extralight text-gray-700 dark:text-gray-300'>OCT 2018 - DEC 2018, REMOTE</p>
+    <Dates dates={'OCT 2018 - DEC 2018, REMOTE'}/>
     <ul class="inline-block items-center w-3/4 sm:w-1/2 md:w-3/4 list-disc list-inside text-left text-sm font-thin text-white dark:text-gray-200">
       <li>Contracted to write official Node.Js <a href='https://github.com/coss-exchange/trading-api-wrapper-node-js'>API wrapper</a></li>
       <li>Worked with COSS's backend head dev to flesh API requirements</li>
       <li>Reported bugs/security vulnerabilities to dev team during beta testing under NDA</li>
     </ul>
     <Subtitle title={'Reynolds and Reynolds'} href={'https://www.reyrey.com/'} role={'IT Consultant (Part Time)'}/>
-    <p class='text-xs inline-block items-center w-3/4 sm:w-1/2 text-center md:(text-left w-3/4) font-extralight text-gray-700 dark:text-gray-300'>OCT 2017 - DEC 2018, TX</p>
+    <Dates dates={'OCT 2017 - DEC 2018, TX'}/>
     <ul class="inline-block items-center w-3/4 sm:w-1/2 md:w-3/4 list-disc list-inside text-left text-sm font-thin text-white dark:text-gray-200">
       <li>Handled incoming calls and emails to provide IT support for contracted UK clients</li>
       <li>Dispatched an Engineer to manage the problem when appropriate</li>
