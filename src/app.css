@@ -24,7 +24,7 @@ html.dark {
   content: '';
   width: calc(100% - 1em);
   height: 2px;
-  background-color: #F97316;
+  background-color: #FA923D;
   display: block;
   bottom: -1px;
 }

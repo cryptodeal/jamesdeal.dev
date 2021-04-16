@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@sveltejs/adapter-node': next
   '@sveltejs/kit': next
-  '@sveltejs/vite-plugin-svelte': 1.0.0-next.6
+  '@sveltejs/vite-plugin-svelte': 1.0.0-next.7
   mdsvex: ^0.9.0
   rehype-autolink-headings: ^5.0.1
   rehype-slug: ^4.0.1
@@ -17,7 +17,7 @@ specifiers:
   svelte-waypoint: ^0.1.4
   vite: ^2.1.5
   vite-imagetools: ^3.4.0
-  vite-plugin-windicss: ^0.14.2
+  vite-plugin-windicss: ^0.14.5
 
 dependencies:
   svelte-particles: 1.9.2
@@ -27,8 +27,8 @@ dependencies:
 
 devDependencies:
   '@sveltejs/adapter-node': 1.0.0-next.12
-  '@sveltejs/kit': 1.0.0-next.76_svelte@3.37.0+vite@2.1.5
-  '@sveltejs/vite-plugin-svelte': 1.0.0-next.6_svelte@3.37.0+vite@2.1.5
+  '@sveltejs/kit': 1.0.0-next.77_svelte@3.37.0+vite@2.1.5
+  '@sveltejs/vite-plugin-svelte': 1.0.0-next.7_svelte@3.37.0+vite@2.1.5
   mdsvex: 0.9.0_svelte@3.37.0
   rehype-autolink-headings: 5.0.1
   rehype-slug: 4.0.1
@@ -38,7 +38,7 @@ devDependencies:
   svelte-lazy: 1.0.8_svelte@3.37.0
   vite: 2.1.5
   vite-imagetools: 3.4.0
-  vite-plugin-windicss: 0.14.2_vite@2.1.5
+  vite-plugin-windicss: 0.14.5_vite@2.1.5
 
 packages:
 
@@ -77,8 +77,8 @@ packages:
     resolution: {integrity: sha512-DGP3dT5ijsTV0zmLDmZP8wI4RjZlifGGzA0y4HLoWNEKhZJLDjFDJnNcA+O5S9QBxQOVaYUlAY2z19r+skBVjA==}
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.76_svelte@3.37.0+vite@2.1.5:
-    resolution: {integrity: sha512-V/FM7hh+NU+Zs0LQ3Rf8EyiFGH7546GyxDBcri7LpCXPOPxdbRf/Pfpe2X0PvaHUAD0sApLOk6NaKKV3Ak3vpQ==}
+  /@sveltejs/kit/1.0.0-next.77_svelte@3.37.0+vite@2.1.5:
+    resolution: {integrity: sha512-3qxJAa+P8hjKtQt0+VlVkv0ktdxJ3Ouf8DTcttv5wejf9EysDWcnrGEePuJWsU0pVSS4WGHdmPEgHGsaUB18BA==}
     engines: {node: '>= 12.17.0'}
     hasBin: true
     peerDependencies:
@@ -117,8 +117,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/vite-plugin-svelte/1.0.0-next.6_svelte@3.37.0+vite@2.1.5:
-    resolution: {integrity: sha512-P+skZslGT+zPXRH9SlEu21LXuFpkQITRcvQb/NRpZHrxj04VDRbuKwksOfq+vDHO/K4HWioXIAQoQnJ3oomItw==}
+  /@sveltejs/vite-plugin-svelte/1.0.0-next.7_svelte@3.37.0+vite@2.1.5:
+    resolution: {integrity: sha512-ENvKYY36jrvFP7h1G87k5uOoEh5UM1m8n40J2duqV/R3wHnxfW81SCR1aXo+5CVU8Prm3/jtS4TWs8CUTqO1fw==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       svelte: ^3.37.0
@@ -143,8 +143,8 @@ packages:
     resolution: {integrity: sha512-FvUupuM3rlRsRtCN+fDudtmytGO6iHJuuRKS1Ss0pG5z8oX0diNEw94UEL7hgDbpN94rgaK5R7sWm6RrSkZuAQ==}
     dev: true
 
-  /@windicss/plugin-utils/0.14.2:
-    resolution: {integrity: sha512-eL7ULKM+NmKFYSbePFoY6ar/qUzhXsCVc45ezzV9R/zJMU/6JjqleShJQ5CifoQ7BuEKvjrHt3p7cBLxMCcmzA==}
+  /@windicss/plugin-utils/0.14.5:
+    resolution: {integrity: sha512-5BFPFGFskNBm9JudAlWJSgk0Pq5H9fmbhY2O2WZzvy0eZCJ9fY3f9lJrUxZElLSP9Tp72r08kV+9x/39X63bsQ==}
     dependencies:
       debug: 4.3.2
       fast-glob: 3.2.5
@@ -1221,12 +1221,12 @@ packages:
       - rollup
     dev: true
 
-  /vite-plugin-windicss/0.14.2_vite@2.1.5:
-    resolution: {integrity: sha512-FFS0Q8306p5gR2dNZVQ6E7wwtcNIKIc+bi5+cIahSrzCNPrt0Vy/74xgAui+fKcO0EXbbN6sdeo6IvT0MBMI1w==}
+  /vite-plugin-windicss/0.14.5_vite@2.1.5:
+    resolution: {integrity: sha512-TOYb4Bz5FpWfJavzAtvjuhGew6tJnjx1ZxRmEBOG7RUFFdclWG0CRcHXSVvwpigYHl2TaNwkpHmpM8dyhN6Scw==}
     peerDependencies:
       vite: ^2.0.1
     dependencies:
-      '@windicss/plugin-utils': 0.14.2
+      '@windicss/plugin-utils': 0.14.5
       chalk: 4.1.0
       debug: 4.3.2
       vite: 2.1.5

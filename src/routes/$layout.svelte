@@ -54,7 +54,7 @@
   </script>
 </svelte:head>
 
-<div class='flex h-40 bg-opacity-80 bg-blue-600 dark:(bg-purple-900 bg-opacity-30)'>
+<div class='flex h-40 bg-opacity-80 bg-blue-800 dark:(bg-purple-900 bg-opacity-30)'>
     <svelte:component
       this="{ParticlesComponent}"
       id="tsparticles"

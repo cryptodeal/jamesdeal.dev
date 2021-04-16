@@ -14,7 +14,7 @@
   <meta property="og:description" content="My academic and profession experience, skills, and interests." />
 </svelte:head>
 
-<div class="grid auto-rows-min break-words grid-cols-1 my-5 h-full mx-10 py-5 rounded-lg gap-2 bg-opacity-80 bg-blue-600 dark:(bg-purple-900 bg-opacity-30) md:(gap-4 grid-cols-2 mx-20) lg:mx-30 xl:mx-40 2xl:mx-60">
+<div class="grid auto-rows-min break-words grid-cols-1 my-5 h-full mx-10 py-5 rounded-lg gap-2 bg-opacity-80 bg-blue-800 dark:(bg-purple-900 bg-opacity-30) md:(gap-4 grid-cols-2 mx-20) lg:mx-30 xl:mx-40 2xl:mx-60">
   <SectionTitle title={'Education'}/>
   <div class='text-center'>
     <Subtitle title={'Texas A&M University'}/>
