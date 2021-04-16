@@ -13,3 +13,28 @@ html.dark {
 *:focus:not(.focus-visible) {
   outline: none;
 }
+
+[aria-current] {
+  position: relative;
+  display: inline-block;
+}
+
+[aria-current]::after {
+  position: absolute;
+  content: '';
+  width: calc(100% - 1em);
+  height: 2px;
+  background-color: #F97316;
+  display: block;
+  bottom: -1px;
+}
+
+.dark [aria-current]::after {
+  position: absolute;
+  content: '';
+  width: calc(100% - 1em);
+  height: 2px;
+  background-color: #34D399;
+  display: block;
+  bottom: -1px;
+}

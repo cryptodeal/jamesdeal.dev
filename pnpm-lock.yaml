@@ -17,7 +17,7 @@ specifiers:
   svelte-waypoint: ^0.1.4
   vite: ^2.1.5
   vite-imagetools: ^3.4.0
-  vite-plugin-windicss: ^0.14.0
+  vite-plugin-windicss: ^0.14.2
 
 dependencies:
   svelte-particles: 1.9.2
@@ -27,7 +27,7 @@ dependencies:
 
 devDependencies:
   '@sveltejs/adapter-node': 1.0.0-next.12
-  '@sveltejs/kit': 1.0.0-next.75_svelte@3.37.0+vite@2.1.5
+  '@sveltejs/kit': 1.0.0-next.76_svelte@3.37.0+vite@2.1.5
   '@sveltejs/vite-plugin-svelte': 1.0.0-next.6_svelte@3.37.0+vite@2.1.5
   mdsvex: 0.9.0_svelte@3.37.0
   rehype-autolink-headings: 5.0.1
@@ -38,7 +38,7 @@ devDependencies:
   svelte-lazy: 1.0.8_svelte@3.37.0
   vite: 2.1.5
   vite-imagetools: 3.4.0
-  vite-plugin-windicss: 0.14.0_vite@2.1.5
+  vite-plugin-windicss: 0.14.2_vite@2.1.5
 
 packages:
 
@@ -77,18 +77,40 @@ packages:
     resolution: {integrity: sha512-DGP3dT5ijsTV0zmLDmZP8wI4RjZlifGGzA0y4HLoWNEKhZJLDjFDJnNcA+O5S9QBxQOVaYUlAY2z19r+skBVjA==}
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.75_svelte@3.37.0+vite@2.1.5:
-    resolution: {integrity: sha512-DbxEptDY5+sYBsdwdKz62AgbXSRAuKyGkE5yrR8ZchRDluCiZG2fSo5qZDSEPqDpdFEuGIubdpXYuQgVxLL9Gg==}
+  /@sveltejs/kit/1.0.0-next.76_svelte@3.37.0+vite@2.1.5:
+    resolution: {integrity: sha512-V/FM7hh+NU+Zs0LQ3Rf8EyiFGH7546GyxDBcri7LpCXPOPxdbRf/Pfpe2X0PvaHUAD0sApLOk6NaKKV3Ak3vpQ==}
     engines: {node: '>= 12.17.0'}
     hasBin: true
     peerDependencies:
       svelte: ^3.32.1
       vite: ^2.1.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 1.0.0-next.6_svelte@3.37.0+vite@2.1.5
+      '@sveltejs/vite-plugin-svelte': 1.0.0-next.5_svelte@3.37.0+vite@2.1.5
       cheap-watch: 1.0.3
       sade: 1.7.4
       svelte: 3.37.0
+      vite: 2.1.5
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
+    dev: true
+
+  /@sveltejs/vite-plugin-svelte/1.0.0-next.5_svelte@3.37.0+vite@2.1.5:
+    resolution: {integrity: sha512-RVjafsqziWwnQm8VEy2y0qNaugNDvRd8tTaCt9rjgQkqaS/BDiyDCluXxA28PRC+ddZjvwUeq9k+0EfbLVObfg==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      svelte: ^3.35.0
+      vite: ^2.1.2
+    dependencies:
+      '@rollup/pluginutils': 4.1.0
+      chalk: 4.1.0
+      debug: 4.3.2
+      hash-sum: 2.0.0
+      require-relative: 0.8.7
+      slash: 3.0.0
+      source-map: 0.7.3
+      svelte: 3.37.0
+      svelte-hmr: 0.13.3_svelte@3.37.0
       vite: 2.1.5
     transitivePeerDependencies:
       - rollup
@@ -121,8 +143,8 @@ packages:
     resolution: {integrity: sha512-FvUupuM3rlRsRtCN+fDudtmytGO6iHJuuRKS1Ss0pG5z8oX0diNEw94UEL7hgDbpN94rgaK5R7sWm6RrSkZuAQ==}
     dev: true
 
-  /@windicss/plugin-utils/0.14.0:
-    resolution: {integrity: sha512-PnXKrCX7dl3tQPkfc2RGOQCqzS+3ApTLelGhr0c1kbHgz+EjaS+pK9vhhQm/8xgzyJLyreYUuQEEAvvPtBRBEQ==}
+  /@windicss/plugin-utils/0.14.2:
+    resolution: {integrity: sha512-eL7ULKM+NmKFYSbePFoY6ar/qUzhXsCVc45ezzV9R/zJMU/6JjqleShJQ5CifoQ7BuEKvjrHt3p7cBLxMCcmzA==}
     dependencies:
       debug: 4.3.2
       fast-glob: 3.2.5
@@ -379,7 +401,7 @@ packages:
       glob-parent: 5.1.2
       merge2: 1.4.1
       micromatch: 4.0.4
-      picomatch: 2.2.2
+      picomatch: 2.2.3
     dev: true
 
   /fastq/1.11.0:
@@ -1038,6 +1060,14 @@ packages:
       has-flag: 4.0.0
     dev: true
 
+  /svelte-hmr/0.13.3_svelte@3.37.0:
+    resolution: {integrity: sha512-gagW62pLQ2lULmvNA3pIZu9pBCYOaGu3rQikUOv6Nokz5VxUgT9/mQLfMxj9phDEKHCg/lgr3i6PkqZDbO9P2Q==}
+    peerDependencies:
+      svelte: '>=3.19.0'
+    dependencies:
+      svelte: 3.37.0
+    dev: true
+
   /svelte-hmr/0.14.0_svelte@3.37.0:
     resolution: {integrity: sha512-Rc4w11U+U30m/cHqOJ/xioFSEAY5fd5muiQC7FL6XJuJAuB2OIJoEZl3KEJR2uO1/f4Bw0PdrugtbxcngSsOtQ==}
     peerDependencies:
@@ -1191,12 +1221,12 @@ packages:
       - rollup
     dev: true
 
-  /vite-plugin-windicss/0.14.0_vite@2.1.5:
-    resolution: {integrity: sha512-f4Dgvpgq1i2rvqJ3He4gZ+BYrgz6OiQwHOLMOMU4RbyWY1Vr7gdNs71E/AbN2DWdkm+L/fj/4BNhvlp35I8+fw==}
+  /vite-plugin-windicss/0.14.2_vite@2.1.5:
+    resolution: {integrity: sha512-FFS0Q8306p5gR2dNZVQ6E7wwtcNIKIc+bi5+cIahSrzCNPrt0Vy/74xgAui+fKcO0EXbbN6sdeo6IvT0MBMI1w==}
     peerDependencies:
       vite: ^2.0.1
     dependencies:
-      '@windicss/plugin-utils': 0.14.0
+      '@windicss/plugin-utils': 0.14.2
       chalk: 4.1.0
       debug: 4.3.2
       vite: 2.1.5
