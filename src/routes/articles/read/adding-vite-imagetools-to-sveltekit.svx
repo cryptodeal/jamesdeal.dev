@@ -11,8 +11,8 @@
   <meta property="og:description" content="Successfully integrate vite-imagetools library with SvelteKit" />
 </svelte:head>
 <script>
-  import Lazy from 'svelte-lazy';
-  import NahNahNah from '$static/NahNahNah.jpeg?webp&meta'  
+  import ImageLoader from '$lib/Image/ImageLoader.svelte';
+  import NahNahNah from '$static/NahNahNah.jpeg?w=300&webp&meta'  
   import NahNahNahBlur from '$static/NahNahNah.jpeg?blur=100'
   import Logo from '$static/NahNahNah.jpeg?w=300;400;500&format=webp&srcset'
   $: console.log(Logo)
@@ -26,7 +26,7 @@
   }
 </style>
 <h1>TODO: Finish Lazy Loading Component And Publish to NPM</h1>
-<img class='center' src={NahNahNah.src} alt="NahNahNah Test!!!">
+<ImageLoader src={NahNahNah.src} alt="Our image"/>
 <img class='center' src={NahNahNahBlur} alt="NahNahNah Test!!!">
 
 

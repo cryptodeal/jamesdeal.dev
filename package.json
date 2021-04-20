@@ -17,16 +17,16 @@
 		"remark-github": "^10.0.1",
 		"svelte": "^3.37.0",
 		"svelte-lazy": "^1.0.8",
-		"vite": "^2.1.5",
+		"vite": "^2.2.1",
 		"vite-imagetools": "^3.4.0",
-		"vite-plugin-windicss": "^0.14.5"
+		"vite-plugin-windicss": "^0.14.6"
 	},
 	"type": "module",
 	"engines": {
 		"node": ">= 12.17.0"
 	},
 	"dependencies": {
-		"svelte-particles": "^1.9.2",
+		"svelte-particles": "^1.9.3",
 		"svelte-toggle": "^3.0.0",
 		"svelte-typewriter": "^2.4.5",
 		"svelte-waypoint": "^0.1.4"

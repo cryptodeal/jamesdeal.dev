@@ -2,22 +2,20 @@
   export let segment
   import Toggle from "svelte-toggle";
   import {browser} from '$app/env';
+  import {theme} from '$lib/stores/localStore'
   let toggled = null
-  $: theme = toggled == false ? "light" : "dark"
-  if(browser){
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      toggled = true
-    } else {
-      toggled = false
-    }
+  if(browser) toggled = localStorage.getItem('theme') === 'dark' ? true : false
+  const saveTheme = (mode, toggled) => {
+    theme.set(mode)
+    toggled = !toggled
   }
   const toggle = () => {
-    if(theme === "dark"){
+    if($theme === "dark"){
       document.documentElement.classList.remove('dark')
-      localStorage.setItem("theme", "light")
+      saveTheme('light', toggled)
     }else{
       document.documentElement.classList.add('dark')
-      localStorage.setItem("theme", "dark")
+      saveTheme('dark', toggled)
     }
   }
 </script>
@@ -34,7 +32,7 @@
 	
 </style>
 
-<nav class="flex items-center py-0 px-4 justify-between bg-opacity-80 text-gray-50 border-b font-light border-yellow-50 bg-blue-800 dark:(text-green-400 bg-purple-900 bg-opacity-30 border-gray-900)">
+<nav class="flex items-center py-0 px-4 justify-between bg-opacity-80 text-red-800 border-b font-light border-yellow-50 bg-blue-300 dark:(text-green-400 bg-purple-900 bg-opacity-30 border-gray-900)">
 	<ul class='m-0 p-0'>
 		<li class='block float-left'><a class='no-underline block py-4 px-2' aria-current='{segment === "" ? "page" : undefined}' sveltekit:prefetch href='/'>home</a></li>
 		<li class='block float-left'><a class='no-underline block py-4 px-2' aria-current='{segment === "articles" ? "page" : undefined}' sveltekit:prefetch href='/articles'>articles</a></li>
@@ -47,7 +45,7 @@
         label="Toggle Theme"
         switchColor="{toggled ? '#111827' : '#FFFFFF'}"
         toggledColor="#34D399"
-        untoggledColor="#FA923D"
+        untoggledColor="#991B1B"
         on="Dark"
         off="Light"
         on:click={toggle}

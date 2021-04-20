@@ -14,7 +14,7 @@
 <div class="flex flex-col text-center">
   <div class='py-1 relative'>
     <Typewriter cursor={false}>
-      <h1 class='uppercase text-7xl font-thin text-orange-500 dark:text-green-400'>Meet James Deal</h1>
+      <h1 class='uppercase text-7xl font-thin text-red-800 dark:text-green-400'>Meet James Deal</h1>
     </Typewriter>
   </div>
 </div>

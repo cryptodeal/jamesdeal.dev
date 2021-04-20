@@ -1,11 +1,6 @@
 <script>
   export let src
-  export let placeholder
-  export let srcsetWebp
-  export let sizes
-  export let srcset
   export let alt
-  export let path
   import { onMount } from 'svelte'
   let loaded = false
   let thisImage
@@ -14,9 +9,18 @@
       loaded = true
     }
   }) 
-
 </script>
 
+<style>
+  img {
+    height: 200px;
+    opacity: 0;
+    transition: opacity 1200ms ease-out;
+  }
+  img.loaded {
+    opacity: 1;
+  }
+</style>
 
 <picture>
   <source type="image/webp" srcset="{srcsetWebp}" {sizes} />

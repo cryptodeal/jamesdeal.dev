@@ -2,43 +2,16 @@
   import {page, navigating} from '$app/stores';
   import '../app.css'
   import {browser} from '$app/env';
-  import {onMount} from 'svelte'
   import 'virtual:windi.css'
-  import Nav from '$lib/Nav.svelte'
+  import Nav from '$lib/nav/Nav.svelte'
+  import {theme} from '$lib/stores/localStore.js';
 	import PreloadingIndicator from '$lib/PreloadingIndicator.svelte';
-  if (browser) import('virtual:windi-devtools');
-  let ParticlesComponent
-  onMount(async () => {
-    const module = await import("svelte-particles");
-    ParticlesComponent = module.default;
-  });
-  let particlesConfig = {
-    fpsLimit: 60,
-    particles: {
-      links: {
-        enable: true,
-        distance: 50
-      },
-      move: {
-        enable: true,
-        speed: 1,
-        outModes: {
-          default: "bounce"
-        }
-      },
-      size: {
-        value: 1
-      }
-    }
+  import Particles from '$lib/nav/Particles.svelte';
+  if (browser){
+    import('virtual:windi-devtools');
+    theme.useLocalStorage();
   }
   $: segment = $page.path.split('/')[1];
-  let onParticlesLoaded = (event) => {
-    const particlesContainer = event.detail.particles;
-  };
-
-  let onParticlesInit = (main) => {
-    // you can use main to customize the tsParticles instance adding presets or custom shapes
-  };
 </script>
 
 <svelte:head>
@@ -54,14 +27,8 @@
   </script>
 </svelte:head>
 
-<div class='flex h-40 bg-opacity-80 bg-blue-800 dark:(bg-purple-900 bg-opacity-30)'>
-    <svelte:component
-      this="{ParticlesComponent}"
-      id="tsparticles"
-      options="{particlesConfig}"
-      on:particlesLoaded="{onParticlesLoaded}"
-      on:particlesInit="{onParticlesInit}"
-    />
+<div class='flex h-40 bg-opacity-80 bg-blue-300 dark:(bg-purple-900 bg-opacity-30)'>
+  <Particles/>
 </div>
 <Nav {segment}/>
 {#if $navigating}
