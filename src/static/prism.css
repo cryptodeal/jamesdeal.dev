@@ -163,7 +163,7 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 .content h1 {
   font-size: 4.5rem;
   line-height: 1;
-  color: #f97316;
+  color: #991B1B;
   font-weight: 200;
   text-align: center;
   padding: .5rem;
@@ -171,13 +171,13 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 .content h2 {
   padding: 0.25rem;
   font-size: 1.8rem;
-  color: #f97316;
+  color: #991B1B;
   font-weight: 200;
 }
 .content h3 {
   padding: 0.25rem;
   font-size: 1.4rem;
-  color: #f97316;
+  color: #991B1B;
   font-weight: 200;
 }
 .content p {

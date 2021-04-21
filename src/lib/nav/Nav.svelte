@@ -43,7 +43,7 @@
       <Toggle
         hideLabel
         label="Toggle Theme"
-        switchColor="{toggled ? '#111827' : '#FFFFFF'}"
+        switchColor="{toggled ? '#111827' : '#FFFBEB'}"
         toggledColor="#34D399"
         untoggledColor="#991B1B"
         on="Dark"
