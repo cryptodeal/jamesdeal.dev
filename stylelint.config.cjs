@@ -15,6 +15,7 @@ module.exports = {
     ],
     "declaration-block-trailing-semicolon": null,
     "no-descending-specificity": null,
-    "color-hex-case": "upper"
+    "color-hex-case": "upper",
+    "max-line-length": null
   },
 };

@@ -1,185 +1,185 @@
-/* PrismJS 1.20.0
-https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+elixir */
-/**
- * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
- * Based on https://github.com/chriskempson/tomorrow-theme
- * @author Rose Pritchard
- */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #CCC;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
 
- code[class*="language-"],
- pre[class*="language-"] {
-   color: #ccc;
-   background: none;
-   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-   font-size: 1em;
-   text-align: left;
-   white-space: pre;
-   word-spacing: normal;
-   word-break: normal;
-   word-wrap: normal;
-   line-height: 1.5;
- 
-   -moz-tab-size: 4;
-   -o-tab-size: 4;
-   tab-size: 4;
- 
-   -webkit-hyphens: none;
-   -moz-hyphens: none;
-   -ms-hyphens: none;
-   hyphens: none;
- 
- }
- 
- /* Code blocks */
- pre[class*="language-"] {
-   padding: 1em;
-   margin: .5em 0;
-   overflow: auto;
- }
- 
- :not(pre) > code[class*="language-"],
- pre[class*="language-"] {
-   background: #2d2d2d;
- }
- 
- /* Inline code */
- :not(pre) > code[class*="language-"] {
-   padding: .1em;
-   border-radius: .3em;
-   white-space: normal;
- }
- 
- .token.comment,
- .token.block-comment,
- .token.prolog,
- .token.doctype,
- .token.cdata {
-   color: #999;
- }
- 
- .token.punctuation {
-   color: #ccc;
- }
- 
- .token.tag,
- .token.attr-name,
- .token.namespace,
- .token.deleted {
-   color: #e2777a;
- }
- 
- .token.function-name {
-   color: #6196cc;
- }
- 
- .token.boolean,
- .token.number,
- .token.function {
-   color: #f08d49;
- }
- 
- .token.property,
- .token.class-name,
- .token.constant,
- .token.symbol {
-   color: #f8c555;
- }
- 
- .token.selector,
- .token.important,
- .token.atrule,
- .token.keyword,
- .token.builtin {
-   color: #cc99cd;
- }
- 
- .token.string,
- .token.char,
- .token.attr-value,
- .token.regex,
- .token.variable {
-   color: #7ec699;
- }
- 
- .token.operator,
- .token.entity,
- .token.url {
-   color: #67cdcc;
- }
- 
- .token.important,
- .token.bold {
-   font-weight: bold;
- }
- .token.italic {
-   font-style: italic;
- }
- 
- .token.entity {
-   cursor: help;
- }
- 
- .token.inserted {
-   color: green;
- }
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+}
 
- .dark .content h1 {
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #2D2D2D;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #999;
+}
+
+.token.punctuation {
+  color: #CCC;
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+  color: #E2777A;
+}
+
+.token.function-name {
+  color: #6196CC;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+  color: #F08D49;
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+  color: #F8C555;
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+  color: #CC99CD;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+  color: #7EC699;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+  color: #67CDCC;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.inserted {
+  color: green;
+}
+
+.dark .content h1 {
   font-size: 4.5rem;
   line-height: 1;
-  color: #34d399;
+  color: #34D399;
   font-weight: 200;
   text-align: center;
-  padding: .5rem;
+  padding: 0.5rem;
   word-break: break-all;
 }
+
 .dark .content h2 {
   font-size: 1.8rem;
-  color: #34d399;
+  color: #34D399;
   font-weight: 200;
   padding: 0.25rem;
 }
+
 .dark .content h3 {
   font-size: 1.4rem;
-  color: #34d399;
+  color: #34D399;
   font-weight: 200;
   padding: 0.25rem;
 }
+
 .dark .content p {
-  color: #cfd3d9;
+  color: #CFD3D9;
   padding: 0.25rem;
   font-size: 1rem;
   line-height: 1.25rem;
   font-weight: 200;
 }
+
 .dark .content ul {
   line-height: 1.5;
 }
+
 .dark .content li {
   margin: 0 0 0.5rem 0;
 }
+
 .dark a {
   text-decoration: none;
 }
+
 .content h1 {
   font-size: 4.5rem;
   line-height: 1;
   color: #991B1B;
   font-weight: 200;
   text-align: center;
-  padding: .5rem;
+  padding: 0.5rem;
 }
+
 .content h2 {
   padding: 0.25rem;
   font-size: 1.8rem;
   color: #991B1B;
   font-weight: 200;
 }
+
 .content h3 {
   padding: 0.25rem;
   font-size: 1.4rem;
   color: #991B1B;
   font-weight: 200;
 }
+
 .content p {
   padding: 0.25rem;
   font-size: 1rem;
@@ -187,12 +187,15 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
   font-weight: 200;
   color: black;
 }
+
 .content ul {
   line-height: 1.5;
 }
+
 .content li {
   margin: 0 0 0.5rem 0;
 }
+
 a {
   text-decoration: none;
 }

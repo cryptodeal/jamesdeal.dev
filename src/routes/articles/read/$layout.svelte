@@ -6,7 +6,7 @@
 </svelte:head>
 <div class="container mx-auto">
   <article class="content text-left text-base" itemscope itemtype="http://schema.org/TechArticle">
-    <slot />
+    <slot/>
   </article>
   <div class="twitter flex py-1 justify-center">
     <a

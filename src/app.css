@@ -11,12 +11,11 @@ html.dark {
 }
 
 *:focus:not(.focus-visible) {
-  outline: none;
+  @apply outline-none;
 }
 
 [aria-current] {
-  position: relative;
-  display: inline-block;
+  @apply relative inline-block;
 }
 
 [aria-current]::after {
@@ -24,7 +23,7 @@ html.dark {
   content: '';
   width: calc(100% - 1em);
   height: 2px;
-  background-color: #991B1B;
+  background-color: bg-red-800;
   display: block;
   bottom: -1px;
 }
@@ -34,7 +33,7 @@ html.dark {
   content: '';
   width: calc(100% - 1em);
   height: 2px;
-  background-color: #34D399;
+  background-color: bg-green-400;
   display: block;
   bottom: -1px;
 }
