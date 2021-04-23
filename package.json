@@ -25,7 +25,7 @@
 		"svelte-lazy": "^1.0.8",
 		"vite": "^2.2.1",
 		"vite-imagetools": "^3.4.0",
-		"vite-plugin-windicss": "^0.15.5"
+		"vite-plugin-windicss": "^0.15.7"
 	},
 	"type": "module",
 	"engines": {

@@ -1,5 +1,5 @@
 <script>
-  import {onMount} from "svelte";
+  import { onMount } from "svelte";
   let observerCallback = function(entries, observer) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -8,21 +8,6 @@
       }
     });
   };
-  /**
-   * WebP Image srcset.
-   * @type {string}
-   */
-  export let srcsetWebP;
-  /**
-   * AVIF Image srcset.
-   * @type {string}
-   */
-  export let srcsetAvif;
-  /**
-     * WebP Image srcset.
-     * @type {string}
-     */
-  export let sizes;
   /**
    * Path to placeholder image.
    * @type {string}
@@ -58,27 +43,12 @@
   }
 </script>
 
-<picture>
-  <!--fall back to .webp srcset-->
-  <source 
-    type="image/avif"
-    srcset={srcsetAvif}
-    sizes={sizes}
-  />
-
-  <!--fall back to .webp srcset-->
-  <source
-    type="image/webp"
-    srcset={srcsetWebP}
-    sizes={sizes}
-  />
-
-  <img
-    src={path}
-    {alt}
-    on:load={handleLoad}
-    bind:this={imgElement}
-    class="svelte-lazy-image"
-    class:svelte-lazy-image--loaded={loaded}
-  />
-</picture>
+<img
+  src={path}
+  {alt}
+  on:load={handleLoad}
+  bind:this={imgElement}
+  {...$$restProps}
+  class="svelte-lazy-image"
+  class:svelte-lazy-image--loaded={loaded}
+/>

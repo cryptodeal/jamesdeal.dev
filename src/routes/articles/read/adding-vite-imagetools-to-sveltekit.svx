@@ -12,10 +12,15 @@
 </svelte:head>
 <script>
   import ImageLoader from '$lib/Image/ImageLoader.svelte';
-  import NahNahNah from '$static/NahNahNah.jpeg?w=300&webp&meta'  
-  import NahNahNahBlur from '$static/NahNahNah.jpeg?blur=100'
-  import Logo from '$static/NahNahNah.jpeg?w=300;400;500&format=webp&srcset'
-  $: console.log(Logo)
+  import LazyImage from '$lib/lazySrcset/ImagesPerf.svelte'
+  import NahNahNah from '$static/NahNahNah.jpeg?w=300'  
+  import NahNahNahBlur from '$static/NahNahNah.jpeg?w=300&blur=100'
+  import Logo from '$static/NahNahNah.jpeg?w=500;1000;2000;&format=webp&srcset'
+  import Logo2 from '$static/NahNahNah.jpeg?w=500;1000;2000;&format=avif&srcset'
+
+  let sizes = "(min-width: 1500px) 2000px, 100vw"
+  $: console.log(Logo2)
+  $: console.log(NahNahNahBlur)
   //$: createSizeMap(Logo)
 </script>
 <style>
@@ -26,13 +31,6 @@
   }
 </style>
 <h1>TODO: Finish Lazy Loading Component And Publish to NPM</h1>
-<ImageLoader src={NahNahNah.src} alt="Our image"/>
-<img class='center' src={NahNahNahBlur} alt="NahNahNah Test!!!">
-
-
-<br/>
-<img srcset={Logo} type="image/webp" alt="your alt attribute here"/>
-
 
 
 <h1 itemprop="name"> Integrating vite-imagetools and SvelteKit </h1>
@@ -86,6 +84,14 @@ N.B. the above creates the $static alias for the src/static folder; you can plac
 </script>
   <img src={Logo.src} alt="your alt attribute here">
 ```
+<LazyImage
+  src={NahNahNah}
+  srcsetWebP={Logo}
+  srcsetAvif={Logo2}
+  {sizes}
+  placeholder={NahNahNahBlur}
+  alt="test"
+/>
 
 ## Example 2: Import .png, Transforming to 3 Sizes, Formatted and Rendered as srcset
 
