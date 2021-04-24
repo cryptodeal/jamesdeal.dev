@@ -13,15 +13,14 @@
 <script>
   import ImageLoader from '$lib/Image/ImageLoader.svelte';
   import LazyImage from '$lib/lazySrcset/ImagesPerf.svelte'
-  import NahNahNah from '$static/NahNahNah.jpeg?w=300'  
-  import NahNahNahBlur from '$static/NahNahNah.jpeg?w=300&blur=100'
-  import Logo from '$static/NahNahNah.jpeg?w=500;1000;2000;&format=webp&srcset'
-  import Logo2 from '$static/NahNahNah.jpeg?w=500;1000;2000;&format=avif&srcset'
-
+  import NahNahNah from '$static/test.jpg?w=300&meta'  
+  import NahNahNahBlur from '$static/test.jpg?w=300&blur=100'
+  import Logo from '$static/test.jpg?w=500;1000;2000;&format=webp&srcset'
+  import Logo2 from '$static/test.jpg?w=500;1000;2000;&format=avif&srcset'
+  let ratio = `${(1 / (NahNahNah.width / NahNahNah.height)) * 100}%`
   let sizes = "(min-width: 1500px) 2000px, 100vw"
-  $: console.log(Logo2)
-  $: console.log(NahNahNahBlur)
-  //$: createSizeMap(Logo)
+  //$: console.log(NahNahNah)
+  //$: console.log(ratio)
 </script>
 <style>
   .center {
@@ -30,7 +29,17 @@
     margin-right: auto;
   }
 </style>
-<h1>TODO: Finish Lazy Loading Component And Publish to NPM</h1>
+<div class='container-md'>
+  <LazyImage
+    src={NahNahNah.src}
+    ratio={ratio}
+    srcsetWebP={Logo}
+    srcsetAvif={Logo2}
+    {sizes}
+    placeholder={NahNahNahBlur}
+    alt="test"
+  />
+</div>
 
 
 <h1 itemprop="name"> Integrating vite-imagetools and SvelteKit </h1>
@@ -84,14 +93,6 @@ N.B. the above creates the $static alias for the src/static folder; you can plac
 </script>
   <img src={Logo.src} alt="your alt attribute here">
 ```
-<LazyImage
-  src={NahNahNah}
-  srcsetWebP={Logo}
-  srcsetAvif={Logo2}
-  {sizes}
-  placeholder={NahNahNahBlur}
-  alt="test"
-/>
 
 ## Example 2: Import .png, Transforming to 3 Sizes, Formatted and Rendered as srcset
 

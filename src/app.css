@@ -23,7 +23,7 @@ html.dark {
   content: '';
   width: calc(100% - 1em);
   height: 2px;
-  background-color: bg-red-800;
+  background-color: #991B1B;
   display: block;
   bottom: -1px;
 }
@@ -33,7 +33,7 @@ html.dark {
   content: '';
   width: calc(100% - 1em);
   height: 2px;
-  background-color: bg-green-400;
+  background-color: #34D399;
   display: block;
   bottom: -1px;
 }
