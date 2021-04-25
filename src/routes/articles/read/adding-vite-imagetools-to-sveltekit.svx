@@ -11,15 +11,14 @@
   <meta property="og:description" content="Successfully integrate vite-imagetools library with SvelteKit" />
 </svelte:head>
 <script>
-  import ImageLoader from '$lib/Image/ImageLoader.svelte';
-  import LazyImage from '$lib/lazySrcset/ImagesPerf.svelte'
+  import LazySrcset from '$lib/images/LazySrcsetPerf.svelte'
   import NahNahNah from '$static/test.jpg?w=300&meta'  
-  import NahNahNahBlur from '$static/test.jpg?w=300&blur=100'
-  import Logo from '$static/test.jpg?w=500;1000;2000;&format=webp&srcset'
-  import Logo2 from '$static/test.jpg?w=500;1000;2000;&format=avif&srcset'
+  import NahNahNahBlur from '$static/test.jpg?w=300&blur=100&quality=30'
+  import Logo from '$static/test.jpg?w=500;1000;2000&format=webp&srcset'
+  import Logo2 from '$static/test.jpg?w=500;1000;2000&format=avif&srcset'
   let ratio = `${(1 / (NahNahNah.width / NahNahNah.height)) * 100}%`
   let sizes = "(min-width: 1500px) 2000px, 100vw"
-  //$: console.log(NahNahNah)
+  //$: console.log(Logo)
   //$: console.log(ratio)
 </script>
 <style>
@@ -29,16 +28,19 @@
     margin-right: auto;
   }
 </style>
-<div class='container-md'>
-  <LazyImage
-    src={NahNahNah.src}
-    ratio={ratio}
-    srcsetWebP={Logo}
-    srcsetAvif={Logo2}
-    {sizes}
-    placeholder={NahNahNahBlur}
-    alt="test"
-  />
+
+<div class='flex flex-row justify-center'>
+  <div class='w-1/2 inline-block'>
+    <LazySrcset
+      src={NahNahNah.src}
+      ratio={ratio}
+      srcsetWebP={Logo}
+      srcsetAvif={Logo2}
+      {sizes}
+      placeholder={NahNahNahBlur}
+      alt="test"
+    />
+  </div>
 </div>
 
 

@@ -38,7 +38,7 @@ module.exports = {
       plugins: [
         //svelte(), 
         vitePluginWindicss(),
-        imagetools({force: true})
+        imagetools()
       ]
 		}
 	}

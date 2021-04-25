@@ -17,7 +17,6 @@
       >
       Tweet
     </a>
-    <script src="https://platform.twitter.com/widgets.js">
-    </script>
+    <script src="https://platform.twitter.com/widgets.js"/>
   </div>
 </div>
