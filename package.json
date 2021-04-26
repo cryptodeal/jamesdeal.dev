@@ -23,7 +23,7 @@
 		"stylelint-config-standard": "^22.0.0",
 		"svelte": "^3.37.0",
 		"svelte-lazy": "^1.0.8",
-		"vite": "^2.2.2",
+		"vite": "^2.2.3",
 		"vite-imagetools": "^3.4.0",
 		"vite-plugin-windicss": "^0.15.7"
 	},

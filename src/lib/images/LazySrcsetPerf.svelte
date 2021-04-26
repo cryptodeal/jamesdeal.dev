@@ -9,6 +9,7 @@
       }
     });
   };
+  export let style;
   /**
    * Image aspect ratio.
    * @type {string}
@@ -45,12 +46,12 @@
    */
   export let alt;
   let imgElement;
-  //let path;
+  let path;
   let observer;
   let intersected = false;
   let loaded = false;
   let placeholderAlt = 'test'
-  //$: path = intersected ? src : placeholder;
+  $: path = intersected ? src : placeholder;
   onMount(() => {
     observer = new IntersectionObserver(observerCallback)
     observer.observe(imgElement);
@@ -63,22 +64,18 @@
       loaded = true;
     }
   }
-  function load(img) {
-    img.onload = () => (loaded = true);
-  }
 </script>
 
-<div class:loaded class='relative w-full'>
-  <div class="relative overflow-hidden">
-    <div style="padding-bottom:{ratio};" class='w-full'>
-      <img class="placeholder" class:blur src={placeholder} {alt} />
+<div class:loaded class='relative w-full h-full'>
+  <div class="relative overflow-hidden w-full h-full">
+    <div style="padding-bottom:{ratio};" class='w-full h-full'>
+      <img class="placeholder" style={style} class:blur src={placeholder} {alt} />
       <picture>
-        <!--fall back to .webp srcset-->
+        <!--default to .avif i-->
         <source 
           type="image/avif"
           srcset={srcsetAvif}
           sizes={sizes}
-          class='lazy'
         />
       
         <!--fall back to .webp srcset-->
@@ -86,15 +83,16 @@
           type="image/webp"
           srcset={srcsetWebP}
           sizes={sizes}
-          class='lazy'
         />
       
         <img
-          {src}
+          src={path}
           {alt}
-          use:load
+          style={style}
+          on:load={handleLoad}
           bind:this={imgElement}
           class="svelte-lazy-image main"
+          class:svelte-lazy-image--loaded={loaded}
         />
       </picture>
     </div>
@@ -108,17 +106,16 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    object-fit: contain;
     will-change: opacity;
+    width: 100%;
+    height: 100%;
   }
   .blur {
-    filter: blur(15px);
     transition: opacity 1000ms;
   }
   .placeholder {
     opacity: 1;
-    width: 100%;
-    height: 100%;
     transition: opacity 1000ms ease-out;
     transition-delay: 0.4s;
   }
