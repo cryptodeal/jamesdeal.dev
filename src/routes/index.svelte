@@ -48,7 +48,7 @@
       <h2 class='uppercase text-3xl mb-3 sm:text-5xl font-thin text-red-800 dark:text-green-400'>About Me</h2>
       <p class="text-gray-800 text-sm font-thin dark:text-gray-200">I'm a 23 year old full-stack developer based out of Austin, TX. Specializing in full-stack development, with a focus on building light-weight front end applications (SPA/Static, PWA, SSR) using Svelte and backend frameworks that leverage a server written in C++ with node.js bindings for performance. My applications utilize both REST and Websocket API.</p>
     </div>
-    <div class="mx-auto mb-5 md:mb-0 w-98">
+    <div class="mx-auto my-5 w-98">
       <LazySrcset
         src={proHeadshot}
         ratio={proHeadshotRatio}
@@ -63,7 +63,7 @@
   </div>
 
   <div class="flex items-center flex-wrap mb-40">
-    <div class="mx-auto w-98 mb-5 md:mb-0">
+    <div class="mx-auto w-98 my-5">
       <LazySrcset
         src={nahNahNah}
         ratio={nahNahNahRatio}
@@ -85,7 +85,7 @@
       <h2 class='uppercase text-3xl mb-3 sm:text-5xl font-thin text-red-800 dark:text-green-400'>About Me</h2>
       <p class="text-gray-800 text-sm font-thin dark:text-gray-200">I'm a 23 year old full-stack developer based out of Austin, TX. Specializing in full-stack development, with a focus on building light-weight front end applications (SPA/Static, PWA, SSR) using Svelte and backend frameworks that leverage a server written in C++ with node.js bindings for performance. My applications utilize both REST and Websocket API.</p>
     </div>
-    <div class="mx-auto w-98 mb-5 md:mb-0">
+    <div class="mx-auto w-98 my-5">
       <LazySrcset
         src={test}
         ratio={testRatio}
