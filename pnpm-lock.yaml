@@ -29,8 +29,8 @@ dependencies:
   svelte-typewriter: 2.4.5
 
 devDependencies:
-  '@sveltejs/adapter-node': 1.0.0-next.16
-  '@sveltejs/kit': 1.0.0-next.89_svelte@3.37.0+vite@2.2.3
+  '@sveltejs/adapter-node': 1.0.0-next.17
+  '@sveltejs/kit': 1.0.0-next.91_svelte@3.37.0+vite@2.2.3
   eslint: 7.25.0
   eslint-config-prettier: 8.3.0_eslint@7.25.0
   eslint-plugin-svelte3: 3.2.0_eslint@7.25.0+svelte@3.37.0
@@ -316,17 +316,17 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/adapter-node/1.0.0-next.16:
-    resolution: {integrity: sha512-XXZtiyX8dT1shmiKF2DwB2mCrMrUzFVRItYAV0B3BFF+U5775hpNS5krgtZnJdbA1AoW0Ay2OT+u6MKeQ5/KUQ==}
+  /@sveltejs/adapter-node/1.0.0-next.17:
+    resolution: {integrity: sha512-kRGW9S0yf9X5kxFdW2sYF3s/bgME3Xyu/rnFEf121bSv0q7NhWktuuRWH3WbS5wQnFRoN+0s/1PaRK3ErNHsVQ==}
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.89_svelte@3.37.0+vite@2.2.3:
-    resolution: {integrity: sha512-TN56CGSbn/483v1v4vwpV08GqJFrfOKrC/Ok+fmpUupJ2d2f424uNYeuiMhx6QU7WPtuTqaIVEBf2HfUA7tuAA==}
+  /@sveltejs/kit/1.0.0-next.91_svelte@3.37.0+vite@2.2.3:
+    resolution: {integrity: sha512-o2wjAnCMhpDNedyczQWwVQMRYRFhobTXQzBLpSentZXJjmImcdjI6InYXBe8wkilrpqHWxBqyc3VmbtBqXmxAA==}
     engines: {node: '>= 12.17.0'}
     hasBin: true
     peerDependencies:
       svelte: ^3.32.1
-      vite: ^2.1.0
+      vite: ^2.2.3
     dependencies:
       '@sveltejs/vite-plugin-svelte': 1.0.0-next.7_svelte@3.37.0+vite@2.2.3
       cheap-watch: 1.0.3
