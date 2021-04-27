@@ -16,11 +16,9 @@ specifiers:
   stylelint: ^13.13.0
   stylelint-config-standard: ^22.0.0
   svelte: ^3.37.0
-  svelte-lazy: ^1.0.8
   svelte-particles: ^1.9.3
   svelte-toggle: ^3.0.0
   svelte-typewriter: ^2.4.5
-  svelte-waypoint: ^0.1.4
   vite: ^2.2.3
   vite-imagetools: ^3.4.0
   vite-plugin-windicss: ^0.15.7
@@ -29,7 +27,6 @@ dependencies:
   svelte-particles: 1.9.3
   svelte-toggle: 3.0.0
   svelte-typewriter: 2.4.5
-  svelte-waypoint: 0.1.4
 
 devDependencies:
   '@sveltejs/adapter-node': 1.0.0-next.16
@@ -47,7 +44,6 @@ devDependencies:
   stylelint: 13.13.0
   stylelint-config-standard: 22.0.0_stylelint@13.13.0
   svelte: 3.37.0
-  svelte-lazy: 1.0.8_svelte@3.37.0
   vite: 2.2.3
   vite-imagetools: 3.4.0
   vite-plugin-windicss: 0.15.7_vite@2.2.3
@@ -357,7 +353,7 @@ packages:
       slash: 3.0.0
       source-map: 0.7.3
       svelte: 3.37.0
-      svelte-hmr: 0.14.0_svelte@3.37.0
+      svelte-hmr: 0.14.2_svelte@3.37.0
       vite: 2.2.3
     transitivePeerDependencies:
       - rollup
@@ -2693,18 +2689,10 @@ packages:
       has-flag: 4.0.0
     dev: true
 
-  /svelte-hmr/0.14.0_svelte@3.37.0:
-    resolution: {integrity: sha512-Rc4w11U+U30m/cHqOJ/xioFSEAY5fd5muiQC7FL6XJuJAuB2OIJoEZl3KEJR2uO1/f4Bw0PdrugtbxcngSsOtQ==}
+  /svelte-hmr/0.14.2_svelte@3.37.0:
+    resolution: {integrity: sha512-aVIRSCRpOFGuLqjg12Z5hBhvjrrlqkJVMMGEK14iVD0kXI4l5dkpHCj35AEyieWNvyYTMtlyhZlpKPrIjFpxxQ==}
     peerDependencies:
       svelte: '>=3.19.0'
-    dependencies:
-      svelte: 3.37.0
-    dev: true
-
-  /svelte-lazy/1.0.8_svelte@3.37.0:
-    resolution: {integrity: sha512-wWuDQo/6rWpkAQANI966+jy0mTmtXQsvtS97JL0EjK0EEbsw7NMa7/xpTOf3CpY8bgiQMvTTOqAh4vMG5j47lA==}
-    peerDependencies:
-      svelte: 3.x
     dependencies:
       svelte: 3.37.0
     dev: true
@@ -2723,10 +2711,6 @@ packages:
 
   /svelte-typewriter/2.4.5:
     resolution: {integrity: sha512-ObsLgIuLkZ14noqTHf6KNZCYgL8xqoJN6S1IaTJoaMBE1pG3MaqpVorXfCn5uQcFzzThfwoGyiYvjyRFQI3fbw==}
-    dev: false
-
-  /svelte-waypoint/0.1.4:
-    resolution: {integrity: sha512-UEqoXZjJeKj2sWlAIsBOFjxjMn+KP8aFCc/zjdmZi1cCOE59z6T2C+I6ZaAf8EmNQqNzfZVB/Lci4Ci9spzXAw==}
     dev: false
 
   /svelte/3.37.0:

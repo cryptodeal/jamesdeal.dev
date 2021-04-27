@@ -22,7 +22,6 @@
 		"stylelint": "^13.13.0",
 		"stylelint-config-standard": "^22.0.0",
 		"svelte": "^3.37.0",
-		"svelte-lazy": "^1.0.8",
 		"vite": "^2.2.3",
 		"vite-imagetools": "^3.4.0",
 		"vite-plugin-windicss": "^0.15.7"
@@ -34,7 +33,6 @@
 	"dependencies": {
 		"svelte-particles": "^1.9.3",
 		"svelte-toggle": "^3.0.0",
-		"svelte-typewriter": "^2.4.5",
-		"svelte-waypoint": "^0.1.4"
+		"svelte-typewriter": "^2.4.5"
 	}
 }

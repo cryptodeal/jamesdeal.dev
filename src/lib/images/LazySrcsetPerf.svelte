@@ -66,9 +66,9 @@
   }
 </script>
 
-<div class:loaded class='relative w-full h-full'>
-  <div class="relative overflow-hidden w-full h-full">
-    <div style="padding-bottom:{ratio};" class='w-full h-full'>
+<div class:loaded class='relative w-full'>
+  <div class="relative overflow-hidden w-full">
+    <div style="padding-bottom:{ratio};" class='w-full'>
       <img class="placeholder" style={style} class:blur src={placeholder} {alt} />
       <picture>
         <!--default to .avif i-->
@@ -108,8 +108,7 @@
     left: 0;
     object-fit: contain;
     will-change: opacity;
-    width: 100%;
-    height: 100%;
+    width: 100%
   }
   .blur {
     transition: opacity 1000ms;
