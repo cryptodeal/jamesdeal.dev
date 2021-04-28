@@ -1,41 +1,41 @@
-code[class*="language-"],
-pre[class*="language-"] {
-  color: #CCC;
-  background: none;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-size: 1em;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  line-height: 1.5;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
+code[class*='language-'],
+pre[class*='language-'] {
+	color: #ccc;
+	background: none;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
 }
 
 /* Code blocks */
-pre[class*="language-"] {
-  padding: 1em;
-  margin: 0.5em 0;
-  overflow: auto;
+pre[class*='language-'] {
+	padding: 1em;
+	margin: 0.5em 0;
+	overflow: auto;
 }
 
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-  background: #2D2D2D;
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+	background: #2d2d2d;
 }
 
 /* Inline code */
-:not(pre) > code[class*="language-"] {
-  padding: 0.1em;
-  border-radius: 0.3em;
-  white-space: normal;
+:not(pre) > code[class*='language-'] {
+	padding: 0.1em;
+	border-radius: 0.3em;
+	white-space: normal;
 }
 
 .token.comment,
@@ -43,35 +43,35 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #999;
+	color: #999;
 }
 
 .token.punctuation {
-  color: #CCC;
+	color: #ccc;
 }
 
 .token.tag,
 .token.attr-name,
 .token.namespace,
 .token.deleted {
-  color: #E2777A;
+	color: #e2777a;
 }
 
 .token.function-name {
-  color: #6196CC;
+	color: #6196cc;
 }
 
 .token.boolean,
 .token.number,
 .token.function {
-  color: #F08D49;
+	color: #f08d49;
 }
 
 .token.property,
 .token.class-name,
 .token.constant,
 .token.symbol {
-  color: #F8C555;
+	color: #f8c555;
 }
 
 .token.selector,
@@ -79,7 +79,7 @@ pre[class*="language-"] {
 .token.atrule,
 .token.keyword,
 .token.builtin {
-  color: #CC99CD;
+	color: #cc99cd;
 }
 
 .token.string,
@@ -87,115 +87,115 @@ pre[class*="language-"] {
 .token.attr-value,
 .token.regex,
 .token.variable {
-  color: #7EC699;
+	color: #7ec699;
 }
 
 .token.operator,
 .token.entity,
 .token.url {
-  color: #67CDCC;
+	color: #67cdcc;
 }
 
 .token.important,
 .token.bold {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 .token.italic {
-  font-style: italic;
+	font-style: italic;
 }
 
 .token.entity {
-  cursor: help;
+	cursor: help;
 }
 
 .token.inserted {
-  color: green;
+	color: green;
 }
 
 .dark .content h1 {
-  font-size: 4.5rem;
-  line-height: 1;
-  color: #34D399;
-  font-weight: 200;
-  text-align: center;
-  padding: 0.5rem;
-  word-break: break-all;
+	font-size: 4.5rem;
+	line-height: 1;
+	color: #34d399;
+	font-weight: 200;
+	text-align: center;
+	padding: 0.5rem;
+	word-break: break-all;
 }
 
 .dark .content h2 {
-  font-size: 1.8rem;
-  color: #34D399;
-  font-weight: 200;
-  padding: 0.25rem;
+	font-size: 1.8rem;
+	color: #34d399;
+	font-weight: 200;
+	padding: 0.25rem;
 }
 
 .dark .content h3 {
-  font-size: 1.4rem;
-  color: #34D399;
-  font-weight: 200;
-  padding: 0.25rem;
+	font-size: 1.4rem;
+	color: #34d399;
+	font-weight: 200;
+	padding: 0.25rem;
 }
 
 .dark .content p {
-  color: #CFD3D9;
-  padding: 0.25rem;
-  font-size: 1rem;
-  line-height: 1.25rem;
-  font-weight: 200;
+	color: #cfd3d9;
+	padding: 0.25rem;
+	font-size: 1rem;
+	line-height: 1.25rem;
+	font-weight: 200;
 }
 
 .dark .content ul {
-  line-height: 1.5;
+	line-height: 1.5;
 }
 
 .dark .content li {
-  margin: 0 0 0.5rem 0;
+	margin: 0 0 0.5rem 0;
 }
 
 .dark a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 .content h1 {
-  font-size: 4.5rem;
-  line-height: 1;
-  color: #991B1B;
-  font-weight: 200;
-  text-align: center;
-  padding: 0.5rem;
+	font-size: 4.5rem;
+	line-height: 1;
+	color: #991b1b;
+	font-weight: 200;
+	text-align: center;
+	padding: 0.5rem;
 }
 
 .content h2 {
-  padding: 0.25rem;
-  font-size: 1.8rem;
-  color: #991B1B;
-  font-weight: 200;
+	padding: 0.25rem;
+	font-size: 1.8rem;
+	color: #991b1b;
+	font-weight: 200;
 }
 
 .content h3 {
-  padding: 0.25rem;
-  font-size: 1.4rem;
-  color: #991B1B;
-  font-weight: 200;
+	padding: 0.25rem;
+	font-size: 1.4rem;
+	color: #991b1b;
+	font-weight: 200;
 }
 
 .content p {
-  padding: 0.25rem;
-  font-size: 1rem;
-  line-height: 1.25rem;
-  font-weight: 200;
-  color: black;
+	padding: 0.25rem;
+	font-size: 1rem;
+	line-height: 1.25rem;
+	font-weight: 200;
+	color: black;
 }
 
 .content ul {
-  line-height: 1.5;
+	line-height: 1.5;
 }
 
 .content li {
-  margin: 0 0 0.5rem 0;
+	margin: 0 0 0.5rem 0;
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
 }

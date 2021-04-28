@@ -1,7 +1,7 @@
 <script>
-  import {onMount} from "svelte";
+  import { onMount } from "svelte";
   let blur = true;
-  let observerCallback = function(entries, observer) {
+  let observerCallback = function (entries, observer) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         intersected = true;
@@ -50,7 +50,7 @@
   let observer;
   let intersected = false;
   let loaded = false;
-  let placeholderAlt = 'test'
+  let placeholderAlt = 'placeholder image'
   $: path = intersected ? src : placeholder;
   onMount(() => {
     observer = new IntersectionObserver(observerCallback)
@@ -66,34 +66,19 @@
   }
 </script>
 
-<div class:loaded class='relative w-full'>
-  <div class="relative overflow-hidden w-full">
+<div class:loaded class='w-full relative'>
+  <div class="w-full relative overflow-hidden">
     <div style="padding-bottom:{ratio};" class='w-full'>
-    <img class="placeholder" style={style} class:blur src={placeholder} {alt} />
+      <img class="placeholder" style={style} class:blur src={placeholder} alt={placeholderAlt} />
       <picture>
         <!--default to .avif i-->
-        <source 
-          type="image/avif"
-          srcset={srcsetAvif}
-          sizes={sizes}
-        />
-      
+        <source type="image/avif" srcset={srcsetAvif} sizes={sizes} />
+
         <!--fall back to .webp srcset-->
-        <source
-          type="image/webp"
-          srcset={srcsetWebP}
-          sizes={sizes}
-        />
-      
-        <img
-          src={path}
-          {alt}
-          style={style}
-          on:load={handleLoad}
-          bind:this={imgElement}
-          class="svelte-lazy-image main"
-          class:svelte-lazy-image--loaded={loaded}
-        />
+        <source type="image/webp" srcset={srcsetWebP} sizes={sizes} />
+
+        <img src={path} {alt} style={style} on:load={handleLoad} bind:this={imgElement} class="svelte-lazy-image main"
+          class:svelte-lazy-image--loaded={loaded} />
       </picture>
     </div>
   </div>
@@ -101,7 +86,7 @@
 
 
 <style>
-  img, canvas {
+  img {
     object-position: center;
     position: absolute;
     top: 0;
@@ -110,23 +95,28 @@
     will-change: opacity;
     width: 100%
   }
+
   .blur {
     transition: opacity 1000ms;
   }
+
   .placeholder {
     opacity: 1;
     transition: opacity 1000ms ease-out;
     transition-delay: 0.4s;
   }
+
   .main {
     opacity: 0;
     transition: opacity 1000ms ease-out;
     transition-delay: 0.4s;
   }
+
   .loaded .placeholder {
     opacity: 0;
     position: absolute;
   }
+
   .loaded .main {
     opacity: 1;
   }

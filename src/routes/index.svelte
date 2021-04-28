@@ -19,7 +19,7 @@
   let testRatio = `${(1 / (test.width / test.height)) * 100}%`
   let sizes = "(min-width: 1500px) 2000px, 100vw"
   let headshotSizes = "(min-width: 1500px) 1000px, 100vw"
-  let style='border-radius:50%'
+  let style = 'border-radius:50%'
 </script>
 
 <svelte:head>
@@ -30,10 +30,10 @@
 
   <meta property="og:title" content="The Musings of a Mad Dev" />
   <meta property="og:description"
-    content="Latest articles, anecdotes, projects, and cool code snippets from James Deal."/>
+    content="Latest articles, anecdotes, projects, and cool code snippets from James Deal." />
 </svelte:head>
 
-<div class="flex flex-col text-center h-40 m-5 mb-15">
+<div class="flex flex-col h-40 m-5 text-center mb-15">
   <div class="py-1 relative">
     <Typewriter cursor={false}>
       <h1 class="font-extralight text-7xl text-red-800 uppercase dark:text-green-400">Meet James Deal</h1>
@@ -41,58 +41,45 @@
   </div>
 </div>
 <section class="container mx-auto p-10">
-  <div class="flex items-center flex-wrap-reverse mb-40">
-    <div class="mx-auto bg-opacity-80 p-5 bg-blue-300 rounded-lg dark:(bg-purple-900 bg-opacity-30) lg:(w-4/9 p-8)">
-      <h2 class='uppercase text-3xl mb-3 sm:text-5xl font-extralight text-red-800 dark:text-green-400'>About Me</h2>
-      <p class="text-gray-800 text-sm font-extralight dark:text-gray-200">I'm a 23 year old full-stack developer based out of Austin, TX. Specializing in full-stack development, with a focus on building light-weight front end applications (SPA/Static, PWA, SSR) using Svelte and backend frameworks that leverage a server written in C++ with node.js bindings for performance. My applications utilize both REST and Websocket API.</p>
+  <div class="flex flex-wrap-reverse mb-40 items-center">
+    <div class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 p-5 lg:(w-4/9 p-8) dark:(bg-purple-900 bg-opacity-30)">
+      <h2 class='font-extralight mb-3 text-3xl text-red-800 uppercase sm:text-5xl dark:text-green-400'>About Me</h2>
+      <p class="font-extralight text-sm text-gray-800 dark:text-gray-200">I'm a 23 year old full-stack developer based
+        out of Austin, TX. Specializing in full-stack development, with a focus on building light-weight front end
+        applications (SPA/Static, PWA, SSR) using Svelte and backend frameworks that leverage a server written in C++
+        with node.js bindings for performance. My applications utilize both REST and Websocket API.</p>
     </div>
     <div class="mx-auto my-5 w-98">
-      <LazySrcset
-        src={proHeadshot}
-        ratio={proHeadshotRatio}
-        srcsetWebP={proHeadshotWebP}
-        srcsetAvif={proHeadshotAvif}
-        sizes={headshotSizes}
-        style={style}
-        placeholder={proHeadshotBlur}
-        {alt}
-      />
+      <LazySrcset src={proHeadshot} ratio={proHeadshotRatio} srcsetWebP={proHeadshotWebP} srcsetAvif={proHeadshotAvif}
+        sizes={headshotSizes} style={style} placeholder={proHeadshotBlur} {alt} />
     </div>
   </div>
 
-  <div class="flex items-center flex-wrap mb-40">
-    <div class="mx-auto w-98 my-5">
-      <LazySrcset
-        src={nahNahNah}
-        ratio={nahNahNahRatio}
-        srcsetWebP={nahNahNahWebP}
-        srcsetAvif={nahNahNahAvif}
-        {sizes}
-        placeholder={nahNahNahBlur}
-        {alt}
-      />
+  <div class="flex flex-wrap mb-40 items-center">
+    <div class="mx-auto my-5 w-98">
+      <LazySrcset src={nahNahNah} ratio={nahNahNahRatio} srcsetWebP={nahNahNahWebP} srcsetAvif={nahNahNahAvif} {sizes}
+        placeholder={nahNahNahBlur} {alt} />
     </div>
-    <div class="mx-auto bg-opacity-80 p-5 bg-blue-300 rounded-lg dark:(bg-purple-900 bg-opacity-30) lg:(w-4/9 p-8)">
-      <h2 class='uppercase mb-3 text-3xl sm:text-5xl font-extralight text-red-800 dark:text-green-400'>About Me</h2>
-      <p class="text-gray-800 text-sm font-extralight dark:text-gray-200">I'm a 23 year old full-stack developer based out of Austin, TX. Specializing in full-stack development, with a focus on building light-weight front end applications (SPA/Static, PWA, SSR) using Svelte and backend frameworks that leverage a server written in C++ with node.js bindings for performance. My applications utilize both REST and Websocket API.</p>
+    <div class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 p-5 lg:(w-4/9 p-8) dark:(bg-purple-900 bg-opacity-30)">
+      <h2 class='font-extralight mb-3 text-3xl text-red-800 uppercase sm:text-5xl dark:text-green-400'>About Me</h2>
+      <p class="font-extralight text-sm text-gray-800 dark:text-gray-200">I'm a 23 year old full-stack developer based
+        out of Austin, TX. Specializing in full-stack development, with a focus on building light-weight front end
+        applications (SPA/Static, PWA, SSR) using Svelte and backend frameworks that leverage a server written in C++
+        with node.js bindings for performance. My applications utilize both REST and Websocket API.</p>
     </div>
   </div>
 
-  <div class="flex items-center flex-wrap-reverse mb-40">
-    <div class="mx-auto bg-opacity-80 p-5 bg-blue-300 rounded-lg dark:(bg-purple-900 bg-opacity-30) lg:(w-4/9 p-8)">
-      <h2 class='uppercase text-3xl mb-3 sm:text-5xl font-extralight text-red-800 dark:text-green-400'>About Me</h2>
-      <p class="text-gray-800 text-sm font-extralight dark:text-gray-200">I'm a 23 year old full-stack developer based out of Austin, TX. Specializing in full-stack development, with a focus on building light-weight front end applications (SPA/Static, PWA, SSR) using Svelte and backend frameworks that leverage a server written in C++ with node.js bindings for performance. My applications utilize both REST and Websocket API.</p>
+  <div class="flex flex-wrap-reverse mb-40 items-center">
+    <div class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 p-5 lg:(w-4/9 p-8) dark:(bg-purple-900 bg-opacity-30)">
+      <h2 class='font-extralight mb-3 text-3xl text-red-800 uppercase sm:text-5xl dark:text-green-400'>About Me</h2>
+      <p class="font-extralight text-sm text-gray-800 dark:text-gray-200">I'm a 23 year old full-stack developer based
+        out of Austin, TX. Specializing in full-stack development, with a focus on building light-weight front end
+        applications (SPA/Static, PWA, SSR) using Svelte and backend frameworks that leverage a server written in C++
+        with node.js bindings for performance. My applications utilize both REST and Websocket API.</p>
     </div>
-    <div class="mx-auto w-98 my-5">
-      <LazySrcset
-        src={test}
-        ratio={testRatio}
-        srcsetWebP={testWebP}
-        srcsetAvif={testAvif}
-        {sizes}
-        placeholder={testBlur}
-        {alt}
-      />
+    <div class="mx-auto my-5 w-98">
+      <LazySrcset src={test} ratio={testRatio} srcsetWebP={testWebP} srcsetAvif={testAvif} {sizes}
+        placeholder={testBlur} {alt} />
     </div>
   </div>
 </section>

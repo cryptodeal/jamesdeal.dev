@@ -1,24 +1,17 @@
 <script>
-  import {onMount} from 'svelte'
-  import {theme} from '$lib/stores/localStore.js';
-  let ParticlesComponent 
+  import { onMount } from 'svelte'
+  import { theme } from '$lib/stores/localStore.js';
+  let ParticlesComponent
   onMount(async () => {
     const module = await import("svelte-particles");
     ParticlesComponent = module.default;
   });
-  let onParticlesLoaded = (event) => {
-    const particlesContainer = event.detail.particles;
-  };
-
-  let onParticlesInit = (main) => {
-    // you can use main to customize the tsParticles instance adding presets or custom shapes
-  };
   $: particleConfig = {
     fpsLimit: 60,
     particles: {
       color: {
         value: $theme === 'dark' ? '#FFF' : '#000'
-      }, 
+      },
       links: {
         color: $theme === 'dark' ? '#FFF' : '#000',
         enable: true,
@@ -37,10 +30,4 @@
     }
   }
 </script>
-<svelte:component
-  this="{ParticlesComponent}"
-  id="tsparticles"
-  options="{particleConfig}"
-  on:particlesLoaded="{onParticlesLoaded}"
-  on:particlesInit="{onParticlesInit}"
-/>
+<svelte:component this="{ParticlesComponent}" id="tsparticles" options="{particleConfig}" />

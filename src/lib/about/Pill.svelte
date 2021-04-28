@@ -3,7 +3,9 @@
   export let href = ''
 </script>
 {#if href !== ''}
-  <a class="inline-block cursor-pointer hover:(transform-gpu -translate-x-1 -translate-y-1 shadow-animate transition duration-300 ease-in-out) my-1 mx-1 bg-red-800 text-white dark:(bg-green-300 text-gray-900) text-sm font-extralight py-1 px-2 rounded-full" {href} target="_blank" rel="noopener noreferrer">{text}</a>
+<a class="rounded-full cursor-pointer font-extralight bg-red-800 my-1 mx-1 text-white text-sm py-1 px-2 inline-block dark:(bg-green-300 text-gray-900) hover:(transform-gpu -translate-x-1 -translate-y-1 shadow-animate transition duration-300 ease-in-out)"
+  {href} target="_blank" rel="noopener noreferrer">{text}</a>
 {:else}
-  <span class="inline-block cursor-pointer hover:(transform-gpu -translate-x-1 -translate-y-1 shadow-animate transition duration-300 ease-in-out ) my-1 mx-1 bg-red-800 dark:(bg-green-300 text-gray-900) text-white text-sm font-extralight py-1 px-2 rounded-full">{text}</span>
+<span
+  class="rounded-full cursor-pointer font-extralight bg-red-800 my-1 mx-1 text-white text-sm py-1 px-2 inline-block dark:(bg-green-300 text-gray-900) hover:(transform-gpu -translate-x-1 -translate-y-1 shadow-animate transition duration-300 ease-in-out )">{text}</span>
 {/if}

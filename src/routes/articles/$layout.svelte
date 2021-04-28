@@ -11,7 +11,6 @@
   <slot></slot>
 </main>
 <style>
-
   main {
     position: static;
     padding: 2em;

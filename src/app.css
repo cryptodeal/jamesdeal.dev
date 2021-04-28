@@ -1,39 +1,39 @@
 #tsparticles {
-  @apply h-full w-full;
+	@apply h-full w-full;
 }
 
 html {
-  @apply bg-yellow-50;
+	@apply bg-yellow-50;
 }
 
 html.dark {
-  @apply bg-gray-900;
+	@apply bg-gray-900;
 }
 
 *:focus:not(.focus-visible) {
-  @apply outline-none;
+	@apply outline-none;
 }
 
 [aria-current] {
-  @apply relative inline-block;
+	@apply relative inline-block;
 }
 
 [aria-current]::after {
-  position: absolute;
-  content: '';
-  width: calc(100% - 1em);
-  height: 2px;
-  background-color: #991B1B;
-  display: block;
-  bottom: -1px;
+	position: absolute;
+	content: '';
+	width: calc(100% - 1em);
+	height: 2px;
+	background-color: #991b1b;
+	display: block;
+	bottom: -1px;
 }
 
 .dark [aria-current]::after {
-  position: absolute;
-  content: '';
-  width: calc(100% - 1em);
-  height: 2px;
-  background-color: #34D399;
-  display: block;
-  bottom: -1px;
+	position: absolute;
+	content: '';
+	width: calc(100% - 1em);
+	height: 2px;
+	background-color: #34d399;
+	display: block;
+	bottom: -1px;
 }
