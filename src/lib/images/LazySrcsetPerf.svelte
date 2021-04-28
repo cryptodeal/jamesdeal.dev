@@ -69,7 +69,7 @@
 <div class:loaded class='relative w-full'>
   <div class="relative overflow-hidden w-full">
     <div style="padding-bottom:{ratio};" class='w-full'>
-      <img class="placeholder" style={style} class:blur src={placeholder} {alt} />
+    <img class="placeholder" style={style} class:blur src={placeholder} {alt} />
       <picture>
         <!--default to .avif i-->
         <source 
