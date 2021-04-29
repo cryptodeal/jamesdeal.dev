@@ -29,6 +29,8 @@
   }
 </style>
 
+<h1 itemprop="name"> Integrating vite-imagetools and SvelteKit </h1>
+
 <div class='flex flex-row justify-center'>
   <div class='w-1/2 inline-block'>
     <LazySrcset
@@ -42,9 +44,6 @@
     />
   </div>
 </div>
-
-
-<h1 itemprop="name"> Integrating vite-imagetools and SvelteKit </h1>
 
 ## Installing vite-imagetools
 

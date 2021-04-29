@@ -4,7 +4,7 @@
 <svelte:head>
   <meta property="og:type" content="article" />
 </svelte:head>
-<div class="container mx-auto">
+<div class="container mx-auto p-10">
   <article class="text-left text-base content" itemscope itemtype="http://schema.org/TechArticle">
     <slot />
   </article>
