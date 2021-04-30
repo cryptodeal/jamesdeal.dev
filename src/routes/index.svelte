@@ -1,4 +1,28 @@
+<script context="module">
+	/**
+	 * @type {import('@sveltejs/kit').Load}
+	 */
+	export async function load({ fetch }) {
+		const url = `/api/github/commits.json`;
+		const res = await fetch(url);
+
+		if (res.ok) {
+			return {
+				props: {
+					data: await res.json()
+				}
+			};
+		}
+
+		return {
+			status: res.status,
+			error: new Error(`Could not load ${url}`)
+		};
+	}
+</script>
+
 <script>
+	export let data;
 	import Typewriter from 'svelte-typewriter';
 	import LazySrcset from '$lib/images/LazySrcsetPerf.svelte';
 	import proHeadshot from '$static/headshot1.jpg?w=600&meta';
@@ -15,7 +39,7 @@
 	let sizes = '(min-width: 1500px) 2000px, 100vw';
 	let headshotSizes = '(min-width: 1500px) 1000px, 100vw';
 	let style = 'border-radius:50%';
-
+	$: console.log(data);
 	//test layercake copy github commits
 	import LayerCake from '$lib/graphics/LayerCake.svelte';
 	import ScaledSvg from '$lib/graphics/layouts/ScaledSvg.svelte';
@@ -36,7 +60,7 @@
 		'November',
 		'December'
 	];
-	$: console.log(dates);
+	//$: console.log(dates);
 	const datesTransformed = dates.split('\n').map((row) => {
 		return { date: new Date(row), timestring: row };
 	});
@@ -112,7 +136,7 @@
 	</div>
 
 	<div class="flex flex-wrap mb-40 items-center">
-		<div class="mx-auto h-98 my-5 w-98">
+		<div class="h-98 my-5 w-98">
 			{#each sortedData as month, i}
 				<div
 					class="flex chart-container"
