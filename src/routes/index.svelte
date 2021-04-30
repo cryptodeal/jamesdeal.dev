@@ -112,7 +112,7 @@
 	</div>
 
 	<div class="flex flex-wrap mb-40 items-center">
-		<div class="h-98 my-5 w-98">
+		<div class="mx-auto h-98 my-5 w-98">
 			{#each sortedData as month, i}
 				<div
 					class="flex chart-container"
@@ -130,7 +130,8 @@
 						data={month.values}
 					>
 						<ScaledSvg>
-							<CalendarMonth {seriesColors} calcCellSize={(w, h) => 100 / 7} />
+							<!--eslint-disable-next-line no-unused-vars-->
+							<CalendarMonth {seriesColors} calcCellSize={() => 100 / 7} />
 						</ScaledSvg>
 					</LayerCake>
 				</div>
