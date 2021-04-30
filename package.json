@@ -40,6 +40,7 @@
 		"@lukeed/uuid": "^2.0.0",
 		"@octokit/rest": "^18.5.3",
 		"cookie": "^0.4.1",
+		"mongoose": "^5.12.7",
 		"svelte-particles": "^1.9.3",
 		"svelte-toggle": "^3.0.0",
 		"svelte-typewriter": "^2.4.5"
