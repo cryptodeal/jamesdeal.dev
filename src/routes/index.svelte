@@ -130,7 +130,6 @@
 						data={month.values}
 					>
 						<ScaledSvg>
-							<!--eslint-disable-next-line no-unused-vars-->
 							<CalendarMonth {seriesColors} calcCellSize={() => 100 / 7} />
 						</ScaledSvg>
 					</LayerCake>
