@@ -4,10 +4,7 @@ const node = require('@sveltejs/adapter-node');
 //const pkg = require('./package.json');
 const { imagetools } = require('vite-imagetools');
 const path = require('path');
-//const svelte = require('@sveltejs/vite-plugin-svelte');
 const vitePluginWindicss = require('vite-plugin-windicss').default;
-//const windicssPlugins = vitePluginWindicss()
-//const windicssPreprocess = windicssPlugins.find(v => v.name.includes(':css:svelte')).sveltePreprocess
 
 /** @type {import('@sveltejs/kit').Config} */
 module.exports = {
@@ -29,11 +26,7 @@ module.exports = {
 					$static: path.resolve('src/static')
 				}
 			},
-			plugins: [
-				//svelte(),
-				vitePluginWindicss(),
-				imagetools()
-			]
+			plugins: [vitePluginWindicss(), imagetools()]
 		}
 	}
 };
