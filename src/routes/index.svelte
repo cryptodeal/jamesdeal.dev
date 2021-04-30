@@ -23,6 +23,7 @@
 
 <script>
 	export let data;
+	import { browser } from '$app/env';
 	import Typewriter from 'svelte-typewriter';
 	import LazySrcset from '$lib/images/LazySrcsetPerf.svelte';
 	import proHeadshot from '$static/headshot1.jpg?w=600&meta';
@@ -39,7 +40,7 @@
 	let sizes = '(min-width: 1500px) 2000px, 100vw';
 	let headshotSizes = '(min-width: 1500px) 1000px, 100vw';
 	let style = 'border-radius:50%';
-	$: console.log(data);
+	if (browser) console.log(data);
 	//test layercake copy github commits
 	import LayerCake from '$lib/graphics/LayerCake.svelte';
 	import ScaledSvg from '$lib/graphics/layouts/ScaledSvg.svelte';

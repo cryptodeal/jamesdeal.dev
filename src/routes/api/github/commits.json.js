@@ -6,11 +6,21 @@ export async function get() {
     per_page: 100
   });
   //console.log(data);
+  let count = 0;
+  let parsedData = data
+    .filter(action => action.type === 'PushEvent')
+    .map(pushEvent => {
+      return { ...pushEvent, commits: pushEvent.payload.commits.filter(commits => commits.author.email === 'jimmydeal16@gmail.com') }
+    })
+  parsedData.map(item => {
+    item.payload.commits.map(() => count++)
+  })
+  //console.log(count)
 
-  if (data) {
+  if (data && parsedData) {
     return {
       body: {
-        data
+        parsedData
       }
     };
   }
