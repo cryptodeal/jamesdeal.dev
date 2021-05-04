@@ -1,5 +1,12 @@
 import cookie from 'cookie';
 import { v4 as uuid } from '@lukeed/uuid';
+import mongoose from 'mongoose';
+mongoose.connect(import.meta.env.VITE_MONGOOSE_URI, {
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
+	useCreateIndex: true,
+	useFindAndModify: false
+});
 
 export const getContext = (request) => {
 	const cookies = cookie.parse(request.headers.cookie || '');

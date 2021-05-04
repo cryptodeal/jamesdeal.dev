@@ -9,6 +9,7 @@
 			}
 		});
 	};
+	export let style;
 	/**
 	 * Image aspect ratio.
 	 * @type {string}
@@ -68,7 +69,7 @@
 <div class:loaded class="w-full relative">
 	<div class="w-full relative overflow-hidden">
 		<div style="padding-bottom:{ratio};" class="w-full">
-			<img class="placeholder" class:blur src={placeholder} alt={placeholderAlt} />
+			<img class="placeholder" class:blur src={placeholder} alt={placeholderAlt} {style} />
 			<picture>
 				<!--default to .avif i-->
 				<source type="image/avif" srcset={srcsetAvif} {sizes} />
@@ -79,6 +80,7 @@
 				<img
 					src={path}
 					{alt}
+					{style}
 					on:load={handleLoad}
 					bind:this={imgElement}
 					class="svelte-lazy-image main"

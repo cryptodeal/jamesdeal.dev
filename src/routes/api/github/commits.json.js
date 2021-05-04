@@ -1,11 +1,12 @@
 import { octokit } from '$lib/_api/Github';
-import { addRepo } from '$lib/_db/utils';
+import { addRepo, addCommit } from '$lib/_db/utils';
 
 export async function get() {
 	const { data } = await octokit.request('GET /users/{username}/events', {
 		username: 'cryptodeal',
 		per_page: 100
 	});
+
 	const parsedData = data
 		.filter((action) => action.type === 'PushEvent')
 		.map((pushEvent) => {
@@ -16,18 +17,29 @@ export async function get() {
 				)
 			};
 		});
-	let repos = [...new Set(parsedData.map((item) => JSON.stringify(item.repo)))];
-	repos.forEach((item) => {
-		addRepo(JSON.parse(item)).then((repo) => console.log(repo));
-		console.log(JSON.parse(item));
-	});
-	//parse all commits in the same manner as repos
-	//write all commits to database
 
-	//console.log(parsedData)
-	//console.log(parsedData[0].payload.commits)
-	//const parsedRepos = JSON.parse(repos)
-	//console.log(repos)
+	let repos = [...new Set(parsedData.map((item) => JSON.stringify(item.repo)))];
+	repos.forEach((repo) => {
+		addRepo(JSON.parse(repo));
+	});
+
+	let commits = [
+		...new Set(
+			parsedData.map((item) =>
+				item.commits.map((commit) =>
+					JSON.stringify({
+						...commit,
+						repoId: item.repo.id,
+						date: item.created_at
+					})
+				)
+			)
+		)
+	].flat();
+	commits.forEach((commit) => {
+		addCommit(JSON.parse(commit));
+	});
+
 	if (data && parsedData) {
 		return {
 			body: {

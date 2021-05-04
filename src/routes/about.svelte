@@ -14,7 +14,7 @@
 	<meta property="og:title" content="My Resume - James Deal" />
 	<meta
 		property="og:description"
-		content="My academic and profession experience, skills, and interests."
+		content="My academic and professional experience, skills, and interests."
 	/>
 </svelte:head>
 
