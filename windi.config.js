@@ -1,4 +1,4 @@
-module.exports = {
+const windiConfig = {
 	preflight: {
 		enableAll: true
 	},
@@ -11,3 +11,4 @@ module.exports = {
 	variants: {},
 	plugins: []
 };
+export default windiConfig;
