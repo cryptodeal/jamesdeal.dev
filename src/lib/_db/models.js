@@ -11,7 +11,8 @@ const Commit = mongoose.model(
 		},
 		message: { type: String, require: true },
 		distinct: { type: Boolean, require: true },
-		repo: { type: Number, ref: 'Repo', index: true }
+		repo: { type: Number, ref: 'Repo', index: true },
+		date: { type: Date, require: true }
 	})
 );
 
