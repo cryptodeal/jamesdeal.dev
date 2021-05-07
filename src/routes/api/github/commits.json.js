@@ -1,5 +1,5 @@
 import { octokit } from '$lib/_api/Github';
-import { addRepo, addCommit } from '$lib/_db/utils';
+import { addRepo, addCommit, getAllCommits } from '$lib/_db/utils';
 
 export async function get() {
 	const { data } = await octokit.request('GET /users/{username}/events', {
@@ -40,10 +40,12 @@ export async function get() {
 		addCommit(JSON.parse(commit));
 	});
 
-	if (data && parsedData) {
+  const storedCommits = await getAllCommits()
+  console.log(storedCommits)
+	if (storedCommits) {
 		return {
 			body: {
-				parsedData
+				storedCommits
 			}
 		};
 	}

@@ -38,4 +38,7 @@ const addCommit = async (commit) => {
 	}
 };
 
-export { addRepo, addCommit };
+const getAllCommits = () => {
+  return Commit.find().lean().exec()
+}
+export { addRepo, addCommit, getAllCommits };

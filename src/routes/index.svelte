@@ -9,7 +9,7 @@
 		if (res.ok) {
 			return {
 				props: {
-					data: await res.json()
+					storedCommits: await res.json()
 				}
 			};
 		}
@@ -22,7 +22,7 @@
 </script>
 
 <script>
-	export let data;
+	export let storedCommits;
 	import { browser } from '$app/env';
 	import Typewriter from 'svelte-typewriter';
 	import LazySrcset from '$lib/images/LazySrcsetPerf.svelte';
@@ -40,33 +40,20 @@
 	let sizes = '(min-width: 1500px) 2000px, 100vw';
 	let headshotSizes = '(min-width: 1500px) 1000px, 100vw';
 	let style = 'border-radius:50%';
-	if (browser) console.log(data);
+	if (browser) console.log(storedCommits);
 	//test layercake copy github commits
 	import LayerCake from '$lib/graphics/LayerCake.svelte';
-	import ScaledSvg from '$lib/graphics/layouts/ScaledSvg.svelte';
+	//import Svg from '$lib/graphics/layouts/Svg.svelte';
 	import { nest } from 'd3-collection';
-	import CalendarMonth from '$lib/Commits/CalendarMonth.svelte';
+	import CalendarMonth from '$lib/Commits/CommitMap.svelte';
 	import dates from '$lib/Commits/dates.js';
-	const monthNames = [
-		'January',
-		'February',
-		'March',
-		'April',
-		'May',
-		'June',
-		'July',
-		'August',
-		'September',
-		'October',
-		'November',
-		'December'
-	];
+  import ScaledSvg from '$lib/graphics/layouts/ScaledSvg.svelte';
 	//$: console.log(dates);
 	const datesTransformed = dates.split('\n').map((row) => {
 		return { date: new Date(row), timestring: row };
 	});
 
-	const gutter = 10;
+	//const gutter = 10;
 	const seriesColors = ['#fff5cc', '#ffeba9', '#ffe182', '#ffd754', '#ffcc00'];
 
 	/* --------------------------------------------
@@ -78,6 +65,7 @@
 		.entries(datesTransformed);
 
 	const sortedData = byMonthByDate.sort((a, b) => a.key - b.key);
+  console.log(sortedData)
 </script>
 
 <svelte:head>
@@ -137,28 +125,21 @@
 	</div>
 
 	<div class="flex flex-wrap mb-40 items-center">
-		<div class="h-98 my-5 w-98">
+		<div class="mx-auto h-98 my-5 w-98">
 			{#each sortedData as month, i}
-				<div
-					class="flex chart-container"
-					style="width:calc({100 / sortedData.length}% - {gutter}px);{i === 0
-						? `margin-right:${gutter * 2}px`
-						: ''}"
-					data-month={monthNames[+month.key + 1]}
-				>
-					<LayerCake
-						ssr={true}
-						percentRange={true}
-						padding={{ top: 1, right: 1, bottom: 1, left: 1 }}
-						x={'key'}
-						r={(d) => d.values.length}
-						data={month.values}
-					>
-						<ScaledSvg>
-							<CalendarMonth {seriesColors} calcCellSize={() => 100 / 7} />
-						</ScaledSvg>
-					</LayerCake>
-				</div>
+        <div class='chart-container'>
+          <LayerCake
+            ssr={true}
+            percentRange={true}
+            x={'key'}
+            r={(d) => d.values.length}
+            data={month.values}
+          >
+            <ScaledSvg>
+              <CalendarMonth {seriesColors}/>
+            </ScaledSvg>
+          </LayerCake>
+        </div>
 			{/each}
 		</div>
 		<div
@@ -214,21 +195,13 @@
 			'Open Sans', 'Helvetica Neue', sans-serif;
 	}
 
-	/*
-    The wrapper div needs to have an explicit width and height in CSS.
-    It can also be a flexbox child or CSS grid element.
-    The point being it needs dimensions since the <LayerCake> element will
-    expand to fill it.
-    The width is being set inline-below.
-  */
-	.chart-container {
+  .chart-container {
 		display: inline-block;
 		position: relative;
 		vertical-align: top;
 		height: 100%;
 		margin-top: 25px;
 	}
-
 	.chart-container:before {
 		content: attr(data-month);
 		position: absolute;
