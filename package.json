@@ -42,6 +42,7 @@
 		"@lukeed/uuid": "^2.0.0",
 		"@octokit/rest": "^18.5.3",
 		"cookie": "^0.4.1",
+		"layercake": "^4.1.0",
 		"svelte-particles": "^1.9.3",
 		"svelte-toggle": "^3.0.0",
 		"svelte-typewriter": "^2.4.5"

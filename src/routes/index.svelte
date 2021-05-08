@@ -23,7 +23,7 @@
 
 <script>
 	export let storedCommits;
-	import { browser } from '$app/env';
+	//import { browser } from '$app/env';
 	import Typewriter from 'svelte-typewriter';
 	import LazySrcset from '$lib/images/LazySrcsetPerf.svelte';
 	import proHeadshot from '$static/headshot1.jpg?w=600&meta';
@@ -34,22 +34,28 @@
 	import testWebP from '$static/test.jpg?w=500;1000;2000&format=webp&srcset';
 	import testAvif from '$static/test.jpg?w=500;1000;2000&format=avif&srcset';
 	import testBlur from '$static/test.jpg?w=300&blur=100&quality=30';
+  console.log(storedCommits.storedCommits.length)
 	let alt = 'Professional headshot of James Deal';
 	let proHeadshotRatio = `${(1 / (proHeadshot.width / proHeadshot.height)) * 100}%`;
 	let testRatio = `${(1 / (test.width / test.height)) * 100}%`;
 	let sizes = '(min-width: 1500px) 2000px, 100vw';
 	let headshotSizes = '(min-width: 1500px) 1000px, 100vw';
 	let style = 'border-radius:50%';
-	if (browser) console.log(storedCommits);
+	//if (browser) console.log(storedCommits);
 	//test layercake copy github commits
-	import LayerCake from '$lib/graphics/LayerCake.svelte';
+	//import LayerCake from '$lib/graphics/LayerCake.svelte';
 	//import Svg from '$lib/graphics/layouts/Svg.svelte';
 	import { nest } from 'd3-collection';
 	import CalendarMonth from '$lib/Commits/CommitMap.svelte';
-	import dates from '$lib/Commits/dates.js';
-  import ScaledSvg from '$lib/graphics/layouts/ScaledSvg.svelte';
+	//import dates from '$lib/Commits/dates.js';
+  import {LayerCake, Svg} from 'layercake';
+  import dayjs from 'dayjs';
+  //const {LayerCake, Svg} = pkg;
+  //import ScaledSvg from '$lib/graphics/layouts/ScaledSvg.svelte';
 	//$: console.log(dates);
-	const datesTransformed = dates.split('\n').map((row) => {
+  let dates = storedCommits.storedCommits.map(commit => {return dayjs(commit.date).toISOString()})
+  
+	const datesTransformed = dates.map((row) => {
 		return { date: new Date(row), timestring: row };
 	});
 
@@ -60,12 +66,11 @@
 	 * Group by month then by date
 	 */
 	const byMonthByDate = nest()
-		.key((d) => d.date.getUTCMonth())
 		.key((d) => d.timestring.split('T')[0])
 		.entries(datesTransformed);
 
 	const sortedData = byMonthByDate.sort((a, b) => a.key - b.key);
-  console.log(sortedData)
+  //console.log(`sortedData: ${sortedData.map(item => JSON.stringify(item))}`)
 </script>
 
 <svelte:head>
@@ -124,23 +129,18 @@
 		</div>
 	</div>
 
-	<div class="flex flex-wrap mb-40 items-center">
-		<div class="mx-auto h-98 my-5 w-98">
-			{#each sortedData as month, i}
-        <div class='chart-container'>
-          <LayerCake
-            ssr={true}
-            percentRange={true}
-            x={'key'}
-            r={(d) => d.values.length}
-            data={month.values}
-          >
-            <ScaledSvg>
-              <CalendarMonth {seriesColors}/>
-            </ScaledSvg>
-          </LayerCake>
-        </div>
-			{/each}
+	<div class="flex flex-wrap mb-40">
+		<div class="h-98 my-5 w-98 content-center">
+        <LayerCake
+          ssr={true}
+          x={'key'}
+          r={(d) => d.values.length}
+          data={sortedData}
+        >
+          <Svg>
+            <CalendarMonth {seriesColors}/>
+          </Svg>
+        </LayerCake>
 		</div>
 		<div
 			class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 p-5 lg:(w-4/9 p-8) dark:(bg-purple-900 bg-opacity-30)"
@@ -193,20 +193,5 @@
 	:root {
 		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cxantarell,
 			'Open Sans', 'Helvetica Neue', sans-serif;
-	}
-
-  .chart-container {
-		display: inline-block;
-		position: relative;
-		vertical-align: top;
-		height: 100%;
-		margin-top: 25px;
-	}
-	.chart-container:before {
-		content: attr(data-month);
-		position: absolute;
-		top: 0;
-		left: 0;
-		transform: translate(0, -100%);
 	}
 </style>

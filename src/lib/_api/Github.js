@@ -20,7 +20,7 @@ const octokit = new Octokit({
 });
 
 const storeResponse = (parsedData) => {
-  let repos = [...new Set(parsedData.map((item) => JSON.stringify(item.repo)))];
+	let repos = [...new Set(parsedData.map((item) => JSON.stringify(item.repo)))];
 	repos.forEach((repo) => {
 		addRepo(JSON.parse(repo));
 	});
@@ -41,5 +41,5 @@ const storeResponse = (parsedData) => {
 	commits.forEach((commit) => {
 		addCommit(JSON.parse(commit));
 	});
-}
-export { octokit, storeResponse};
+};
+export { octokit, storeResponse };

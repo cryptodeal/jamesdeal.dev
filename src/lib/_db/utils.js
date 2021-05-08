@@ -39,6 +39,12 @@ const addCommit = async (commit) => {
 };
 
 const getAllCommits = () => {
-  return Commit.find().lean().exec()
-}
-export { addRepo, addCommit, getAllCommits };
+	return Commit.find().lean().exec();
+};
+
+const getCommitsByDate = (start, end) => {
+	return Commit.find({ date: { $gte: start, $lt: end } })
+		.lean()
+		.exec();
+};
+export { addRepo, addCommit, getAllCommits, getCommitsByDate };

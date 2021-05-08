@@ -17,7 +17,7 @@
     twoMonthsBack = twoMonthsBack.add(daysTilSunday, 'day')
   }
   //date printed is the first sunday of the month 2 months back
-  console.log(twoMonthsBack)
+  //console.log(twoMonthsBack)
   const numWeeks = now.week() - twoMonthsBack.week()
   //export let calcCellSize = d => d;
   export let seriesColors = ['#fff5cc', '#ffeba9', '#ffe182', '#ffd754', '#ffcc00'];
@@ -50,26 +50,30 @@
   };
 
   $: cellSize = width > height ? calcWidth : calcHeight
-  $: console.log(cellSize)
+  //$: console.log(cellSize)
   let days;
 
   /* --------------------------------------------
    * Calculate what month we're in and generate the full days of that month
    */
-  $: {
-    const minDate = $extents.x[0];
-    const parts = minDate.split('-').map(d => +d);
+  //const start = twoMonthsBack.toISOString().split('T')
+  //const minDate = start[0]
+  //console.log(minDate)
+  //const parts = minDate.split('-').map(d => +d);
+  //console.log(parts)
 
-    days = timeDay.range(new Date(Date.UTC(parts[0], parts[1] - 1, 1)), new Date(Date.UTC(parts[0], parts[1], 1)));
+  days = timeDay.range(twoMonthsBack, now);
+  //console.log(`days: ${days}`)
+
+
+  $: rectY = day => { 
+    return getDayOfWeek(day) * cellSize
   }
-
-  $: rectY = day => getDayOfWeek(day) * cellSize;
   $: rectX = day => {
-    const thisWeek = dayjs(day).week()
-    console.log(`Week: ${thisWeek}`)
-    const weekDiff = thisWeek - twoMonthsBack.week()
-    console.log(weekDiff)
-    return weekDiff * cellSize;
+    const startWeek = twoMonthsBack.week()
+		const thisWeek = dayjs(day).week()
+		const weekDiff = thisWeek - startWeek
+		return weekDiff * cellSize;
   };
 
   function showCount(day) {

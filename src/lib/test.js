@@ -1,3 +1,3 @@
-const cta = "headshot"
+const cta = 'headshot';
 
-export default cta
+export default cta;

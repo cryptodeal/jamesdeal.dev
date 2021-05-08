@@ -1,11 +1,19 @@
 import { octokit } from '$lib/_api/Github';
-import { addRepo, addCommit, getAllCommits } from '$lib/_db/utils';
+import { addRepo, addCommit, getCommitsByDate } from '$lib/_db/utils';
+import dayjs from 'dayjs';
 
 export async function get() {
 	const { data } = await octokit.request('GET /users/{username}/events', {
 		username: 'cryptodeal',
 		per_page: 100
 	});
+	var now = dayjs();
+	var twoMonthsBack = now.subtract(2, 'month').date(1);
+	if (twoMonthsBack.day() !== 0) {
+		let daysTilSunday = 7 - twoMonthsBack.day();
+		twoMonthsBack = twoMonthsBack.add(daysTilSunday, 'day');
+	}
+	console.log(twoMonthsBack);
 
 	const parsedData = data
 		.filter((action) => action.type === 'PushEvent')
@@ -40,8 +48,10 @@ export async function get() {
 		addCommit(JSON.parse(commit));
 	});
 
-  const storedCommits = await getAllCommits()
-  console.log(storedCommits)
+	const storedCommits = await getCommitsByDate(twoMonthsBack, now).catch((err) =>
+		console.catch(err)
+	);
+	//console.log(storedCommits)
 	if (storedCommits) {
 		return {
 			body: {

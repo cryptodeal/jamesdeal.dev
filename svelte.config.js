@@ -24,6 +24,12 @@ const config = {
 					$static: path.resolve('src/static')
 				}
 			},
+			ssr: {
+				noExternal: []
+			},
+			optimizeDeps: {
+				include: ['layercake']
+			},
 			plugins: [WindiCSS.default(), imagetools()]
 		}
 	}
