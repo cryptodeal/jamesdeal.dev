@@ -17,15 +17,13 @@
     twoMonthsBack = twoMonthsBack.add(daysTilSunday, 'day')
   }
   //date printed is the first sunday of the month 2 months back
-  //console.log(twoMonthsBack)
-  const numWeeks = now.week() - twoMonthsBack.week()
+  console.log(twoMonthsBack)
+  const numWeeks = now.week() - twoMonthsBack.week() + 1
   //export let calcCellSize = d => d;
   export let seriesColors = ['#fff5cc', '#ffeba9', '#ffe182', '#ffd754', '#ffcc00'];
 
   $: calcWidth = $width / numWeeks
-  $: calcHeight = $height / 7
-  $: console.log(calcWidth)
-  $: console.log(calcHeight)
+  $: calcHeight = $height / numWeeks
   const { width, height, data, x, r, extents } = getContext('LayerCake');
 
   const getDayOfWeek = timeFormat('%w');
@@ -62,8 +60,8 @@
   //const parts = minDate.split('-').map(d => +d);
   //console.log(parts)
 
-  days = timeDay.range(twoMonthsBack, now);
-  //console.log(`days: ${days}`)
+  days = timeDay.range(twoMonthsBack.subtract(1, 'day'), now);
+  console.log(`days: ${days}`)
 
 
   $: rectY = day => { 

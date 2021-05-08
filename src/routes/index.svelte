@@ -130,7 +130,7 @@
 	</div>
 
 	<div class="flex flex-wrap mb-40">
-		<div class="h-98 my-5 w-98 content-center">
+		<div class="mx-auto h-98 w-98" data-month='July'>
         <LayerCake
           ssr={true}
           x={'key'}
