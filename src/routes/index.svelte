@@ -130,7 +130,7 @@
 	</div>
 
 	<div class="flex flex-wrap mb-40">
-		<div class="mx-auto h-98 w-98" data-month='July'>
+		<div class="mx-auto h-98 my-5 w-98">
         <LayerCake
           ssr={true}
           x={'key'}
@@ -142,8 +142,9 @@
           </Svg>
         </LayerCake>
 		</div>
-		<div
-			class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 p-5 lg:(w-4/9 p-8) dark:(bg-purple-900 bg-opacity-30)"
+    <div class='mx-auto p-5 lg:(w-4/9 p-8)'>
+      <div
+			class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 p-5 lg:(p-8) dark:(bg-purple-900 bg-opacity-30)"
 		>
 			<h2
 				class="font-extralight mb-3 text-3xl text-red-800 uppercase sm:text-5xl dark:text-green-400"
@@ -157,6 +158,7 @@
 				bindings for performance. My applications utilize both REST and Websocket API.
 			</p>
 		</div>
+    </div>
 	</div>
 
 	<div class="flex flex-wrap-reverse mb-40 items-center">

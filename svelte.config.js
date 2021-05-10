@@ -28,7 +28,7 @@ const config = {
 				noExternal: []
 			},
 			optimizeDeps: {
-				include: ['layercake']
+				include: ['layercake', 'mongoose']
 			},
 			plugins: [WindiCSS.default(), imagetools()]
 		}
