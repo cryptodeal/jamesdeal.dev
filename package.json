@@ -21,7 +21,7 @@
 		"eslint-plugin-svelte3": "^3.2.0",
 		"mdsvex": "^0.9.5",
 		"prettier": "^2.3.0",
-		"prettier-plugin-svelte": "^2.2.0",
+		"prettier-plugin-svelte": "^2.3.0",
 		"rehype-autolink-headings": "^5.0.1",
 		"rehype-slug": "^4.0.1",
 		"remark-abbr": "^1.4.1",
@@ -42,7 +42,7 @@
 		"@octokit/rest": "^18.5.3",
 		"cookie": "^0.4.1",
 		"layercake": "^4.1.0",
-		"mongoose": "^5.12.7",
+		"mongoose": "^5.12.8",
 		"svelte-particles": "^1.9.3",
 		"svelte-toggle": "^3.0.0",
 		"svelte-typewriter": "^2.4.5"

@@ -16,9 +16,9 @@ specifiers:
   eslint-plugin-svelte3: ^3.2.0
   layercake: ^4.1.0
   mdsvex: ^0.9.5
-  mongoose: ^5.12.7
+  mongoose: ^5.12.8
   prettier: ^2.3.0
-  prettier-plugin-svelte: ^2.2.0
+  prettier-plugin-svelte: ^2.3.0
   rehype-autolink-headings: ^5.0.1
   rehype-slug: ^4.0.1
   remark-abbr: ^1.4.1
@@ -38,14 +38,14 @@ dependencies:
   '@octokit/rest': 18.5.3
   cookie: 0.4.1
   layercake: 4.1.0_svelte@3.38.2
-  mongoose: 5.12.7
+  mongoose: 5.12.8
   svelte-particles: 1.9.3
   svelte-toggle: 3.0.0
   svelte-typewriter: 2.4.5
 
 devDependencies:
-  '@sveltejs/adapter-node': 1.0.0-next.19
-  '@sveltejs/kit': 1.0.0-next.103_svelte@3.38.2
+  '@sveltejs/adapter-node': 1.0.0-next.20
+  '@sveltejs/kit': 1.0.0-next.104_svelte@3.38.2
   d3-collection: 1.0.7
   d3-scale: 3.3.0
   d3-time: 2.1.1
@@ -56,7 +56,7 @@ devDependencies:
   eslint-plugin-svelte3: 3.2.0_eslint@7.26.0+svelte@3.38.2
   mdsvex: 0.9.5_svelte@3.38.2
   prettier: 2.3.0
-  prettier-plugin-svelte: 2.2.0_prettier@2.3.0+svelte@3.38.2
+  prettier-plugin-svelte: 2.3.0_prettier@2.3.0+svelte@3.38.2
   rehype-autolink-headings: 5.0.1
   rehype-slug: 4.0.1
   remark-abbr: 1.4.1
@@ -447,12 +447,12 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/adapter-node/1.0.0-next.19:
-    resolution: {integrity: sha512-8QXOm0x9xiRGNZl9H0VplhIRVk14tO67bHDihxpUuOG3gFYxsNvdISC0wrvdGHOOINDUj4K2pdSn8LEjPrml/A==}
+  /@sveltejs/adapter-node/1.0.0-next.20:
+    resolution: {integrity: sha512-ornNW289XN4TyY3tRXVGH38FxrqLsw1MHn4oq92T7U6EqnSbw/22waMZnPBQUxcj5GxZsXuuFjeBjn1BWt0x2A==}
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.103_svelte@3.38.2:
-    resolution: {integrity: sha512-g3Q3AnYloJVpXu83yfQLddYcsTYJ5M/NaoRTyv0qCTMNea1L9HTGrI8grdi5kF8wbPCUcX9fLA9RYRDfEkjF/Q==}
+  /@sveltejs/kit/1.0.0-next.104_svelte@3.38.2:
+    resolution: {integrity: sha512-1ww5NvpGYJdKXR4bfxo04AM4izcJwTziFIVrImq3jqS2b4d8l3KfrJOqgv+e07RvW/WakrCRPAyZzeHpXLdkZg==}
     engines: {node: '>= 12.17.0'}
     hasBin: true
     peerDependencies:
@@ -2044,23 +2044,23 @@ packages:
       saslprep: 1.0.3
     dev: false
 
-  /mongoose-legacy-pluralize/1.0.2_mongoose@5.12.7:
+  /mongoose-legacy-pluralize/1.0.2_mongoose@5.12.8:
     resolution: {integrity: sha512-Yo/7qQU4/EyIS8YDFSeenIvXxZN+ld7YdV9LqFVQJzTLye8unujAWPZ4NWKfFA+RNjh+wvTWKY9Z3E5XM6ZZiQ==}
     peerDependencies:
       mongoose: '*'
     dependencies:
-      mongoose: 5.12.7
+      mongoose: 5.12.8
     dev: false
 
-  /mongoose/5.12.7:
-    resolution: {integrity: sha512-BniNwACn7uflK2h+M3juvyLH5nn9JDFgnB5KE2EwWFwSrRyhSpPnCtanRKJW3OtMCJyPccMIjtGZxHNW7JfnIw==}
+  /mongoose/5.12.8:
+    resolution: {integrity: sha512-+6Q8mvTsIHQkXBWmBGnEy93Gm0fjKIwV/AEIT23wXN3O4Pd3L/aZaJWrdOStcuE4b9SqXrs1QBnnR9MNqNZwrw==}
     engines: {node: '>=4.0.0'}
     dependencies:
       '@types/mongodb': 3.6.12
       bson: 1.1.6
       kareem: 2.3.2
       mongodb: 3.6.6
-      mongoose-legacy-pluralize: 1.0.2_mongoose@5.12.7
+      mongoose-legacy-pluralize: 1.0.2_mongoose@5.12.8
       mpath: 0.8.3
       mquery: 3.2.5
       ms: 2.1.2
@@ -2427,8 +2427,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-svelte/2.2.0_prettier@2.3.0+svelte@3.38.2:
-    resolution: {integrity: sha512-Xdmqgr71tAuMqqzNCK52/v94g/Yv7V7lz+nmbO9NEA+9ol15VV3uUHOfydMNOo3SWvFaVlBcp947ebEaMWqVfQ==}
+  /prettier-plugin-svelte/2.3.0_prettier@2.3.0+svelte@3.38.2:
+    resolution: {integrity: sha512-HTzXvSq7lWFuLsSaxYOUkGkVNCl3RrSjDCOgQjkBX5FQGmWjL8o3IFACSGhjPMMfWKADpapAr0zdbBWkND9mqw==}
     peerDependencies:
       prettier: ^1.16.4 || ^2.0.0
       svelte: ^3.2.0

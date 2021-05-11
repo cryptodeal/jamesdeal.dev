@@ -23,7 +23,6 @@
 
 <script>
 	export let storedCommits;
-	//import { browser } from '$app/env';
 	import Typewriter from 'svelte-typewriter';
 	import LazySrcset from '$lib/images/LazySrcsetPerf.svelte';
 	import proHeadshot from '$static/headshot1.jpg?w=600&meta';
@@ -41,25 +40,17 @@
 	let sizes = '(min-width: 1500px) 2000px, 100vw';
 	let headshotSizes = '(min-width: 1500px) 1000px, 100vw';
 	let style = 'border-radius:50%';
-	//if (browser) console.log(storedCommits);
-	//test layercake copy github commits
-	//import LayerCake from '$lib/graphics/LayerCake.svelte';
-	//import Svg from '$lib/graphics/layouts/Svg.svelte';
 	import { nest } from 'd3-collection';
 	import CalendarMonth from '$lib/Commits/CommitMap.svelte';
-	//import dates from '$lib/Commits/dates.js';
   import {LayerCake, Svg} from 'layercake';
   import dayjs from 'dayjs';
-  //const {LayerCake, Svg} = pkg;
-  //import ScaledSvg from '$lib/graphics/layouts/ScaledSvg.svelte';
-	//$: console.log(dates);
+  
   let dates = storedCommits.storedCommits.map(commit => {return dayjs(commit.date).toISOString()})
   
 	const datesTransformed = dates.map((row) => {
 		return { date: new Date(row), timestring: row };
 	});
 
-	//const gutter = 10;
 	const seriesColors = ['#fff5cc', '#ffeba9', '#ffe182', '#ffd754', '#ffcc00'];
 
 	/* --------------------------------------------
@@ -70,7 +61,6 @@
 		.entries(datesTransformed);
 
 	const sortedData = byMonthByDate.sort((a, b) => a.key - b.key);
-  //console.log(`sortedData: ${sortedData.map(item => JSON.stringify(item))}`)
 </script>
 
 <svelte:head>
@@ -129,22 +119,21 @@
 		</div>
 	</div>
 
-	<div class="flex flex-wrap mb-40">
-		<div class="mx-auto h-98 my-5 w-98">
-        <LayerCake
-          ssr={true}
-          x={'key'}
-          r={(d) => d.values.length}
-          data={sortedData}
-        >
-          <Svg>
-            <CalendarMonth {seriesColors}/>
-          </Svg>
-        </LayerCake>
-		</div>
-    <div class='mx-auto p-5 lg:(w-4/9 p-8)'>
+	<div class="flex flex-wrap mb-40 items-center">
+    <div class='mx-auto h-98 w-98'>
+      <LayerCake
+        ssr={true}
+        x={'key'}
+        r={(d) => d.values.length}
+        data={sortedData}
+      >
+        <Svg>
+          <CalendarMonth {seriesColors}/>
+        </Svg>
+      </LayerCake>
+    </div>
       <div
-			class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 p-5 lg:(p-8) dark:(bg-purple-900 bg-opacity-30)"
+			class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 p-5 content-center lg:(w-4/9 p-8) dark:(bg-purple-900 bg-opacity-30)"
 		>
 			<h2
 				class="font-extralight mb-3 text-3xl text-red-800 uppercase sm:text-5xl dark:text-green-400"
@@ -157,7 +146,6 @@
 				SSR) using Svelte and backend frameworks that leverage a server written in C++ with node.js
 				bindings for performance. My applications utilize both REST and Websocket API.
 			</p>
-		</div>
     </div>
 	</div>
 
