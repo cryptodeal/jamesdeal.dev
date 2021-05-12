@@ -13,7 +13,7 @@ export async function get() {
 		let daysTilSunday = 7 - twoMonthsBack.day();
 		twoMonthsBack = twoMonthsBack.add(daysTilSunday, 'day');
 	}
-	console.log(twoMonthsBack);
+	//console.log(twoMonthsBack);
 
 	const parsedData = data
 		.filter((action) => action.type === 'PushEvent')

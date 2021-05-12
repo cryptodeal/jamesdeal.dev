@@ -33,7 +33,7 @@
 	import testWebP from '$static/test.jpg?w=500;1000;2000&format=webp&srcset';
 	import testAvif from '$static/test.jpg?w=500;1000;2000&format=avif&srcset';
 	import testBlur from '$static/test.jpg?w=300&blur=100&quality=30';
-  console.log(storedCommits.storedCommits.length)
+  //console.log(storedCommits.storedCommits.length)
 	let alt = 'Professional headshot of James Deal';
 	let proHeadshotRatio = `${(1 / (proHeadshot.width / proHeadshot.height)) * 100}%`;
 	let testRatio = `${(1 / (test.width / test.height)) * 100}%`;
@@ -120,11 +120,11 @@
 	</div>
 
 	<div class="flex flex-wrap mb-40 w-full items-center">
-    <div class='text-center'>
+    <div class='mx-auto'>
       <h2
 				class="font-extralight mb-3 text-3xl text-red-800 uppercase sm:text-5xl dark:text-green-400"
 			>
-				About Me
+				Git Commit History:
 			</h2>
       <div class='commitChart'>
         <LayerCake
