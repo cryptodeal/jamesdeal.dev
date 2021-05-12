@@ -122,7 +122,7 @@
 	<div class="flex flex-wrap mb-40 w-full items-center">
     <div class='mx-auto'>
       <h2
-				class="font-extralight mb-3 text-3xl text-red-800 uppercase sm:text-5xl dark:text-green-400"
+				class="font-extralight mb-3 text-3xl text-red-800 w-55 uppercase sm:(text-5xl w-65) md:w-75 lg:w-50 xl:w-60 2xl:w-75 dark:text-green-400"
 			>
 				Git Commit History:
 			</h2>
