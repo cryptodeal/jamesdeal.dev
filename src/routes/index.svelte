@@ -105,7 +105,7 @@
 				bindings for performance. My applications utilize both REST and Websocket API.
 			</p>
 		</div>
-		<div class="mx-auto my-5 w-98">
+		<div class="mx-auto w-98">
 			<LazySrcset
 				src={proHeadshot}
 				ratio={proHeadshotRatio}
@@ -119,8 +119,8 @@
 		</div>
 	</div>
 
-	<div class="flex flex-wrap mb-40 items-center">
-    <div class='mx-auto h-98 w-98'>
+	<div class="flex flex-wrap h-70 mb-40 items-center">
+    <div class='h-full mx-auto w-98'>
       <LayerCake
         ssr={true}
         x={'key'}
@@ -165,7 +165,7 @@
 				bindings for performance. My applications utilize both REST and Websocket API.
 			</p>
 		</div>
-		<div class="mx-auto my-5 w-98">
+		<div class="mx-auto w-98">
 			<LazySrcset
 				src={test}
 				ratio={testRatio}

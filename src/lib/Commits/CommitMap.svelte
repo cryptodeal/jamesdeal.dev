@@ -23,7 +23,7 @@
   export let seriesColors = ['#fff5cc', '#ffeba9', '#ffe182', '#ffd754', '#ffcc00'];
 
   $: calcWidth = $width / numWeeks
-  $: calcHeight = $height / numWeeks
+  $: calcHeight = $height / 7
   const { width, height, data, x, r, extents } = getContext('LayerCake');
 
   const getDayOfWeek = timeFormat('%w');
@@ -47,7 +47,7 @@
     return n ? colorScale(n) : '#fff';
   };
 
-  $: cellSize = width >= height ? calcWidth : calcHeight
+  $: cellSize = $width > $height ? calcWidth : calcHeight
   //$: console.log(cellSize)
   let days;
 

@@ -29,8 +29,8 @@
 		"stylelint": "^13.13.1",
 		"stylelint-config-standard": "^22.0.0",
 		"svelte": "3.38.2",
-		"vite": "^2.2.4",
-		"vite-imagetools": "^3.6.1",
+		"vite": "^2.3.0",
+		"vite-imagetools": "^3.6.6",
 		"vite-plugin-windicss": "^0.15.10"
 	},
 	"type": "module",
@@ -43,7 +43,7 @@
 		"cookie": "^0.4.1",
 		"layercake": "^4.1.0",
 		"mongoose": "^5.12.8",
-		"svelte-particles": "^1.9.3",
+		"svelte-particles": "^1.10.0",
 		"svelte-toggle": "^3.0.0",
 		"svelte-typewriter": "^2.4.5"
 	}
