@@ -38,6 +38,6 @@ html.dark {
 	bottom: -1px;
 }
 
-.commitChart{
-  @apply mx-auto h-50 w-55 sm:(h-60 w-65) md:(h-70 w-75) lg:(h-50 w-50) xl:(h-60 w-60) 2xl:(h-75 w-75);
+.commitChart {
+	@apply mx-auto h-50 w-55 sm:(h-60 w-65) md:(h-70 w-75) lg:(h-50 w-50) xl:(h-60 w-60) 2xl:(h-75 w-75);
 }
