@@ -47,7 +47,7 @@
     return n ? colorScale(n) : '#fff';
   };
 
-  $: cellSize = $width > $height ? calcWidth : calcHeight
+  $: cellSize = $height >= $width ? calcHeight : calcWidth
   //$: console.log(cellSize)
   let days;
 

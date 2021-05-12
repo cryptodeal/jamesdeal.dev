@@ -105,7 +105,7 @@
 				bindings for performance. My applications utilize both REST and Websocket API.
 			</p>
 		</div>
-		<div class="mx-auto w-98">
+		<div class="mx-auto my-5 w-98">
 			<LazySrcset
 				src={proHeadshot}
 				ratio={proHeadshotRatio}
@@ -119,9 +119,15 @@
 		</div>
 	</div>
 
-	<div class="flex flex-wrap h-70 mb-40 items-center">
-    <div class='h-full mx-auto w-98'>
-      <LayerCake
+	<div class="flex flex-wrap mb-40 w-full items-center">
+    <div class='text-center'>
+      <h2
+				class="font-extralight mb-3 text-3xl text-red-800 uppercase sm:text-5xl dark:text-green-400"
+			>
+				About Me
+			</h2>
+      <div class='commitChart'>
+        <LayerCake
         ssr={true}
         x={'key'}
         r={(d) => d.values.length}
@@ -131,6 +137,7 @@
           <CalendarMonth {seriesColors}/>
         </Svg>
       </LayerCake>
+    </div>
     </div>
       <div
 			class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 p-5 content-center lg:(w-4/9 p-8) dark:(bg-purple-900 bg-opacity-30)"
@@ -165,7 +172,7 @@
 				bindings for performance. My applications utilize both REST and Websocket API.
 			</p>
 		</div>
-		<div class="mx-auto w-98">
+		<div class="mx-auto my-5 w-98">
 			<LazySrcset
 				src={test}
 				ratio={testRatio}
