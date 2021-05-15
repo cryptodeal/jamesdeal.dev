@@ -1,9 +1,6 @@
 <script context="module">
-  import { browser, dev } from '$app/env';
-	export const hydrate = dev;
-
+  import { browser } from '$app/env';
 	export const router = browser;
-
 	export const prerender = true;
 	/**
 	 * @type {import('@sveltejs/kit').Load}
