@@ -27,10 +27,10 @@ const config = {
 				}
 			},
 			ssr: {
-				noExternal: ['aws4', 'mongodb-client-encryption']
+				external: []
 			},
 			optimizeDeps: {
-				include: ['layercake', 'mongoose']
+				include: ['layercake']
 			},
 			plugins: [WindiCSS.default(), imagetools()]
 		}
