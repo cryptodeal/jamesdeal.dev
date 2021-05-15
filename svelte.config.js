@@ -27,10 +27,10 @@ const config = {
 				}
 			},
 			ssr: {
-				noExternal: []
+				noExternal: ['mongoose']
 			},
 			optimizeDeps: {
-				include: ['layercake', 'mongoose']
+				include: ['layercake']
 			},
 			plugins: [WindiCSS.default(), imagetools()]
 		}
