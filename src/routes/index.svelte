@@ -139,7 +139,7 @@
 			<h2
 				class="font-extralight mb-3 text-3xl text-red-800 uppercase sm:text-5xl dark:text-green-400"
 			>
-				Developer Interests
+				Developer Interest
 			</h2>
 			<p class="font-extralight text-sm text-gray-800 dark:text-gray-200">
 				I'm a 23 year old full-stack developer based out of Austin, TX. Specializing in full-stack
