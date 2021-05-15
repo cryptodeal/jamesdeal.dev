@@ -10,7 +10,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-node": "next",
-    "@sveltejs/adapter-vercel": "next",
+		"@sveltejs/adapter-vercel": "next",
 		"@sveltejs/kit": "next",
 		"d3-collection": "^1.0.7",
 		"d3-scale": "^3.3.0",
@@ -43,6 +43,7 @@
 		"@octokit/rest": "^18.5.3",
 		"cookie": "^0.4.1",
 		"layercake": "^4.1.0",
+		"mongodb-client-encryption": "^1.2.3",
 		"mongoose": "^5.12.8",
 		"svelte-particles": "^1.10.0",
 		"svelte-toggle": "^3.0.0",
