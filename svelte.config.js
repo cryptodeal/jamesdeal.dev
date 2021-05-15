@@ -1,7 +1,9 @@
 import pkg from 'mdsvex';
 const { mdsvex } = pkg;
 import { mdsvexConfig } from './mdsvex.config.js';
-import node from '@sveltejs/adapter-node';
+//import node from '@sveltejs/adapter-node';
+import vercel from '@sveltejs/adapter-vercel';
+
 import pack from 'vite-imagetools';
 const { imagetools } = pack;
 import path from 'path';
@@ -12,7 +14,7 @@ const config = {
 	extensions: ['.svelte', ...mdsvexConfig.extensions],
 	preprocess: [mdsvex(mdsvexConfig)],
 	kit: {
-		adapter: node(),
+		adapter: vercel(),
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
 		files: {

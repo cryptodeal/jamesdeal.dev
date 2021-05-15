@@ -33,7 +33,6 @@
 	import testWebP from '$static/test.jpg?w=500;1000;2000&format=webp&srcset';
 	import testAvif from '$static/test.jpg?w=500;1000;2000&format=avif&srcset';
 	import testBlur from '$static/test.jpg?w=300&blur=100&quality=30';
-  //console.log(storedCommits.storedCommits.length)
 	let alt = 'Professional headshot of James Deal';
 	let proHeadshotRatio = `${(1 / (proHeadshot.width / proHeadshot.height)) * 100}%`;
 	let testRatio = `${(1 / (test.width / test.height)) * 100}%`;
@@ -52,10 +51,6 @@
 	});
 
 	const seriesColors = ['#fff5cc', '#ffeba9', '#ffe182', '#ffd754', '#ffcc00'];
-
-	/* --------------------------------------------
-	 * Group by month then by date
-	 */
 	const byMonthByDate = nest()
 		.key((d) => d.timestring.split('T')[0])
 		.entries(datesTransformed);
@@ -101,8 +96,7 @@
 			<p class="font-extralight text-sm text-gray-800 dark:text-gray-200">
 				I'm a 23 year old full-stack developer based out of Austin, TX. Specializing in full-stack
 				development, with a focus on building light-weight front end applications (SPA/Static, PWA,
-				SSR) using Svelte and backend frameworks that leverage a server written in C++ with node.js
-				bindings for performance. My applications utilize both REST and Websocket API.
+				SSR) using Svelte and leveraging uWebsocket.js or NanoExpress to build out a backend capable of scaling to <a href='https://web-frameworks-benchmark.netlify.app/result'>150,000+ Requests/Second</a>.
 			</p>
 		</div>
 		<div class="mx-auto my-5 w-98">
@@ -145,7 +139,7 @@
 			<h2
 				class="font-extralight mb-3 text-3xl text-red-800 uppercase sm:text-5xl dark:text-green-400"
 			>
-				About Me
+				Developer Interests
 			</h2>
 			<p class="font-extralight text-sm text-gray-800 dark:text-gray-200">
 				I'm a 23 year old full-stack developer based out of Austin, TX. Specializing in full-stack

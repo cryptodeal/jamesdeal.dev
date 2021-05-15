@@ -19,16 +19,7 @@
 
 <script>
   import Typewriter from 'svelte-typewriter';
-  //import cta from '$lib/test.js'
-  //import {onMount} from 'svelte'
-  //let picture
-  //onMount(async()=>{
-    //picture = await import(`../../static/${cta.image}.jpg`)
-  //})
-  
-  //console.log(cta)
   export let posts;
-  //console.log(picture)
 </script>
 
 <svelte:head>
@@ -49,9 +40,4 @@
       {/each}
     </ul>
   </div>
-  <!--
-    {#if picture !== null}
-      <img src={picture} alt="Your image alt">
-    {/if}
-  -->
 </div>
