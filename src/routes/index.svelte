@@ -1,6 +1,4 @@
 <script context="module">
-  import { browser } from '$app/env';
-	export const router = browser;
 	/**
 	 * @type {import('@sveltejs/kit').Load}
 	 */

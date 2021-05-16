@@ -1,8 +1,3 @@
-<script context="module">
-	import { browser } from '$app/env';
-	export const router = browser;
-</script>
-
 <script>
 	import Pill from '$lib/about/Pill.svelte';
 	import Subtitle from '$lib/about/Subtitle.svelte';

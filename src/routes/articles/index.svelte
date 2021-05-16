@@ -1,6 +1,4 @@
 <script context="module">
-	import { browser } from '$app/env';
-	export const router = browser;
   export async function load({ fetch }) {
     const url = `/articles.json`;
     const res = await fetch(url);
