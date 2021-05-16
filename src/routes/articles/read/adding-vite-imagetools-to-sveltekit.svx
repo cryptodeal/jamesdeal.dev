@@ -1,4 +1,9 @@
 ---
+title: "Integrating vite-imagetools and SvelteKit"
+description: "How to successfully integrate the vite-imagetools lib within your SvelteKit application."
+author: "James Deal"
+date: "2021-03-24"
+published: true
 ---
 
 <svelte:head>

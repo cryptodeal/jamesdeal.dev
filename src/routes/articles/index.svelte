@@ -2,11 +2,11 @@
   export async function load({ fetch }) {
     const url = `/articles.json`;
     const res = await fetch(url);
-    const jsonBody = await res.json()
+    const posts = await res.json()
     if (res.ok) {
       return {
         props: {
-          posts: JSON.parse(jsonBody.articles)
+          posts
         }
       };
     }
@@ -33,10 +33,10 @@
   </div>
   <div>
     <ul>
-      {#each posts as post}
+      {#each posts as {slug, title, author}}
       <h2 class='font-extralight text-2xl text-red-800 no-underline dark:text-green-400 dark:hover:text-green-600'><a
-          href='articles/read/{post.slug}'>{post.title}</a></h2>
-      <p class='font-extralight text-sm text-left text-gray-900 w-3/4 dark:text-gray-200'>By: James Deal</p>
+          href='articles/read/{slug}'>{title}</a></h2>
+      <p class='font-extralight text-sm text-left text-gray-900 w-3/4 dark:text-gray-200'>By: {author}</p>
       {/each}
     </ul>
   </div>
