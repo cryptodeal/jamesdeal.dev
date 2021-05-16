@@ -9,7 +9,6 @@
 		"format": "prettier --write ."
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-node": "next",
 		"@sveltejs/adapter-vercel": "next",
 		"@sveltejs/kit": "next",
 		"d3-collection": "^1.0.7",
@@ -31,7 +30,7 @@
 		"stylelint-config-standard": "^22.0.0",
 		"svelte": "3.38.2",
 		"vite": "^2.3.2",
-		"vite-imagetools": "^3.6.6",
+		"vite-imagetools": "^3.6.7",
 		"vite-plugin-windicss": "^0.15.10"
 	},
 	"type": "module",
@@ -44,7 +43,7 @@
 		"cookie": "^0.4.1",
 		"layercake": "^4.1.0",
 		"mongodb-client-encryption": "^1.2.3",
-		"mongoose": "^5.12.8",
+		"mongoose": "^5.12.9",
 		"svelte-particles": "^1.10.0",
 		"svelte-toggle": "^3.0.0",
 		"svelte-typewriter": "^2.4.5"
