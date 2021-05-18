@@ -1,4 +1,5 @@
 const windiConfig = {
+	darkMode: 'class',
 	preflight: {
 		enableAll: true
 	},

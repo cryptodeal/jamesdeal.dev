@@ -1,3 +1,75 @@
+#tsparticles {
+	@apply h-full w-full;
+}
+
+html {
+	@apply bg-yellow-50;
+}
+
+html.dark {
+	@apply bg-gray-900;
+}
+
+*:focus:not(.focus-visible) {
+	@apply outline-none;
+}
+
+[aria-current] {
+	@apply relative inline-block;
+}
+
+[aria-current]::after {
+	position: absolute;
+	content: '';
+	width: calc(100% - 1em);
+	height: 2px;
+	background-color: #991b1b;
+	display: block;
+	bottom: -1px;
+}
+
+.dark [aria-current]::after {
+	position: absolute;
+	content: '';
+	width: calc(100% - 1em);
+	height: 2px;
+	background-color: #34d399;
+	display: block;
+	bottom: -1px;
+}
+
+.commitChart {
+	@apply mx-auto h-50 w-55 sm:(h-60 w-65) md:(h-70 w-75) lg:(h-50 w-50) xl:(h-60 w-60) 2xl:(h-75 w-75);
+}
+
+h1 {
+	@apply font-extralight font-mono text-5xl md:text-7xl text-red-800 dark:text-green-400 text-center p-4 break-words;
+}
+
+h2 {
+	@apply font-extralight font-mono text-3xl text-red-800 sm:text-5xl dark:text-green-400;
+}
+
+h3 {
+	@apply font-extralight font-mono text-xl text-red-800 w-3/4 dark:text-green-400;
+}
+
+p {
+	@apply font-extralight text-sm text-gray-800 dark:text-gray-200;
+}
+
+ul {
+	@apply leading-normal;
+}
+
+li {
+	@apply mx-0 mt-0 mb-2;
+}
+
+a {
+	@apply no-underline;
+}
+
 code[class*='language-'],
 pre[class*='language-'] {
 	color: #ccc;
@@ -111,32 +183,4 @@ pre[class*='language-'] {
 
 .token.inserted {
 	color: green;
-}
-
-.content h1 {
-	@apply font-extralight text-7xl text-red-800 dark:text-green-400 text-center p-4 break-all;
-}
-
-.content h2 {
-	@apply font-extralight text-3xl text-red-800 sm:text-5xl dark:text-green-400;
-}
-
-.content h3 {
-	@apply font-extralight text-xl text-red-800 w-3/4 dark:text-green-400;
-}
-
-.content p {
-	@apply font-extralight text-sm text-gray-800 dark:text-gray-200;
-}
-
-.content ul {
-	@apply leading-normal;
-}
-
-.content li {
-	@apply mx-0 mt-0 mb-2;
-}
-
-.content a {
-	@apply no-underline;
 }

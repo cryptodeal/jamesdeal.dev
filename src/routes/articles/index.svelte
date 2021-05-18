@@ -26,12 +26,12 @@
   <title>Articles</title>
 </svelte:head>
 <div class="flex flex-col items-center">
-  <div class='h-40 sm:h-20'>
+  <div class='absolute'>
     <Typewriter cursor={false}>
-      <h1 class='font-extralight text-7xl text-red-800 uppercase dark:text-green-400'>Recent Articles</h1>
+      <h1>Recent Articles</h1>
     </Typewriter>
   </div>
-  <div>
+  <div class='mt-30 absolute'>
     <ul>
       {#each posts as {slug, title, author}}
       <h2 class='font-extralight text-2xl text-red-800 no-underline dark:text-green-400 dark:hover:text-green-600'><a

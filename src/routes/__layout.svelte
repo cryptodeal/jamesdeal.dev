@@ -1,8 +1,8 @@
 <script>
 	import { page } from '$app/stores';
-	import '../app.css';
 	import { browser } from '$app/env';
 	import 'virtual:windi.css';
+  import '$static/app.css';
 	import Nav from '$lib/nav/Nav.svelte';
 	import { theme } from '$lib/stores/localStore.js';
 	import Particles from '$lib/nav/Particles.svelte';

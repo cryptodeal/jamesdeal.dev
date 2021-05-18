@@ -74,16 +74,14 @@
 	/>
 </svelte:head>
 
-<div class="flex flex-col h-40 m-5 text-center mb-15">
+<div class="flex flex-col h-40 m-5 text-center mb-5">
 	<div class="py-1 relative">
 		<Typewriter cursor={false}>
-			<h1 class="font-extralight text-7xl text-red-800 uppercase dark:text-green-400">
-				Meet James Deal
-			</h1>
+			<h1>Meet James Deal</h1>
 		</Typewriter>
 	</div>
 </div>
-<section class="container mx-auto p-10">
+<section class="container mx-auto p-5">
 	<div class="flex flex-wrap-reverse mb-40 items-center">
 		<div
 			class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 p-5 lg:(w-4/9 p-8) dark:(bg-purple-900 bg-opacity-30)"
