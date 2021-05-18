@@ -62,10 +62,6 @@ ul {
 	@apply leading-normal;
 }
 
-li {
-	@apply mx-0 mt-0 mb-2;
-}
-
 a {
 	@apply no-underline;
 }

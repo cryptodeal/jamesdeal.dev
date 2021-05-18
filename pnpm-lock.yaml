@@ -15,12 +15,12 @@ specifiers:
   eslint-config-prettier: ^8.3.0
   eslint-plugin-svelte3: ^3.2.0
   layercake: ^4.1.0
-  mdsvex: ^0.9.5
+  mdsvex: ^0.9.6
   mongodb-client-encryption: ^1.2.3
-  mongoose: ^5.12.9
+  mongoose: ^5.12.10
   prettier: ^2.3.0
   prettier-plugin-svelte: ^2.3.0
-  rehype-autolink-headings: ^5.0.1
+  rehype-autolink-headings: ^5.1.0
   rehype-slug: ^4.0.1
   remark-abbr: ^1.4.1
   remark-github: ^10.1.0
@@ -40,14 +40,14 @@ dependencies:
   cookie: 0.4.1
   layercake: 4.1.0_svelte@3.38.2
   mongodb-client-encryption: 1.2.3
-  mongoose: 5.12.9_mongodb-client-encryption@1.2.3
+  mongoose: 5.12.10_mongodb-client-encryption@1.2.3
   svelte-particles: 1.10.0
   svelte-toggle: 3.0.0
   svelte-typewriter: 2.4.5
 
 devDependencies:
-  '@sveltejs/adapter-vercel': 1.0.0-next.17_svelte@3.38.2
-  '@sveltejs/kit': 1.0.0-next.107_svelte@3.38.2
+  '@sveltejs/adapter-vercel': 1.0.0-next.18_svelte@3.38.2
+  '@sveltejs/kit': 1.0.0-next.108_svelte@3.38.2
   d3-collection: 1.0.7
   d3-scale: 3.3.0
   d3-time: 2.1.1
@@ -56,10 +56,10 @@ devDependencies:
   eslint: 7.26.0
   eslint-config-prettier: 8.3.0_eslint@7.26.0
   eslint-plugin-svelte3: 3.2.0_eslint@7.26.0+svelte@3.38.2
-  mdsvex: 0.9.5_svelte@3.38.2
+  mdsvex: 0.9.6_svelte@3.38.2
   prettier: 2.3.0
   prettier-plugin-svelte: 2.3.0_prettier@2.3.0+svelte@3.38.2
-  rehype-autolink-headings: 5.0.1
+  rehype-autolink-headings: 5.1.0
   rehype-slug: 4.0.1
   remark-abbr: 1.4.1
   remark-github: 10.1.0
@@ -580,13 +580,13 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/adapter-vercel/1.0.0-next.17_svelte@3.38.2:
+  /@sveltejs/adapter-vercel/1.0.0-next.18_svelte@3.38.2:
     resolution:
       {
-        integrity: sha512-35Z4R9V4+katvCZz37+E3pjcacQq8goIqwuClIVnnSK7+OUd6LoGb/cFoHm7OdvoSLUKaXSZ9/bLF/hwpmfJhQ==
+        integrity: sha512-l6jEJG+1Mo0FHqMIDTS4gNoWQkdpk8Bk9E3711nfp5aMybnjU380Hhkppt25u/A1bMUssrmztq6A+sd3Py2niQ==
       }
     dependencies:
-      '@sveltejs/kit': 1.0.0-next.104_svelte@3.38.2
+      '@sveltejs/kit': 1.0.0-next.108_svelte@3.38.2
       esbuild: 0.11.23
     transitivePeerDependencies:
       - rollup
@@ -594,30 +594,10 @@ packages:
       - svelte
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.104_svelte@3.38.2:
+  /@sveltejs/kit/1.0.0-next.108_svelte@3.38.2:
     resolution:
       {
-        integrity: sha512-1ww5NvpGYJdKXR4bfxo04AM4izcJwTziFIVrImq3jqS2b4d8l3KfrJOqgv+e07RvW/WakrCRPAyZzeHpXLdkZg==
-      }
-    engines: { node: '>= 12.17.0' }
-    hasBin: true
-    peerDependencies:
-      svelte: ^3.38.2
-    dependencies:
-      '@sveltejs/vite-plugin-svelte': 1.0.0-next.10_svelte@3.38.2+vite@2.3.3
-      cheap-watch: 1.0.3
-      sade: 1.7.4
-      svelte: 3.38.2
-      vite: 2.3.3
-    transitivePeerDependencies:
-      - rollup
-      - supports-color
-    dev: true
-
-  /@sveltejs/kit/1.0.0-next.107_svelte@3.38.2:
-    resolution:
-      {
-        integrity: sha512-HxomGMWbuWTU8lahk98hqIL/xjW6HzNTAvTZVMnnmlMHN1N8x7+abkz4Y09Zhu8lZkZpFuqBj2UlsgPW4uJXtw==
+        integrity: sha512-4XPuN1WsL6hksYZionnO1f+aBLifWIM/gFgDgx4u1Fzhln5usgOCe0RqrN3unmhyprawRYY5/1DUPfqfVHxSVQ==
       }
     engines: { node: '>= 12.17.0' }
     hasBin: true
@@ -2672,10 +2652,10 @@ packages:
       }
     dev: true
 
-  /mdsvex/0.9.5_svelte@3.38.2:
+  /mdsvex/0.9.6_svelte@3.38.2:
     resolution:
       {
-        integrity: sha512-QXgxm7F9+lGuXJx4il6FBJUVdEwBXDvmB9YVXM0BjAzpOa7le4ojOoS9mq9m8m8zvG7CWRssVIUxFROwVxEopQ==
+        integrity: sha512-AMdB7TNC40aE/XZuVhqFLWJGufUHK64/Yre88CEC9jktINp+vmYs1YsmUUM7ophl2Y+6qZwcYE4DPe1PPHVNjA==
       }
     peerDependencies:
       svelte: 3.x
@@ -2847,7 +2827,7 @@ packages:
       saslprep: 1.0.3
     dev: false
 
-  /mongoose-legacy-pluralize/1.0.2_mongoose@5.12.9:
+  /mongoose-legacy-pluralize/1.0.2_mongoose@5.12.10:
     resolution:
       {
         integrity: sha512-Yo/7qQU4/EyIS8YDFSeenIvXxZN+ld7YdV9LqFVQJzTLye8unujAWPZ4NWKfFA+RNjh+wvTWKY9Z3E5XM6ZZiQ==
@@ -2855,13 +2835,13 @@ packages:
     peerDependencies:
       mongoose: '*'
     dependencies:
-      mongoose: 5.12.9_mongodb-client-encryption@1.2.3
+      mongoose: 5.12.10_mongodb-client-encryption@1.2.3
     dev: false
 
-  /mongoose/5.12.9_mongodb-client-encryption@1.2.3:
+  /mongoose/5.12.10_mongodb-client-encryption@1.2.3:
     resolution:
       {
-        integrity: sha512-ZSDjW15DmUbHQcZ2PqoXsJeYnpYipISi6QJH/XHR9dcSg3IRNCa86apcTptBux03/YBPiSZlKNYUNDx7iuMWoA==
+        integrity: sha512-/VmFFEACH2yiuPcJoBjOzVTXozBhCeminVbWI8mxiZwvgCbNu9PQrIABIgeCJncnZH8VT4G7s2IXO5FySxF1XA==
       }
     engines: { node: '>=4.0.0' }
     dependencies:
@@ -2869,7 +2849,7 @@ packages:
       bson: 1.1.6
       kareem: 2.3.2
       mongodb: 3.6.6_mongodb-client-encryption@1.2.3
-      mongoose-legacy-pluralize: 1.0.2_mongoose@5.12.9
+      mongoose-legacy-pluralize: 1.0.2_mongoose@5.12.10
       mpath: 0.8.3
       mquery: 3.2.5
       ms: 2.1.2
@@ -3557,10 +3537,10 @@ packages:
     engines: { node: '>=8' }
     dev: true
 
-  /rehype-autolink-headings/5.0.1:
+  /rehype-autolink-headings/5.1.0:
     resolution:
       {
-        integrity: sha512-B6dmUVhtGdXLxJr3qynjRR10+f/iPJbSOtW5YyWieMvcwAm1XW5/yIYaW/9Qqr/Sd5h/Jym3dDCLJ4y6rPluWg==
+        integrity: sha512-ujU4/ALnWLJQubobQaMdC0h9nkzi7HlW9SOuCxZOkkJqhc/TrQ1cigIjMFQ2Tfc/es0KiFopKvwCUGw7Gw+mFw==
       }
     dependencies:
       extend: 3.0.2
