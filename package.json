@@ -29,13 +29,13 @@
 		"stylelint": "^13.13.1",
 		"stylelint-config-standard": "^22.0.0",
 		"svelte": "3.38.2",
-		"vite": "^2.3.2",
+		"vite": "^2.3.3",
 		"vite-imagetools": "^3.6.7",
 		"vite-plugin-windicss": "^0.15.10"
 	},
 	"type": "module",
 	"engines": {
-		"node": ">= 14.17.0"
+		"node": ">= 14.16.1"
 	},
 	"dependencies": {
 		"@lukeed/uuid": "^2.0.0",
