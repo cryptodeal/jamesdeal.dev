@@ -14,20 +14,6 @@ html.dark {
 	@apply outline-none;
 }
 
-[aria-current] {
-	@apply relative inline-block;
-}
-
-[aria-current]::after {
-	position: absolute;
-	content: '';
-	width: calc(100% - 1em);
-	height: 2px;
-	background-color: #991b1b;
-	display: block;
-	bottom: -1px;
-}
-
 .dark [aria-current]::after {
 	position: absolute;
 	content: '';
@@ -47,7 +33,7 @@ h1 {
 }
 
 h2 {
-	@apply font-extralight font-sans text-3xl text-red-800 sm:text-5xl dark:text-green-400;
+	@apply font-extralight font-sans text-2xl text-red-800 sm:text-5xl dark:text-green-400;
 }
 
 h3 {
@@ -58,12 +44,12 @@ p {
 	@apply font-extralight font-mono text-sm text-gray-800 dark:text-gray-200;
 }
 
-ul {
-	@apply leading-normal;
+a {
+	@apply underline-dashed underline-red-800 dark:underline-green-400;
 }
 
-a {
-	@apply no-underline;
+ul {
+	@apply leading-normal;
 }
 
 code[class*='language-'],

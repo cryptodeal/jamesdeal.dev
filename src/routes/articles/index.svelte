@@ -34,8 +34,9 @@
   <div class='mx-4 mt-30 absolute'>
     <ul>
       {#each posts as {slug, title, author}}
-      <h2 class='font-extralight text-2xl text-red-800 no-underline dark:text-green-400 dark:hover:text-green-600'><a
-          href='articles/read/{slug}'>{title}</a></h2>
+      <h2 class='hover:text-red-900 dark:hover:text-green-600'>
+        <a class='no-underline' href='articles/read/{slug}'>{title}</a>
+      </h2>
       <p class='font-extralight text-sm text-left text-gray-900 w-3/4 dark:text-gray-200'>By: {author}</p>
       {/each}
     </ul>

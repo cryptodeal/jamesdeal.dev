@@ -21,15 +21,25 @@
   }
 </script>
 <style>
-  :root {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-
   /* clearfix */
   ul::after {
     content: '';
     vertical-align: center;
     clear: both;
+  }
+
+  [aria-current] {
+    @apply relative inline-block;
+  }
+
+  [aria-current]::after {
+    position: absolute;
+    content: '';
+    width: calc(100% - 1em);
+    height: 2px;
+    background-color: #991b1b;
+    display: block;
+    bottom: -1px;
   }
 </style>
 
