@@ -1,6 +1,6 @@
 <script>
   export let segment
-  import './nav.css'
+  import '$static/nav.css'
   import Toggle from "svelte-toggle";
   import { browser } from '$app/env';
   import { theme } from '$lib/stores/localStore'
