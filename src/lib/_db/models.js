@@ -1,7 +1,11 @@
 import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
-const Commit = mongoose.model(
+let Commit 
+try {
+  Commit = mongoose.model('Commit')
+} catch (error) {
+  Commit = mongoose.model(
 	'Commit',
 	new Schema({
 		_id: { type: String },
@@ -13,16 +17,21 @@ const Commit = mongoose.model(
 		distinct: { type: Boolean, require: true },
 		repo: { type: Number, ref: 'Repo', index: true },
 		date: { type: Date, require: true }
-	})
-);
+	}))
+}
 
-const Repo = mongoose.model(
-	'Repo',
-	new Schema({
-		_id: { type: Number },
-		name: { type: String, require: true, index: true },
-		url: { type: String, require: true }
-	})
-);
+let Repo
+try {
+  Repo = mongoose.model('Repo')
+} catch (error) {
+  Repo = mongoose.model(
+    'Repo',
+    new Schema({
+      _id: { type: Number },
+      name: { type: String, require: true, index: true },
+      url: { type: String, require: true }
+    })
+  )
+}
 
 export { Commit, Repo };

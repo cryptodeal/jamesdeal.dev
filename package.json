@@ -29,9 +29,11 @@
 		"stylelint": "^13.13.1",
 		"stylelint-config-standard": "^22.0.0",
 		"svelte": "3.38.2",
+		"svelte-preprocess": "^4.7.3",
 		"vite": "^2.3.3",
 		"vite-imagetools": "^3.6.7",
-		"vite-plugin-windicss": "^0.15.10"
+		"vite-plugin-windicss": "^0.15.10",
+		"windicss": "^3.0.8"
 	},
 	"type": "module",
 	"engines": {

@@ -1,8 +1,8 @@
 <svelte:head>
   <meta property="og:type" content="article" />
 </svelte:head>
-<div class="container mx-auto 2xl:px-10">
-  <article class="text-left text-base content" itemscope itemtype="http://schema.org/TechArticle">
+<div class="mx-auto max-w-3xl py-10 px-4 sm:px-6 sm:py-12 lg:max-w-4xl lg:py-16 lg:px-8 xl:max-w-6xl">
+  <article class="mx-auto prose prose-sm sm:prose lg:prose-xl xl:prose-2xl">
     <slot />
   </article>
   <div class="flex py-1 twitter justify-center">

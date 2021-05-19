@@ -1,3 +1,4 @@
+import typography from 'windicss/plugin/typography'
 const windiConfig = {
 	darkMode: 'class',
 	preflight: {
@@ -10,6 +11,6 @@ const windiConfig = {
 		}
 	},
 	variants: {},
-	plugins: []
+	plugins: [typography]
 };
 export default windiConfig;

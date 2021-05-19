@@ -23,7 +23,13 @@
 </script>
 
 <svelte:head>
-  <title>Articles</title>
+  <title>Recent Articles</title>
+
+  <meta name="description" content="Recent Articles: The latest musings of a sleep deprived dev.">
+  <meta name="keywords" content="James Deal, Developer, Front End, Svelte, Back End">
+
+  <meta property="og:title" content="Recent Articles" />
+  <meta property="og:description" content="Recent Articles: The latest musings of a sleep deprived dev." />
 </svelte:head>
 <div class="flex flex-col items-center">
   <div class='absolute'>
