@@ -14,16 +14,6 @@ html.dark {
 	@apply outline-none;
 }
 
-.dark [aria-current]::after {
-	position: absolute;
-	content: '';
-	width: calc(100% - 1em);
-	height: 2px;
-	background-color: #34d399;
-	display: block;
-	bottom: -1px;
-}
-
 .commitChart {
 	@apply mx-auto h-50 w-55 sm:(h-60 w-65) md:(h-70 w-75) lg:(h-50 w-50) xl:(h-60 w-60) 2xl:(h-75 w-75);
 }
