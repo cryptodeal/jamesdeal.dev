@@ -1,10 +1,8 @@
-import pkg from 'mdsvex';
-const { mdsvex } = pkg;
+import { mdsvex } from 'mdsvex';
 import { mdsvexConfig } from './mdsvex.config.js';
 import preprocess from 'svelte-preprocess';
 import vercel from '@sveltejs/adapter-vercel';
-import pack from 'vite-imagetools';
-const { imagetools } = pack;
+import { imagetools } from 'vite-imagetools';
 import path from 'path';
 import WindiCSS from 'vite-plugin-windicss';
 
