@@ -43,7 +43,7 @@
       <h2 class='hover:text-red-900 dark:hover:text-green-600'>
         <a class='no-underline' href='articles/read/{slug}'>{title}</a>
       </h2>
-      <p class='font-extralight text-sm text-left text-gray-900 w-3/4 dark:text-gray-200'>By: {author}</p>
+      <p class='prose dark:prose-dark prose-sm md:prose'>By: {author}</p>
       {/each}
     </ul>
   </div>

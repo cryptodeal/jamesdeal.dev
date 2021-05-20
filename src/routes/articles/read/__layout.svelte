@@ -5,7 +5,7 @@
   <article class="mx-auto prose dark:prose-dark prose-sm sm:prose lg:prose-xl 2xl:prose-2xl">
     <slot />
   </article>
-  <div class="flex py-1 twitter justify-center">
+  <div class="flex py-5 twitter justify-center">
     <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Check%20this%20out:%20" rel="noopener"
       data-size="large">
       Tweet

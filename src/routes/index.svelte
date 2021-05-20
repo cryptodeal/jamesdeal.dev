@@ -89,7 +89,7 @@
 			>
 				About Me
 			</h2>
-			<p>
+			<p class='prose dark:prose-dark prose-sm md:prose'>
 				I'm a 23 year old full-stack developer based out of Austin, TX. Specializing in full-stack
 				development, with a focus on building light-weight front end applications (SPA/Static, PWA,
 				SSR) using Svelte and leveraging uWebsocket.js or NanoExpress to build out a backend capable of scaling to <a href='https://web-frameworks-benchmark.netlify.app/result'>150,000+ Requests/Second</a>.
@@ -137,7 +137,7 @@
 			>
 				Developer Interest
 			</h2>
-			<p class="font-extralight text-sm text-gray-800 dark:text-gray-200">
+			<p class='prose dark:prose-dark prose-sm md:prose'>
 				I'm a 23 year old full-stack developer based out of Austin, TX. Specializing in full-stack
 				development, with a focus on building light-weight front end applications (SPA/Static, PWA,
 				SSR) using Svelte and backend frameworks that leverage a server written in C++ with node.js
@@ -155,7 +155,7 @@
 			>
 				About Me
 			</h2>
-			<p class="font-extralight text-sm text-gray-800 dark:text-gray-200">
+			<p class='prose dark:prose-dark prose-sm md:prose'>
 				I'm a 23 year old full-stack developer based out of Austin, TX. Specializing in full-stack
 				development, with a focus on building light-weight front end applications (SPA/Static, PWA,
 				SSR) using Svelte and backend frameworks that leverage a server written in C++ with node.js
