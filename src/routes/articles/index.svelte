@@ -31,7 +31,7 @@
   <meta property="og:title" content="Recent Articles" />
   <meta property="og:description" content="Recent Articles: The latest musings of a sleep deprived dev." />
 </svelte:head>
-<div class="flex flex-col items-center">
+<div class="flex flex-col mx-auto max-w-3xl py-5 px-4 items-center sm:(px-6 py-12) lg:(max-w-4xl py-16 px-8) xl:max-w-6xl">
   <div class='absolute'>
     <Typewriter cursor={false}>
       <h1>Recent Articles</h1>
