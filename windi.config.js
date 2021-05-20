@@ -36,22 +36,22 @@ const windiConfig = {
 						color: '#e4e4e7',
 						a: {
 							textDecoration: 'underline',
-							color: '#4ade80',
+							color: '#34d399',
 							'&:hover': {
 								color: '#86efac'
 							}
 						},
 						h1: {
-							color: '#4ade80'
+							color: '#34d399'
 						},
 						h2: {
-							color: '#4ade80'
+							color: '#34d399'
 						},
 						h3: {
-							color: '#4ade80'
+							color: '#34d399'
 						},
 						h4: {
-							color: '#4ade80'
+							color: '#34d399'
 						}
 					}
 				}
