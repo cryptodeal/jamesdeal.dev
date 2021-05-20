@@ -79,7 +79,7 @@
 			<h1>Meet James Deal</h1>
 		</Typewriter>
 </div>
-<section class="container mx-auto mt-5.5rem p-5 absolute sm:mt-9rem md:mt-10.5rem lg:mt-12.5rem">
+<section class="container mx-auto mt-5.5rem p-5 sm:mt-9rem md:mt-10.5rem lg:mt-12.5rem">
 	<div class="flex flex-wrap-reverse mb-40 items-center">
 		<div
 			class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 p-5 lg:(w-4/9 p-8) dark:(bg-purple-900 bg-opacity-30)"
