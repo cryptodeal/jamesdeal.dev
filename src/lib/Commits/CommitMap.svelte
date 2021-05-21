@@ -6,28 +6,23 @@
   import dayjs from 'dayjs'
   import weekOfYear from 'dayjs/plugin/weekOfYear.js'
   dayjs.extend(weekOfYear)
+  export let seriesColors = ['#fff5cc', '#ffeba9', '#ffe182', '#ffd754', '#ffcc00'];
 
-  //get current date and time
+  const { width, height, data, x, r, extents } = getContext('LayerCake');
   var now = dayjs()
-  
-  //get date 2 months ago
+  let days;
   var twoMonthsBack = now.subtract(2, 'month').date(1)
   if(twoMonthsBack.day() !== 0){
     let daysTilSunday = 7 - twoMonthsBack.day()
     twoMonthsBack = twoMonthsBack.add(daysTilSunday, 'day')
   }
-  //date printed is the first sunday of the month 2 months back
-  //console.log(twoMonthsBack)
+
   const numWeeks = now.week() - twoMonthsBack.week() + 1
-  //export let calcCellSize = d => d;
-  export let seriesColors = ['#fff5cc', '#ffeba9', '#ffe182', '#ffd754', '#ffcc00'];
+
 
   $: calcWidth = $width / numWeeks
   $: calcHeight = $height / 7
-  const { width, height, data, x, r, extents } = getContext('LayerCake');
-
   const getDayOfWeek = timeFormat('%w');
-  //const getWeekOfYear = timeFormat('%U');
 
   $: count = date => {
     const stringDate = date.toISOString().split('T')[0];
@@ -48,25 +43,12 @@
   };
 
   $: cellSize = $height >= $width ? calcHeight : calcWidth
-  //$: console.log(cellSize)
-  let days;
-
-  /* --------------------------------------------
-   * Calculate what month we're in and generate the full days of that month
-   */
-  //const start = twoMonthsBack.toISOString().split('T')
-  //const minDate = start[0]
-  //console.log(minDate)
-  //const parts = minDate.split('-').map(d => +d);
-  //console.log(parts)
-
   days = timeDay.range(twoMonthsBack.subtract(1, 'day'), now);
-  //console.log(`days: ${days}`)
-
 
   $: rectY = day => { 
     return getDayOfWeek(day) * cellSize
   }
+
   $: rectX = day => {
     const startWeek = twoMonthsBack.week()
 		const thisWeek = dayjs(day).week()

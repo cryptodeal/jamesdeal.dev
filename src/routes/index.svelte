@@ -41,7 +41,8 @@
 	let style = 'border-radius:50%';
 	import { nest } from 'd3-collection';
 	import CalendarMonth from '$lib/Commits/CommitMap.svelte';
-  import {LayerCake, Svg} from 'layercake';
+  import XAxis from '$lib/Commits/XAxis.svelte'
+  import {LayerCake, Svg, Html} from 'layercake';
   import dayjs from 'dayjs';
   
   let dates = storedCommits.storedCommits.map(commit => {return dayjs(commit.date).toISOString()})
@@ -121,8 +122,12 @@
         ssr={true}
         x={'key'}
         r={(d) => d.values.length}
+        padding={{ top: 20}}
         data={sortedData}
       >
+        <Html>
+          <XAxis/>
+        </Html>
         <Svg>
           <CalendarMonth {seriesColors}/>
         </Svg>

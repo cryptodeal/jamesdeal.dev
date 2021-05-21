@@ -14,10 +14,6 @@ html.dark {
 	@apply outline-none;
 }
 
-.commitChart {
-	@apply mx-auto h-50 w-55 sm:(h-60 w-65) md:(h-70 w-75) lg:(h-50 w-50) xl:(h-60 w-60) 2xl:(h-75 w-75);
-}
-
 h1 {
 	@apply font-extralight font-sans text-5xl md:text-7xl text-red-800 dark:text-green-400 text-center break-words;
 }
@@ -40,6 +36,10 @@ a {
 
 ul {
 	@apply leading-normal;
+}
+
+.commitChart {
+	@apply mx-auto h-50 w-55 sm:(h-60 w-65) md:(h-90 w-98);
 }
 
 code[class*='language-'],
