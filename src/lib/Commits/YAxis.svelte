@@ -5,9 +5,8 @@
   import weekOfYear from 'dayjs/plugin/weekOfYear.js'
   dayjs.extend(weekOfYear)
   const now = dayjs()
-  let oneMonthBack = now.subtract(1, 'month').date(1)
   let twoMonthsBack = now.subtract(2, 'month').date(1)
-  const months = [twoMonthsBack.format('MMM'), oneMonthBack.format('MMM'), now.format('MMM')];
+  const days = ['Mon','Wed','Fri'];
   //date printed is the first sunday of the month 2 months back
   //console.log(twoMonthsBack)
   const numWeeks = now.week() - twoMonthsBack.week() + 1
@@ -15,12 +14,13 @@
   $: calcWidth = $width / numWeeks
   $: calcHeight = $height / 7
   $: cellSize = $height >= $width ? calcHeight : calcWidth
+
 </script>
-<div class='flex relative' style='top:0%;width:100%'>
-  {#each months as mon, i}
+<div class='flex relative' style='left:0%;height:100%'>
+  {#each days as day, i}
       <div
         class="text-xs text-left text-gray-800 textChart absolute whitespace-nowrap dark:text-gray-200"
-        style='bottom:{$padding.top/2}px;left:{i * 4.4 * cellSize}px;max-width:{cellSize}px;'>{mon}
+        style='left:-{$padding.left}px;top:{1.4 * cellSize + 2.1 * i * cellSize}px;max-width:20px;'>{day}
       </div>
   {/each}
 </div>

@@ -42,6 +42,7 @@
 	import { nest } from 'd3-collection';
 	import CalendarMonth from '$lib/Commits/CommitMap.svelte';
   import XAxis from '$lib/Commits/XAxis.svelte'
+  import YAxis from '$lib/Commits/YAxis.svelte'
   import {LayerCake, Svg, Html} from 'layercake';
   import dayjs from 'dayjs';
   
@@ -122,11 +123,12 @@
         ssr={true}
         x={'key'}
         r={(d) => d.values.length}
-        padding={{ top: 20}}
+        padding={{ top: 20, left: 30}}
         data={sortedData}
       >
         <Html>
           <XAxis/>
+          <YAxis/>
         </Html>
         <Svg>
           <CalendarMonth {seriesColors}/>
