@@ -20,7 +20,7 @@
   {#each months as mon, i}
       <div
         class="text-xs text-left text-gray-800 textChart absolute whitespace-nowrap dark:text-gray-200"
-        style='bottom:{$padding.top/2}px;left:{i * 4.4 * cellSize}px;max-width:{cellSize}px;'>{mon}
+        style='bottom:{$padding.top / 2 - 5}px;left:{i * 4.4 * cellSize}px;max-width:{cellSize}px;'>{mon}
       </div>
   {/each}
 </div>
