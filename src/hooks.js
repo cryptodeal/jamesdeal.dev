@@ -1,16 +1,10 @@
 import cookie from 'cookie';
 import { v4 as uuid } from '@lukeed/uuid';
-import mongoose from 'mongoose';
+import initConnection from '$lib/_db/initConnect';
 
-mongoose.connect(import.meta.env.VITE_MONGOOSE_URI, {
-	useNewUrlParser: true,
-	useUnifiedTopology: true,
-	useCreateIndex: true,
-	useFindAndModify: false
-});
 //import type { Handle } from '@sveltejs/kit';
-
 export const handle = async ({ request, render }) => {
+	initConnection();
 	const cookies = cookie.parse(request.headers.cookie || '');
 	request.locals.userid = cookies.userid || uuid();
 
