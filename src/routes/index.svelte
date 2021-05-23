@@ -87,7 +87,7 @@
 			class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 p-5 lg:(w-4/9 p-8) dark:(bg-purple-900 bg-opacity-30)"
 		>
 			<h2
-				class="font-extralight mb-3 text-3xl text-red-800 uppercase sm:text-5xl dark:text-green-400"
+				class="mb-3 uppercase"
 			>
 				About Me
 			</h2>
@@ -114,7 +114,7 @@
 	<div class="flex flex-wrap mb-40 w-full items-center">
     <div class='mx-auto'>
       <h2
-				class="font-extralight mb-3 text-3xl text-red-800 w-55 uppercase sm:(text-5xl w-65) md:w-75 lg:w-50 xl:w-60 2xl:w-75 dark:text-green-400"
+				class="mb-3 w-55 uppercase sm:(text-5xl w-65) md:w-75"
 			>
 				Git Commit History:
 			</h2>
@@ -140,7 +140,7 @@
 			class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 p-5 content-center lg:(w-4/9 p-8) dark:(bg-purple-900 bg-opacity-30)"
 		>
 			<h2
-				class="font-extralight mb-3 text-3xl text-red-800 uppercase sm:text-5xl dark:text-green-400"
+				class="mb-3 uppercase"
 			>
 				Developer Interest
 			</h2>
@@ -158,7 +158,7 @@
 			class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 p-5 lg:(w-4/9 p-8) dark:(bg-purple-900 bg-opacity-30)"
 		>
 			<h2
-				class="font-extralight mb-3 text-3xl text-red-800 uppercase sm:text-5xl dark:text-green-400"
+				class="mb-3 uppercase"
 			>
 				About Me
 			</h2>

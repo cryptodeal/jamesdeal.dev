@@ -15,7 +15,7 @@ html.dark {
 }
 
 h1 {
-	@apply font-extralight font-sans text-5xl md:text-7xl text-red-800 dark:text-green-400 text-center break-words;
+	@apply font-light font-sans text-5xl md:text-7xl text-red-800 dark:text-green-400 text-center break-words;
 }
 
 h2 {
@@ -31,7 +31,7 @@ p {
 }
 
 a {
-	@apply underline-double text-red-800 underline-red-800 dark:text-green-400;
+	@apply underline underline-current underline-dashed text-red-800 dark:text-green-400;
 }
 
 ul {
