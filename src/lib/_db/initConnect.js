@@ -1,11 +1,5 @@
 import mongoose from 'mongoose';
 const mongooseURI = import.meta.env.VITE_MONGOOSE_URI;
-mongoose.connect(import.meta.env.VITE_MONGOOSE_URI, {
-	useNewUrlParser: true,
-	useUnifiedTopology: true,
-	useCreateIndex: true,
-	useFindAndModify: false
-});
 
 if (!mongooseURI) {
 	throw new Error(
@@ -21,12 +15,10 @@ export default function connectDatabase() {
 		mongoose.connection
 			//Reject if an error occurred when trying to connect to MongoDB
 			.on('error', (error) => {
-				console.log('Error: connection to DB failed');
 				reject(error);
 			})
 			//Exit Process if there is no longer a Database Connection
 			.on('close', () => {
-				console.log('Error: Connection to DB lost');
 				process.exit(1);
 			})
 			//Connected to DB
