@@ -37,7 +37,7 @@
       <h1>Recent Articles</h1>
     </Typewriter>
   </div>
-  <div class='mx-4 mt-30 absolute'>
+  <div class='mx-4 mt-15 absolute md:mt-30'>
     <ul>
       {#each posts as {slug, title, author}}
       <h2 class='hover:text-red-900 dark:hover:text-green-600'>

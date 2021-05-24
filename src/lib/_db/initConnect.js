@@ -3,47 +3,42 @@ const mongooseURI = import.meta.env.VITE_MONGOOSE_URI;
 
 if (!mongooseURI) {
 	throw new Error(
-		'Please define the mongooseURI environment variable inside .env or vercel env variables'
+		'Please define the VITE_MONGOOSE_URI environment variable inside .env or in vercel deployment settings'
 	);
 }
 
-let cachedMongoConn = null;
+/**
+ * Global is used here to maintain a cached connection across hot reloads
+ * in development. This prevents connections growing exponentially
+ * during API Route usage.
+ */
+let cached = global.mongoose;
 
-export default function connectDatabase() {
-	return new Promise((resolve, reject) => {
-		mongoose.Promise = global.Promise;
-		mongoose.connection
-			//Reject if an error occurred when trying to connect to MongoDB
-			.on('error', (error) => {
-				reject(error);
-			})
-			//Exit Process if there is no longer a Database Connection
-			.on('close', () => {
-				process.exit(1);
-			})
-			//Connected to DB
-			.once('open', () => {
-				//Return successful promise
-				resolve(cachedMongoConn);
-			});
-		if (!cachedMongoConn) {
-			//Because `cachedMongoConn` is globally scoped, var may be retained between
-			//function calls; this saves vercel serverless functions from having to repeat
-			//the potentially expensive process of connecting to MongoDB every time.
-			cachedMongoConn = mongoose.connect(mongooseURI, {
-				useNewUrlParser: true,
-				useCreateIndex: true,
-				useUnifiedTopology: true,
-				useFindAndModify: false,
-				connectTimeoutMS: 10000,
-				//Buffering means mongoose will queue up operations if it gets
-				//disconnected from MongoDB and send them when it reconnects.
-				//With serverless, better to fail fast if not connected.
-				bufferCommands: false, //Disable mongoose buffering
-				bufferMaxEntries: 0 //and MongoDB driver buffering
-			});
-		} else {
-			resolve(cachedMongoConn);
-		}
-	});
+if (!cached) {
+	cached = global.mongoose = { conn: null, promise: null };
+}
+
+export default async function connectToDatabase() {
+	if (cached.conn) {
+		return cached.conn;
+	}
+
+	if (!cached.promise) {
+		const opts = {
+			useNewUrlParser: true,
+			useCreateIndex: true,
+			useUnifiedTopology: true,
+			useFindAndModify: false,
+			connectTimeoutMS: 10000,
+			//Buffering means mongoose will queue up operations if it gets
+			//disconnected from MongoDB and send them when it reconnects.
+			//With serverless, better to fail fast if not connected.
+			bufferCommands: false, //Disable mongoose buffering
+			bufferMaxEntries: 0 //and MongoDB driver buffering
+		};
+
+		cached.promise = mongoose.connect(mongooseURI, opts);
+	}
+	cached.conn = await cached.promise;
+	return cached.conn;
 }
