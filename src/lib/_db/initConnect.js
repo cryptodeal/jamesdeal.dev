@@ -22,7 +22,6 @@ export default async function connectToDatabase() {
 	if (cached.conn) {
 		return cached.conn;
 	}
-
 	if (!cached.promise) {
 		const opts = {
 			useNewUrlParser: true,
@@ -36,7 +35,6 @@ export default async function connectToDatabase() {
 			bufferCommands: false, //Disable mongoose buffering
 			bufferMaxEntries: 0 //and MongoDB driver buffering
 		};
-
 		cached.promise = mongoose.connect(mongooseURI, opts);
 	}
 	cached.conn = await cached.promise;
