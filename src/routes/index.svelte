@@ -94,7 +94,7 @@
 			<p class='prose dark:prose-dark prose-sm md:prose'>
 				I'm a 23 year old full-stack developer based out of Austin, TX. Specializing in full-stack
 				development, with a focus on building light-weight front end applications (SPA/Static, PWA,
-				SSR) using Svelte and leveraging uWebsocket.js or NanoExpress to build out a backend capable of scaling to <a href='https://web-frameworks-benchmark.netlify.app/result'>150,000+ Requests/Second</a>.
+				SSR) using Svelte and high throughput APIs using <a href='https://github.com/nanoexpress/nanoexpress' >NanoExpress</a>, which leverages node.js bindings to a server written in C#. In doing so, I build out a backend frameworks capable of scaling to <a href='https://web-frameworks-benchmark.netlify.app/result'>150,000+ Requests/Second </a> and sustaining <a href='https://alexhultman.medium.com/millions-of-active-websockets-with-node-js-7dc575746a01'>over 1 million active websocket connections</a> per each server instance.
 			</p>
 		</div>
 		<div class="mx-auto my-5 w-98">
@@ -142,7 +142,7 @@
 			<h2
 				class="mb-3 uppercase"
 			>
-				Developer Interest
+				Developer Interests
 			</h2>
 			<p class='prose dark:prose-dark prose-sm md:prose'>
 				I'm a 23 year old full-stack developer based out of Austin, TX. Specializing in full-stack
