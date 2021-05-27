@@ -1,6 +1,5 @@
 import { mdsvex } from 'mdsvex';
 import { mdsvexConfig } from './mdsvex.config.js';
-import preprocess from 'svelte-preprocess';
 import vercel from '@sveltejs/adapter-vercel';
 import { imagetools } from 'vite-imagetools';
 import path from 'path';
@@ -9,7 +8,7 @@ import WindiCSS from 'vite-plugin-windicss';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	extensions: ['.svelte', ...mdsvexConfig.extensions],
-	preprocess: [mdsvex(mdsvexConfig), preprocess()],
+	preprocess: [mdsvex(mdsvexConfig)],
 	kit: {
 		adapter: vercel(),
 		// hydrate the <div id="svelte"> element in src/app.html

@@ -15,7 +15,7 @@
 		"d3-scale": "^3.3.0",
 		"d3-time": "^2.1.1",
 		"d3-time-format": "^3.0.0",
-		"dayjs": "^1.10.4",
+		"dayjs": "^1.10.5",
 		"eslint": "^7.27.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^3.2.0",
@@ -29,11 +29,9 @@
 		"stylelint": "^13.13.1",
 		"stylelint-config-standard": "^22.0.0",
 		"svelte": "3.38.2",
-		"svelte-preprocess": "^4.7.3",
-		"vite": "^2.3.3",
-		"vite-imagetools": "^3.6.7",
+		"vite-imagetools": "^3.6.8",
 		"vite-plugin-windicss": "^0.15.10",
-		"windicss": "^3.0.9"
+		"windicss": "^3.0.12"
 	},
 	"type": "module",
 	"engines": {
@@ -45,7 +43,7 @@
 		"cookie": "^0.4.1",
 		"layercake": "^4.1.0",
 		"mongodb-client-encryption": "^1.2.3",
-		"mongoose": "^5.12.10",
+		"mongoose": "^5.12.11",
 		"svelte-particles": "^1.10.0",
 		"svelte-toggle": "^3.0.0",
 		"svelte-typewriter": "^2.4.5"
