@@ -24,6 +24,7 @@ specifiers:
   rehype-slug: ^4.0.1
   remark-abbr: ^1.4.1
   remark-github: ^10.1.0
+  saslprep: ^1.0.3
   stylelint: ^13.13.1
   stylelint-config-standard: ^22.0.0
   svelte: 3.38.2
@@ -42,6 +43,7 @@ dependencies:
   layercake: 4.1.0_svelte@3.38.2
   mongodb-client-encryption: 1.2.3
   mongoose: 5.12.11_mongodb-client-encryption@1.2.3
+  saslprep: 1.0.3
   svelte-particles: 1.10.0
   svelte-toggle: 3.0.0
   svelte-typewriter: 2.4.5
@@ -2710,7 +2712,6 @@ packages:
         integrity: sha512-ZS4Bp4r/Zoeq6+NLJpP+0Zzm0pR8whtGPf1XExKLJBAczGMnSi3It14OiNCStjQjM6NU1okjQGSxgEZN8eBYKg==
       }
     dev: false
-    optional: true
 
   /meow/9.0.0:
     resolution:
@@ -3774,7 +3775,6 @@ packages:
     dependencies:
       sparse-bitfield: 3.0.3
     dev: false
-    optional: true
 
   /select/1.1.2:
     resolution: { integrity: sha1-DnNQrN7ICxEIUoeG7B1EGNEbOW0= }
@@ -3954,7 +3954,6 @@ packages:
     dependencies:
       memory-pager: 1.5.0
     dev: false
-    optional: true
 
   /spdx-correct/3.1.1:
     resolution:

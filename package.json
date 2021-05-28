@@ -45,6 +45,7 @@
 		"layercake": "^4.1.0",
 		"mongodb-client-encryption": "^1.2.3",
 		"mongoose": "^5.12.11",
+		"saslprep": "^1.0.3",
 		"svelte-particles": "^1.10.0",
 		"svelte-toggle": "^3.0.0",
 		"svelte-typewriter": "^2.4.5"
