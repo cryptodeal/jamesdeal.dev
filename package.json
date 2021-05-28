@@ -43,6 +43,7 @@
 		"@octokit/rest": "^18.5.4",
 		"cookie": "^0.4.1",
 		"layercake": "^4.1.0",
+		"mongodb-client-encryption": "^1.2.3",
 		"mongoose": "^5.12.11",
 		"svelte-particles": "^1.10.0",
 		"svelte-toggle": "^3.0.0",
