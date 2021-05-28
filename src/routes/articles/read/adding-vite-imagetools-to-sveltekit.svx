@@ -17,10 +17,10 @@ published: true
 </svelte:head>
 <script>
   import LazySrcset from '$lib/images/LazySrcsetPerf.svelte'
-  import NahNahNah from '$static/test.jpg?w=300&meta'  
-  import NahNahNahBlur from '$static/test.jpg?w=300&blur=100&quality=30'
-  import Logo from '$static/test.jpg?w=500;1000;2000&format=webp&srcset'
-  import Logo2 from '$static/test.jpg?w=500;1000;2000&format=avif&srcset'
+  import NahNahNah from '$images/test.jpg?w=300&meta'  
+  import NahNahNahBlur from '$images/test.jpg?w=300&blur=100&quality=30'
+  import Logo from '$images/test.jpg?w=500;1000;2000&format=webp&srcset'
+  import Logo2 from '$images/test.jpg?w=500;1000;2000&format=avif&srcset'
   let ratio = `${(1 / (NahNahNah.width / NahNahNah.height)) * 100}%`
   let sizes = "(min-width: 1500px) 2000px, 100vw"
   //$: console.log(Logo)

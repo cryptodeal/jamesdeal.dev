@@ -19,7 +19,8 @@ const config = {
 		vite: {
 			resolve: {
 				alias: {
-					$static: path.resolve('src/static')
+					$static: path.resolve('src/static'),
+					$images: path.resolve('src/images')
 				}
 			},
 			optimizeDeps: {
