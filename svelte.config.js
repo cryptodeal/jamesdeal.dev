@@ -22,9 +22,6 @@ const config = {
 					$static: path.resolve('src/static')
 				}
 			},
-			ssr: {
-				external: ['mongodb-client-encryption']
-			},
 			optimizeDeps: {
 				include: ['layercake']
 			},
