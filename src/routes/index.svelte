@@ -5,11 +5,12 @@
 	export async function load({ fetch }) {
 		const url = `/api/github/commits.json`;
 		const res = await fetch(url);
-
+    const storedCommits = await res.json()
+    
 		if (res.ok) {
 			return {
 				props: {
-					storedCommits: await res.json()
+					storedCommits
 				}
 			};
 		}
@@ -25,14 +26,14 @@
 	export let storedCommits;
 	import Typewriter from 'svelte-typewriter';
 	import LazySrcset from '$lib/images/LazySrcsetPerf.svelte';
-	import proHeadshot from '$static/headshot1.jpg?w=600&meta';
-	import proHeadshotWebP from '$static/headshot1.jpg?w=200;400;600;1000&format=webp&srcset';
-	import proHeadshotAvif from '$static/headshot1.jpg?w=200;400;600;1000&format=avif&srcset';
-	import proHeadshotBlur from '$static/headshot1.jpg?w=300&blur=100&quality=30';
-	import test from '$static/test.jpg?w=800&meta';
-	import testWebP from '$static/test.jpg?w=500;1000;2000&format=webp&srcset';
-	import testAvif from '$static/test.jpg?w=500;1000;2000&format=avif&srcset';
-	import testBlur from '$static/test.jpg?w=300&blur=100&quality=30';
+	import proHeadshot from '$static/headshot1.jpg?w=600&quality=75&meta';
+	import proHeadshotWebP from '$static/headshot1.jpg?w=200;400;600;1000&format=webp&quality=75&srcset';
+	import proHeadshotAvif from '$static/headshot1.jpg?w=200;400;600;1000&format=avif&quality=75&srcset';
+	import proHeadshotBlur from '$static/headshot1.jpg?w=300&blur=100&quality=15';
+	import test from '$static/test.jpg?w=800&quality=75&meta';
+	import testWebP from '$static/test.jpg?w=500;1000;2000&format=webp&quality=75&srcset';
+	import testAvif from '$static/test.jpg?w=500;1000;2000&format=avif&quality=75&srcset';
+	import testBlur from '$static/test.jpg?w=300&blur=100&quality=15';
 	let alt = 'Professional headshot of James Deal';
 	let proHeadshotRatio = `${(1 / (proHeadshot.width / proHeadshot.height)) * 100}%`;
 	let testRatio = `${(1 / (test.width / test.height)) * 100}%`;
