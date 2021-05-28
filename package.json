@@ -39,7 +39,7 @@
 	},
 	"dependencies": {
 		"@lukeed/uuid": "^2.0.0",
-		"@octokit/rest": "^18.5.3",
+		"@octokit/rest": "^18.5.4",
 		"cookie": "^0.4.1",
 		"layercake": "^4.1.0",
 		"mongodb-client-encryption": "^1.2.3",
