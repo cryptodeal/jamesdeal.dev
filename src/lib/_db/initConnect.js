@@ -1,42 +1,37 @@
 import mongoose from 'mongoose';
-const mongooseURI = import.meta.env.VITE_MONGOOSE_URI;
+const MONGOOSE_URI = import.meta.env.VITE_MONGOOSE_URI;
 
-if (!mongooseURI) {
-	throw new Error(
-		'Please define the VITE_MONGOOSE_URI environment variable inside .env or in vercel deployment settings'
-	);
+if (!MONGOOSE_URI) {
+	throw new Error('Please define the MONGODB_URI environment variable inside .env.local');
 }
 
-/**
- * Global is used here to maintain a cached connection across hot reloads
- * in development. This prevents connections growing exponentially
- * during API Route usage.
- */
 let cached = global.mongoose;
 
 if (!cached) {
 	cached = global.mongoose = { conn: null, promise: null };
 }
 
-export default async function connectToDatabase() {
+async function initConnect() {
 	if (cached.conn) {
 		return cached.conn;
 	}
+
 	if (!cached.promise) {
 		const opts = {
 			useNewUrlParser: true,
-			useCreateIndex: true,
 			useUnifiedTopology: true,
+			bufferCommands: false,
+			bufferMaxEntries: 0,
 			useFindAndModify: false,
-			connectTimeoutMS: 10000,
-			//Buffering means mongoose will queue up operations if it gets
-			//disconnected from MongoDB and send them when it reconnects.
-			//With serverless, better to fail fast if not connected.
-			bufferCommands: false, //Disable mongoose buffering
-			bufferMaxEntries: 0 //and MongoDB driver buffering
+			useCreateIndex: true
 		};
-		cached.promise = mongoose.connect(mongooseURI, opts);
+
+		cached.promise = mongoose.connect(MONGOOSE_URI, opts).then((mongoose) => {
+			return mongoose;
+		});
 	}
 	cached.conn = await cached.promise;
 	return cached.conn;
 }
+
+export default initConnect;

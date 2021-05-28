@@ -1,8 +1,10 @@
 import { octokit } from '$lib/_api/Github';
 import { addRepo, addCommit, getCommitsByDate } from '$lib/_db/utils';
+import initConnect from '$lib/_db/initConnect';
 import dayjs from 'dayjs';
 
 export async function get() {
+	await initConnect();
 	const { data } = await octokit.request('GET /users/{username}/events', {
 		username: 'cryptodeal',
 		per_page: 100
@@ -13,7 +15,6 @@ export async function get() {
 		let daysTilSunday = 7 - twoMonthsBack.day();
 		twoMonthsBack = twoMonthsBack.add(daysTilSunday, 'day');
 	}
-	//console.log(twoMonthsBack);
 
 	const parsedData = data
 		.filter((action) => action.type === 'PushEvent')

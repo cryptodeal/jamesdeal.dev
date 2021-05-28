@@ -29,6 +29,7 @@
 		"stylelint": "^13.13.1",
 		"stylelint-config-standard": "^22.0.0",
 		"svelte": "3.38.2",
+		"svelte-preprocess": "^4.7.3",
 		"vite-imagetools": "^3.6.8",
 		"vite-plugin-windicss": "^0.15.10",
 		"windicss": "^3.0.12"
@@ -42,7 +43,6 @@
 		"@octokit/rest": "^18.5.4",
 		"cookie": "^0.4.1",
 		"layercake": "^4.1.0",
-		"mongodb-client-encryption": "^1.2.3",
 		"mongoose": "^5.12.11",
 		"svelte-particles": "^1.10.0",
 		"svelte-toggle": "^3.0.0",
