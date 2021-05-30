@@ -163,7 +163,6 @@
 				Developer Interests
 			</h2>
       <h3 class='mb-2'>Data Viz</h3>
-      <p class='font-light text-sm text-gray-900 dark:text-gray-200'>Server Side Rendered Github Commit Activity Chart</p>
       <div class='prose dark:prose-dark prose-sm md:prose'>
         <p>
           Data visualization, charting, and graphics are of particular interest to me as the ability to convey complex data and information to users in a medium that is inviting (i.e. not intimidating), 
@@ -173,7 +172,6 @@
           The advent of Javascript frameworks like REACT, Vue, Angular, and, more recently, Svelte, has greatly expanded the ease of which interactive data visualizations can be constructed as well as 
           greatly increased the extent to which user's can interact with the data. I see Data Visualization as one of the next great frontiers of frontend developers.
         </p>
-
       </div>
     </div>
 	</div>
