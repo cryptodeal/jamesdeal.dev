@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@lukeed/uuid': ^2.0.0
-  '@octokit/rest': ^18.5.4
+  '@octokit/rest': ^18.5.5
   '@sveltejs/adapter-vercel': next
   '@sveltejs/kit': next
   cookie: ^0.4.1
@@ -17,7 +17,7 @@ specifiers:
   layercake: ^4.1.0
   mdsvex: ^0.9.6
   mongodb-client-encryption: ^1.2.3
-  mongoose: ^5.12.11
+  mongoose: ^5.12.12
   prettier: ^2.3.0
   prettier-plugin-svelte: ^2.3.0
   rehype-autolink-headings: ^5.1.0
@@ -38,19 +38,19 @@ specifiers:
 
 dependencies:
   '@lukeed/uuid': 2.0.0
-  '@octokit/rest': 18.5.4
+  '@octokit/rest': 18.5.5
   cookie: 0.4.1
   layercake: 4.1.0_svelte@3.38.2
   mongodb-client-encryption: 1.2.3
-  mongoose: 5.12.11_mongodb-client-encryption@1.2.3
+  mongoose: 5.12.12_mongodb-client-encryption@1.2.3
   saslprep: 1.0.3
   svelte-particles: 1.10.0
   svelte-toggle: 3.0.0
   svelte-typewriter: 2.4.5
 
 devDependencies:
-  '@sveltejs/adapter-vercel': 1.0.0-next.19_@sveltejs+kit@1.0.0-next.109
-  '@sveltejs/kit': 1.0.0-next.109_svelte@3.38.2
+  '@sveltejs/adapter-vercel': 1.0.0-next.20_@sveltejs+kit@1.0.0-next.111
+  '@sveltejs/kit': 1.0.0-next.111_svelte@3.38.2
   d3-collection: 1.0.7
   d3-scale: 3.3.0
   d3-time: 2.1.1
@@ -433,7 +433,7 @@ packages:
         integrity: sha512-fUIPpx+pZyoLW4GCs3yMnlj2LfoXTWDUVPTC4V3MUEKZm48W+XYpeWSZCv+vYF1ZABUm2CqnDVf1sFtIYrj7KQ==
       }
     dependencies:
-      '@octokit/types': 6.16.0
+      '@octokit/types': 6.16.2
       is-plain-object: 5.0.0
       universal-user-agent: 6.0.0
     dev: false
@@ -453,6 +453,13 @@ packages:
     resolution:
       {
         integrity: sha512-IHQJpLciwzwDvciLxiFj3IEV5VYn7lSVcj5cu0jbTwMfK4IG6/g8SPrVp3Le1VRzIiYSRcBzm1dA7vgWelYP3Q==
+      }
+    dev: false
+
+  /@octokit/openapi-types/7.2.3:
+    resolution:
+      {
+        integrity: sha512-V1ycxkR19jqbIl3evf2RQiMRBvTNRi+Iy9h20G5OP5dPfEF6GJ1DPlUeiZRxo2HJxRr+UA4i0H1nn4btBDPFrw==
       }
     dev: false
 
@@ -479,16 +486,16 @@ packages:
       '@octokit/core': 3.4.0
     dev: false
 
-  /@octokit/plugin-rest-endpoint-methods/5.3.0_@octokit+core@3.4.0:
+  /@octokit/plugin-rest-endpoint-methods/5.3.1_@octokit+core@3.4.0:
     resolution:
       {
-        integrity: sha512-+4NAJ9WzPN5gW6W1H1tblw/DesTD6PaWuU5+/x3Pa7nyK6qjR6cn4jwkJtzxVPTgtzryOFLX+5vs7MROFswp5Q==
+        integrity: sha512-3B2iguGmkh6bQQaVOtCsS0gixrz8Lg0v4JuXPqBcFqLKuJtxAUf3K88RxMEf/naDOI73spD+goJ/o7Ie7Cvdjg==
       }
     peerDependencies:
       '@octokit/core': '>=3'
     dependencies:
       '@octokit/core': 3.4.0
-      '@octokit/types': 6.16.0
+      '@octokit/types': 6.16.2
       deprecation: 2.3.1
     dev: false
 
@@ -517,16 +524,16 @@ packages:
       universal-user-agent: 6.0.0
     dev: false
 
-  /@octokit/rest/18.5.4:
+  /@octokit/rest/18.5.5:
     resolution:
       {
-        integrity: sha512-n3Q5ikar6dFvGmSrzRwIrPvSAkwibQr5Ti0h722T/YuylsPYahRTmVEU1Vg+XIg8MHgHBTKmwBzz0IwpbseOtQ==
+        integrity: sha512-Py9sWvxBGeAwNY8UnhxP6jnq7aflvQ0uQ6gmZObyJLR9hmd5NEz9piu/A77cxV6+0l9UNACJVXX6FOnl5LIcPw==
       }
     dependencies:
       '@octokit/core': 3.4.0
       '@octokit/plugin-paginate-rest': 2.13.3_@octokit+core@3.4.0
       '@octokit/plugin-request-log': 1.0.3_@octokit+core@3.4.0
-      '@octokit/plugin-rest-endpoint-methods': 5.3.0_@octokit+core@3.4.0
+      '@octokit/plugin-rest-endpoint-methods': 5.3.1_@octokit+core@3.4.0
     dev: false
 
   /@octokit/types/6.16.0:
@@ -536,6 +543,15 @@ packages:
       }
     dependencies:
       '@octokit/openapi-types': 7.2.1
+    dev: false
+
+  /@octokit/types/6.16.2:
+    resolution:
+      {
+        integrity: sha512-wWPSynU4oLy3i4KGyk+J1BLwRKyoeW2TwRHgwbDz17WtVFzSK2GOErGliruIx8c+MaYtHSYTx36DSmLNoNbtgA==
+      }
+    dependencies:
+      '@octokit/openapi-types': 7.2.3
     dev: false
 
   /@rollup/pluginutils/4.1.0:
@@ -584,39 +600,39 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/adapter-vercel/1.0.0-next.19_@sveltejs+kit@1.0.0-next.109:
+  /@sveltejs/adapter-vercel/1.0.0-next.20_@sveltejs+kit@1.0.0-next.111:
     resolution:
       {
-        integrity: sha512-A2fTQDTTARahncaW5qP5sOyyw3xrCFj4rORw9dh819AvpajzO5PLwmQiAm2Fj2D8hrG7cnU0c30g89RsPsQ+OA==
+        integrity: sha512-cSGFym8Ap13p1uMBG3YQyy2Ut0eIjIjbRMtngGLUxi1guSkt1yoHytoW41O0koinrN43paKsym6Q5pO8tfX+Hg==
       }
     peerDependencies:
-      '@sveltejs/kit': 1.0.0-next.109
+      '@sveltejs/kit': 1.0.0-next.110
     dependencies:
-      '@sveltejs/kit': 1.0.0-next.109_svelte@3.38.2
+      '@sveltejs/kit': 1.0.0-next.111_svelte@3.38.2
       esbuild: 0.11.23
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.109_svelte@3.38.2:
+  /@sveltejs/kit/1.0.0-next.111_svelte@3.38.2:
     resolution:
       {
-        integrity: sha512-72iHsgcZTj9WU2VMq/qzMdFidTrSlJ1+KE0Iiw43Gee8TkKi5tMOyeu/f8lWa4HzdHLFZ2CJdvmcL7w3F4SWjg==
+        integrity: sha512-w3irGw6nqK78YBzSi37MvH67EZJxoACUOnihp1nVOGOJjcHSKysjNeF8qB5/jK7It1TJwxYeu+KrK3mBAg7jqQ==
       }
     engines: { node: ^12.20 || ^14.13.1 || >= 16 }
     hasBin: true
     peerDependencies:
       svelte: ^3.38.2
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 1.0.0-next.10_svelte@3.38.2+vite@2.3.4
+      '@sveltejs/vite-plugin-svelte': 1.0.0-next.10_svelte@3.38.2+vite@2.3.3
       cheap-watch: 1.0.3
       sade: 1.7.4
       svelte: 3.38.2
-      vite: 2.3.4
+      vite: 2.3.3
     transitivePeerDependencies:
       - rollup
       - supports-color
     dev: true
 
-  /@sveltejs/vite-plugin-svelte/1.0.0-next.10_svelte@3.38.2+vite@2.3.4:
+  /@sveltejs/vite-plugin-svelte/1.0.0-next.10_svelte@3.38.2+vite@2.3.3:
     resolution:
       {
         integrity: sha512-ImvxbhPePm2hWNTKBSA3LHAYGwiEjHjvvgfPLXm4R87sfZ+BMXql9jBmDpzUC/URBLT4BB3Jxos/i523qkJBHg==
@@ -635,7 +651,7 @@ packages:
       source-map: 0.7.3
       svelte: 3.38.2
       svelte-hmr: 0.14.4_svelte@3.38.2
-      vite: 2.3.4
+      vite: 2.3.3
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -647,7 +663,7 @@ packages:
         integrity: sha512-mVRvYnTOZJz3ccpxhr3wgxVmSeiYinW+zlzQz3SXWaJmD1DuL05Jeq7nKw3SnbKmbleW5qrLG5vdyWe/A9sXhw==
       }
     dependencies:
-      '@types/node': 15.6.0
+      '@types/node': 15.6.1
     dev: false
 
   /@types/mdast/3.0.3:
@@ -673,14 +689,7 @@ packages:
       }
     dependencies:
       '@types/bson': 4.0.3
-      '@types/node': 15.6.0
-    dev: false
-
-  /@types/node/15.6.0:
-    resolution:
-      {
-        integrity: sha512-gCYSfQpy+LYhOFTKAeE8BkyGqaxmlFxe+n4DKM6DR0wzw/HISUE/hAmkC/KT8Sw5PCJblqg062b3z9gucv3k0A==
-      }
+      '@types/node': 15.6.1
     dev: false
 
   /@types/node/15.6.1:
@@ -688,7 +697,6 @@ packages:
       {
         integrity: sha512-7EIraBEyRHEe7CH+Fm1XvgqU6uwZN8Q7jppJGcqjROMT29qhAuuOxYB1uEY5UMYQKEmA5D+5tBnhdaPXSsLONA==
       }
-    dev: true
 
   /@types/normalize-package-data/2.4.0:
     resolution:
@@ -2865,7 +2873,7 @@ packages:
       saslprep: 1.0.3
     dev: false
 
-  /mongoose-legacy-pluralize/1.0.2_mongoose@5.12.11:
+  /mongoose-legacy-pluralize/1.0.2_mongoose@5.12.12:
     resolution:
       {
         integrity: sha512-Yo/7qQU4/EyIS8YDFSeenIvXxZN+ld7YdV9LqFVQJzTLye8unujAWPZ4NWKfFA+RNjh+wvTWKY9Z3E5XM6ZZiQ==
@@ -2873,13 +2881,13 @@ packages:
     peerDependencies:
       mongoose: '*'
     dependencies:
-      mongoose: 5.12.11_mongodb-client-encryption@1.2.3
+      mongoose: 5.12.12_mongodb-client-encryption@1.2.3
     dev: false
 
-  /mongoose/5.12.11_mongodb-client-encryption@1.2.3:
+  /mongoose/5.12.12_mongodb-client-encryption@1.2.3:
     resolution:
       {
-        integrity: sha512-16TVqYhHQdZNR8RTis/8iiTPy+nJPq0UhKyBFTucLLU3PWcDLY2gAGv6aOk0LygTNhEfgNnENgUUHhjVqTuh8w==
+        integrity: sha512-n+ZmGApaL5x/r92w6S4pb+c075i+YKzg1F9YWkznSzQMtvetj/2dSjj2cqsITpd6z60k3K7ZaosIl6hzHwUA9g==
       }
     engines: { node: '>=4.0.0' }
     dependencies:
@@ -2887,7 +2895,7 @@ packages:
       bson: 1.1.6
       kareem: 2.3.2
       mongodb: 3.6.8_mongodb-client-encryption@1.2.3
-      mongoose-legacy-pluralize: 1.0.2_mongoose@5.12.11
+      mongoose-legacy-pluralize: 1.0.2_mongoose@5.12.12
       mpath: 0.8.3
       mquery: 3.2.5
       ms: 2.1.2
@@ -4640,10 +4648,10 @@ packages:
       - supports-color
     dev: true
 
-  /vite/2.3.4:
+  /vite/2.3.3:
     resolution:
       {
-        integrity: sha512-7orxrF65+Q5n/sMCnO91S8OS0gkPJ7g+y3bLlc7CPCXVswK8to1T8YycCk9SZh+AcIc0TuN6YajWTBFS5atMNA==
+        integrity: sha512-eO1iwRbn3/BfkNVMNJDeANAFCZ5NobYOFPu7IqfY7DcI7I9nFGjJIZid0EViTmLDGwwSUPmRAq3cRBbO3+DsMA==
       }
     engines: { node: '>=12.0.0' }
     hasBin: true
