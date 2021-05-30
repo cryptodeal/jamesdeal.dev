@@ -107,11 +107,11 @@
 				Specializing in full-stack development, with a focus on building light-weight front end applications (SPA, Static, PWA,
 				SSR) using Svelte powered by high throughput APIs (REST/Websocket) using <a href='https://github.com/nanoexpress/nanoexpress' >NanoExpress</a>, 
         which provides an Express-like wrapper, as well as many other invaluable utilities, to the <a href='https://github.com/uNetworking/uWebSockets.js/'>µWebSockets.js</a> library.
-        The µWebSockets.js library provides node.js bindings to µWebSockets, a server written in C# with kernel level performance optimizations.
+        The µWebSockets.js library, in turn, provides node.js bindings to µWebSockets, a server written in C# with kernel level performance optimizations.
 			</p>
       <p>
-        By utilizing NanoExpress, my applications APIs have proven, in testing, to be capable of scaling to <a href='https://web-frameworks-benchmark.netlify.app/result'>150,000+ Requests/Second</a> 
-        and sustaining <a href='https://alexhultman.medium.com/millions-of-active-websockets-with-node-js-7dc575746a01'>over 1 million active websocket connections</a> per each instance of the server spun up.
+        By utilizing NanoExpress, the APIs backing my applications have proven, in testing, capable of scaling to <a href='https://web-frameworks-benchmark.netlify.app/result'>150,000+ Requests/Second</a> 
+        and sustaining <a href='https://alexhultman.medium.com/millions-of-active-websockets-with-node-js-7dc575746a01'>over 1 million</a> active websocket connections per each instance of the server.
       </p>
     </div>
 		</div>
@@ -134,7 +134,7 @@
       <h2
 				class="mb-3 w-55 uppercase sm:(text-5xl w-65) md:w-75"
 			>
-				Git Commit History:
+				Git Commits:
 			</h2>
       <div class='commitChart'>
         <LayerCake
@@ -162,12 +162,19 @@
 			>
 				Developer Interests
 			</h2>
-			<p class='prose dark:prose-dark prose-sm md:prose'>
-				I'm a 23 year old full-stack developer based out of Austin, TX. Specializing in full-stack
-				development, with a focus on building light-weight front end applications (SPA/Static, PWA,
-				SSR) using Svelte and backend frameworks that leverage a server written in C++ with node.js
-				bindings for performance. My applications utilize both REST and Websocket API.
-			</p>
+      <h3 class='mb-2'>Data Viz</h3>
+      <p class='font-light text-sm text-gray-900 dark:text-gray-200'>Server Side Rendered Github Commit Activity Chart</p>
+      <div class='prose dark:prose-dark prose-sm md:prose'>
+        <p>
+          Data visualization, charting, and graphics are of particular interest to me as the ability to convey complex data and information to users in a medium that is inviting (i.e. not intimidating), 
+          easily understood, and interactive dramatically improve user experience.
+        </p>
+        <p>
+          The advent of Javascript frameworks like REACT, Vue, Angular, and, more recently, Svelte, has greatly expanded the ease of which interactive data visualizations can be constructed as well as 
+          greatly increased the extent to which user's can interact with the data. I see Data Visualization as one of the next great frontiers of frontend developers.
+        </p>
+
+      </div>
     </div>
 	</div>
 
@@ -178,7 +185,7 @@
 			<h2
 				class="mb-3 uppercase"
 			>
-				About Me
+				Personal Interests
 			</h2>
 			<p class='prose dark:prose-dark prose-sm md:prose'>
 				I'm a 23 year old full-stack developer based out of Austin, TX. Specializing in full-stack
