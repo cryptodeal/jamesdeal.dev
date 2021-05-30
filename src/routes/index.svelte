@@ -91,11 +91,29 @@
 			>
 				About Me
 			</h2>
-			<p class='prose dark:prose-dark prose-sm md:prose'>
-				I'm a 23 year old full-stack developer based out of Austin, TX. Specializing in full-stack
-				development, with a focus on building light-weight front end applications (SPA/Static, PWA,
-				SSR) using Svelte and high throughput APIs using <a href='https://github.com/nanoexpress/nanoexpress' >NanoExpress</a>, which leverages node.js bindings to a server written in C#. In doing so, I build out a backend frameworks capable of scaling to <a href='https://web-frameworks-benchmark.netlify.app/result'>150,000+ Requests/Second </a> and sustaining <a href='https://alexhultman.medium.com/millions-of-active-websockets-with-node-js-7dc575746a01'>over 1 million active websocket connections</a> per each server instance.
+      <div class="flex-1 mb-2 inline-flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 stroke-current mr-3 text-red-800 w-6 dark:text-green-400" fill="none"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+            </path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+        </svg>
+        <p class='font-light text-sm text-gray-900 dark:text-gray-200'>Austin, TX</p>
+    </div>
+    <div class='prose dark:prose-dark prose-sm md:prose'>
+      <p>
+				Specializing in full-stack development, with a focus on building light-weight front end applications (SPA, Static, PWA,
+				SSR) using Svelte powered by high throughput APIs (REST/Websocket) using <a href='https://github.com/nanoexpress/nanoexpress' >NanoExpress</a>, 
+        which provides an Express-like wrapper, as well as many other invaluable utilities, to the <a href='https://github.com/uNetworking/uWebSockets.js/'>µWebSockets.js</a> library.
+        The µWebSockets.js library provides node.js bindings to µWebSockets, a server written in C# with kernel level performance optimizations.
 			</p>
+      <p>
+        By utilizing NanoExpress, my applications APIs have proven, in testing, to be capable of scaling to <a href='https://web-frameworks-benchmark.netlify.app/result'>150,000+ Requests/Second</a> 
+        and sustaining <a href='https://alexhultman.medium.com/millions-of-active-websockets-with-node-js-7dc575746a01'>over 1 million active websocket connections</a> per each instance of the server spun up.
+      </p>
+    </div>
 		</div>
 		<div class="mx-auto my-5 w-98">
 			<LazySrcset
