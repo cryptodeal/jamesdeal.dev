@@ -24,7 +24,7 @@ const config = {
 				}
 			},
 			ssr: {
-				external: ['saslprep']
+				noExternal: ['saslprep']
 			},
 			optimizeDeps: {
 				include: ['layercake']
