@@ -34,21 +34,20 @@
 	import testWebP from '$images/test.jpg?w=500;1000;2000&format=webp&quality=75&srcset';
 	import testAvif from '$images/test.jpg?w=500;1000;2000&format=avif&quality=75&srcset';
 	import testBlur from '$images/test.jpg?w=300&blur=100&quality=15';
+  import { nest } from 'd3-collection';
+	import CalendarMonth from '$lib/Commits/CommitMap.svelte';
+  import XAxis from '$lib/Commits/XAxis.svelte'
+  import YAxis from '$lib/Commits/YAxis.svelte'
+  import {LayerCake, Svg, Html} from 'layercake';
+  import dayjs from 'dayjs';
 	let alt = 'Professional headshot of James Deal';
 	let proHeadshotRatio = `${(1 / (proHeadshot.width / proHeadshot.height)) * 100}%`;
 	let testRatio = `${(1 / (test.width / test.height)) * 100}%`;
 	let sizes = '(min-width: 1500px) 2000px, 100vw';
 	let headshotSizes = '(min-width: 1500px) 1000px, 100vw';
 	let style = 'border-radius:50%';
-	import { nest } from 'd3-collection';
-	import CalendarMonth from '$lib/Commits/CommitMap.svelte';
-  import XAxis from '$lib/Commits/XAxis.svelte'
-  import YAxis from '$lib/Commits/YAxis.svelte'
-  import {LayerCake, Svg, Html} from 'layercake';
-  import dayjs from 'dayjs';
-  
   let dates = storedCommits.storedCommits.map(commit => {return dayjs(commit.date).toISOString()})
-  
+
 	const datesTransformed = dates.map((row) => {
 		return { date: new Date(row), timestring: row };
 	});
