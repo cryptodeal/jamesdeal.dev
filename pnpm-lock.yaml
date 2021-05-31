@@ -3732,10 +3732,10 @@ packages:
       glob: 7.1.7
     dev: true
 
-  /rollup/2.50.2:
+  /rollup/2.50.5:
     resolution:
       {
-        integrity: sha512-Ra5JkxSiZPZZFnvE68KWtlrLnZGg5LNaV1n1esq4ch69P7ReeoRVlrTuL/k+L/GJfcowA5An0BEhEq2Hfzwl6w==
+        integrity: sha512-Ztz4NurU2LbS3Jn5rlhnYv35z6pkjBUmYKr94fOBIKINKRO6kug9NTFHArT7jqwMP2kqEZ39jJuEtkk91NBltQ==
       }
     engines: { node: '>=10.0.0' }
     hasBin: true
@@ -4659,7 +4659,7 @@ packages:
       esbuild: 0.11.23
       postcss: 8.3.0
       resolve: 1.20.0
-      rollup: 2.50.2
+      rollup: 2.50.5
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
