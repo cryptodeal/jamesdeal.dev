@@ -25,7 +25,7 @@ const config = {
 			},
 			ssr: {
 				noExternal: ['saslprep'],
-				external: ['mongodb-client-encryption']
+				external: ['mongoose']
 			},
 			optimizeDeps: {
 				include: ['layercake']
