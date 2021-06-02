@@ -23,7 +23,7 @@ h2 {
 }
 
 h3 {
-	@apply font-extralight font-sans text-xl text-red-800 w-3/4 dark:text-green-400;
+	@apply font-extralight font-sans text-xl lg:text-3xl text-red-800 w-3/4 dark:text-green-400;
 }
 
 p {

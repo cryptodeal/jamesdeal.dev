@@ -40,6 +40,7 @@
   import YAxis from '$lib/Commits/YAxis.svelte'
   import {LayerCake, Svg, Html} from 'layercake';
   import dayjs from 'dayjs';
+  import DevInterests from '$lib/index/DevInterests.svelte'
 	let alt = 'Professional headshot of James Deal';
 	let proHeadshotRatio = `${(1 / (proHeadshot.width / proHeadshot.height)) * 100}%`;
 	let testRatio = `${(1 / (test.width / test.height)) * 100}%`;
@@ -102,7 +103,7 @@
         </svg>
         <p class='font-light text-sm text-gray-900 dark:text-gray-200'>Austin, TX</p>
     </div>
-    <div class='prose dark:prose-dark prose-sm md:prose'>
+    <div class='prose dark:prose-dark prose-sm lg:prose'>
       <p>
 				Specializing in full-stack development, with a focus on building light-weight front end applications (SPA, Static, PWA,
 				SSR) using Svelte powered by high throughput APIs (REST/Websocket) using <a href='https://github.com/nanoexpress/nanoexpress' >NanoExpress</a>, 
@@ -162,16 +163,8 @@
 			>
 				Developer Interests
 			</h2>
-      <h3 class='mb-2'>Data Viz</h3>
-      <div class='prose dark:prose-dark prose-sm md:prose'>
-        <p>
-          Data visualization, charting, and graphics are of particular interest to me as the ability to convey complex data and information to users in a medium that is inviting (i.e. not intimidating), 
-          easily understood, and interactive dramatically improve user experience.
-        </p>
-        <p>
-          The advent of Javascript frameworks like REACT, Vue, Angular, and, more recently, Svelte, has greatly expanded the ease of which interactive data visualizations can be constructed as well as 
-          greatly increased the extent to which user's can interact with the data. I see Data Visualization as one of the next great frontiers of frontend developers.
-        </p>
+      <div class='h-98'>
+        <DevInterests/>
       </div>
     </div>
 	</div>
@@ -185,12 +178,14 @@
 			>
 				Personal Interests
 			</h2>
-			<p class='prose dark:prose-dark prose-sm md:prose'>
-				I'm a 23 year old full-stack developer based out of Austin, TX. Specializing in full-stack
-				development, with a focus on building light-weight front end applications (SPA/Static, PWA,
-				SSR) using Svelte and backend frameworks that leverage a server written in C++ with node.js
-				bindings for performance. My applications utilize both REST and Websocket API.
-			</p>
+      <div class='prose dark:prose-dark prose-sm lg:prose'>
+        <p>
+          I'm a 23 year old full-stack developer based out of Austin, TX. Specializing in full-stack
+          development, with a focus on building light-weight front end applications (SPA/Static, PWA,
+          SSR) using Svelte and backend frameworks that leverage a server written in C++ with node.js
+          bindings for performance. My applications utilize both REST and Websocket API.
+        </p>
+      </div>
 		</div>
 		<div class="mx-auto my-5 w-98">
 			<LazySrcset
