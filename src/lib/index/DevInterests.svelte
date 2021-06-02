@@ -37,10 +37,6 @@
 		width: 100%;
 		display: flex;
 	}
-	
-	.tab-panel-content {
-		color: #FFF;
-	}
 
 	.tab-panel {
     scroll-snap-align: start;
