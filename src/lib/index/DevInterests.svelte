@@ -1,8 +1,6 @@
-<script context="module">
-  const modules = import.meta.globEager('./interests/*.svelte');
-  export const interests = Object.values(modules).map((mod) => ({ Interest: mod.default }));
-</script>
+
 <script>
+  export let interests;
 	import { tweened } from 'svelte/motion';
 	import { sineOut } from 'svelte/easing';
 	const progress = tweened(1/interests.length, {
@@ -41,8 +39,6 @@
 	}
 	
 	.tab-panel-content {
-		margin: auto;
-		padding: 3rem;
 		color: #FFF;
 	}
 

@@ -1,3 +1,4 @@
+
 <script context="module">
 	/**
 	 * @type {import('@sveltejs/kit').Load}
@@ -20,6 +21,8 @@
 			error: new Error(`Could not load ${url}`)
 		};
 	}
+  const modules = import.meta.globEager('./_devInterests/*.svelte');
+  export const interests = Object.values(modules).map((mod) => ({ Interest: mod.default }));
 </script>
 
 <script>
@@ -163,9 +166,7 @@
 			>
 				Developer Interests
 			</h2>
-      <div class='h-98'>
-        <DevInterests/>
-      </div>
+      <DevInterests {interests} />
     </div>
 	</div>
 

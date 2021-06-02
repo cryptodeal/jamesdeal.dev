@@ -23,9 +23,6 @@ const config = {
 					$images: path.resolve('src/images')
 				}
 			},
-			ssr: {
-				noExternal: ['mongoose'],
-			},
 			optimizeDeps: {
 				include: ['layercake']
 			},
