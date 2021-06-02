@@ -24,8 +24,7 @@ const config = {
 				}
 			},
 			ssr: {
-				noExternal: ['saslprep'],
-				external: ['mongoose']
+				noExternal: ['mongoose'],
 			},
 			optimizeDeps: {
 				include: ['layercake']
