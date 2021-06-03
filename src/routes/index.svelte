@@ -43,7 +43,7 @@
   import YAxis from '$lib/Commits/YAxis.svelte'
   import {LayerCake, Svg, Html} from 'layercake';
   import dayjs from 'dayjs';
-  import DevInterests from '$lib/index/DevInterests.svelte'
+  import Slider from '$lib/ux/Slider.svelte'
 	let alt = 'Professional headshot of James Deal';
 	let proHeadshotRatio = `${(1 / (proHeadshot.width / proHeadshot.height)) * 100}%`;
 	let testRatio = `${(1 / (test.width / test.height)) * 100}%`;
@@ -85,7 +85,7 @@
 			<h1>Meet James Deal</h1>
 		</Typewriter>
 </div>
-<section class="container mx-auto mt-5.5rem p-5 sm:mt-9rem md:mt-10.5rem lg:mt-12.5rem">
+<section class="container mx-auto my-5 p-5 md:mt-10 lg:mt-20">
 	<div class="flex flex-wrap-reverse mb-40 items-center">
 		<div
 			class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 p-5 lg:(w-4/9 p-8) dark:(bg-purple-900 bg-opacity-30)"
@@ -106,7 +106,7 @@
         </svg>
         <p class='font-light text-sm text-gray-900 dark:text-gray-200'>Austin, TX</p>
     </div>
-    <div class='prose dark:prose-dark prose-sm lg:prose'>
+    <div>
       <p>
 				Specializing in full-stack development, with a focus on building light-weight front end applications (SPA, Static, PWA,
 				SSR) using Svelte powered by high throughput APIs (REST/Websocket) using <a href='https://github.com/nanoexpress/nanoexpress' >NanoExpress</a>, 
@@ -166,7 +166,7 @@
 			>
 				Developer Interests
 			</h2>
-      <DevInterests {interests} />
+      <Slider {interests} />
     </div>
 	</div>
 
@@ -179,7 +179,7 @@
 			>
 				Personal Interests
 			</h2>
-      <div class='prose dark:prose-dark prose-sm lg:prose'>
+      <div>
         <p>
           I'm a 23 year old full-stack developer based out of Austin, TX. Specializing in full-stack
           development, with a focus on building light-weight front end applications (SPA/Static, PWA,

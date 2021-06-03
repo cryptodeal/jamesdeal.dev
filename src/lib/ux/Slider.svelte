@@ -19,6 +19,7 @@
 		display: block;
 		width: 100%;
     height: 5px;
+    margin-bottom: .75rem;
 	}
   
   progress[value]::-webkit-progress-bar {
@@ -38,6 +39,10 @@
 		display: flex;
 	}
 
+  .tab-panels-container::-webkit-scrollbar {
+    display: none;
+  }
+
 	.tab-panel {
     scroll-snap-align: start;
     /* only supported in Chrome */
@@ -49,12 +54,12 @@
   }
 </style>
 
-<progress value={$progress}></progress>
+<progress class='rounde-lg' value={$progress}></progress>
 <div class="tab-panels-container" bind:clientWidth={containerWidth} on:scroll={({target}) => handleScroll(target)}>
-	{#each interests as {Interest}}
+	{#each interests as {Interest}, i}
 		<div class="tab-panel">
 			<div class="tab-panel-content">
-			  <Interest/>
+			  <Interest num={i}/>
 			</div>
 	</div>
 	{/each}

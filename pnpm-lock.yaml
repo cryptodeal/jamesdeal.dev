@@ -49,8 +49,8 @@ dependencies:
   svelte-typewriter: 2.4.5
 
 devDependencies:
-  '@sveltejs/adapter-vercel': 1.0.0-next.21
-  '@sveltejs/kit': 1.0.0-next.112_svelte@3.38.2
+  '@sveltejs/adapter-vercel': 1.0.0-next.22
+  '@sveltejs/kit': 1.0.0-next.113_svelte@3.38.2
   d3-collection: 1.0.7
   d3-scale: 3.3.0
   d3-time: 2.1.1
@@ -584,36 +584,36 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/adapter-vercel/1.0.0-next.21:
+  /@sveltejs/adapter-vercel/1.0.0-next.22:
     resolution:
       {
-        integrity: sha512-4fQpCWUOj1P7t6XhvHEIVGrfMF9UtlX8ra5m4vAlgARYPWHihKriAr39Dr/Wtx36Q6SY8cw6z1AERNjLRDnl9Q==
+        integrity: sha512-C9JL/4/CQR1BqEwyKFr6wCyejzIjwyC0nkA73TzGllIiPHxbJ3AykYZ4Ak7DFcZj9UNz8AmNbyzkuJTz3j2qJQ==
       }
     dependencies:
-      esbuild: 0.11.23
+      esbuild: 0.12.5
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.112_svelte@3.38.2:
+  /@sveltejs/kit/1.0.0-next.113_svelte@3.38.2:
     resolution:
       {
-        integrity: sha512-n+GyrDB7j4CJTazRAnwZolsoRp76g38x7+8msEul6DctghtNBRtW1eIyCcIuUn0nQMVQdseZUmifrbQ9NTEvJQ==
+        integrity: sha512-X7feyAD9ZWQ79W5MXgF0t3JBsA+pTqCrnl2l8y8PNCP7pEJwizPCfmFAjwx7luz3OZUA2FTFBB7bqG7K1IUaYg==
       }
     engines: { node: ^12.20 || ^14.13.1 || >= 16 }
     hasBin: true
     peerDependencies:
       svelte: ^3.38.2
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 1.0.0-next.10_svelte@3.38.2+vite@2.3.3
+      '@sveltejs/vite-plugin-svelte': 1.0.0-next.10_svelte@3.38.2+vite@2.3.6
       cheap-watch: 1.0.3
       sade: 1.7.4
       svelte: 3.38.2
-      vite: 2.3.3
+      vite: 2.3.6
     transitivePeerDependencies:
       - rollup
       - supports-color
     dev: true
 
-  /@sveltejs/vite-plugin-svelte/1.0.0-next.10_svelte@3.38.2+vite@2.3.3:
+  /@sveltejs/vite-plugin-svelte/1.0.0-next.10_svelte@3.38.2+vite@2.3.6:
     resolution:
       {
         integrity: sha512-ImvxbhPePm2hWNTKBSA3LHAYGwiEjHjvvgfPLXm4R87sfZ+BMXql9jBmDpzUC/URBLT4BB3Jxos/i523qkJBHg==
@@ -632,7 +632,7 @@ packages:
       source-map: 0.7.3
       svelte: 3.38.2
       svelte-hmr: 0.14.4_svelte@3.38.2
-      vite: 2.3.3
+      vite: 2.3.6
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -1550,10 +1550,10 @@ packages:
       is-arrayish: 0.2.1
     dev: true
 
-  /esbuild/0.11.23:
+  /esbuild/0.12.5:
     resolution:
       {
-        integrity: sha512-iaiZZ9vUF5wJV8ob1tl+5aJTrwDczlvGP0JoMmnpC2B0ppiMCu8n8gmy5ZTGl5bcG081XBVn+U+jP+mPFm5T5Q==
+        integrity: sha512-vcuP53pA5XiwUU4FnlXM+2PnVjTfHGthM7uP1gtp+9yfheGvFFbq/KyuESThmtoHPUrfZH5JpxGVJIFDVD1Egw==
       }
     hasBin: true
     requiresBuild: true
@@ -4619,15 +4619,15 @@ packages:
       - supports-color
     dev: true
 
-  /vite/2.3.3:
+  /vite/2.3.6:
     resolution:
       {
-        integrity: sha512-eO1iwRbn3/BfkNVMNJDeANAFCZ5NobYOFPu7IqfY7DcI7I9nFGjJIZid0EViTmLDGwwSUPmRAq3cRBbO3+DsMA==
+        integrity: sha512-fsEpNKDHgh3Sn66JH06ZnUBnIgUVUtw6ucDhlOj1CEqxIkymU25yv1/kWDPlIjyYHnalr0cN6V+zzUJ+fmWHYw==
       }
     engines: { node: '>=12.0.0' }
     hasBin: true
     dependencies:
-      esbuild: 0.11.23
+      esbuild: 0.12.5
       postcss: 8.3.0
       resolve: 1.20.0
       rollup: 2.50.5
