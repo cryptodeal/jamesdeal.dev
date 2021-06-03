@@ -55,7 +55,7 @@
 </style>
 
 <progress class='rounde-lg' value={$progress}></progress>
-<div class="tab-panels-container" bind:clientWidth={containerWidth} on:scroll={({target}) => handleScroll(target)}>
+<div class="px-5 tab-panels-container lg:px-8" bind:clientWidth={containerWidth} on:scroll={({target}) => handleScroll(target)}>
 	{#each interests as {Interest}, i}
 		<div class="tab-panel">
 			<div class="tab-panel-content">
