@@ -175,7 +175,7 @@
     </div>
     </div>
       <div
-			class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 py-5 content-center lg:(w-4/9 py-8) dark:(bg-purple-900 bg-opacity-30)"
+			class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 w-full py-5 content-center lg:(w-4/9 py-8) dark:(bg-purple-900 bg-opacity-30)"
 		>
 			<h2
 				class="mb-3 px-5 uppercase"
