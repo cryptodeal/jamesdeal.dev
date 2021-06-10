@@ -19,14 +19,6 @@
 		width: 100%;
     height: 5px;
 	}
-  
-  progress[value]::-webkit-progress-bar {
-    background-color: #34D399;
-  }
-
-  progress[value]::-webkit-progress-value {
-    background-color: #15803D;
-  }
 
   .tab-panels-container {
 		scroll-snap-type: x mandatory;
