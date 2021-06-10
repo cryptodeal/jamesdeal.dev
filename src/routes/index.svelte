@@ -217,11 +217,11 @@
 		</div>
 	</div>
 
-  <div class="flex flex-col mx-auto h-10 w-full text-red-800 justify-center items-center dark:text-green-400">
-    <h2 class='text-center'>Connect With Me:</h2>
-    <div class='flex mx-auto p-3 gap-4 inline-flex'>
+  <div class="flex flex-col w-full text-red-800 justify-center dark:text-green-400">
+    <h2 class='text-center mb-2'>Connect With Me:</h2>
+    <div class='flex mx-auto inline-flex'>
       <a
-        class='no-underline'
+        class='px-2 no-underline'
         title="email"
         href="mailto:me@jamesdeal.dev">
         <svg
@@ -235,7 +235,7 @@
         </svg>
       </a>
       <a
-        class='no-underline'
+        class='px-2 no-underline'
         title="github"
         href="https://github.com/cryptodeal">
         <svg
@@ -250,7 +250,7 @@
       </a>
       <!--Remove placeholder link below-->
       <a
-        class='no-underline'
+        class='px-2 no-underline'
         title="linkedin"
         href="https://placeholderlink.com">
         <svg
@@ -264,7 +264,7 @@
         </svg>
       </a>
       <a
-        class='no-underline'
+        class='px-2 no-underline'
         title="twitter"
         href="https://twitter.com/jamespdeal">
         <svg
