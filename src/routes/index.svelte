@@ -85,7 +85,7 @@
 			<h1>Meet James Deal</h1>
 		</Typewriter>
 </div>
-<section class="container mx-auto my-5 p-5 md:mt-10 lg:mt-20">
+<section class="container mx-auto my-3 p-5 md:mt-10 lg:mt-20">
 	<div class="flex flex-wrap-reverse mb-40 items-center">
 		<div
 			class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 p-5 lg:(w-4/9 p-8) dark:(bg-purple-900 bg-opacity-30)"
@@ -105,7 +105,7 @@
                 d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
         </svg>
         <p class='font-light text-sm text-gray-900 dark:text-gray-200'>Austin, TX</p>
-    </div>
+      </div>
     <div>
       <p>
 				Specializing in full-stack development, with a focus on building light-weight front end applications (SPA, Static, PWA,
@@ -117,12 +117,12 @@
         By utilizing NanoExpress, the APIs backing my applications have proven, in testing, capable of scaling to <a href='https://web-frameworks-benchmark.netlify.app/result'>150,000+ Requests/Second</a> 
         and sustaining <a href='https://alexhultman.medium.com/millions-of-active-websockets-with-node-js-7dc575746a01'>over 1 million</a> active websocket connections per each instance of the server.
       </p>
-      <div class="flex-1 mt-2 gap-3 inline-flex items-center">
-        <h4>Résumé</h4>
+      <div class='flex inline-flex'></div>
         <a
-        class='no-underline'
+        class='flex-1 gap-3 no-underline inline-flex items-center'
         title="twitter"
         href="/about">
+        <h4>Résumé</h4>
         <svg
           class="h-full fill-current w-auto"
           xmlns="http://www.w3.org/2000/svg"
@@ -133,8 +133,7 @@
         </svg>
       </a>
     </div>
-    </div>
-		</div>
+	</div>
 		<div class="mx-auto my-5 w-98">
 			<LazySrcset
 				src={proHeadshot}
