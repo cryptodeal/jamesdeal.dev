@@ -16,10 +16,8 @@
 </script>
 <style>
   progress {
-		display: block;
 		width: 100%;
     height: 5px;
-    margin-bottom: .75rem;
 	}
   
   progress[value]::-webkit-progress-bar {
@@ -54,8 +52,8 @@
   }
 </style>
 
-<progress class='rounde-lg' value={$progress}></progress>
-<div class="px-5 tab-panels-container lg:px-8" bind:clientWidth={containerWidth} on:scroll={({target}) => handleScroll(target)}>
+<progress class='rounded-lg px-5 lg:px-8' value={$progress}></progress>
+<div class="tab-panels-container" bind:clientWidth={containerWidth} on:scroll={({target}) => handleScroll(target)}>
 	{#each interests as {Interest}, i}
 		<div class="tab-panel">
 			<div class="tab-panel-content">

@@ -117,6 +117,22 @@
         By utilizing NanoExpress, the APIs backing my applications have proven, in testing, capable of scaling to <a href='https://web-frameworks-benchmark.netlify.app/result'>150,000+ Requests/Second</a> 
         and sustaining <a href='https://alexhultman.medium.com/millions-of-active-websockets-with-node-js-7dc575746a01'>over 1 million</a> active websocket connections per each instance of the server.
       </p>
+      <div class="flex flex-row text-red-800 w-1/3 justify-start dark:text-green-400">
+        <a
+          class='no-underline inline-flex content-center justify-center'
+          title="twitter"
+          href="https://twitter.com/jamespdeal">
+          <h3>Learn More</h3>
+          <svg
+            class="h-10 fill-current w-auto"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24">
+            <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/>
+          </svg>
+        </a>
+      </div>
     </div>
 		</div>
 		<div class="mx-auto my-5 w-98">
@@ -159,10 +175,10 @@
     </div>
     </div>
       <div
-			class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 p-5 content-center lg:(w-4/9 p-8) dark:(bg-purple-900 bg-opacity-30)"
+			class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 py-5 content-center lg:(w-4/9 py-8) dark:(bg-purple-900 bg-opacity-30)"
 		>
 			<h2
-				class="mb-3 uppercase"
+				class="mb-3 px-5 uppercase"
 			>
 				Developer Interests
 			</h2>

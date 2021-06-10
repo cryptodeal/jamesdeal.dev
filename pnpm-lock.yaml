@@ -11,14 +11,14 @@ specifiers:
   d3-time: ^2.1.1
   d3-time-format: ^3.0.0
   dayjs: ^1.10.5
-  eslint: ^7.27.0
+  eslint: ^7.28.0
   eslint-config-prettier: ^8.3.0
   eslint-plugin-svelte3: ^3.2.0
   layercake: ^4.1.0
-  mdsvex: ^0.9.6
+  mdsvex: ^0.9.7
   mongodb-client-encryption: 1.2.3
-  mongoose: ^5.12.12
-  prettier: ^2.3.0
+  mongoose: ^5.12.13
+  prettier: ^2.3.1
   prettier-plugin-svelte: ^2.3.0
   rehype-autolink-headings: ^5.1.0
   rehype-slug: ^4.0.1
@@ -42,7 +42,7 @@ dependencies:
   cookie: 0.4.1
   layercake: 4.1.0_svelte@3.38.2
   mongodb-client-encryption: 1.2.3
-  mongoose: 5.12.12_mongodb-client-encryption@1.2.3
+  mongoose: 5.12.13_mongodb-client-encryption@1.2.3
   saslprep: 1.0.3
   svelte-particles: 1.10.0
   svelte-toggle: 3.0.0
@@ -50,18 +50,18 @@ dependencies:
 
 devDependencies:
   '@sveltejs/adapter-vercel': 1.0.0-next.22
-  '@sveltejs/kit': 1.0.0-next.113_svelte@3.38.2
+  '@sveltejs/kit': 1.0.0-next.114_svelte@3.38.2
   d3-collection: 1.0.7
   d3-scale: 3.3.0
   d3-time: 2.1.1
   d3-time-format: 3.0.0
   dayjs: 1.10.5
-  eslint: 7.27.0
-  eslint-config-prettier: 8.3.0_eslint@7.27.0
-  eslint-plugin-svelte3: 3.2.0_eslint@7.27.0+svelte@3.38.2
-  mdsvex: 0.9.6_svelte@3.38.2
-  prettier: 2.3.0
-  prettier-plugin-svelte: 2.3.0_prettier@2.3.0+svelte@3.38.2
+  eslint: 7.28.0
+  eslint-config-prettier: 8.3.0_eslint@7.28.0
+  eslint-plugin-svelte3: 3.2.0_eslint@7.28.0+svelte@3.38.2
+  mdsvex: 0.9.7_svelte@3.38.2
+  prettier: 2.3.1
+  prettier-plugin-svelte: 2.3.0_prettier@2.3.1+svelte@3.38.2
   rehype-autolink-headings: 5.1.0
   rehype-slug: 4.0.1
   remark-abbr: 1.4.1
@@ -335,17 +335,17 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@eslint/eslintrc/0.4.1:
+  /@eslint/eslintrc/0.4.2:
     resolution:
       {
-        integrity: sha512-5v7TDE9plVhvxQeWLXDTvFvJBdH6pEsdnl2g/dAptmuFEPedQ4Erq5rsDsX+mvAM610IhNaO2W5V1dOOnDKxkQ==
+        integrity: sha512-8nmGq/4ycLpIwzvhI4tNDmQztZ8sp+hI7cyG8i1nQDhkAbRzHpXPidRAHlNvCZQpJTKw5ItIpMw9RSToGF00mg==
       }
     engines: { node: ^10.12.0 || >=12.0.0 }
     dependencies:
       ajv: 6.12.6
       debug: 4.3.1
       espree: 7.3.1
-      globals: 12.4.0
+      globals: 13.9.0
       ignore: 4.0.6
       import-fresh: 3.3.0
       js-yaml: 3.14.1
@@ -593,10 +593,10 @@ packages:
       esbuild: 0.12.5
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.113_svelte@3.38.2:
+  /@sveltejs/kit/1.0.0-next.114_svelte@3.38.2:
     resolution:
       {
-        integrity: sha512-X7feyAD9ZWQ79W5MXgF0t3JBsA+pTqCrnl2l8y8PNCP7pEJwizPCfmFAjwx7luz3OZUA2FTFBB7bqG7K1IUaYg==
+        integrity: sha512-SDs0DmGzq3KOE/9CmK11AIef4c84iAx5Cyr9gw2ae04awrksalSbm9Xb45/4fxOwsA5gTKUZrOJNnOIhfZrm+A==
       }
     engines: { node: ^12.20 || ^14.13.1 || >= 16 }
     hasBin: true
@@ -1580,7 +1580,7 @@ packages:
     engines: { node: '>=10' }
     dev: true
 
-  /eslint-config-prettier/8.3.0_eslint@7.27.0:
+  /eslint-config-prettier/8.3.0_eslint@7.28.0:
     resolution:
       {
         integrity: sha512-BgZuLUSeKzvlL/VUjx/Yb787VQ26RU3gGjA3iiFvdsp/2bMfVIWUVP7tjxtjS0e+HP409cPlPvNkQloz8C91ew==
@@ -1589,10 +1589,10 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
     dependencies:
-      eslint: 7.27.0
+      eslint: 7.28.0
     dev: true
 
-  /eslint-plugin-svelte3/3.2.0_eslint@7.27.0+svelte@3.38.2:
+  /eslint-plugin-svelte3/3.2.0_eslint@7.28.0+svelte@3.38.2:
     resolution:
       {
         integrity: sha512-qdWB1QN21dEozsJFdR8XlEhMnsS6aKHjsXWuNmchYwxoet5I6QdCr1Xcq62++IzRBMCNCeH4waXqSOAdqrZzgA==
@@ -1602,7 +1602,7 @@ packages:
       eslint: '>=6.0.0'
       svelte: ^3.2.0
     dependencies:
-      eslint: 7.27.0
+      eslint: 7.28.0
       svelte: 3.38.2
     dev: true
 
@@ -1643,16 +1643,16 @@ packages:
     engines: { node: '>=10' }
     dev: true
 
-  /eslint/7.27.0:
+  /eslint/7.28.0:
     resolution:
       {
-        integrity: sha512-JZuR6La2ZF0UD384lcbnd0Cgg6QJjiCwhMD6eU4h/VGPcVGwawNNzKU41tgokGXnfjOOyI6QIffthhJTPzzuRA==
+        integrity: sha512-UMfH0VSjP0G4p3EWirscJEQ/cHqnT/iuH6oNZOB94nBjWbMnhGEPxsZm1eyIW0C/9jLI0Fow4W5DXLjEI7mn1g==
       }
     engines: { node: ^10.12.0 || >=12.0.0 }
     hasBin: true
     dependencies:
       '@babel/code-frame': 7.12.11
-      '@eslint/eslintrc': 0.4.1
+      '@eslint/eslintrc': 0.4.2
       ajv: 6.12.6
       chalk: 4.1.1
       cross-spawn: 7.0.3
@@ -2032,16 +2032,6 @@ packages:
         integrity: sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==
       }
     engines: { node: '>=4' }
-    dev: true
-
-  /globals/12.4.0:
-    resolution:
-      {
-        integrity: sha512-BWICuzzDvDoH54NHKCseDanAhE3CeDorgDL5MT6LMXXj2WCnd9UC2szdk4AWLfjdgNBCXLUanXYcpBBKOSWGwg==
-      }
-    engines: { node: '>=8' }
-    dependencies:
-      type-fest: 0.8.1
     dev: true
 
   /globals/13.9.0:
@@ -2680,10 +2670,10 @@ packages:
       }
     dev: true
 
-  /mdsvex/0.9.6_svelte@3.38.2:
+  /mdsvex/0.9.7_svelte@3.38.2:
     resolution:
       {
-        integrity: sha512-AMdB7TNC40aE/XZuVhqFLWJGufUHK64/Yre88CEC9jktINp+vmYs1YsmUUM7ophl2Y+6qZwcYE4DPe1PPHVNjA==
+        integrity: sha512-oeyqfxOsGC2km90F2BYKZ+XqOhDoMs6ARuYn49Wq3ULxoo7Wjevm6usLrDFuDL2yodCcKwtjjy+9FglWRmpzKg==
       }
     peerDependencies:
       svelte: 3.x
@@ -2854,7 +2844,7 @@ packages:
       saslprep: 1.0.3
     dev: false
 
-  /mongoose-legacy-pluralize/1.0.2_mongoose@5.12.12:
+  /mongoose-legacy-pluralize/1.0.2_mongoose@5.12.13:
     resolution:
       {
         integrity: sha512-Yo/7qQU4/EyIS8YDFSeenIvXxZN+ld7YdV9LqFVQJzTLye8unujAWPZ4NWKfFA+RNjh+wvTWKY9Z3E5XM6ZZiQ==
@@ -2862,13 +2852,13 @@ packages:
     peerDependencies:
       mongoose: '*'
     dependencies:
-      mongoose: 5.12.12_mongodb-client-encryption@1.2.3
+      mongoose: 5.12.13_mongodb-client-encryption@1.2.3
     dev: false
 
-  /mongoose/5.12.12_mongodb-client-encryption@1.2.3:
+  /mongoose/5.12.13_mongodb-client-encryption@1.2.3:
     resolution:
       {
-        integrity: sha512-n+ZmGApaL5x/r92w6S4pb+c075i+YKzg1F9YWkznSzQMtvetj/2dSjj2cqsITpd6z60k3K7ZaosIl6hzHwUA9g==
+        integrity: sha512-QGn1FCzZ8Z+mMGVg8oR2kQw4NmhLloCHsw1NqKWg3Yr7WfPzkE4pe7s9P6o5pkYGsku17n9mqMHowne7EFK/zQ==
       }
     engines: { node: '>=4.0.0' }
     dependencies:
@@ -2876,7 +2866,7 @@ packages:
       bson: 1.1.6
       kareem: 2.3.2
       mongodb: 3.6.8_mongodb-client-encryption@1.2.3
-      mongoose-legacy-pluralize: 1.0.2_mongoose@5.12.12
+      mongoose-legacy-pluralize: 1.0.2_mongoose@5.12.13
       mpath: 0.8.3
       mquery: 3.2.5
       ms: 2.1.2
@@ -3392,7 +3382,7 @@ packages:
     engines: { node: '>= 0.8.0' }
     dev: true
 
-  /prettier-plugin-svelte/2.3.0_prettier@2.3.0+svelte@3.38.2:
+  /prettier-plugin-svelte/2.3.0_prettier@2.3.1+svelte@3.38.2:
     resolution:
       {
         integrity: sha512-HTzXvSq7lWFuLsSaxYOUkGkVNCl3RrSjDCOgQjkBX5FQGmWjL8o3IFACSGhjPMMfWKADpapAr0zdbBWkND9mqw==
@@ -3401,14 +3391,14 @@ packages:
       prettier: ^1.16.4 || ^2.0.0
       svelte: ^3.2.0
     dependencies:
-      prettier: 2.3.0
+      prettier: 2.3.1
       svelte: 3.38.2
     dev: true
 
-  /prettier/2.3.0:
+  /prettier/2.3.1:
     resolution:
       {
-        integrity: sha512-kXtO4s0Lz/DW/IJ9QdWhAf7/NmPWQXkFr/r/WkR3vyI+0v8amTDxiaQSLzs8NBlytfLWX/7uQUMIW677yLKl4w==
+        integrity: sha512-p+vNbgpLjif/+D+DwAZAbndtRrR0md0MwfmOVN9N+2RgyACMT+7tfaRnT+WDPkqnuVwleyuBIG2XBxKDme3hPA==
       }
     engines: { node: '>=10.13.0' }
     hasBin: true
@@ -3703,10 +3693,10 @@ packages:
       glob: 7.1.7
     dev: true
 
-  /rollup/2.50.5:
+  /rollup/2.50.6:
     resolution:
       {
-        integrity: sha512-Ztz4NurU2LbS3Jn5rlhnYv35z6pkjBUmYKr94fOBIKINKRO6kug9NTFHArT7jqwMP2kqEZ39jJuEtkk91NBltQ==
+        integrity: sha512-6c5CJPLVgo0iNaZWWliNu1Kl43tjP9LZcp6D/tkf2eLH2a9/WeHxg9vfTFl8QV/2SOyaJX37CEm9XuGM0rviUg==
       }
     engines: { node: '>=10.0.0' }
     hasBin: true
@@ -4630,7 +4620,7 @@ packages:
       esbuild: 0.12.5
       postcss: 8.3.0
       resolve: 1.20.0
-      rollup: 2.50.5
+      rollup: 2.50.6
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
