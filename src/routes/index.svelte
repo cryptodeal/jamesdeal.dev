@@ -117,22 +117,22 @@
         By utilizing NanoExpress, the APIs backing my applications have proven, in testing, capable of scaling to <a href='https://web-frameworks-benchmark.netlify.app/result'>150,000+ Requests/Second</a> 
         and sustaining <a href='https://alexhultman.medium.com/millions-of-active-websockets-with-node-js-7dc575746a01'>over 1 million</a> active websocket connections per each instance of the server.
       </p>
-      <div class="flex flex-row text-red-800 w-1/3 justify-start dark:text-green-400">
+      <div class="flex-1 mt-2 gap-3 inline-flex items-center">
+        <h4>Résumé</h4>
         <a
-          class='no-underline inline-flex content-center justify-center'
-          title="twitter"
-          href="https://twitter.com/jamespdeal">
-          <h3>Learn More</h3>
-          <svg
-            class="h-10 fill-current w-auto"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24">
-            <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/>
-          </svg>
-        </a>
-      </div>
+        class='no-underline'
+        title="twitter"
+        href="/about">
+        <svg
+          class="h-full fill-current w-auto"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24">
+          <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/>
+        </svg>
+      </a>
+    </div>
     </div>
 		</div>
 		<div class="mx-auto my-5 w-98">
