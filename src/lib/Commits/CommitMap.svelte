@@ -61,7 +61,7 @@
 
 {#each days as day}
 <rect class="day" width="{cellSize}" height="{cellSize}" x="{rectX(day)}" y="{rectY(day)}"
-  style="fill:{fillColor(day)};" title={`${dayjs(day).format('dddd, MMMM D')}: ${count(day)} commits to Github`} use:tooltip/>
+  style="fill:{fillColor(day)};" title={`${dayjs(day).format('dddd, MMMM D')}: ${count(day)} ${count(day) == 1 ? 'Commit' : 'Commits'} to Github`} use:tooltip/>
 {/each}
 
 <style>
