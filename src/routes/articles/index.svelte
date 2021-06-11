@@ -41,7 +41,7 @@
     <ul>
       {#each posts as {slug, title, author}}
       <h2 class='hover:text-red-900 dark:hover:text-green-600'>
-        <a class='no-underline' href='articles/read/{slug}'>{title}</a>
+        <a class='no-underline' sveltekit:prefetch href='articles/read/{slug}'>{title}</a>
       </h2>
       <p class='prose dark:prose-dark prose-sm md:prose'>By: {author}</p>
       {/each}
