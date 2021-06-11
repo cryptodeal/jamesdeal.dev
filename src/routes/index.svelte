@@ -4,7 +4,7 @@
 	 * @type {import('@sveltejs/kit').Load}
 	 */
 	export async function load({ fetch }) {
-		const url = `/api/github/commits.json`;
+		const url = `api/github/commits.json`;
 		const res = await fetch(url);
     const storedCommits = await res.json()
     

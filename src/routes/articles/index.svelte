@@ -1,6 +1,6 @@
 <script context="module">
   export async function load({ fetch }) {
-    const url = `/articles.json`;
+    const url = `articles.json`;
     const res = await fetch(url);
     const posts = await res.json()
     if (res.ok) {

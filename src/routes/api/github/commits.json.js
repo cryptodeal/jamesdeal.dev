@@ -5,6 +5,7 @@ import dayjs from 'dayjs';
 
 export async function get() {
 	await initConnect();
+	/* TODO: Optimize by fetching existing mongodb record, creating new records, and then merging existing w new records */
 	const { data } = await octokit.request('GET /users/{username}/events', {
 		username: 'cryptodeal',
 		per_page: 100
@@ -52,7 +53,7 @@ export async function get() {
 	const storedCommits = await getCommitsByDate(twoMonthsBack, now).catch((err) =>
 		console.catch(err)
 	);
-	//console.log(storedCommits)
+
 	if (storedCommits) {
 		return {
 			body: {

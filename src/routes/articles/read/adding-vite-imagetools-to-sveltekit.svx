@@ -26,13 +26,6 @@ published: true
   //$: console.log(Logo)
   //$: console.log(ratio)
 </script>
-<style>
-  .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-</style>
 
 <h1 itemprop="name"> Integrating vite-imagetools and SvelteKit </h1>
 
