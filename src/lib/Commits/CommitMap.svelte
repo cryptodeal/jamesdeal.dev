@@ -1,4 +1,5 @@
 <script>
+  import { tooltip } from './tooltip';
   import { getContext } from 'svelte';
   import { scaleQuantize } from 'd3-scale';
   import { timeFormat } from 'd3-time-format';
@@ -56,14 +57,11 @@
 		return weekDiff * cellSize;
   };
 
-  function showCount(day) {
-    console.log(day, count(day));
-  }
 </script>
 
 {#each days as day}
 <rect class="day" width="{cellSize}" height="{cellSize}" x="{rectX(day)}" y="{rectY(day)}"
-  style="fill:{fillColor(day)};" on:mouseenter="{showCount(day)}" />
+  style="fill:{fillColor(day)};" title={`${dayjs(day).format('dddd, MMMM D')}: ${count(day)} commits to Github`} use:tooltip/>
 {/each}
 
 <style>
