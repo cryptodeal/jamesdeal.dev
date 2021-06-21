@@ -32,6 +32,8 @@
     </li>
     <li class='block float-left'><a class='py-4 px-2 no-underline block'
         aria-current='{segment === "about" ? "page" : undefined}' sveltekit:prefetch href='/about'>about</a></li>
+    <li class='block float-left'><a class='py-4 px-2 no-underline block'
+      aria-current='{segment === "demos" ? "page" : undefined}' sveltekit:prefetch href='/demos'>demos</a></li>
   </ul>
   <ul>
     {#if toggled !== null}
