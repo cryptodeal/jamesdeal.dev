@@ -4,11 +4,11 @@
 	import {tweened} from 'svelte/motion';
 	import * as eases from 'svelte/easing';
 	import {fade} from 'svelte/transition';
-	import * as yootils from 'yootils';
-	import Treemap from '$lib/dataviz/Treemap.svelte';
-	import spData from '$lib/dataviz/sp500.js'
-	import data from '$lib/dataviz/data.js'
-	import {calcPctChange} from '$lib/dataviz/utils.js'
+	//import * as yootils from 'yootils';
+	import Treemap from './Treemap.svelte';
+	import spData from './sp500'
+	import data from './data.json'
+	import {calcPctChange,formatCurrency} from './utils'
 	
 	function findWithAttr(array, attr, value) {
     for(var i = 0; i < array.length; i += 1) {
@@ -18,13 +18,15 @@
     }
     return -1;
 }
+
 	spData["data"].forEach(dat => {
 		let tempSector = findWithAttr(data.children, 'name', dat["sector"])
 		let tempIndustry = findWithAttr(data.children[tempSector].children, 'name', dat["industry"])
 		data.children[tempSector].children[tempIndustry].children.push({name: dat["ticker"], value: dat["shrOutstnd"] * dat["price"], pctChange: dat["pctChange"]})
 	})
+
 	
-	calcPctChange(data.children)
+	$: calcPctChange(data.children)
 
 	const treemap = d3.treemap();
 
@@ -94,7 +96,7 @@
 				>
 					<div class:negative={node.data.pctChange<0} class="contents">
 						<strong>{node.data.name}</strong>
-						<span>{`$${yootils.commas(node.value)}`}</span>
+						<span>{`$${formatCurrency(node.value)}`}</span>
 						<span>{`${node.data.pctChange.toFixed(2)}%`}</span>
 					</div>
 				</div>
@@ -123,7 +125,7 @@
 	}
 
 	.chart {
-		width: calc(100% + 2px);
+		width: 100%;
 		height: 500px;
 		padding: 0;
 		margin: 0 -1px 36px -1px;

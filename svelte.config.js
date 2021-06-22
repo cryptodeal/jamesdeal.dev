@@ -1,15 +1,14 @@
-import preprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
 import { mdsvexConfig } from './mdsvex.config.js';
 import vercel from '@sveltejs/adapter-vercel';
 import { imagetools } from 'vite-imagetools';
 import path from 'path';
-import WindiCSS from 'vite-plugin-windicss';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	extensions: ['.svelte', ...mdsvexConfig.extensions],
-	preprocess: [preprocess(), mdsvex(mdsvexConfig)],
+	preprocess: [mdsvex(mdsvexConfig)],
+
 	kit: {
 		adapter: vercel(),
 		target: '#svelte',
@@ -29,7 +28,7 @@ const config = {
 			optimizeDeps: {
 				include: ['layercake']
 			},
-			plugins: [WindiCSS.default(), imagetools()]
+			plugins: [imagetools()]
 		}
 	}
 };

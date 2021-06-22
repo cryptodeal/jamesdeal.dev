@@ -1,10 +1,11 @@
 import typography from 'windicss/plugin/typography';
+import { defineConfig } from 'vite-plugin-windicss';
 
-const windiConfig = {
-	darkMode: 'class',
+export default defineConfig({
 	preflight: {
-		enableAll: true
+		safelist: 'chart'
 	},
+	darkMode: 'class',
 	theme: {
 		extend: {
 			typography: {
@@ -69,5 +70,4 @@ const windiConfig = {
 		}
 	},
 	plugins: [typography]
-};
-export default windiConfig;
+});
