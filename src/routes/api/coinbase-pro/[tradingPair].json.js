@@ -1,4 +1,5 @@
-import { initClient, CandleGranularity } from 'coinbase-pro-node';
+import { CandleGranularity } from 'coinbase-pro-node';
+import { initClient } from '$lib/dataviz/crypto/utils';
 //import dayjs from 'dayjs';
 
 /**
@@ -15,6 +16,8 @@ export async function get({ params }) {
 		granularity: CandleGranularity.ONE_HOUR,
 		start: '2020-04-11T08:00:00.000Z'
 	});
+
+	console.log(candles);
 
 	if (candles) {
 		return {
