@@ -1,179 +1,83 @@
-<script>
-	import * as Pancake from '@sveltejs/pancake';
-	import * as d3 from 'd3-hierarchy';
-	import {tweened} from 'svelte/motion';
-	import * as eases from 'svelte/easing';
-	import {fade} from 'svelte/transition';
-	import Treemap from '$lib/dataviz/sp500/Treemap.svelte';
-	import {data} from '$lib/dataviz/sp500/data.json'
-  import { calcPctChange, convertToPositiveFloat } from '$lib/dataviz/sp500/utils.js';
-  const currency = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 1, notation: "compact", compactDisplay: "short" })
-  
-  $: calcPctChange(data['children']);
+<script context="module">
+	const modules = import.meta.globEager(`./*/index.svelte`);
+	/**
+	 * @type {import('@sveltejs/kit').Load}
+	 */
+	export async function load({ fetch }) {
+		const url = `api/github/commits.json`;
+		const res = await fetch(url);
+		const storedCommits = await res.json();
 
-  const treemap = d3.treemap();
+		if (res.ok) {
+			return {
+				props: {
+					storedCommits
+				}
+			};
+		}
 
-  const hierarchy = d3
-    .hierarchy(data)
-    .sum((d) => d.value)
-    .sort((a, b) => b.value - a.value);
-
-  const root = treemap(hierarchy);
-
-  let selected = root;
-
-  const select = (node) => {
-    while (node.parent && node.parent !== selected) {
-      node = node.parent;
-    }
-
-    if (node && node.children) selected = node;
-  };
-
-  const breadcrumbs = (node) => {
-    const crumbs = [];
-    while (node) {
-      crumbs.unshift(node.data.name);
-      node = node.parent;
-    }
-
-    return crumbs.join('/');
-  };
-
-  const extents = tweened(undefined, {
-    easing: eases.cubicOut,
-    duration: 600
-  });
-
-  const is_visible = (a, b) => {
-    while (b) {
-      if (a.parent === b) return true;
-      b = b.parent;
-    }
-
-    return false;
-  };
-
-  $: $extents = {
-    x1: selected.x0,
-    x2: selected.x1,
-    y1: selected.y1,
-    y2: selected.y0
-  };
+		return {
+			status: res.status,
+			error: new Error(`Could not load ${url}`)
+		};
+	}
+	export const interests = Object.values(modules).map((mod) => ({ Interest: mod.default }));
+	export const charts = Object.values(modules).map((mod) => ({ Chart: mod.default }));
 </script>
 
-<button
-  class="breadcrumbs"
-  disabled={!selected.parent}
-  on:click={() => (selected = selected.parent)}
->
-  {breadcrumbs(selected)}
-</button>
+<script>
+	export let storedCommits;
+	function nextChart() {
+		number + 1 < charts.length ? (number += 1) : (number = 0);
+	}
+	function prevChart() {
+		number - 1 >= 0 ? (number -= 1) : (number = charts.length - 1);
+	}
+	let number;
+	$: number = 0;
+</script>
 
-<div class="chart">
-  <Pancake.Chart x1={$extents.x1} x2={$extents.x2} y1={$extents.y1} y2={$extents.y2}>
-    <Treemap {root} let:node>
-      {#if is_visible(node, selected)}
-        <div
-          transition:fade={{ duration: 350 }}
-          class="node"
-          class:leaf={!node.children}
-          on:click={() => select(node)}
-        >
-          <div
-            class:negative={node.data.pctChange < 0}
-            class="chartContents"
-            style="--color-intensity: {convertToPositiveFloat(node.data.pctChange)}"
-          >
-            <strong>{node.data.name}</strong>
-            <span>{`${currency.format(node.value)}`}</span>
-            <span>{`${node.data.pctChange.toFixed(2)}%`}</span>
-          </div>
-        </div>
-      {/if}
-    </Treemap>
-  </Pancake.Chart>
+<svelte:head>
+	<title>Demos</title>
+</svelte:head>
+
+<h1 class="my-5">Demos</h1>
+<div class="flex mb-5">
+	<nav class="mx-auto h-8 gap-20 inline-flex">
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			on:click={prevChart}
+			class="cursor-pointer h-8 fill-current stroke-none w-auto text-red-800 dark:text-green-400"
+			width="24"
+			height="24"
+			viewBox="0 0 24 24"
+			transform="rotate(180)"
+		>
+			<path
+				d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm2 12l-4.5 4.5 1.527 1.5 5.973-6-5.973-6-1.527 1.5 4.5 4.5z"
+			/>
+		</svg>
+		<h2 class="self-center">Data Viz</h2>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			on:click={nextChart}
+			class="cursor-pointer h-8 fill-current stroke-none w-auto text-red-800 dark:text-green-400"
+			width="24"
+			height="24"
+			viewBox="0 0 24 24"
+		>
+			<path
+				d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm2 12l-4.5 4.5 1.527 1.5 5.973-6-5.973-6-1.527 1.5 4.5 4.5z"
+			/>
+		</svg>
+	</nav>
 </div>
-
-<p>
-  Adapted from <a href="https://observablehq.com/@d3/zoomable-treemap"
-    >Zoomable Treemap by Mike Bostock
-  </a>using Rich Harris'
-  <a href="https://github.com/Rich-Harris/pancake#readme">@sveltejs/pancake Charting library</a>.
-</p>
-
-<style>
-  .breadcrumbs {
-    width: 100%;
-    padding: 0.3rem 0.4rem;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    text-align: left;
-    border: none;
-    cursor: pointer;
-    outline: none;
-  }
-
-  .breadcrumbs:disabled {
-    cursor: default;
-  }
-
-  .chart {
-    width: calc(100% + 2px);
-    height: 500px;
-    padding: 0;
-    margin: 0 -1px 36px -1px;
-    overflow: hidden;
-  }
-
-  .node {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    overflow: hidden;
-    pointer-events: all;
-  }
-
-  .node:not(.leaf) {
-    cursor: pointer;
-  }
-
-  .chartContents {
-    width: 100%;
-    height: 100%;
-    padding: 0.3rem 0.4rem;
-    border: 1px solid white;
-    background-color: hsla(120, 40%, 50%, var(--color-intensity));
-    color: black;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-
-  .chartContents.negative {
-    width: 100%;
-    height: 100%;
-    padding: 0.3rem 0.4rem;
-    border: 1px solid white;
-    background-color: hsla(0, 50%, 40%, var(--color-intensity));
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-
-  .node:not(.leaf) .chartContents {
-    background-color: hsla(120, 40%, 50%, var(--color-intensity));
-  }
-
-  .node:not(.leaf) .chartContents.negative {
-    background-color: hsla(0, 50%, 40%, var(--color-intensity));
-  }
-
-  strong,
-  span {
-    display: block;
-    font-size: 12px;
-    white-space: nowrap;
-    line-height: 1;
-  }
-</style>
+<section class="md:container md:mx-auto">
+	{#if charts !== null}
+		{#each charts as { Chart }, index}
+			{#if number === index}
+				<Chart {storedCommits} />
+			{/if}
+		{/each}
+	{/if}
+</section>

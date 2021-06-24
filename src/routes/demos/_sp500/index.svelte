@@ -4,32 +4,18 @@
 	import { tweened } from 'svelte/motion';
 	import * as eases from 'svelte/easing';
 	import { fade } from 'svelte/transition';
-	//import * as yootils from 'yootils';
-	import Treemap from './Treemap.svelte';
-	import spData from './sp500';
-	import data from './data.json';
-	import { calcPctChange, formatCurrency } from './utils';
-
-	function findWithAttr(array, attr, value) {
-		for (var i = 0; i < array.length; i += 1) {
-			if (array[i][attr] === value) {
-				return i;
-			}
-		}
-		return -1;
-	}
-
-	spData['data'].forEach((dat) => {
-		let tempSector = findWithAttr(data.children, 'name', dat['sector']);
-		let tempIndustry = findWithAttr(data.children[tempSector].children, 'name', dat['industry']);
-		data.children[tempSector].children[tempIndustry].children.push({
-			name: dat['ticker'],
-			value: dat['shrOutstnd'] * dat['price'],
-			pctChange: dat['pctChange']
-		});
+	import Treemap from '$lib/dataviz/sp500/Treemap.svelte';
+	import { data } from '$lib/dataviz/sp500/data.json';
+	import { calcPctChange, convertToPositiveFloat } from '$lib/dataviz/sp500/utils.js';
+	const currency = new Intl.NumberFormat('en-US', {
+		style: 'currency',
+		currency: 'USD',
+		minimumFractionDigits: 1,
+		notation: 'compact',
+		compactDisplay: 'short'
 	});
 
-	$: calcPctChange(data.children);
+	$: calcPctChange(data['children']);
 
 	const treemap = d3.treemap();
 
@@ -83,7 +69,7 @@
 </script>
 
 <button
-	class="breadcrumbs"
+	class="text-red-800 text-green-400 breadcrumbs"
 	disabled={!selected.parent}
 	on:click={() => (selected = selected.parent)}
 >
@@ -100,9 +86,13 @@
 					class:leaf={!node.children}
 					on:click={() => select(node)}
 				>
-					<div class:negative={node.data.pctChange < 0} class="contents">
+					<div
+						class:negative={node.data.pctChange < 0}
+						class="chartContents"
+						style="--color-intensity: {convertToPositiveFloat(node.data.pctChange)}"
+					>
 						<strong>{node.data.name}</strong>
-						<span>{`$${formatCurrency(node.value)}`}</span>
+						<span>{`${currency.format(node.value)}`}</span>
 						<span>{`${node.data.pctChange.toFixed(2)}%`}</span>
 					</div>
 				</div>
@@ -111,12 +101,14 @@
 	</Pancake.Chart>
 </div>
 
-<p>
-	Adapted from <a href="https://observablehq.com/@d3/zoomable-treemap"
-		>Zoomable Treemap by Mike Bostock
-	</a>using Rich Harris'
-	<a href="https://github.com/Rich-Harris/pancake#readme">@sveltejs/pancake Charting library</a>.
-</p>
+<div class="text-center md:container md:mx-auto">
+	<p>
+		Adapted from <a href="https://observablehq.com/@d3/zoomable-treemap"
+			>Zoomable Treemap by Mike Bostock
+		</a>using Rich Harris'
+		<a href="https://github.com/Rich-Harris/pancake#readme">@sveltejs/pancake Charting library</a>.
+	</p>
+</div>
 
 <style>
 	.breadcrumbs {
@@ -136,7 +128,7 @@
 	}
 
 	.chart {
-		width: 100%;
+		width: calc(100% + 2px);
 		height: 500px;
 		padding: 0;
 		margin: 0 -1px 36px -1px;
@@ -156,34 +148,33 @@
 		cursor: pointer;
 	}
 
-	.contents {
+	.chartContents {
 		width: 100%;
 		height: 100%;
 		padding: 0.3rem 0.4rem;
 		border: 1px solid white;
-		background-color: hsl(120, 40%, 50%);
-		color: white;
+		background-color: hsla(120, 40%, 50%, var(--color-intensity));
+		color: black;
 		border-radius: 4px;
 		box-sizing: border-box;
 	}
 
-	.contents.negative {
+	.chartContents.negative {
 		width: 100%;
 		height: 100%;
 		padding: 0.3rem 0.4rem;
 		border: 1px solid white;
-		background-color: hsl(0, 40%, 50%);
-		color: white;
+		background-color: hsla(0, 50%, 40%, var(--color-intensity));
 		border-radius: 4px;
 		box-sizing: border-box;
 	}
 
-	.node:not(.leaf) .contents {
-		background-color: hsl(120, 40%, 38%);
+	.node:not(.leaf) .chartContents {
+		background-color: hsla(120, 40%, 50%, var(--color-intensity));
 	}
 
-	.node:not(.leaf) .contents.negative {
-		background-color: hsl(0, 50%, 40%);
+	.node:not(.leaf) .chartContents.negative {
+		background-color: hsla(0, 50%, 40%, var(--color-intensity));
 	}
 
 	strong,

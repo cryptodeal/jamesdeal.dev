@@ -3,10 +3,12 @@
 	export let x;
 	export let y;
 </script>
+
 <div
-  style="top: {y + 5}px;
-	left: {x + 5}px;">
-  {title}
+	style="top: {y + 5}px;
+	left: {x + 5}px;"
+>
+	{title}
 </div>
 
 <style>

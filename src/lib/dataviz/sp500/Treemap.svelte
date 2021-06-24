@@ -5,7 +5,7 @@
 
 <pancake-treemap>
 	<TreemapNode node={root} let:node>
-		<slot {node}></slot>
+		<slot {node} />
 	</TreemapNode>
 </pancake-treemap>
 
