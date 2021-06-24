@@ -31,7 +31,7 @@ html.dark {
 }
 
 h1 {
-	@apply font-light font-sans text-5xl md:text-7xl text-red-800 dark:text-green-400 text-center break-words;
+	@apply font-light font-sans text-5xl text-center break-words text-red-800 md:text-7xl dark:text-green-400;
 }
 
 h2 {

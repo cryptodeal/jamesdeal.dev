@@ -82,7 +82,7 @@
 
 <div class="mx-auto h-20 max-w-3xl py-5 px-4 sm:(px-6 py-12) lg:(max-w-4xl py-16 px-8) xl:max-w-6xl">
 		<Typewriter cursor={false}>
-			<h1>Meet James Deal</h1>
+			<h1 class='font-light font-sans text-center text-5xl text-red-800 break-words md:text-7xl dark:text-green-400'>Meet James Deal</h1>
 		</Typewriter>
 </div>
 <section class="container mx-auto my-3 p-5 md:mt-10 lg:mt-20">
@@ -91,7 +91,7 @@
 			class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 p-5 lg:(w-4/9 p-8) dark:(bg-purple-900 bg-opacity-30)"
 		>
 			<h2
-				class="mb-3 uppercase"
+				class="font-extralight font-sans mb-3 text-2xl text-red-800 uppercase lg:text-4xl dark:text-green-400"
 			>
 				About Me
 			</h2>
@@ -122,7 +122,7 @@
         class='flex-1 gap-3 no-underline inline-flex items-center'
         title="twitter"
         href="/about">
-        <h4>Résumé</h4>
+        <h4 class='font-extralight font-sans text-lg text-red-800 lg:text-2xl dark:text-green-400'>Résumé</h4>
         <svg
           class="h-full fill-current w-auto"
           xmlns="http://www.w3.org/2000/svg"
@@ -151,7 +151,7 @@
 	<div class="flex flex-wrap mb-40 w-full items-center">
     <div class='mx-auto'>
       <h2
-				class="mb-3 w-55 uppercase sm:w-65 md:w-75"
+				class="font-extralight font-sans mb-3 text-2xl text-red-800 w-55 uppercase sm:w-65 md:w-75 lg:text-4xl dark:text-green-400;"
 			>
 				Git Commits:
 			</h2>
@@ -177,7 +177,7 @@
 			class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 w-full py-5 content-center lg:(w-4/9 py-8) dark:(bg-purple-900 bg-opacity-30)"
 		>
 			<h2
-				class="mb-3 px-5 uppercase"
+				class="font-extralight font-sans mb-3 px-5 text-2xl text-red-800 uppercase lg:text-4xl dark:text-green-400;"
 			>
 				Developer Interests
 			</h2>
@@ -190,7 +190,7 @@
 			class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 p-5 lg:(w-4/9 p-8) dark:(bg-purple-900 bg-opacity-30)"
 		>
 			<h2
-				class="mb-3 uppercase"
+				class="font-extralight font-sans mb-3 text-2xl text-red-800 uppercase lg:text-4xl dark:text-green-400;"
 			>
 				Personal Interests
 			</h2>
@@ -217,7 +217,7 @@
 	</div>
 
   <div class="flex flex-col w-full text-red-800 justify-center dark:text-green-400">
-    <h2 class='text-center mb-2'>Connect With Me:</h2>
+    <h2 class='font-extralight font-sans text-center mb-2 text-2xl text-red-800 lg:text-4xl dark:text-green-400;'>Connect With Me:</h2>
     <div class='flex mx-auto inline-flex'>
       <a
         class='px-2 no-underline'

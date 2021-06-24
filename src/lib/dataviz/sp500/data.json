@@ -1,0 +1,1116 @@
+{
+	"data": {
+		"name": "S&P 500",
+		"children": [
+			{
+				"name": "Technology",
+				"children": [
+					{
+						"name": "Information Technology Services",
+						"children": [
+							{ "name": "ACN", "value": 181578915164.16, "pctChange": 0.03502101134612691 },
+							{ "name": "BR", "value": 18704414820, "pctChange": 0.11188265274411088 },
+							{ "name": "CDW", "value": 23994512559.999996, "pctChange": 0.8307333411889473 },
+							{ "name": "CTSH", "value": 36670956360, "pctChange": -0.1292788997414536 },
+							{ "name": "DXC", "value": 9644445252.800001, "pctChange": 0.5846330055806538 },
+							{ "name": "FIS", "value": 90785971600, "pctChange": 0.24729363879920316 },
+							{ "name": "FISV", "value": 72211085299.2, "pctChange": -0.17512656466033735 },
+							{ "name": "FLT", "value": 21854265120, "pctChange": -0.3041779467680608 },
+							{ "name": "IT", "value": 20850607560.96, "pctChange": 0.3725873487671118 },
+							{ "name": "IBM", "value": 130776027450.88, "pctChange": -0.197744971019434 },
+							{ "name": "JKHY", "value": 12606768720.16, "pctChange": -0.6832480671261613 },
+							{ "name": "LDOS", "value": 14903522240, "pctChange": -0.3496787827237501 }
+						]
+					},
+					{
+						"name": "Software—Infrastructure",
+						"children": [
+							{ "name": "ADBE", "value": 275203720000, "pctChange": 1.4788076143474045 },
+							{ "name": "AKAM", "value": 18903812160, "pctChange": 0.13814855810740806 },
+							{ "name": "FFIV", "value": 11119228320, "pctChange": -0.17252106426568903 },
+							{ "name": "FTNT", "value": 39506624200, "pctChange": 1.672829396435777 },
+							{ "name": "MSFT", "value": 1999707197429.76, "pctChange": 1.09660168297605 },
+							{ "name": "NLOK", "value": 15781154903.04, "pctChange": -0.9134088417975885 },
+							{ "name": "ORCL", "value": 226876924682.24002, "pctChange": 0.8847319399923068 },
+							{ "name": "SNPS", "value": 40906053432.32, "pctChange": 1.3821766238670694 },
+							{ "name": "VRSN", "value": 25547620150, "pctChange": 0.9388629527453946 }
+						]
+					},
+					{
+						"name": "Semiconductors",
+						"children": [
+							{ "name": "AMD", "value": 101551374274.56, "pctChange": 1.1986989950357185 },
+							{ "name": "ADI", "value": 60365916399.35999, "pctChange": -0.2924128723728297 },
+							{ "name": "AVGO", "value": 190545717734.4, "pctChange": -0.034431704009814684 },
+							{ "name": "INTC", "value": 225603067151.36, "pctChange": 0 },
+							{ "name": "MXIM", "value": 26933011040, "pctChange": -0.119429488455414 },
+							{ "name": "MCHP", "value": 39279942894.08, "pctChange": -1.2656481218274112 },
+							{ "name": "MU", "value": 87089479685.12, "pctChange": 0.7655429739198133 },
+							{ "name": "MPWR", "value": 16178091640.000002, "pctChange": -0.11013078704357401 },
+							{ "name": "NVDA", "value": 470192440480, "pctChange": 2.493582059178662 },
+							{ "name": "NXPI", "value": 54432459379.200005, "pctChange": -0.534119117202459 },
+							{ "name": "QRVO", "value": 19844584620, "pctChange": 0.011341928052655468 },
+							{ "name": "QCOM", "value": 152370240000, "pctChange": 0.8360668109883547 },
+							{ "name": "SWKS", "value": 28361325095.68, "pctChange": 0.14573860324122653 },
+							{ "name": "TXN", "value": 172735922974.72, "pctChange": 0.49970055343613984 },
+							{ "name": "XLNX", "value": 31968926499.840004, "pctChange": 1.9524860817062653 }
+						]
+					},
+					{
+						"name": "Communication Equipment",
+						"children": [
+							{ "name": "CSCO", "value": 224448295408.63998, "pctChange": 0.15042877021436632 },
+							{ "name": "HPE", "value": 19009800798.719997, "pctChange": -0.8146631771894094 },
+							{ "name": "JNPR", "value": 8976798600, "pctChange": -0.9044862518089725 },
+							{ "name": "MSI", "value": 36233503961.6, "pctChange": 1.2493490132979983 },
+							{ "name": "ZBRA", "value": 27100262772, "pctChange": 0.45821466685180406 }
+						]
+					},
+					{
+						"name": "Electronic Components",
+						"children": [
+							{ "name": "APH", "value": 40357008480, "pctChange": 0.7459346561241236 },
+							{ "name": "GLW", "value": 34181983228.8, "pctChange": 1.9294291444529068 },
+							{ "name": "TEL", "value": 43484026946.560005, "pctChange": 0.030380800668489825 }
+						]
+					},
+					{
+						"name": "Software—Application",
+						"children": [
+							{ "name": "ANSS", "value": 29685577992, "pctChange": 1.1251992102841197 },
+							{ "name": "ADSK", "value": 62939116621.439995, "pctChange": 1.0062869853823881 },
+							{ "name": "CDNS", "value": 37298639527.68, "pctChange": 1.4455372738969197 },
+							{ "name": "CTXS", "value": 14253129930, "pctChange": -1.094258659314148 },
+							{ "name": "INTU", "value": 130775030400, "pctChange": -0.07114382506800586 },
+							{ "name": "PAYC", "value": 21760633224, "pctChange": 1.3624853938884218 },
+							{ "name": "PTC", "value": 15791543900, "pctChange": 0.4010460750092833 },
+							{ "name": "CRM", "value": 224204070464.64, "pctChange": -0.5603730366492147 },
+							{ "name": "NOW", "value": 107812531440, "pctChange": 2.1093969144460027 },
+							{ "name": "TYL", "value": 18132514320, "pctChange": -0.20167932773109246 }
+						]
+					},
+					{
+						"name": "Consumer Electronics",
+						"children": [
+							{ "name": "AAPL", "value": 2235804596551.6797, "pctChange": 1.269835752078609 }
+						]
+					},
+					{
+						"name": "Semiconductor Equipment & Materials",
+						"children": [
+							{ "name": "AMAT", "value": 121961623572.48, "pctChange": 0.29312243517474634 },
+							{ "name": "IPGP", "value": 10910607285, "pctChange": -0.4892128565138692 },
+							{ "name": "KLAC", "value": 47305890840, "pctChange": -0.061527295100547254 },
+							{ "name": "LRCX", "value": 88679072984.31999, "pctChange": 0.5124281465196728 },
+							{ "name": "TER", "value": 20942865360, "pctChange": -0.20599123752178733 }
+						]
+					},
+					{
+						"name": "Computer Hardware",
+						"children": [
+							{ "name": "ANET", "value": 27807847830, "pctChange": -1.3937726657645466 },
+							{ "name": "HPQ", "value": 36325922135.04, "pctChange": -0.23964291338582677 },
+							{ "name": "NTAP", "value": 17975030104, "pctChange": 1.6618402366863905 },
+							{ "name": "STX", "value": 19339767824, "pctChange": -0.949475512835541 },
+							{ "name": "WDC", "value": 20955400072.32, "pctChange": -1.0693610693641618 }
+						]
+					},
+					{
+						"name": "Solar",
+						"children": [
+							{ "name": "ENPH", "value": 22702444038.4, "pctChange": 2.5876876379690947 }
+						]
+					},
+					{
+						"name": "Scientific & Technical Instruments",
+						"children": [
+							{ "name": "FTV", "value": 23558025453.440002, "pctChange": 0.10069001006904488 },
+							{ "name": "GRMN", "value": 27353761061.120003, "pctChange": 0.24646581226674177 },
+							{ "name": "KEYS", "value": 28005116580, "pctChange": 0.9994670646632681 },
+							{ "name": "TDY", "value": 15935361240, "pctChange": -0.8304512110726643 },
+							{ "name": "TRMB", "value": 19956634835.2, "pctChange": 0.55724726443769 }
+						]
+					}
+				]
+			},
+			{
+				"name": "Healthcare",
+				"children": [
+					{
+						"name": "Medical Devices",
+						"children": [
+							{ "name": "ABT", "value": 197155943649.28, "pctChange": -0.43072806891600857 },
+							{ "name": "ABMD", "value": 14820398240, "pctChange": 0.6459768064228368 },
+							{ "name": "ALGN", "value": 47854693386, "pctChange": -1.1168453412695818 },
+							{ "name": "BIO", "value": 15428430332.000002, "pctChange": -0.13585046430226796 },
+							{ "name": "BSX", "value": 62278483196.159996, "pctChange": 0.5275298165137615 },
+							{ "name": "EW", "value": 64973498403.84, "pctChange": 1.633605600933489 },
+							{ "name": "MDT", "value": 170840913127.68, "pctChange": 0.9479050501832084 },
+							{ "name": "SYK", "value": 98986769520, "pctChange": 1.1588877680668386 },
+							{ "name": "ZBH", "value": 34687235160, "pctChange": 1.7739229263518472 }
+						]
+					},
+					{
+						"name": "Drug Manufacturers—General",
+						"children": [
+							{ "name": "ABBV", "value": 202585437670.4, "pctChange": -0.026153934454806935 },
+							{ "name": "AMGN", "value": 137841246301.44, "pctChange": -0.1373633991008991 },
+							{ "name": "BIIB", "value": 56367794995.2, "pctChange": -1.709067758788165 },
+							{ "name": "BMY", "value": 147233465379.84, "pctChange": -1.3317357474188238 },
+							{ "name": "LLY", "value": 212467690536.96, "pctChange": -0.552385009206449 },
+							{ "name": "GILD", "value": 84419970854.4, "pctChange": -0.4454274981440238 },
+							{ "name": "JNJ", "value": 430876918471.68, "pctChange": -0.13427795410156249 },
+							{ "name": "MRK", "value": 192859754314.24, "pctChange": -0.7296385146579805 },
+							{ "name": "OGN", "value": 7474928900, "pctChange": 0.4080273376402584 },
+							{ "name": "PFE", "value": 220950922670.08, "pctChange": 0.4819950279046169 }
+						]
+					},
+					{
+						"name": "Diagnostics & Research",
+						"children": [
+							{ "name": "A", "value": 44493848263.04, "pctChange": 0.1502637934567311 },
+							{ "name": "CRL", "value": 18292019200, "pctChange": 0.9456723702820379 },
+							{ "name": "DHR", "value": 190474017751.04, "pctChange": 1.694661639818729 },
+							{ "name": "DXCM", "value": 41342741019.04, "pctChange": 1.0590291468690165 },
+							{ "name": "IDXX", "value": 52374547261.44, "pctChange": 0.8258757397425119 },
+							{ "name": "ILMN", "value": 67990740000, "pctChange": 1.006401605031992 },
+							{ "name": "IQV", "value": 46761448828.159996, "pctChange": 0.21770334771000205 },
+							{ "name": "LH", "value": 26143896000, "pctChange": 0.7500169600120604 },
+							{ "name": "MTD", "value": 32112508392, "pctChange": 0.9116485288190247 },
+							{ "name": "PKI", "value": 17167898399.999998, "pctChange": 0.5051527258413697 },
+							{ "name": "DGX", "value": 15832755840.000002, "pctChange": 0.6258307965695742 },
+							{ "name": "TMO", "value": 193452311880, "pctChange": 1.788814211266441 },
+							{ "name": "WAT", "value": 21324926810, "pctChange": 0.9286277012031305 }
+						]
+					},
+					{
+						"name": "Biotechnology",
+						"children": [
+							{ "name": "ALXN", "value": 39701644407.04, "pctChange": -0.5701310749474151 },
+							{ "name": "INCY", "value": 18709333249.280003, "pctChange": 0.18838576474743907 },
+							{ "name": "REGN", "value": 55898009480, "pctChange": -0.04679282010968237 },
+							{ "name": "VRTX", "value": 48892021420, "pctChange": 0.6233341502397443 }
+						]
+					},
+					{
+						"name": "Drug Manufacturers—Specialty & Generic",
+						"children": [
+							{ "name": "CTLT", "value": 18739323420, "pctChange": 0.23690399999999998 },
+							{ "name": "PRGO", "value": 6220215190, "pctChange": -1.313835558381013 },
+							{ "name": "VTRS", "value": 17187144744.96, "pctChange": -0.9059241114982578 },
+							{ "name": "ZTS", "value": 88641884334.08, "pctChange": 0.010712226152197213 }
+						]
+					},
+					{
+						"name": "Medical Distribution",
+						"children": [
+							{ "name": "ABC", "value": 24202790523.52, "pctChange": 0.06002375235808608 },
+							{ "name": "CAH", "value": 16448490120, "pctChange": 0.017639943542695838 },
+							{ "name": "HSIC", "value": 10872120560, "pctChange": 0.039270558973687655 },
+							{ "name": "MCK", "value": 30257648220.8, "pctChange": 0.7312446481559984 }
+						]
+					},
+					{
+						"name": "Healthcare Plans",
+						"children": [
+							{ "name": "ANTM", "value": 92794735968, "pctChange": 0.6880794877925666 },
+							{ "name": "CNC", "value": 42073465267.200005, "pctChange": 0.04156682832201746 },
+							{ "name": "CI", "value": 80857026000, "pctChange": -0.19874873139377539 },
+							{ "name": "CVS", "value": 110341730359.04001, "pctChange": -0.249939300166627 },
+							{ "name": "HUM", "value": 56215270220, "pctChange": 0.04133238434163701 },
+							{ "name": "UNH", "value": 376244556759.04, "pctChange": 0.1557502449317959 }
+						]
+					},
+					{
+						"name": "Health Information Services",
+						"children": [
+							{ "name": "CERN", "value": 23825134557.44, "pctChange": -0.5158576497232008 }
+						]
+					},
+					{
+						"name": "Medical Care Facilities",
+						"children": [
+							{ "name": "DVA", "value": 13083840000, "pctChange": -0.9327758121582501 },
+							{ "name": "HCA", "value": 69384646878.72, "pctChange": 0.8409822672881926 },
+							{ "name": "UHS", "value": 11784173636.320002, "pctChange": -0.3424458347053013 }
+						]
+					},
+					{
+						"name": "Medical Instruments & Supplies",
+						"children": [
+							{ "name": "BAX", "value": 40896953160, "pctChange": -0.22083179977916817 },
+							{ "name": "BDX", "value": 69889377914.88, "pctChange": -0.21176556076900716 },
+							{ "name": "XRAY", "value": 14050946480, "pctChange": -0.9693756731804892 },
+							{ "name": "HOLX", "value": 16404036147.839998, "pctChange": 1.345573056830774 },
+							{ "name": "ISRG", "value": 106803789480, "pctChange": 0.8903827740492171 },
+							{ "name": "RMD", "value": 35082934620, "pctChange": 0.6554734468937875 },
+							{ "name": "STE", "value": 17454565800, "pctChange": 1.5593961064759634 },
+							{ "name": "TFX", "value": 18917396960, "pctChange": 1.1266779584801019 },
+							{ "name": "COO", "value": 19243124446, "pctChange": 0.3338095213640099 },
+							{ "name": "WST", "value": 26583174692.64, "pctChange": 0.6991246958807573 }
+						]
+					},
+					{
+						"name": "Pharmaceutical Retailers",
+						"children": [
+							{ "name": "WBA", "value": 44749676551.68, "pctChange": -0.3081067783554785 }
+						]
+					}
+				]
+			},
+			{
+				"name": "Financial Services",
+				"children": [
+					{
+						"name": "Insurance—Life",
+						"children": [
+							{ "name": "AFL", "value": 35906808032.64, "pctChange": -0.45222913133597137 },
+							{ "name": "GL", "value": 11020382150, "pctChange": -0.6791995820271681 },
+							{ "name": "LNC", "value": 11793892806.4, "pctChange": -0.14565496034957115 },
+							{ "name": "MET", "value": 52010375216.64, "pctChange": -0.6869973190348525 },
+							{ "name": "PRU", "value": 39565480000, "pctChange": -0.3473236082167312 },
+							{ "name": "UNM", "value": 5690154037.12, "pctChange": -1.2056737588652484 }
+						]
+					},
+					{
+						"name": "Insurance—Property & Casualty",
+						"children": [
+							{ "name": "ALL", "value": 38465062528, "pctChange": 0.2652902621722847 },
+							{ "name": "CB", "value": 71644771394.56, "pctChange": 0.18236118971263285 },
+							{ "name": "CINF", "value": 18891844251.84, "pctChange": 0.350843770323464 },
+							{ "name": "L", "value": 14359261200, "pctChange": -0.2566037390029325 },
+							{ "name": "PGR", "value": 55574231961.6, "pctChange": 0.3699767441860465 },
+							{ "name": "TRV", "value": 37292258313.600006, "pctChange": -0.23544635048772283 },
+							{ "name": "WRB", "value": 13744867246.08, "pctChange": -0.1479497108271688 }
+						]
+					},
+					{
+						"name": "Credit Services",
+						"children": [
+							{ "name": "AXP", "value": 132143339552, "pctChange": -0.2425675560946028 },
+							{ "name": "COF", "value": 69931129970.87999, "pctChange": 0 },
+							{ "name": "DFS", "value": 36034712720, "pctChange": 0.11859296908089793 },
+							{ "name": "MA", "value": 371577415272.96, "pctChange": 1.3267602991235359 },
+							{ "name": "PYPL", "value": 336719045824, "pctChange": 1.2892949487813492 },
+							{ "name": "SYF", "value": 27858590950.399998, "pctChange": -0.20833020833333332 },
+							{ "name": "V", "value": 399148744624.64, "pctChange": 0.6870903038579721 },
+							{ "name": "WU", "value": 9527386560, "pctChange": -1.5228371404399321 }
+						]
+					},
+					{
+						"name": "Insurance—Diversified",
+						"children": [
+							{ "name": "AIG", "value": 40804604169.6, "pctChange": -0.41885026178010476 },
+							{ "name": "BRK.B", "value": 367353759969.28, "pctChange": -0.06495585709130278 },
+							{ "name": "PFG", "value": 16794020880, "pctChange": 0.19474642973060696 },
+							{ "name": "HIG", "value": 22099407664.96, "pctChange": -0.4505271118262269 }
+						]
+					},
+					{
+						"name": "Asset Management",
+						"children": [
+							{ "name": "AMP", "value": 28161437850, "pctChange": 0.6712223327118292 },
+							{ "name": "BLK", "value": 131898383760, "pctChange": 0.4063813482572046 },
+							{ "name": "BK", "value": 43283781826.56, "pctChange": -0.4430149416028997 },
+							{ "name": "BEN", "value": 16268954759.999998, "pctChange": -0.7094386181369525 },
+							{ "name": "IVZ", "value": 12256138772.48, "pctChange": -1.2639410780669147 },
+							{ "name": "NTRS", "value": 23322087000, "pctChange": -0.9809125132555673 },
+							{ "name": "STT", "value": 28061399920, "pctChange": -1.1273105869378752 },
+							{ "name": "TROW", "value": 44466044560, "pctChange": 0.5334119608144843 }
+						]
+					},
+					{
+						"name": "Insurance Brokers",
+						"children": [
+							{ "name": "AON", "value": 52702115188.48, "pctChange": -0.18803523076923076 },
+							{ "name": "AJG", "value": 28916488648.320004, "pctChange": 0.39381573106114853 },
+							{ "name": "MMC", "value": 69526495040, "pctChange": 0.278718556549802 },
+							{ "name": "WLTW", "value": 29717590570, "pctChange": 0.09992657485446171 }
+						]
+					},
+					{
+						"name": "Insurance—Specialty",
+						"children": [{ "name": "AIZ", "value": 9377526678, "pctChange": 0.06463258579460997 }]
+					},
+					{
+						"name": "Banks—Diversified",
+						"children": [
+							{ "name": "BAC", "value": 342515717841.92, "pctChange": 0.5534616352201258 },
+							{ "name": "C", "value": 142543766896.63998, "pctChange": 0.7450725200876551 },
+							{ "name": "JPM", "value": 454700676579.84, "pctChange": -0.14623811739679582 },
+							{ "name": "WFC", "value": 179975639889.91998, "pctChange": 0.6007443160813308 }
+						]
+					},
+					{
+						"name": "Financial Data & Stock Exchanges",
+						"children": [
+							{ "name": "CBOE", "value": 12801253140, "pctChange": 1.6519823788546255 },
+							{ "name": "CME", "value": 77514034293.76001, "pctChange": -0.06943840562936902 },
+							{ "name": "ICE", "value": 64408570531.200005, "pctChange": 0.6596306068601583 },
+							{ "name": "MCO", "value": 67296528000, "pctChange": 1.079712160832279 },
+							{ "name": "MSCI", "value": 43040257494.00001, "pctChange": 1.2800821583040787 },
+							{ "name": "NDAQ", "value": 29326637129.6, "pctChange": -0.04474875825036357 },
+							{ "name": "SPGI", "value": 97289874000, "pctChange": 1.0863035642771326 }
+						]
+					},
+					{
+						"name": "Capital Markets",
+						"children": [
+							{ "name": "SCHW", "value": 131011123840, "pctChange": -0.3299395105856475 },
+							{ "name": "GS", "value": 121637426479.99998, "pctChange": -0.0027996308105386804 },
+							{ "name": "MKTX", "value": 17388859887, "pctChange": 0.5733711335676626 },
+							{ "name": "MS", "value": 159452558886.4, "pctChange": -0.27927100302536656 },
+							{ "name": "RJF", "value": 17578810171.2, "pctChange": -0.4367874580765931 }
+						]
+					},
+					{
+						"name": "Banks—Regional",
+						"children": [
+							{ "name": "CFG", "value": 19418147970.56, "pctChange": 0.19780263736263737 },
+							{ "name": "CMA", "value": 9869242404.48, "pctChange": 0 },
+							{ "name": "FITB", "value": 27005069414.4, "pctChange": 0.4233920349298756 },
+							{ "name": "FRC", "value": 32048234080, "pctChange": 0.1851831917211329 },
+							{ "name": "HBAN", "value": 13926923781.119999, "pctChange": 0 },
+							{ "name": "KEY", "value": 19996388884.48, "pctChange": -0.14570519669742593 },
+							{ "name": "MTB", "value": 18927538850, "pctChange": -0.352176769387064 },
+							{ "name": "PBCT", "value": 7378089400, "pctChange": -0.575707426597582 },
+							{ "name": "PNC", "value": 78135631837.44, "pctChange": -0.13032310616345372 },
+							{ "name": "RF", "value": 19098198801.92, "pctChange": 0.10069788519637463 },
+							{ "name": "SIVB", "value": 30211688073, "pctChange": 0.49867378539035545 },
+							{ "name": "TFC", "value": 73106048609.28, "pctChange": -0.25687889908256883 },
+							{ "name": "USB", "value": 83332699200, "pctChange": -0.07145569846373705 },
+							{ "name": "ZION", "value": 8651916000, "pctChange": 0.26575434700075934 }
+						]
+					},
+					{
+						"name": "Insurance—Reinsurance",
+						"children": [{ "name": "RE", "value": 9797644080, "pctChange": 0.35306716479185485 }]
+					}
+				]
+			},
+			{
+				"name": "Consumer Cyclical",
+				"children": [
+					{
+						"name": "Specialty Retail",
+						"children": [
+							{ "name": "AAP", "value": 13090397556, "pctChange": 0.7910465057691338 },
+							{ "name": "AZO", "value": 30906015600, "pctChange": 1.335124611472167 },
+							{ "name": "BBY", "value": 27812521031.68, "pctChange": 2.1715126978284873 },
+							{ "name": "GPC", "value": 18051776400, "pctChange": 0.4259757273750201 },
+							{ "name": "ORLY", "value": 38484039598.4, "pctChange": 0.8500958683729434 },
+							{ "name": "TSCO", "value": 20966146430, "pctChange": 2.8853267947767574 },
+							{ "name": "ULTA", "value": 18380483592, "pctChange": 0.2299252105106002 }
+						]
+					},
+					{
+						"name": "Internet Retail",
+						"children": [
+							{ "name": "AMZN", "value": 1767877522560, "pctChange": 1.4904625415465147 },
+							{ "name": "EBAY", "value": 44207092218.24, "pctChange": 0.7608662422360248 },
+							{ "name": "ETSY", "value": 22620902040, "pctChange": 4.2098497570115345 }
+						]
+					},
+					{
+						"name": "Packaging & Containers",
+						"children": [
+							{ "name": "AMCR", "value": 17792256046.079998, "pctChange": 0.610285091543156 },
+							{ "name": "BLL", "value": 26811869053.440002, "pctChange": 2.1510755377688846 },
+							{ "name": "IP", "value": 23919583828.48, "pctChange": 0.0327661500655308 },
+							{ "name": "PKG", "value": 12854791601.279999, "pctChange": -0.007385285598167441 },
+							{ "name": "SEE", "value": 8986587600, "pctChange": 0.27355077791075394 },
+							{ "name": "WRK", "value": 14124510771.2, "pctChange": -0.44576894502228825 }
+						]
+					},
+					{
+						"name": "Auto Parts",
+						"children": [
+							{ "name": "APTV", "value": 41013010533.119995, "pctChange": 0.7976601967561818 },
+							{ "name": "BWA", "value": 11630229520, "pctChange": -0.020615092783505155 },
+							{ "name": "LKQ", "value": 14516782931.84, "pctChange": -0.2285964463840399 }
+						]
+					},
+					{
+						"name": "Travel Services",
+						"children": [
+							{ "name": "BKNG", "value": 92405747520, "pctChange": -0.5377724065097411 },
+							{ "name": "CCL", "value": 27317560235.52, "pctChange": -2.1276630624346007 },
+							{ "name": "EXPE", "value": 23605403034.56, "pctChange": -0.5895697355883754 },
+							{ "name": "NCLH", "value": 11358988800, "pctChange": -1.720838113448056 },
+							{ "name": "RCL", "value": 21806552545.28, "pctChange": -1.990844279176201 }
+						]
+					},
+					{
+						"name": "Resorts & Casinos",
+						"children": [
+							{ "name": "CZR", "value": 21769393524.48, "pctChange": 0.471968657291466 },
+							{ "name": "LVS", "value": 40948523571.200005, "pctChange": -1.7775352757925598 },
+							{ "name": "MGM", "value": 20749672800, "pctChange": 0.4989284865763839 },
+							{ "name": "PENN", "value": 11998036343.039999, "pctChange": 0.802421204946067 },
+							{ "name": "WYNN", "value": 14660808080, "pctChange": -0.6660908236031658 }
+						]
+					},
+					{
+						"name": "Auto & Truck Dealerships",
+						"children": [
+							{ "name": "KMX", "value": 19162085889.600002, "pctChange": 1.171505383753984 }
+						]
+					},
+					{
+						"name": "Restaurants",
+						"children": [
+							{ "name": "CMG", "value": 40751789820, "pctChange": 1.4748380765456333 },
+							{ "name": "DRI", "value": 17742310800, "pctChange": 1.626330960053961 },
+							{ "name": "DPZ", "value": 17854074888, "pctChange": 0.07835633134549254 },
+							{ "name": "MCD", "value": 174497171973.12, "pctChange": 0.42078617432374404 },
+							{ "name": "SBUX", "value": 131792858579.2, "pctChange": 0.7930046408939353 },
+							{ "name": "YUM", "value": 35003366560, "pctChange": 0.6337768585131894 }
+						]
+					},
+					{
+						"name": "Residential Construction",
+						"children": [
+							{ "name": "DHI", "value": 32796834320, "pctChange": 0.47487575924903375 },
+							{ "name": "LEN", "value": 27162360000, "pctChange": 0.9221331967213114 },
+							{ "name": "NVR", "value": 17535489329.7, "pctChange": 0.07431109307572718 },
+							{ "name": "PHM", "value": 14302720740, "pctChange": 0.3505509778597786 }
+						]
+					},
+					{
+						"name": "Auto Manufacturers",
+						"children": [
+							{ "name": "F", "value": 58458979138.56, "pctChange": 0.8795677266576455 },
+							{ "name": "GM", "value": 85972052843.52, "pctChange": -0.10117639123102867 },
+							{ "name": "TSLA", "value": 600838544320.64, "pctChange": 0.4638959135351063 }
+						]
+					},
+					{
+						"name": "Furnishings, Fixtures & Appliances",
+						"children": [
+							{ "name": "FBHS", "value": 13614393800, "pctChange": 0.6549988742196295 },
+							{ "name": "LEG", "value": 6737643000, "pctChange": 0.27744550138723745 },
+							{ "name": "MHK", "value": 13248005400, "pctChange": 1.5224412393162394 },
+							{ "name": "WHR", "value": 13501906880, "pctChange": 0.5034504008950215 }
+						]
+					},
+					{
+						"name": "Apparel Retail",
+						"children": [
+							{ "name": "GPS", "value": 12105876448.32, "pctChange": 2.151218918063904 },
+							{ "name": "LB", "value": 19269061714.56, "pctChange": 5.015952880376956 },
+							{ "name": "ROST", "value": 42935965363.200005, "pctChange": 0.8290744996231472 },
+							{ "name": "TJX", "value": 79519754845.44, "pctChange": 1.5405946695424435 }
+						]
+					},
+					{
+						"name": "Apparel Manufacturing",
+						"children": [
+							{ "name": "HBI", "value": 6495057341.12, "pctChange": 0.26940247844827586 },
+							{ "name": "PVH", "value": 7453675992, "pctChange": 0.818257604928764 },
+							{ "name": "RL", "value": 5660623685, "pctChange": 1.6633441912847613 },
+							{ "name": "UAA", "value": 3829026600, "pctChange": 0.6944414186507936 },
+							{ "name": "UA", "value": 4133954880, "pctChange": 0.6211214568040655 },
+							{ "name": "VFC", "value": 31817428319.999996, "pctChange": 0.7568250620347395 }
+						]
+					},
+					{
+						"name": "Leisure",
+						"children": [
+							{ "name": "HAS", "value": 12776032287.04, "pctChange": 0.7703983289930555 },
+							{ "name": "POOL", "value": 18439134560, "pctChange": 1.5146866858026056 }
+						]
+					},
+					{
+						"name": "Lodging",
+						"children": [
+							{ "name": "HLT", "value": 35121622182.4, "pctChange": -0.5049703329651255 },
+							{ "name": "MAR", "value": 46033903462.4, "pctChange": -1.0358419652855544 }
+						]
+					},
+					{
+						"name": "Home Improvement Retail",
+						"children": [
+							{ "name": "HD", "value": 336232036193.27997, "pctChange": 1.6612451235370609 },
+							{ "name": "LOW", "value": 137497363092.48, "pctChange": 1.5035982105040238 }
+						]
+					},
+					{
+						"name": "Footwear & Accessories",
+						"children": [{ "name": "NKE", "value": 168906700800, "pctChange": 1.8450107626076258 }]
+					},
+					{
+						"name": "Personal Services",
+						"children": [
+							{ "name": "ROL", "value": 16702688559.999998, "pctChange": 0.6225882004150608 }
+						]
+					},
+					{
+						"name": "Luxury Goods",
+						"children": [{ "name": "TPR", "value": 11752548076.8, "pctChange": 0.3320668643263758 }]
+					}
+				]
+			},
+			{
+				"name": "Communication Services",
+				"children": [
+					{
+						"name": "Electronic Gaming & Multimedia",
+						"children": [
+							{ "name": "ATVI", "value": 71392324165.12, "pctChange": 0.06534258331518188 },
+							{ "name": "EA", "value": 40514996106.240005, "pctChange": -0.07094643870601589 },
+							{ "name": "TTWO", "value": 20240473330, "pctChange": 0.43811293018965813 }
+						]
+					},
+					{
+						"name": "Entertainment",
+						"children": [
+							{ "name": "CHTR", "value": 133384975340, "pctChange": 1.752996214792533 },
+							{ "name": "CMCSA", "value": 264224340264.96002, "pctChange": 0.611037534916201 },
+							{ "name": "DISCA", "value": 4976407774.08, "pctChange": -0.6736300437857864 },
+							{ "name": "DISCK", "value": 9174756895.36, "pctChange": -0.6080048998569385 },
+							{ "name": "DISH", "value": 11790604113.92, "pctChange": -0.5368502196193266 },
+							{ "name": "LYV", "value": 20013868892.16, "pctChange": 2.7621816752750954 },
+							{ "name": "NFLX", "value": 225612318530.56, "pctChange": 2.3782710261569417 },
+							{ "name": "DIS", "value": 315237363328, "pctChange": -0.2701622233718457 },
+							{ "name": "VIAC", "value": 23942253696, "pctChange": -0.51269306640625 }
+						]
+					},
+					{
+						"name": "Internet Content & Information",
+						"children": [
+							{ "name": "GOOGL", "value": 735810637242.88, "pctChange": 0.42524810672139557 },
+							{ "name": "GOOG", "value": 821889964199.9999, "pctChange": 0.4305837254359258 },
+							{ "name": "FB", "value": 812332804377.6, "pctChange": 2.028345722110205 },
+							{ "name": "TWTR", "value": 50904538529.28, "pctChange": 2.937378469980633 }
+						]
+					},
+					{
+						"name": "Telecom Services",
+						"children": [
+							{ "name": "T", "value": 205489192632.32, "pctChange": -0.5184916004147944 },
+							{ "name": "LUMN", "value": 15389788497.92, "pctChange": -0.6373951841359774 },
+							{ "name": "TMUS", "value": 181817129866.24, "pctChange": 0.10984735685843744 },
+							{ "name": "VZ", "value": 233375739586.56, "pctChange": -0.035468168114913996 }
+						]
+					},
+					{
+						"name": "Broadcasting",
+						"children": [
+							{ "name": "FOXA", "value": 12588315451.199999, "pctChange": 0.4267800746865831 },
+							{ "name": "FOX", "value": 9156302080, "pctChange": -0.08386575342465753 },
+							{ "name": "NWSA", "value": 9980693155.84, "pctChange": -0.8161643218033424 },
+							{ "name": "NWS", "value": 4821064500, "pctChange": -0.6172823868312757 }
+						]
+					},
+					{
+						"name": "Advertising Agencies",
+						"children": [
+							{ "name": "IPG", "value": 12564429440, "pctChange": -1.389314603272615 },
+							{ "name": "OMC", "value": 17017208087.04, "pctChange": -0.8645470492419496 }
+						]
+					}
+				]
+			},
+			{
+				"name": "Industrials",
+				"children": [
+					{
+						"name": "Specialty Industrial Machinery",
+						"children": [
+							{ "name": "MMM", "value": 113117781061.12, "pctChange": -0.035862570565032524 },
+							{ "name": "AME", "value": 30855397848.960003, "pctChange": -0.07478761591384983 },
+							{ "name": "AOS", "value": 9132999183.36, "pctChange": 0.4139547604967475 },
+							{ "name": "CMI", "value": 34651574926.08, "pctChange": 0.4747954979015642 },
+							{ "name": "DOV", "value": 21200448278.4, "pctChange": 0.683526999316473 },
+							{ "name": "ETN", "value": 56898188432.64001, "pctChange": -0.14680578859060403 },
+							{ "name": "EMR", "value": 56870844916.48, "pctChange": -0.1580127778363004 },
+							{ "name": "GNRC", "value": 24978456965, "pctChange": 1.9423961357621848 },
+							{ "name": "GE", "value": 114385684203.51999, "pctChange": -1.2130401819560273 },
+							{ "name": "HON", "value": 149669879335.68, "pctChange": -0.23610856481481482 },
+							{ "name": "HWM", "value": 14676109560.000002, "pctChange": -0.7631297916055181 },
+							{ "name": "IEX", "value": 16511955260, "pctChange": 0.16121141356915847 },
+							{ "name": "ITW", "value": 70771257600, "pctChange": 0.22858455470395767 },
+							{ "name": "IR", "value": 19546509427.2, "pctChange": -0.6820112958226768 },
+							{ "name": "OTIS", "value": 34919366560.96, "pctChange": 0.40720878578479763 },
+							{ "name": "PH", "value": 37341842490, "pctChange": 0.43048776254122545 },
+							{ "name": "PNR", "value": 10952711800, "pctChange": 0.30442097412480973 },
+							{ "name": "ROK", "value": 33102838860, "pctChange": 1.7337276683789953 },
+							{ "name": "ROP", "value": 48381288210, "pctChange": 0.36875461488108224 },
+							{ "name": "TT", "value": 43075337760, "pctChange": 0.3118721096012475 },
+							{ "name": "XYL", "value": 20953287960, "pctChange": 0.042977238889366456 }
+						]
+					},
+					{
+						"name": "Airlines",
+						"children": [
+							{ "name": "ALK", "value": 7992989219.999999, "pctChange": -1.245767456167333 },
+							{ "name": "AAL", "value": 14180977599.359999, "pctChange": -1.5144772828507795 },
+							{ "name": "DAL", "value": 29020783301.12, "pctChange": -0.8739382346515183 },
+							{ "name": "LUV", "value": 32969269088, "pctChange": -0.9769076376554174 },
+							{ "name": "UAL", "value": 17851797377.28, "pctChange": -0.9337411743580536 }
+						]
+					},
+					{
+						"name": "Aerospace & Defense",
+						"children": [
+							{ "name": "BA", "value": 142564977899.52, "pctChange": -0.611545988258317 },
+							{ "name": "GD", "value": 54270117183.36, "pctChange": -0.6289967501834574 },
+							{ "name": "HII", "value": 8527480000, "pctChange": -0.6805914104670264 },
+							{ "name": "LHX", "value": 45442902960, "pctChange": -0.4445796658882702 },
+							{ "name": "LMT", "value": 106304202439.68001, "pctChange": -0.005225886013071896 },
+							{ "name": "NOC", "value": 59969236789.44, "pctChange": -0.19287979854804577 },
+							{ "name": "RTX", "value": 132388568394.23999, "pctChange": -0.7045488636363636 },
+							{ "name": "TXT", "value": 14804252785.28, "pctChange": -0.7565441065214101 },
+							{ "name": "TDG", "value": 37133763100, "pctChange": 1.2028090858956972 }
+						]
+					},
+					{
+						"name": "Waste Management",
+						"children": [
+							{ "name": "RSG", "value": 34697522100.159996, "pctChange": 0.3135626671585354 },
+							{ "name": "WM", "value": 58958479207.35999, "pctChange": 0.22244402985074624 }
+						]
+					},
+					{
+						"name": "Staffing & Employment Services",
+						"children": [
+							{ "name": "ADP", "value": 83737690368.64, "pctChange": 0.16287070290629613 },
+							{ "name": "PAYX", "value": 37344106800, "pctChange": -0.02894695060775613 },
+							{ "name": "RHI", "value": 9911194280, "pctChange": -0.06823423697975893 }
+						]
+					},
+					{
+						"name": "Tools & Accessories",
+						"children": [
+							{ "name": "SNA", "value": 11885702400, "pctChange": -0.34008978370289755 },
+							{ "name": "SWK", "value": 32048684337.6, "pctChange": -0.1710327481261633 }
+						]
+					},
+					{
+						"name": "Railroads",
+						"children": [
+							{ "name": "CSX", "value": 72165072000, "pctChange": -0.5531769126395991 },
+							{ "name": "KSU", "value": 25792433533.44, "pctChange": 0.0035291753340619815 },
+							{ "name": "NSC", "value": 66083641167.35999, "pctChange": -0.25684514277081133 },
+							{ "name": "UNP", "value": 145475708714.24002, "pctChange": 0.6804330835363892 },
+							{ "name": "WAB", "value": 15293718160, "pctChange": 1.8117700050327126 }
+						]
+					},
+					{
+						"name": "Integrated Freight & Logistics",
+						"children": [
+							{ "name": "CHRW", "value": 12681831040, "pctChange": 1.070484472708002 },
+							{ "name": "EXPD", "value": 21206522740, "pctChange": 1.8307023896314296 },
+							{ "name": "FDX", "value": 78989659980, "pctChange": 1.5452312730249693 },
+							{ "name": "JBHT", "value": 16944344850, "pctChange": 0.4133030621829795 },
+							{ "name": "UPS", "value": 148569310156.80002, "pctChange": 1.0230113122171944 }
+						]
+					},
+					{
+						"name": "Rental & Leasing Services",
+						"children": [{ "name": "URI", "value": 21984846660, "pctChange": 1.517332308412152 }]
+					},
+					{
+						"name": "Consulting Services",
+						"children": [
+							{ "name": "EFX", "value": 28978701330, "pctChange": -0.2555299095174263 },
+							{ "name": "INFO", "value": 47336442240, "pctChange": 1.3150734627244693 },
+							{ "name": "NLSN", "value": 8897895341.44, "pctChange": -0.72 },
+							{ "name": "VRSK", "value": 28408070062.079998, "pctChange": 0.20009767308901724 }
+						]
+					},
+					{
+						"name": "Industrial Distribution",
+						"children": [
+							{ "name": "FAST", "value": 29613566412.8, "pctChange": 0.17489341235911388 },
+							{ "name": "GWW", "value": 23062366957, "pctChange": -0.5661753802601721 }
+						]
+					},
+					{
+						"name": "Security & Protection Services",
+						"children": [
+							{ "name": "ALLE", "value": 12479062134.24, "pctChange": 0.6677783044204108 }
+						]
+					},
+					{
+						"name": "Business Equipment & Supplies",
+						"children": [
+							{ "name": "AVY", "value": 17434936467.84, "pctChange": 0.07622851153039834 }
+						]
+					},
+					{
+						"name": "Building Products & Equipment",
+						"children": [
+							{ "name": "CARR", "value": 40069542783.36, "pctChange": -0.8387075268817203 },
+							{ "name": "MAS", "value": 14833791700, "pctChange": -0.2219205701604643 }
+						]
+					},
+					{
+						"name": "Farm & Heavy Construction Machinery",
+						"children": [
+							{ "name": "CAT", "value": 116749845015.04, "pctChange": -0.03752253646639463 },
+							{ "name": "DE", "value": 106715363673.6, "pctChange": 1.2489641292766662 },
+							{ "name": "PCAR", "value": 30331019720, "pctChange": -0.03432354691075515 }
+						]
+					},
+					{
+						"name": "Specialty Business Services",
+						"children": [
+							{ "name": "CTAS", "value": 39342348500, "pctChange": 3.2277601367182114 },
+							{ "name": "CPRT", "value": 31117104340, "pctChange": -0.14424722137868204 },
+							{ "name": "GPN", "value": 57117617303.04, "pctChange": -0.06195528707145807 }
+						]
+					},
+					{
+						"name": "Engineering & Construction",
+						"children": [
+							{ "name": "J", "value": 17268916500, "pctChange": -0.05270842041861165 },
+							{ "name": "JCI", "value": 47819225333.76, "pctChange": 0.5879677370722146 },
+							{ "name": "PWR", "value": 12403304868.48, "pctChange": 0.8275739712050789 }
+						]
+					},
+					{
+						"name": "Trucking",
+						"children": [{ "name": "ODFL", "value": 29331027450, "pctChange": 0.6085914081145585 }]
+					}
+				]
+			},
+			{
+				"name": "Consumer Defensive",
+				"children": [
+					{
+						"name": "Farm Products",
+						"children": [
+							{ "name": "ADM", "value": 34438392266.24, "pctChange": -0.32341688227684345 },
+							{ "name": "TSN", "value": 21875103736.32, "pctChange": 0.8699184450183498 }
+						]
+					},
+					{
+						"name": "Beverages—Wineries & Distilleries",
+						"children": [
+							{ "name": "BF.B", "value": 22813318060.48, "pctChange": -0.4592683236525733 },
+							{ "name": "STZ", "value": 37974077097.6, "pctChange": -0.548820704611844 }
+						]
+					},
+					{
+						"name": "Packaged Foods",
+						"children": [
+							{ "name": "CPB", "value": 13816095454.720001, "pctChange": 0.08781756311745335 },
+							{ "name": "CAG", "value": 17148506595.839998, "pctChange": -0.30692134486607137 },
+							{ "name": "GIS", "value": 36726354391.68, "pctChange": 0.11639457931493181 },
+							{ "name": "HRL", "value": 25786663992.32, "pctChange": -0.16728987871183607 },
+							{ "name": "SJM", "value": 14136621200.000002, "pctChange": -0.45758923123856016 },
+							{ "name": "K", "value": 21755492111.36, "pctChange": -0.38959015116097867 },
+							{ "name": "KHC", "value": 49598730553.6, "pctChange": -0.6857766348273329 },
+							{ "name": "LW", "value": 11674766420, "pctChange": 0.188292618629174 },
+							{ "name": "MKC", "value": 21728002478.08, "pctChange": 0.1032511185040725 }
+						]
+					},
+					{
+						"name": "Household & Personal Products",
+						"children": [
+							{ "name": "CHD", "value": 20585949240, "pctChange": -0.011905309112567004 },
+							{ "name": "CLX", "value": 21712863760, "pctChange": 0.9599814943326395 },
+							{ "name": "CL", "value": 68768821960.96, "pctChange": -0.18418713163064834 },
+							{ "name": "EL", "value": 69686768854.08, "pctChange": -0.32174638450311793 },
+							{ "name": "KMB", "value": 43910026160, "pctChange": 0.5175329599876409 },
+							{ "name": "NWL", "value": 11278956000, "pctChange": -0.07535967596081386 },
+							{ "name": "PG", "value": 325908362690.56, "pctChange": 0.037565035695498614 }
+						]
+					},
+					{
+						"name": "Beverages—Non-Alcoholic",
+						"children": [
+							{ "name": "KO", "value": 235245260800, "pctChange": 0.36791942604856515 },
+							{ "name": "MNST", "value": 48511236800, "pctChange": -0.28248820078226855 },
+							{ "name": "PEP", "value": 202795644354.56, "pctChange": 0.15011000272925765 }
+						]
+					},
+					{
+						"name": "Discount Stores",
+						"children": [
+							{ "name": "COST", "value": 173370617282.56, "pctChange": 1.390900982419855 },
+							{ "name": "DG", "value": 50746280481.28, "pctChange": 0.4065967659017619 },
+							{ "name": "DLTR", "value": 23399519520, "pctChange": -0.30635952169186675 },
+							{ "name": "TGT", "value": 118028818807.68001, "pctChange": 1.4715328741925824 },
+							{ "name": "WMT", "value": 385531155630.08, "pctChange": 0.46188049853372437 }
+						]
+					},
+					{
+						"name": "Grocery Stores",
+						"children": [
+							{ "name": "KR", "value": 29951920382.719997, "pctChange": 0.6316321374431532 }
+						]
+					},
+					{
+						"name": "Beverages—Brewers",
+						"children": [
+							{ "name": "TAP", "value": 11013271920.64, "pctChange": -1.4180594148267816 }
+						]
+					},
+					{
+						"name": "Confectioners",
+						"children": [
+							{ "name": "MDLZ", "value": 88314118705.92, "pctChange": 0.33514056814554744 },
+							{ "name": "HSY", "value": 25217400788.16, "pctChange": 0.017416860195076635 }
+						]
+					},
+					{
+						"name": "Tobacco",
+						"children": [
+							{ "name": "MO", "value": 87424233600, "pctChange": -0.10572898498625502 },
+							{ "name": "PM", "value": 155854003200, "pctChange": -0.15974840255591055 }
+						]
+					},
+					{
+						"name": "Food Distribution",
+						"children": [
+							{ "name": "SYY", "value": 39458320894.079994, "pctChange": -0.2973151499482937 }
+						]
+					}
+				]
+			},
+			{
+				"name": "Energy",
+				"children": [
+					{
+						"name": "Oil & Gas E&P",
+						"children": [
+							{ "name": "APA", "value": 8296507174.4, "pctChange": -0.9476492779783394 },
+							{ "name": "COG", "value": 6414607200, "pctChange": 0.7532889516635279 },
+							{ "name": "COP", "value": 82031243745.28, "pctChange": 0.5624483043837882 },
+							{ "name": "DVN", "value": 19318725086.72, "pctChange": -0.2097884615384615 },
+							{ "name": "FANG", "value": 16530455279.36, "pctChange": -0.18579034972677597 },
+							{ "name": "EOG", "value": 49580810611.200005, "pctChange": -0.047065419461113076 },
+							{ "name": "HES", "value": 27332268311.04, "pctChange": -1.9690265486725662 },
+							{ "name": "MRO", "value": 10617741077.76, "pctChange": 0.22321949404761907 },
+							{ "name": "OXY", "value": 28013164369.920002, "pctChange": 1.728813559322034 },
+							{ "name": "PXD", "value": 35162319242.24, "pctChange": 0.7014712272642621 }
+						]
+					},
+					{
+						"name": "Oil & Gas Midstream",
+						"children": [
+							{ "name": "KMI", "value": 41215357747.2, "pctChange": -0.49207326407873164 },
+							{ "name": "OKE", "value": 24713936946.239998, "pctChange": -0.21586436409426155 },
+							{ "name": "WMB", "value": 32470533089.28, "pctChange": -0.07476822429906542 }
+						]
+					},
+					{
+						"name": "Oil & Gas Refining & Marketing",
+						"children": [
+							{ "name": "MPC", "value": 39991779932.16, "pctChange": 0.47502211302211306 },
+							{ "name": "PSX", "value": 38519160693.76, "pctChange": 0.7097916428162565 },
+							{ "name": "VLO", "value": 33101384800, "pctChange": 1.2503125781445361 }
+						]
+					},
+					{
+						"name": "Oil & Gas Equipment & Services",
+						"children": [
+							{ "name": "BKR", "value": 18487132395.52, "pctChange": 0.2097281879194631 },
+							{ "name": "HAL", "value": 20899498746.239998, "pctChange": 0.5995674518201285 },
+							{ "name": "NOV", "value": 6351855310.080001, "pctChange": -0.1228531941031941 },
+							{ "name": "SLB", "value": 46172856071.68001, "pctChange": -0.3019278381642512 }
+						]
+					},
+					{
+						"name": "Oil & Gas Integrated",
+						"children": [
+							{ "name": "CVX", "value": 205145587404.80002, "pctChange": 0.3300315605846299 },
+							{ "name": "XOM", "value": 270056248965.12, "pctChange": 1.9172404537466048 }
+						]
+					}
+				]
+			},
+			{
+				"name": "Utilities",
+				"children": [
+					{
+						"name": "Utilities—Diversified",
+						"children": [
+							{ "name": "AES", "value": 17149455797.759998, "pctChange": -1.5678776290630976 },
+							{ "name": "EXC", "value": 43299770800, "pctChange": -0.8499155669872511 },
+							{ "name": "PEG", "value": 30113644183.039997, "pctChange": -0.7326047952047952 },
+							{ "name": "SRE", "value": 41463117854.399994, "pctChange": -1.0905747508305645 }
+						]
+					},
+					{
+						"name": "Utilities—Regulated Gas",
+						"children": [
+							{ "name": "ATO", "value": 12859431520, "pctChange": -0.636103846930533 },
+							{ "name": "NI", "value": 9862069097.6, "pctChange": -0.9452531311539977 }
+						]
+					},
+					{
+						"name": "Utilities—Regulated Electric",
+						"children": [
+							{ "name": "LNT", "value": 14315226507.84, "pctChange": -0.1744327402755974 },
+							{ "name": "AEE", "value": 21088232899.84, "pctChange": -1.0432941599712195 },
+							{ "name": "AEP", "value": 41609186332.16, "pctChange": 0.08414436230316144 },
+							{ "name": "CNP", "value": 14390495840, "pctChange": -0.6014434643143544 },
+							{ "name": "CMS", "value": 16965250600, "pctChange": 0.13668516999829147 },
+							{ "name": "ED", "value": 25537695119.999996, "pctChange": -0.9708782550871128 },
+							{ "name": "D", "value": 61013543020.8, "pctChange": -0.32938076416337286 },
+							{ "name": "DTE", "value": 25523533304, "pctChange": -0.8727738319163344 },
+							{ "name": "DUK", "value": 77229588403.2, "pctChange": -0.8982292271246669 },
+							{ "name": "EIX", "value": 21119519970.559998, "pctChange": -0.7843119429590018 },
+							{ "name": "ETR", "value": 20709337434.24, "pctChange": -1.2154273136185283 },
+							{ "name": "EVRG", "value": 14183762320, "pctChange": -2.8723873803170616 },
+							{ "name": "ES", "value": 27541209978.239998, "pctChange": -0.5824773825752882 },
+							{ "name": "FE", "value": 20396251200, "pctChange": -0.7674012172532416 },
+							{ "name": "NEE", "value": 145363058314.24, "pctChange": -0.29597874344140995 },
+							{ "name": "PNW", "value": 9274897260, "pctChange": -0.44777335108314176 },
+							{ "name": "PPL", "value": 21536288824.32, "pctChange": -0.4623079658605974 },
+							{ "name": "SO", "value": 65719751393.28, "pctChange": -0.671997072 },
+							{ "name": "WEC", "value": 28442774671.36, "pctChange": -0.5514503143266791 },
+							{ "name": "XEL", "value": 35925315648, "pctChange": -0.5808748882931188 }
+						]
+					},
+					{
+						"name": "Utilities—Independent Power Producers",
+						"children": [{ "name": "NRG", "value": 9134203040, "pctChange": -1.5299340543392246 }]
+					},
+					{
+						"name": "Utilities—Regulated Water",
+						"children": [
+							{ "name": "AWK", "value": 28980598022.399998, "pctChange": -0.9919466831990079 }
+						]
+					}
+				]
+			},
+			{
+				"name": "Real Estate",
+				"children": [
+					{
+						"name": "REIT—Office",
+						"children": [
+							{ "name": "ARE", "value": 27058500640, "pctChange": -1.6196503271479135 },
+							{ "name": "BXP", "value": 18379274240, "pctChange": -1.563153055253699 },
+							{ "name": "DLR", "value": 43615165319.99999, "pctChange": -0.5074466855087358 },
+							{ "name": "VNO", "value": 9048635521.92, "pctChange": -1.8076106378558072 }
+						]
+					},
+					{
+						"name": "REIT—Specialty",
+						"children": [
+							{ "name": "AMT", "value": 121226500560, "pctChange": -0.4220512437439306 },
+							{ "name": "CCI", "value": 85193295953.92, "pctChange": -0.26815026562104727 },
+							{ "name": "EQIX", "value": 73685741633.28, "pctChange": 0.008511528753799392 },
+							{ "name": "IRM", "value": 12634080529.92, "pctChange": -3.527341931216931 },
+							{ "name": "SBAC", "value": 35098530930, "pctChange": -0.02802576606875934 },
+							{ "name": "WY", "value": 25570707130.88, "pctChange": -0.3794424985405721 }
+						]
+					},
+					{
+						"name": "REIT—Residential",
+						"children": [
+							{ "name": "AVB", "value": 29537624207.36, "pctChange": -0.24516940122583686 },
+							{ "name": "EQR", "value": 29568834667.52, "pctChange": -0.3780279737903226 },
+							{ "name": "ESS", "value": 19887713433, "pctChange": -0.7138956420157706 },
+							{ "name": "MAA", "value": 19406691370, "pctChange": -0.8597503801614224 },
+							{ "name": "UDR", "value": 14681459495.68, "pctChange": -0.1816351160443996 }
+						]
+					},
+					{
+						"name": "Real Estate Services",
+						"children": [
+							{ "name": "CBRE", "value": 29658651813.12, "pctChange": -0.7191004494382023 }
+						]
+					},
+					{
+						"name": "REIT—Industrial",
+						"children": [
+							{ "name": "DRE", "value": 18089276014.08, "pctChange": -1.0461497435897436 },
+							{ "name": "EXR", "value": 21788303040, "pctChange": -0.4460534033972871 },
+							{ "name": "PLD", "value": 90237509564.16, "pctChange": -0.49758789460804304 },
+							{ "name": "PSA", "value": 52922096100, "pctChange": -0.3623719321363861 }
+						]
+					},
+					{
+						"name": "REIT—Retail",
+						"children": [
+							{ "name": "FRT", "value": 9174028917.76, "pctChange": -1.3948133299924832 },
+							{ "name": "KIM", "value": 8911917204.48, "pctChange": -2.188396764985728 },
+							{ "name": "O", "value": 25208435580.16, "pctChange": -0.852180429033206 },
+							{ "name": "REG", "value": 10973085199.999998, "pctChange": -1.2986990068754776 },
+							{ "name": "SPG", "value": 42745574208, "pctChange": -0.9505703422053232 }
+						]
+					},
+					{
+						"name": "REIT—Healthcare Facilities",
+						"children": [
+							{ "name": "PEAK", "value": 18149243448.32, "pctChange": -0.4728132387706856 },
+							{ "name": "VTR", "value": 21955662096.64, "pctChange": 1.596671294689344 },
+							{ "name": "WELL", "value": 34328575962.239998, "pctChange": 2.0352437329362125 }
+						]
+					},
+					{
+						"name": "REIT—Hotel & Motel",
+						"children": [{ "name": "HST", "value": 12343887360, "pctChange": -0.7373747022121384 }]
+					}
+				]
+			},
+			{
+				"name": "Basic Materials",
+				"children": [
+					{
+						"name": "Chemicals",
+						"children": [
+							{ "name": "APD", "value": 65953785140, "pctChange": 0.488943215538171 },
+							{ "name": "CE", "value": 16735011140.000002, "pctChange": -0.5288835107451295 },
+							{ "name": "DOW", "value": 47433800992, "pctChange": 0.6179670416732689 },
+							{ "name": "EMN", "value": 16072599600, "pctChange": -0.9576607862903226 }
+						]
+					},
+					{
+						"name": "Specialty Chemicals",
+						"children": [
+							{ "name": "ALB", "value": 18859940760, "pctChange": 0.10532061210581749 },
+							{ "name": "DD", "value": 40889792509.44, "pctChange": -0.6208010346611486 },
+							{ "name": "ECL", "value": 60110712721.92, "pctChange": 0.1573010296010296 },
+							{ "name": "IFF", "value": 37103088892.799995, "pctChange": 0.464929586955057 },
+							{ "name": "LIN", "value": 150990715145.6, "pctChange": 0.7005928970277113 },
+							{ "name": "LYB", "value": 34428429732.48, "pctChange": 0.16536786964980546 },
+							{ "name": "PPG", "value": 40663478782.079994, "pctChange": -0.07574276392449313 },
+							{ "name": "SHW", "value": 72726687000, "pctChange": 0.1318143537165873 }
+						]
+					},
+					{
+						"name": "Agricultural Inputs",
+						"children": [
+							{ "name": "CF", "value": 11011055360.64, "pctChange": -0.17502205367561258 },
+							{ "name": "CTVA", "value": 32056522142.08, "pctChange": 0.18429354987330107 },
+							{ "name": "FMC", "value": 14840436310, "pctChange": 0.39425 },
+							{ "name": "MOS", "value": 11803748382.72, "pctChange": 0.7782093709468223 }
+						]
+					},
+					{
+						"name": "Building Materials",
+						"children": [
+							{ "name": "MLM", "value": 21495526470, "pctChange": 0.7217371942845454 },
+							{ "name": "VMC", "value": 22539613600, "pctChange": 0.5682437551793537 }
+						]
+					},
+					{
+						"name": "Copper",
+						"children": [
+							{ "name": "FCX", "value": 53443256335.36, "pctChange": 1.9843569032979316 }
+						]
+					},
+					{
+						"name": "Gold",
+						"children": [
+							{ "name": "NEM", "value": 50409112033.28, "pctChange": -0.8040390982185085 }
+						]
+					},
+					{
+						"name": "Steel",
+						"children": [
+							{ "name": "NUE", "value": 28631473029.120003, "pctChange": -0.18777383684539953 }
+						]
+					}
+				]
+			}
+		]
+	}
+}

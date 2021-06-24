@@ -1,14 +1,14 @@
-ul::after {
+nav ul::after {
 	content: '';
 	vertical-align: center;
 	clear: both;
 }
 
-[aria-current] {
+nav [aria-current] {
 	@apply relative inline-block;
 }
 
-[aria-current]::after {
+nav [aria-current]::after {
 	position: absolute;
 	content: '';
 	width: calc(100% - 1em);
@@ -18,7 +18,7 @@ ul::after {
 	bottom: -1px;
 }
 
-.dark [aria-current]::after {
+.dark nav [aria-current]::after {
 	position: absolute;
 	content: '';
 	width: calc(100% - 1em);
