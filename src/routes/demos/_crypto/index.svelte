@@ -3,12 +3,14 @@
 	import points from '$lib/dataviz/crypto/points.js';
 
 	const fruits = ['apples', 'bananas', 'cherries', 'dates'];
-	const colors = ['#00bbff', '#8bcef6', '#c4e2ed', '#f7f6e3'];
+	//const colors = ['#00bbff', '#8bcef6', '#c4e2ed', '#f7f6e3'];
 
 	const stacks = Pancake.stacks(points, fruits, 'year');
 
 	const min = stacks.reduce((min, stack) => Math.min(min, ...stack.values.map((v) => v.end)), 0);
+	$: console.log(min);
 	const max = stacks.reduce((max, stack) => Math.max(max, ...stack.values.map((v) => v.end)), 0);
+	$: console.log(max);
 </script>
 
 <div class="chart">
@@ -80,7 +82,7 @@
 		color: #999;
 		text-align: center;
 	}
-
+	/*
 	.box {
 		position: absolute;
 		left: 0;
@@ -89,4 +91,5 @@
 		height: calc(100% - 4px);
 		border-radius: 1px;
 	}
+*/
 </style>

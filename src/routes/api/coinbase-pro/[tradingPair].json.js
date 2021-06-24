@@ -1,4 +1,4 @@
-import { CoinbasePro, CandleGranularity } from 'coinbase-pro-node';
+import { initClient, CandleGranularity } from 'coinbase-pro-node';
 //import dayjs from 'dayjs';
 
 /**
@@ -7,7 +7,7 @@ import { CoinbasePro, CandleGranularity } from 'coinbase-pro-node';
 export async function get({ params }) {
 	//var now = dayjs();
 	//var twoMonthsBack = now.subtract(2, 'month').date(1);
-	const client = new CoinbasePro();
+	const client = initClient();
 	const { slug } = params;
 
 	const candles = await client.rest.product.getCandles(slug, {
