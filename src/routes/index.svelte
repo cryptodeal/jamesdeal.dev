@@ -82,10 +82,14 @@
 </svelte:head>
 
 <div
-	class="mx-auto h-20 max-w-3xl py-5 px-4 sm:(px-6 py-12) lg:(max-w-4xl py-16 px-8) xl:max-w-6xl"
+	class="mx-auto h-20 text-center max-w-3xl py-5 px-4 break-words sm:(px-6 py-12) lg:(max-w-4xl py-16 px-8) xl:max-w-6xl"
 >
 	<Typewriter cursor={false}>
-		<h1 class="text-center break-words">Meet James Deal</h1>
+		<h1
+			class="font-light font-sans text-center text-5xl text-red-800 break-words md:text-7xl dark:text-green-400"
+		>
+			Meet James Deal
+		</h1>
 	</Typewriter>
 </div>
 <section class="container mx-auto my-3 p-5 md:mt-10 lg:mt-20">

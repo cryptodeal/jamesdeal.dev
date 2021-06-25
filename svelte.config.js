@@ -27,7 +27,7 @@ const config = {
 				noExternal: ['saslprep']
 			},
 			optimizeDeps: {
-				include: ['layercake', 'coinbase-pro-node']
+				include: ['layercake']
 			},
 			plugins: [WindiCSS.default(), imagetools()]
 		}

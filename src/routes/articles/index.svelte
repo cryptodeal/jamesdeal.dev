@@ -39,7 +39,11 @@
 >
 	<div class="absolute">
 		<Typewriter cursor={false}>
-			<h1>Recent Articles</h1>
+			<h1
+				class="font-light font-sans text-center text-5xl text-red-800 break-words md:text-7xl dark:text-green-400"
+			>
+				Recent Articles
+			</h1>
 		</Typewriter>
 	</div>
 	<div class="mx-4 mt-15 absolute md:mt-30">

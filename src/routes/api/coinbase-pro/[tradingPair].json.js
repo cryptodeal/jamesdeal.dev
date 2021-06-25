@@ -1,6 +1,3 @@
-//import { CandleGranularity } from 'coinbase-pro-node';
-//import { initClient } from '$lib/dataviz/crypto/utils';
-//import dayjs from 'dayjs';
 import { getCandles } from '$lib/dataviz/crypto/_api';
 
 /**
