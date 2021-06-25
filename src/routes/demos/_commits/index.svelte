@@ -23,7 +23,13 @@
 	const sortedData = byMonthByDate.sort((a, b) => a.key - b.key);
 </script>
 
-<h3 class="my-5 text-center">My Github Commit Activity:</h3>
+<div class="flex">
+	<h3
+		class="font-extralight font-sans mx-auto my-5 text-xl text-red-800 center break-words lg:text-2xl dark:text-green-400"
+	>
+		My Github Commit Activity:
+	</h3>
+</div>
 <div class="mx-auto h-55 w-80">
 	<LayerCake
 		ssr={true}

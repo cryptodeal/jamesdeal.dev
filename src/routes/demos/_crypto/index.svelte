@@ -17,6 +17,13 @@
 	$: maxY = data.reduce((max, candle) => Math.max(max, candle.high), 0);
 </script>
 
+<div class="flex">
+	<h3
+		class="font-extralight font-sans mx-auto my-5 text-xl text-red-800 break-words lg:text-2xl dark:text-green-400"
+	>
+		Coinbase Pro ETH-USD Candlestick Chart (In Progress):
+	</h3>
+</div>
 <div class="chart">
 	<Pancake.Chart x1={minX} x2={maxX} y1={minY} y2={maxY}>
 		<Pancake.Grid horizontal count={5} let:value let:first>
