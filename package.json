@@ -38,7 +38,7 @@
 	"type": "module",
 	"dependencies": {
 		"@lukeed/uuid": "^2.0.0",
-		"@octokit/rest": "^18.6.1",
+		"@octokit/rest": "^18.6.2",
 		"@sveltejs/pancake": "^0.0.17",
 		"cookie": "^0.4.1",
 		"layercake": "^4.1.0",

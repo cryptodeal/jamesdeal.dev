@@ -179,7 +179,7 @@
 	<div class="flex flex-wrap mb-40 w-full items-center">
 		<div class="mx-auto">
 			<h2
-				class="font-extralight font-sans mb-3 text-2xl text-red-800 w-55 uppercase sm:w-65 md:w-75 lg:text-4xl dark:text-green-400;"
+				class="font-extralight font-sans mb-3 text-2xl text-red-800 w-55 uppercase sm:w-65 md:w-75 lg:text-4xl dark:text-green-400"
 			>
 				Git Commits:
 			</h2>
@@ -218,7 +218,7 @@
 			class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 p-5 lg:(w-4/9 p-8) dark:(bg-purple-900 bg-opacity-30)"
 		>
 			<h2
-				class="font-extralight font-sans mb-3 text-2xl text-red-800 uppercase lg:text-4xl dark:text-green-400;"
+				class="font-extralight font-sans mb-3 text-2xl text-red-800 uppercase lg:text-4xl dark:text-green-400"
 			>
 				Personal Interests
 			</h2>

@@ -1,7 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 	import { browser } from '$app/env';
-	import '../app.css';
+	import '$static/app.css';
 	import 'virtual:windi.css';
 	import Nav from '$lib/nav/Nav.svelte';
 	import { theme } from '$lib/stores/localStore.js';

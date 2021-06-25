@@ -6,7 +6,7 @@ import { getCandles } from '$lib/dataviz/crypto/_api';
 export async function get() {
 	let data = await getCandles('ETH-USD', { granularity: 900 });
 
-	console.log(data);
+	//console.log(data[0][0]);
 	if (data) {
 		return {
 			body: {
