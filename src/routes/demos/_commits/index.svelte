@@ -52,7 +52,7 @@
 		Adapted from <a
 			href="https://docs.github.com/en/github/setting-up-and-managing-your-github-profile/managing-contribution-graphs-on-your-profile/showing-an-overview-of-your-activity-on-your-profile"
 			>Github Activity overview calendar heatmap
-		</a>using
-		<a href="https://layercake.graphics/">Layer Cake</a>, a Svelte graphics framework.
+		</a>
+		using <a href="https://layercake.graphics/">Layer Cake</a>, a Svelte graphics framework.
 	</p>
 </div>
