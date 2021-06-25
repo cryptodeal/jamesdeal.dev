@@ -1,5 +1,3 @@
-import { CoinbasePro } from 'coinbase-pro-node';
-
 function ema(inReal, inTimePeriod, k1) {
 	var outReal = new Array(inReal.length).fill(0.0);
 
@@ -36,15 +34,4 @@ const Ema = (inReal, inTimePeriod) => {
 	return ema(inReal, inTimePeriod, k);
 };
 
-const initClient = () => {
-	console.info("Using Coinbase Pro's public sandbox with API key...");
-
-	return new CoinbasePro({
-		apiKey: import.meta.env.VITE_COINBASE_PRO_SANDBOX_API_KEY,
-		apiSecret: import.meta.env.VITE_COINBASE_PRO_SANDBOX_API_SECRET,
-		passphrase: import.meta.env.VITE_COINBASE_PRO_SANDBOX_PASSPHRASE,
-		useSandbox: true
-	});
-};
-
-export { Ema, initClient };
+export { Ema };

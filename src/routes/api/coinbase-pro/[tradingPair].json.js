@@ -1,28 +1,19 @@
-import { CandleGranularity } from 'coinbase-pro-node';
-import { initClient } from '$lib/dataviz/crypto/utils';
+//import { CandleGranularity } from 'coinbase-pro-node';
+//import { initClient } from '$lib/dataviz/crypto/utils';
 //import dayjs from 'dayjs';
+import { getCandles } from '$lib/dataviz/crypto/_api';
 
 /**
  * @type {import('@sveltejs/kit').RequestHandler}
  */
-export async function get({ params }) {
-	//var now = dayjs();
-	//var twoMonthsBack = now.subtract(2, 'month').date(1);
-	const client = initClient();
-	const { slug } = params;
+export async function get() {
+	let data = await getCandles('ETH-USD', { granularity: 900 });
 
-	const candles = await client.rest.product.getCandles(slug, {
-		end: '2020-04-11T10:00:00.000Z',
-		granularity: CandleGranularity.ONE_HOUR,
-		start: '2020-04-11T08:00:00.000Z'
-	});
-
-	console.log(candles);
-
-	if (candles) {
+	console.log(data);
+	if (data) {
 		return {
 			body: {
-				candles
+				data
 			}
 		};
 	}

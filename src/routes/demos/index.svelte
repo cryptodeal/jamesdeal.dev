@@ -7,11 +7,15 @@
 		const url = `api/github/commits.json`;
 		const res = await fetch(url);
 		const storedCommits = await res.json();
+		const url2 = `api/coinbase-pro/ETH-USD.json`;
+		const res2 = await fetch(url2);
+		const cryptoData = await res2.json();
 
-		if (res.ok) {
+		if (res.ok && res2.ok) {
 			return {
 				props: {
-					storedCommits
+					storedCommits,
+					cryptoData
 				}
 			};
 		}
@@ -27,6 +31,8 @@
 
 <script>
 	export let storedCommits;
+	export let cryptoData;
+	$: console.log(cryptoData);
 	function nextChart() {
 		number + 1 < charts.length ? (number += 1) : (number = 0);
 	}
