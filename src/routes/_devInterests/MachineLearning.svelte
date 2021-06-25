@@ -1,5 +1,7 @@
 <div class="px-5 lg:px-8">
-	<h3 class="mb-2">Machine Learning</h3>
+	<h3 class="font-extralight font-sans text-xl mb-2 text-red-800 lg:text-3xl dark:text-green-400">
+		Machine Learning
+	</h3>
 	<p>
 		In an era dominated by big data, the value in Machine Learning cannot be understated. Data is
 		only as useful insofar as it can be used in the pursuit of knowledge or as a means to some other
