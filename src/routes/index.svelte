@@ -97,7 +97,11 @@
 		<div
 			class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 p-5 lg:(w-4/9 p-8) dark:(bg-purple-900 bg-opacity-30)"
 		>
-			<h2 class="mb-3 uppercase">About Me</h2>
+			<h2
+				class="font-extralight font-sans mb-3 text-2xl text-red-800 uppercase lg:text-4xl dark:text-green-400"
+			>
+				About Me
+			</h2>
 			<div class="flex-1 mb-2 inline-flex items-center">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -205,7 +209,7 @@
 			class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 w-full py-5 content-center lg:(w-4/9 py-8) dark:(bg-purple-900 bg-opacity-30)"
 		>
 			<h2
-				class="font-extralight font-sans mb-3 px-5 text-2xl text-red-800 uppercase lg:text-4xl dark:text-green-400;"
+				class="font-extralight font-sans mb-3 px-5 text-2xl text-red-800 uppercase lg:text-4xl dark:text-green-400"
 			>
 				Developer Interests
 			</h2>

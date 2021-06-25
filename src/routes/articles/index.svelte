@@ -49,7 +49,9 @@
 	<div class="mx-4 mt-15 absolute md:mt-30">
 		<ul>
 			{#each posts as { slug, title, author }}
-				<h2 class="hover:text-red-900 dark:hover:text-green-600">
+				<h2
+					class="font-extralight font-sans text-2xl text-red-800 hover:text-red-900 dark:hover:text-green-600 lg:text-4xl dark:text-green-400"
+				>
 					<a class="no-underline" sveltekit:prefetch href="articles/read/{slug}">{title}</a>
 				</h2>
 				<p class="prose dark:prose-dark prose-sm md:prose">By: {author}</p>
