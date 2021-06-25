@@ -1,5 +1,5 @@
 import typography from 'windicss/plugin/typography';
-import { defineConfig } from 'windicss/helpers';
+import { defineConfig } from 'vite-plugin-windicss';
 
 export default defineConfig({
 	darkMode: 'class',
