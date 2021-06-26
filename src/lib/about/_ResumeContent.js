@@ -38,7 +38,12 @@ const content = {
 		},
 		graphics: {
 			subtitle: 'Graphics/Data Viz',
-			list: ['SVG', ['D3.js', `https://d3js.org/`], [`Layer Cake`, `https://layercake.graphics/`]]
+			list: [
+				[`Pancake`, `https://github.com/cryptodeal/pancake`],
+				[`Layer Cake`, `https://layercake.graphics/`],
+				[`D3.js`, `https://d3js.org/`],
+				`SVG`
+			]
 		}
 	},
 	stack: {

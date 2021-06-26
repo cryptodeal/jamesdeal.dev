@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@lukeed/uuid': ^2.0.0
-  '@octokit/rest': ^18.6.2
+  '@octokit/rest': ^18.6.3
   '@sveltejs/adapter-vercel': next
   '@sveltejs/kit': next
   '@sveltejs/pancake': ^0.0.17
@@ -20,7 +20,7 @@ specifiers:
   mdsvex: ^0.9.7
   mongodb-client-encryption: 1.2.3
   mongoose: ^5.12.15
-  prettier: ^2.3.1
+  prettier: ^2.3.2
   prettier-plugin-svelte: ^2.3.1
   rehype-autolink-headings: ^5.1.0
   rehype-slug: ^4.0.1
@@ -41,7 +41,7 @@ specifiers:
 
 dependencies:
   '@lukeed/uuid': 2.0.0
-  '@octokit/rest': 18.6.2
+  '@octokit/rest': 18.6.3
   '@sveltejs/pancake': 0.0.17
   cookie: 0.4.1
   layercake: 4.1.0_svelte@3.38.3
@@ -55,7 +55,7 @@ dependencies:
 
 devDependencies:
   '@sveltejs/adapter-vercel': 1.0.0-next.22
-  '@sveltejs/kit': 1.0.0-next.117_svelte@3.38.3
+  '@sveltejs/kit': 1.0.0-next.118_svelte@3.38.3
   d3-collection: 1.0.7
   d3-hierarchy: 2.0.0
   d3-scale: 3.3.0
@@ -66,8 +66,8 @@ devDependencies:
   eslint-config-prettier: 8.3.0_eslint@7.29.0
   eslint-plugin-svelte3: 3.2.0_eslint@7.29.0+svelte@3.38.3
   mdsvex: 0.9.7_svelte@3.38.3
-  prettier: 2.3.1
-  prettier-plugin-svelte: 2.3.1_prettier@2.3.1+svelte@3.38.3
+  prettier: 2.3.2
+  prettier-plugin-svelte: 2.3.1_prettier@2.3.2+svelte@3.38.3
   rehype-autolink-headings: 5.1.0
   rehype-slug: 4.0.1
   remark-abbr: 1.4.1
@@ -424,7 +424,7 @@ packages:
         integrity: sha512-BpGYsPgJt05M7/L/5FoE1PiAbdxXFZkX/3kDYcsvd1v6UhlnE5e96dTDr0ezX/EFwciQxf3cNV0loipsURU+WA==
       }
     dependencies:
-      '@octokit/types': 6.16.5
+      '@octokit/types': 6.16.7
     dev: false
 
   /@octokit/core/3.5.1:
@@ -437,7 +437,7 @@ packages:
       '@octokit/graphql': 4.6.2
       '@octokit/request': 5.6.0
       '@octokit/request-error': 2.1.0
-      '@octokit/types': 6.16.5
+      '@octokit/types': 6.16.6
       before-after-hook: 2.2.1
       universal-user-agent: 6.0.0
     dev: false
@@ -448,7 +448,7 @@ packages:
         integrity: sha512-fUIPpx+pZyoLW4GCs3yMnlj2LfoXTWDUVPTC4V3MUEKZm48W+XYpeWSZCv+vYF1ZABUm2CqnDVf1sFtIYrj7KQ==
       }
     dependencies:
-      '@octokit/types': 6.16.6
+      '@octokit/types': 6.16.7
       is-plain-object: 5.0.0
       universal-user-agent: 6.0.0
     dev: false
@@ -460,21 +460,21 @@ packages:
       }
     dependencies:
       '@octokit/request': 5.6.0
-      '@octokit/types': 6.16.5
+      '@octokit/types': 6.16.7
       universal-user-agent: 6.0.0
-    dev: false
-
-  /@octokit/openapi-types/7.3.3:
-    resolution:
-      {
-        integrity: sha512-/tpvcWCjYUHtvdc/t/bX6pxaOoeYPhfPCyvUaSWP29YkRcdZmlhRaMsXudZhvXm8GBPBxmCOsf1Ye/FpkszOHw==
-      }
     dev: false
 
   /@octokit/openapi-types/7.3.4:
     resolution:
       {
         integrity: sha512-binmLrMQWBG0CvUE/jS3/XXrZbX3oN/6gF7ocSsb/ZJ0xfox2isJN4ZhGeL91SDJVzFK7XuUYBm2mlIDedkxsg==
+      }
+    dev: false
+
+  /@octokit/openapi-types/7.3.5:
+    resolution:
+      {
+        integrity: sha512-6bm5lzGDOeSnWHM5W8OZ86RD2KpchynU+/Qlm5hNEFjfLDhwfAY2lSe68YRUEYFGlxSHe0HmakyhvmtWoD3Zog==
       }
     dev: false
 
@@ -487,7 +487,7 @@ packages:
       '@octokit/core': '>=2'
     dependencies:
       '@octokit/core': 3.5.1
-      '@octokit/types': 6.16.5
+      '@octokit/types': 6.16.6
     dev: false
 
   /@octokit/plugin-request-log/1.0.3_@octokit+core@3.5.1:
@@ -501,16 +501,16 @@ packages:
       '@octokit/core': 3.5.1
     dev: false
 
-  /@octokit/plugin-rest-endpoint-methods/5.3.3_@octokit+core@3.5.1:
+  /@octokit/plugin-rest-endpoint-methods/5.3.4_@octokit+core@3.5.1:
     resolution:
       {
-        integrity: sha512-xHlZK9gxVFP2YQYXOmR1ItCwl9k+0Z3cA40oGMQfpPbWIYY32FTM15Qj+V0V6oLJZr0E26Sz3VX6qYlM/ytfig==
+        integrity: sha512-2Y2q/FYCsW5tcwIqgnLOgzZXEb3I1VoSQGyHs/Zki/Ufs5H+uT0maPVHatLKw90LQbqK7ON8NpL3Y8IyzG6pNA==
       }
     peerDependencies:
       '@octokit/core': '>=3'
     dependencies:
       '@octokit/core': 3.5.1
-      '@octokit/types': 6.16.6
+      '@octokit/types': 6.16.7
       deprecation: 2.3.1
     dev: false
 
@@ -520,7 +520,7 @@ packages:
         integrity: sha512-1VIvgXxs9WHSjicsRwq8PlR2LR2x6DwsJAaFgzdi0JfJoGSO8mYI/cHJQ+9FbN21aa+DrgNLnwObmyeSC8Rmpg==
       }
     dependencies:
-      '@octokit/types': 6.16.5
+      '@octokit/types': 6.16.7
       deprecation: 2.3.1
       once: 1.4.0
     dev: false
@@ -533,31 +533,22 @@ packages:
     dependencies:
       '@octokit/endpoint': 6.0.11
       '@octokit/request-error': 2.1.0
-      '@octokit/types': 6.16.5
+      '@octokit/types': 6.16.7
       is-plain-object: 5.0.0
       node-fetch: 2.6.1
       universal-user-agent: 6.0.0
     dev: false
 
-  /@octokit/rest/18.6.2:
+  /@octokit/rest/18.6.3:
     resolution:
       {
-        integrity: sha512-q6nrxhM+oXzPmbZlykNaBP1vG0+mU6URLBy9cl4XXrWcD0k0ShYiaXDaPewbllTxoMevqv+OABb+Q7ycUWkE2A==
+        integrity: sha512-BeV2P48RR3MVPhSBq6KXXHMVHEJg5vnFBkFN1GKPXBohXTp+eb0gJq+5iYgkjbOMG6biNvkKllPDWJchpQHHiA==
       }
     dependencies:
       '@octokit/core': 3.5.1
       '@octokit/plugin-paginate-rest': 2.13.3_@octokit+core@3.5.1
       '@octokit/plugin-request-log': 1.0.3_@octokit+core@3.5.1
-      '@octokit/plugin-rest-endpoint-methods': 5.3.3_@octokit+core@3.5.1
-    dev: false
-
-  /@octokit/types/6.16.5:
-    resolution:
-      {
-        integrity: sha512-2v30UzgezzVZNCZlEryr8ujqaFW0EEH0fyuNxz5QdE3rlkCG2SXz8RTCT1V4q7inEI2kd2xTcROlq9OkEvY0TQ==
-      }
-    dependencies:
-      '@octokit/openapi-types': 7.3.3
+      '@octokit/plugin-rest-endpoint-methods': 5.3.4_@octokit+core@3.5.1
     dev: false
 
   /@octokit/types/6.16.6:
@@ -567,6 +558,15 @@ packages:
       }
     dependencies:
       '@octokit/openapi-types': 7.3.4
+    dev: false
+
+  /@octokit/types/6.16.7:
+    resolution:
+      {
+        integrity: sha512-OuQELiwIKeDySgNID52vm33wDRc2aaX8lKYgAw9Hmw939ITow1HspT8/AH3M3jgGFUMDmHlMNBNEmH7xV7ggXQ==
+      }
+    dependencies:
+      '@octokit/openapi-types': 7.3.5
     dev: false
 
   /@rollup/pluginutils/4.1.0:
@@ -624,10 +624,10 @@ packages:
       esbuild: 0.12.9
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.117_svelte@3.38.3:
+  /@sveltejs/kit/1.0.0-next.118_svelte@3.38.3:
     resolution:
       {
-        integrity: sha512-9ihHUOhQA5KRfKNTlW/F3zMFKx9zQeEyFvgT+EebloR21xs41w9k0M4ZelOWk+59fV/SvTPQlKNs/tSenDcyBQ==
+        integrity: sha512-z72d8p/Csamg+TLf5Vb3ewAo9WhiEgPmGUA/m5ot2qppzLo36+ys109HVsdVoFg2B7wbYB56stbocHr7gF/QuA==
       }
     engines: { node: ^12.20 || >=14.13 }
     hasBin: true
@@ -3382,7 +3382,7 @@ packages:
     engines: { node: '>= 0.8.0' }
     dev: true
 
-  /prettier-plugin-svelte/2.3.1_prettier@2.3.1+svelte@3.38.3:
+  /prettier-plugin-svelte/2.3.1_prettier@2.3.2+svelte@3.38.3:
     resolution:
       {
         integrity: sha512-F1/r6OYoBq8Zgurhs1MN25tdrhPw0JW5JjioPRqpxbYdmrZ3gY/DzHGs0B6zwd4DLyRsfGB2gqhxUCbHt/D1fw==
@@ -3391,14 +3391,14 @@ packages:
       prettier: ^1.16.4 || ^2.0.0
       svelte: ^3.2.0
     dependencies:
-      prettier: 2.3.1
+      prettier: 2.3.2
       svelte: 3.38.3
     dev: true
 
-  /prettier/2.3.1:
+  /prettier/2.3.2:
     resolution:
       {
-        integrity: sha512-p+vNbgpLjif/+D+DwAZAbndtRrR0md0MwfmOVN9N+2RgyACMT+7tfaRnT+WDPkqnuVwleyuBIG2XBxKDme3hPA==
+        integrity: sha512-lnJzDfJ66zkMy58OL5/NY5zp70S7Nz6KqcKkXYzn2tMVrNxvbqaBpg7H3qHaLxCJ5lNMsGuM8+ohS7cZrthdLQ==
       }
     engines: { node: '>=10.13.0' }
     hasBin: true
