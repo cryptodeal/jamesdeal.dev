@@ -1,39 +1,34 @@
 <script>
 	import * as Pancake from '@sveltejs/pancake';
+	import * as yootils from 'yootils';
 	let w;
 	import dayjs from 'dayjs';
 	export let cryptoData;
 	let { data } = cryptoData;
 	//const resize
+	$: console.log(w);
+	$: count = w <= 650 ? 40 : w <= 800 ? 60 : w <= 1000 ? 125 : w <= 1500 ? 150 : 175;
 
-	//$: count =
-	let testData = data.slice(data.length - 50, data.length - 1);
-	$: console.log(testData);
+	$: testData = data.slice(data.length - count, data.length - 1);
 
 	$: minX = Math.min.apply(
 		null,
 		testData.map((item) => item.openTimeInMillis)
 	);
-	$: console.log(minX);
 
 	$: maxX = Math.max.apply(
 		null,
 		testData.map((item) => item.openTimeInMillis)
 	);
-	$: console.log(maxX);
 	$: minY = Math.min.apply(
 		null,
 		testData.map((item) => item.low)
 	);
-	$: console.log(minY);
 
 	$: maxY = Math.max.apply(
 		null,
 		testData.map((item) => item.high)
 	);
-	$: console.log(maxY);
-
-	$: console.log(testData);
 </script>
 
 <div class="flex">
@@ -46,7 +41,7 @@
 <div bind:clientWidth={w} class="chart">
 	<Pancake.Chart x1={minX} x2={maxX} y1={minY} y2={maxY}>
 		<Pancake.Grid horizontal count={5} let:value let:first>
-			<div class="grid-line horizontal"><span>{value}</span></div>
+			<div class="grid-line horizontal"><span>{`$${yootils.commas(value)}`}</span></div>
 		</Pancake.Grid>
 
 		<Pancake.Grid vertical count={10} let:value>
@@ -65,8 +60,8 @@
 					<div class="box" style="background-color:#Df3604" />
 				</Pancake.Box>
 				<Pancake.Box
-					x1={d.openTimeInMillis - 100000}
-					x2={d.openTimeInMillis + 100000}
+					x1={d.openTimeInMillis - 150000}
+					x2={d.openTimeInMillis + 150000}
 					y1={d.high}
 					y2={d.low}
 				>
@@ -82,8 +77,8 @@
 					<div class="box" style="background-color:#04DF08" />
 				</Pancake.Box>
 				<Pancake.Box
-					x1={d.openTimeInMillis - 100000}
-					x2={d.openTimeInMillis + 100000}
+					x1={d.openTimeInMillis - 150000}
+					x2={d.openTimeInMillis + 150000}
 					y1={d.high}
 					y2={d.low}
 				>
@@ -102,8 +97,8 @@
 					/>
 				</Pancake.Box>
 				<Pancake.Box
-					x1={d.openTimeInMillis - 100000}
-					x2={d.openTimeInMillis + 100000}
+					x1={d.openTimeInMillis - 150000}
+					x2={d.openTimeInMillis + 150000}
 					y1={d.high}
 					y2={d.low}
 				>
@@ -131,18 +126,18 @@
 
 	.grid-line.horizontal {
 		width: calc(100% + 3em);
-		left: -3em;
-		border: 0.5px dashed #ccc;
+		left: -1.5em;
+		border: 1px dashed rgba(204, 204, 204, 0.5);
 	}
 
 	.grid-line.vertical {
 		height: 100%;
-		border-left: 1px dashed #ccc;
+		border-left: 1px dashed rgba(204, 204, 204, 0.5);
 	}
 
 	.grid-line span {
 		position: absolute;
-		left: 0;
+		left: -3em;
 		bottom: -0.5em;
 		font-family: sans-serif;
 		font-size: 14px;
@@ -163,10 +158,9 @@
 
 	.box {
 		position: absolute;
-		left: 2px;
-		top: 2px;
-		width: calc(100% - 4px);
-		height: calc(100% - 4px);
-		border-radius: 2px;
+		left: 1px;
+		width: calc(100% - 2px);
+		height: 100%;
+		border-radius: 0.5px;
 	}
 </style>
