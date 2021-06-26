@@ -1,6 +1,7 @@
 <script>
 	import * as Pancake from '@sveltejs/pancake';
 	import * as yootils from 'yootils';
+	import { tooltip } from '$lib/dataviz/crypto/tooltip';
 	let w;
 	import dayjs from 'dayjs';
 	export let cryptoData;
@@ -10,6 +11,7 @@
 	$: count = w <= 650 ? 40 : w <= 800 ? 60 : w <= 1000 ? 125 : w <= 1500 ? 150 : 175;
 
 	$: testData = data.slice(data.length - count, data.length - 1);
+	$: console.log(testData[0]);
 
 	$: minX = Math.min.apply(
 		null,
@@ -57,7 +59,12 @@
 					y1={d.open}
 					y2={d.close}
 				>
-					<div class="box" style="background-color:#Df3604" />
+					<div
+						class="box"
+						style="background-color:#Df3604"
+						title={`Open: ${d.open}\nClose: ${d.close}\nHigh: ${d.high}\nLow: ${d.low}`}
+						use:tooltip
+					/>
 				</Pancake.Box>
 				<Pancake.Box
 					x1={d.openTimeInMillis - 150000}
@@ -65,7 +72,12 @@
 					y1={d.high}
 					y2={d.low}
 				>
-					<div class="box" style="background-color:#Df3604" />
+					<div
+						class="box"
+						style="background-color:#Df3604"
+						title={`Open: ${d.open}\nClose: ${d.close}\nHigh: ${d.high}\nLow: ${d.low}`}
+						use:tooltip
+					/>
 				</Pancake.Box>
 			{:else if d.close > d.open}
 				<Pancake.Box
@@ -74,7 +86,12 @@
 					y1={d.close}
 					y2={d.open}
 				>
-					<div class="box" style="background-color:#04DF08" />
+					<div
+						class="box"
+						style="background-color:#04DF08"
+						title={`Open: ${d.open}\nClose: ${d.close}\nHigh: ${d.high}\nLow: ${d.low}`}
+						use:tooltip
+					/>
 				</Pancake.Box>
 				<Pancake.Box
 					x1={d.openTimeInMillis - 150000}
@@ -82,7 +99,12 @@
 					y1={d.high}
 					y2={d.low}
 				>
-					<div class="box" style="background-color:#04DF08" />
+					<div
+						class="box"
+						style="background-color:#04DF08"
+						title={`Open: ${d.open}\nClose: ${d.close}\nHigh: ${d.high}\nLow: ${d.low}`}
+						use:tooltip
+					/>
 				</Pancake.Box>
 			{:else}
 				<Pancake.Box
@@ -94,6 +116,8 @@
 					<div
 						class="box"
 						style="background-color:{d[i - 1].open >= d[i - 1].close ? '#Df3604' : '#04DF08'}"
+						title={`Open: ${d.open}\nClose: ${d.close}\nHigh: ${d.high}\nLow: ${d.low}`}
+						use:tooltip
 					/>
 				</Pancake.Box>
 				<Pancake.Box
@@ -105,6 +129,8 @@
 					<div
 						class="box"
 						style="background-color:{d[i - 1].open >= d[i - 1].close ? '#Df3604' : '#04DF08'}"
+						title={`Open: ${d.open}\nClose: ${d.close}\nHigh: ${d.high}\nLow: ${d.low}`}
+						use:tooltip
 					/>
 				</Pancake.Box>
 			{/if}
@@ -158,7 +184,7 @@
 
 	.box {
 		position: absolute;
-		left: 1px;
+		left: 0.5px;
 		width: calc(100% - 2px);
 		height: 100%;
 		border-radius: 0.5px;
