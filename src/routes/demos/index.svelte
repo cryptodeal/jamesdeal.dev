@@ -84,7 +84,7 @@
 		</svg>
 	</nav>
 </div>
-<section class="md:container md:mx-auto">
+<section class="mx-auto lg:container">
 	{#if charts !== null}
 		{#each charts as { Chart }, index}
 			{#if number === index}

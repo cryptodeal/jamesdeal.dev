@@ -1,9 +1,13 @@
 <script>
 	import * as Pancake from '@sveltejs/pancake';
+	let w;
 	import dayjs from 'dayjs';
 	export let cryptoData;
 	let { data } = cryptoData;
-	let testData = data.slice(0, 100);
+	//const resize
+
+	//$: count =
+	let testData = data.slice(data.length - 50, data.length - 1);
 	$: console.log(testData);
 
 	$: minX = Math.min.apply(
@@ -39,7 +43,7 @@
 		Coinbase Pro ETH-USD Candlestick Chart (In Progress):
 	</h3>
 </div>
-<div class="chart">
+<div bind:clientWidth={w} class="chart">
 	<Pancake.Chart x1={minX} x2={maxX} y1={minY} y2={maxY}>
 		<Pancake.Grid horizontal count={5} let:value let:first>
 			<div class="grid-line horizontal"><span>{value}</span></div>
@@ -50,15 +54,65 @@
 			<span class="x-label">{dayjs(value).format('HH:mm')}</span>
 		</Pancake.Grid>
 
-		{#each testData as d}
-			<Pancake.Box
-				x1={d.openTimeInMillis - 900000 / 2}
-				x2={d.openTimeInMillis + 900000 / 2}
-				y1={d.low}
-				y2={d.high}
-			>
-				<div class="box" style="background-color:{d.open > d.close ? '#Df3604' : '#04DF08'}" />
-			</Pancake.Box>
+		{#each testData as d, i}
+			{#if d.open > d.close}
+				<Pancake.Box
+					x1={d.openTimeInMillis - 900000 / 2}
+					x2={d.openTimeInMillis + 900000 / 2}
+					y1={d.open}
+					y2={d.close}
+				>
+					<div class="box" style="background-color:#Df3604" />
+				</Pancake.Box>
+				<Pancake.Box
+					x1={d.openTimeInMillis - 100000}
+					x2={d.openTimeInMillis + 100000}
+					y1={d.high}
+					y2={d.low}
+				>
+					<div class="box" style="background-color:#Df3604" />
+				</Pancake.Box>
+			{:else if d.close > d.open}
+				<Pancake.Box
+					x1={d.openTimeInMillis - 900000 / 2}
+					x2={d.openTimeInMillis + 900000 / 2}
+					y1={d.close}
+					y2={d.open}
+				>
+					<div class="box" style="background-color:#04DF08" />
+				</Pancake.Box>
+				<Pancake.Box
+					x1={d.openTimeInMillis - 100000}
+					x2={d.openTimeInMillis + 100000}
+					y1={d.high}
+					y2={d.low}
+				>
+					<div class="box" style="background-color:#04DF08" />
+				</Pancake.Box>
+			{:else}
+				<Pancake.Box
+					x1={d.openTimeInMillis - 900000 / 2}
+					x2={d.openTimeInMillis + 900000 / 2}
+					y1={d.open}
+					y2={d.close}
+				>
+					<div
+						class="box"
+						style="background-color:{d[i - 1].open >= d[i - 1].close ? '#Df3604' : '#04DF08'}"
+					/>
+				</Pancake.Box>
+				<Pancake.Box
+					x1={d.openTimeInMillis - 100000}
+					x2={d.openTimeInMillis + 100000}
+					y1={d.high}
+					y2={d.low}
+				>
+					<div
+						class="box"
+						style="background-color:{d[i - 1].open >= d[i - 1].close ? '#Df3604' : '#04DF08'}"
+					/>
+				</Pancake.Box>
+			{/if}
 		{/each}
 	</Pancake.Chart>
 </div>
