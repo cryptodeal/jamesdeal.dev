@@ -1,20 +1,35 @@
 <script>
 	import * as Pancake from '@sveltejs/pancake';
 	import dayjs from 'dayjs';
-	//import points from '$lib/dataviz/crypto/points.js';
 	export let cryptoData;
 	let { data } = cryptoData;
-	$: console.log(data);
-	//const fruits = ['apples', 'bananas', 'cherries', 'dates'];
-	const colors = ['#00bbff', '#8bcef6', '#c4e2ed', '#f7f6e3'];
-	$: minX = data.reduce((min, candle) =>
-		Math.min(minX ? minX : candle.openTimeInMillis, candle.openTimeInMillis)
+	let testData = data.slice(0, 100);
+	$: console.log(testData);
+
+	$: minX = Math.min.apply(
+		null,
+		testData.map((item) => item.openTimeInMillis)
 	);
 	$: console.log(minX);
-	$: maxX = data.reduce((max, candle) => Math.max(max, candle.high), 0);
-	$: console.log(minX);
-	$: minY = data.reduce((min, candle) => Math.min(minY ? minY : candle.low, candle.low));
-	$: maxY = data.reduce((max, candle) => Math.max(max, candle.high), 0);
+
+	$: maxX = Math.max.apply(
+		null,
+		testData.map((item) => item.openTimeInMillis)
+	);
+	$: console.log(maxX);
+	$: minY = Math.min.apply(
+		null,
+		testData.map((item) => item.low)
+	);
+	$: console.log(minY);
+
+	$: maxY = Math.max.apply(
+		null,
+		testData.map((item) => item.high)
+	);
+	$: console.log(maxY);
+
+	$: console.log(testData);
 </script>
 
 <div class="flex">
@@ -32,12 +47,17 @@
 
 		<Pancake.Grid vertical count={10} let:value>
 			<div class="grid-line vertical" />
-			<span class="x-label">{new dayjs(value).format('HH:mm')}</span>
+			<span class="x-label">{dayjs(value).format('HH:mm')}</span>
 		</Pancake.Grid>
 
-		{#each data as d}
-			<Pancake.Box x1={d.openTimeInMillis} x2={d.openTimeInMillis + 900000} y1={d.low} y2={d.high}>
-				<div class="box" style="background-color:{colors[0]}" />
+		{#each testData as d}
+			<Pancake.Box
+				x1={d.openTimeInMillis - 900000 / 2}
+				x2={d.openTimeInMillis + 900000 / 2}
+				y1={d.low}
+				y2={d.high}
+			>
+				<div class="box" style="background-color:{d.open > d.close ? '#Df3604' : '#04DF08'}" />
 			</Pancake.Box>
 		{/each}
 	</Pancake.Chart>
@@ -45,7 +65,7 @@
 
 <style>
 	.chart {
-		height: 200px;
+		height: 500px;
 		padding: 3em 0 2em 3em;
 		margin: 0 0 36px 0;
 	}
@@ -89,10 +109,10 @@
 
 	.box {
 		position: absolute;
-		left: 0;
+		left: 2px;
 		top: 2px;
-		width: 100%;
-		height: 100%;
-		border-radius: 1px;
+		width: calc(100% - 4px);
+		height: calc(100% - 4px);
+		border-radius: 2px;
 	}
 </style>
