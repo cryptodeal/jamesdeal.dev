@@ -67,13 +67,13 @@
 					/>
 				</Pancake.Box>
 				<Pancake.Box
-					x1={d.openTimeInMillis - 150000}
-					x2={d.openTimeInMillis + 150000}
+					x1={d.openTimeInMillis - 90000}
+					x2={d.openTimeInMillis + 90000}
 					y1={d.high}
 					y2={d.low}
 				>
 					<div
-						class="box"
+						class="tail"
 						style="background-color:#Df3604"
 						title={`Open: ${d.open}\nClose: ${d.close}\nHigh: ${d.high}\nLow: ${d.low}`}
 						use:tooltip
@@ -94,13 +94,13 @@
 					/>
 				</Pancake.Box>
 				<Pancake.Box
-					x1={d.openTimeInMillis - 150000}
-					x2={d.openTimeInMillis + 150000}
+					x1={d.openTimeInMillis - 90000}
+					x2={d.openTimeInMillis + 90000}
 					y1={d.high}
 					y2={d.low}
 				>
 					<div
-						class="box"
+						class="tail"
 						style="background-color:#04DF08"
 						title={`Open: ${d.open}\nClose: ${d.close}\nHigh: ${d.high}\nLow: ${d.low}`}
 						use:tooltip
@@ -121,13 +121,13 @@
 					/>
 				</Pancake.Box>
 				<Pancake.Box
-					x1={d.openTimeInMillis - 150000}
-					x2={d.openTimeInMillis + 150000}
+					x1={d.openTimeInMillis - 90000}
+					x2={d.openTimeInMillis + 90000}
 					y1={d.high}
 					y2={d.low}
 				>
 					<div
-						class="box"
+						class="tail"
 						style="background-color:{d[i - 1].open >= d[i - 1].close ? '#Df3604' : '#04DF08'}"
 						title={`Open: ${d.open}\nClose: ${d.close}\nHigh: ${d.high}\nLow: ${d.low}`}
 						use:tooltip
@@ -184,8 +184,15 @@
 
 	.box {
 		position: absolute;
-		left: 0.5px;
+		left: 1px;
 		width: calc(100% - 2px);
+		height: 100%;
+		border-radius: 0.5px;
+	}
+
+	.tail {
+		position: absolute;
+		width: 100%;
 		height: 100%;
 		border-radius: 0.5px;
 	}
