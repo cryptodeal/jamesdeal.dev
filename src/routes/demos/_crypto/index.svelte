@@ -62,7 +62,11 @@
 					<div
 						class="box"
 						style="background-color:#Df3604"
-						title={`Open: ${d.open}\nClose: ${d.close}\nHigh: ${d.high}\nLow: ${d.low}`}
+						title={`Open: $${yootils.commas(d.open.toFixed(2))}\nClose: $${yootils.commas(
+							d.close.toFixed(2)
+						)}\nHigh: $${yootils.commas(d.high.toFixed(2))}\nLow: $${yootils.commas(
+							d.low.toFixed(2)
+						)}`}
 						use:tooltip
 					/>
 				</Pancake.Box>
@@ -75,7 +79,11 @@
 					<div
 						class="tail"
 						style="background-color:#Df3604"
-						title={`Open: ${d.open}\nClose: ${d.close}\nHigh: ${d.high}\nLow: ${d.low}`}
+						title={`Open: $${yootils.commas(d.open.toFixed(2))}\nClose: $${yootils.commas(
+							d.close.toFixed(2)
+						)}\nHigh: $${yootils.commas(d.high.toFixed(2))}\nLow: $${yootils.commas(
+							d.low.toFixed(2)
+						)}`}
 						use:tooltip
 					/>
 				</Pancake.Box>
@@ -89,7 +97,11 @@
 					<div
 						class="box"
 						style="background-color:#04DF08"
-						title={`Open: ${d.open}\nClose: ${d.close}\nHigh: ${d.high}\nLow: ${d.low}`}
+						title={`Open: $${yootils.commas(d.open.toFixed(2))}\nClose: $${yootils.commas(
+							d.close.toFixed(2)
+						)}\nHigh: $${yootils.commas(d.high.toFixed(2))}\nLow: $${yootils.commas(
+							d.low.toFixed(2)
+						)}`}
 						use:tooltip
 					/>
 				</Pancake.Box>
@@ -102,7 +114,11 @@
 					<div
 						class="tail"
 						style="background-color:#04DF08"
-						title={`Open: ${d.open}\nClose: ${d.close}\nHigh: ${d.high}\nLow: ${d.low}`}
+						title={`Open: $${yootils.commas(d.open.toFixed(2))}\nClose: $${yootils.commas(
+							d.close.toFixed(2)
+						)}\nHigh: $${yootils.commas(d.high.toFixed(2))}\nLow: $${yootils.commas(
+							d.low.toFixed(2)
+						)}`}
 						use:tooltip
 					/>
 				</Pancake.Box>
@@ -116,7 +132,11 @@
 					<div
 						class="box"
 						style="background-color:{d[i - 1].open >= d[i - 1].close ? '#Df3604' : '#04DF08'}"
-						title={`Open: ${d.open}\nClose: ${d.close}\nHigh: ${d.high}\nLow: ${d.low}`}
+						title={`Open: $${yootils.commas(d.open.toFixed(2))}\nClose: $${yootils.commas(
+							d.close.toFixed(2)
+						)}\nHigh: $${yootils.commas(d.high.toFixed(2))}\nLow: $${yootils.commas(
+							d.low.toFixed(2)
+						)}`}
 						use:tooltip
 					/>
 				</Pancake.Box>
@@ -129,7 +149,11 @@
 					<div
 						class="tail"
 						style="background-color:{d[i - 1].open >= d[i - 1].close ? '#Df3604' : '#04DF08'}"
-						title={`Open: ${d.open}\nClose: ${d.close}\nHigh: ${d.high}\nLow: ${d.low}`}
+						title={`Open: $${yootils.commas(d.open.toFixed(2))}\nClose: $${yootils.commas(
+							d.close.toFixed(2)
+						)}\nHigh: $${yootils.commas(d.high.toFixed(2))}\nLow: $${yootils.commas(
+							d.low.toFixed(2)
+						)}`}
 						use:tooltip
 					/>
 				</Pancake.Box>
