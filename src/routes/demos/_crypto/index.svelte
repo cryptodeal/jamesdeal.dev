@@ -17,18 +17,16 @@
 	let granularity = 900;
 	let { data, pairs } = cryptoData;
 	//const resize
-	const filterUnwanted = (arr) => {
+	/*const filterUnwanted = (arr) => {
 		const required = arr.filter((el) => {
 			return el && el.open && el.close && el.low && el.high;
 		});
 		return required;
-	};
-	$: console.log(w);
+	};*/
+	//$: console.log(w);
 	$: count = w <= 650 ? 40 : w <= 800 ? 60 : w <= 1000 ? 125 : w <= 1500 ? 150 : 175;
 
 	$: testData = data.slice(data.length - count, data.length - 1);
-	$: testData.map((item) => console.log(item));
-
 	$: minX = Math.min.apply(
 		null,
 		testData.map((item) => item.openTimeInMillis)
@@ -50,8 +48,7 @@
 	async function loadData() {
 		let res = await fetch(`api/coinbase-pro/${tradingPair}.json?granularity=${granularity}`);
 		let tempData = await res.json();
-
-		data = await filterUnwanted(tempData.data);
+		data = tempData.data;
 	}
 </script>
 
