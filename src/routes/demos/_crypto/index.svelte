@@ -3,6 +3,7 @@
 	import * as yootils from 'yootils';
 	import { tooltip } from '$lib/dataviz/crypto/tooltip';
 	import dayjs from 'dayjs';
+	import { Ema } from '$lib/dataviz/crypto/utils';
 	export let cryptoData;
 	let tradingPair = `ETH-USD`;
 	const candleGranularity = [
@@ -14,6 +15,9 @@
 		{ label: `1 Day`, value: 86400 }
 	];
 	let w;
+	let ema12Enabled = false;
+	let ema26Enabled = false;
+	//const emaList = [];
 	let tempGranularity = 900;
 	let granularity = 900;
 	let { data, pairs } = cryptoData;
@@ -36,10 +40,23 @@
 		console.log(required.length);
 		return required;
 	};
+
 	//$: console.log(w);
 	$: count = w <= 650 ? 40 : w <= 800 ? 60 : w <= 1000 ? 125 : w <= 1500 ? 150 : 175;
-
+	$: ema12 = Ema(
+		data.map((dat) => dat.close),
+		12
+	).slice(data.length - count, data.length - 1);
+	$: ema26 = Ema(
+		data.map((dat) => dat.close),
+		26
+	).slice(data.length - count, data.length - 1);
 	$: testData = data.slice(data.length - count, data.length - 1);
+	$: testData.forEach((dat, i) => {
+		dat.ema12 = ema12[i];
+		dat.ema26 = ema26[i];
+	});
+	$: console.log(testData);
 	$: minX = Math.min.apply(
 		null,
 		testData.map((item) => item.openTimeInMillis)
@@ -72,7 +89,7 @@
 	>
 		Coinbase Pro {testData[0].productId} Candlestick Chart (In Progress):
 	</h3>
-	<div class="mx-auto gap-4 inline-flex">
+	<div class="mx-auto gap-4 inline-flex items-center">
 		<label class="block">
 			<span class="text-gray-800 dark:text-gray-200">Trading Pair:</span>
 			<select bind:value={tradingPair} on:blur={loadData} class="mt-1 w-full form-select block">
@@ -88,6 +105,23 @@
 					<option value={period.value}>{period.label}</option>
 				{/each}
 			</select>
+		</label>
+		<label class="block">
+			<input
+				type="checkbox"
+				class="text-blue-700 form-checkbox dark:text-light-blue-300"
+				bind:checked={ema12Enabled}
+			/>
+			<span class="mt-1 text-blue-700 dark:text-light-blue-300">EMA 12</span>
+		</label>
+
+		<label class="block">
+			<input
+				type="checkbox"
+				class="text-fuchsia-600 form-checkbox dark:text-fuchsia-400"
+				bind:checked={ema26Enabled}
+			/>
+			<span class="mt-1 text-fuchsia-600 dark:text-fuchsia-400">EMA 26</span>
 		</label>
 	</div>
 </div>
@@ -107,8 +141,8 @@
 			{#if d && d.open && d.close && d.low && d.high && d.openTimeInMillis}
 				{#if d.open > d.close}
 					<Pancake.Box
-						x1={d.openTimeInMillis - (tempGranularity * 1000) / 2}
-						x2={d.openTimeInMillis + (tempGranularity * 1000) / 2}
+						x1={d.openTimeInMillis}
+						x2={d.openTimeInMillis + d.sizeInMillis}
 						y1={d.open}
 						y2={d.close}
 					>
@@ -124,8 +158,8 @@
 						/>
 					</Pancake.Box>
 					<Pancake.Box
-						x1={d.openTimeInMillis - (tempGranularity * 1000) / 10}
-						x2={d.openTimeInMillis + (tempGranularity * 1000) / 10}
+						x1={d.openTimeInMillis + d.sizeInMillis / 2 - 0.075 * d.sizeInMillis}
+						x2={d.openTimeInMillis + d.sizeInMillis / 2 + 0.075 * d.sizeInMillis}
 						y1={d.high}
 						y2={d.low}
 					>
@@ -142,8 +176,8 @@
 					</Pancake.Box>
 				{:else if d.close > d.open}
 					<Pancake.Box
-						x1={d.openTimeInMillis - (tempGranularity * 1000) / 2}
-						x2={d.openTimeInMillis + (tempGranularity * 1000) / 2}
+						x1={d.openTimeInMillis}
+						x2={d.openTimeInMillis + d.sizeInMillis}
 						y1={d.close}
 						y2={d.open}
 					>
@@ -159,8 +193,8 @@
 						/>
 					</Pancake.Box>
 					<Pancake.Box
-						x1={d.openTimeInMillis - (tempGranularity * 1000) / 10}
-						x2={d.openTimeInMillis + (tempGranularity * 1000) / 10}
+						x1={d.openTimeInMillis + d.sizeInMillis / 2 - 0.075 * d.sizeInMillis}
+						x2={d.openTimeInMillis + d.sizeInMillis / 2 + 0.075 * d.sizeInMillis}
 						y1={d.high}
 						y2={d.low}
 					>
@@ -177,8 +211,8 @@
 					</Pancake.Box>
 				{:else}
 					<Pancake.Box
-						x1={d.openTimeInMillis - (tempGranularity * 1000) / 2}
-						x2={d.openTimeInMillis + (tempGranularity * 1000) / 2}
+						x1={d.openTimeInMillis}
+						x2={d.openTimeInMillis + d.sizeInMillis}
 						y1={d.open}
 						y2={d.close}
 					>
@@ -194,8 +228,8 @@
 						/>
 					</Pancake.Box>
 					<Pancake.Box
-						x1={d.openTimeInMillis - (tempGranularity * 1000) / 10}
-						x2={d.openTimeInMillis + (tempGranularity * 1000) / 10}
+						x1={d.openTimeInMillis + d.sizeInMillis / 2 - 0.075 * d.sizeInMillis}
+						x2={d.openTimeInMillis + d.sizeInMillis / 2 + 0.075 * d.sizeInMillis}
 						y1={d.high}
 						y2={d.low}
 					>
@@ -213,6 +247,20 @@
 				{/if}
 			{/if}
 		{/each}
+		{#if ema12Enabled}
+			<Pancake.Svg>
+				<Pancake.SvgLine data={testData} x={(d) => d.openTimeInMillis} y={(d) => d.ema12} let:d>
+					<path class="stroke-blue-700 trend dark:stroke-light-blue-300" {d} />
+				</Pancake.SvgLine>
+			</Pancake.Svg>
+		{/if}
+		{#if ema26Enabled}
+			<Pancake.Svg>
+				<Pancake.SvgLine data={testData} x={(d) => d.openTimeInMillis} y={(d) => d.ema26} let:d>
+					<path class="stroke-fuchsia-600 trend dark:stroke-fuchsia-400" {d} />
+				</Pancake.SvgLine>
+			</Pancake.Svg>
+		{/if}
 	</Pancake.Chart>
 </div>
 
@@ -221,6 +269,13 @@
 		height: 500px;
 		padding: 3em 0 2em 3em;
 		margin: 0 0 36px 0;
+	}
+
+	path.trend {
+		stroke-linejoin: round;
+		stroke-linecap: round;
+		stroke-width: 1px;
+		fill: none;
 	}
 
 	.grid-line {
