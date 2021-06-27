@@ -112,7 +112,7 @@
 					>
 						<div
 							class="box"
-							style="background-color:{determineColor(i)}"
+							style="background-color:#DF3604"
 							title={`Open: $${yootils.commas(d.open.toFixed(2))}\nClose: $${yootils.commas(
 								d.close.toFixed(2)
 							)}\nHigh: $${yootils.commas(d.high.toFixed(2))}\nLow: $${yootils.commas(
@@ -129,7 +129,7 @@
 					>
 						<div
 							class="tail"
-							style="background-color:{determineColor(i)}"
+							style="background-color:#DF3604"
 							title={`Open: $${yootils.commas(d.open.toFixed(2))}\nClose: $${yootils.commas(
 								d.close.toFixed(2)
 							)}\nHigh: $${yootils.commas(d.high.toFixed(2))}\nLow: $${yootils.commas(
@@ -147,7 +147,7 @@
 					>
 						<div
 							class="box"
-							style="background-color:{determineColor(i)}"
+							style="background-color:#04DF08"
 							title={`Open: $${yootils.commas(d.open.toFixed(2))}\nClose: $${yootils.commas(
 								d.close.toFixed(2)
 							)}\nHigh: $${yootils.commas(d.high.toFixed(2))}\nLow: $${yootils.commas(
@@ -164,7 +164,7 @@
 					>
 						<div
 							class="tail"
-							style="background-color:{determineColor(i)}"
+							style="background-color:#04DF08"
 							title={`Open: $${yootils.commas(d.open.toFixed(2))}\nClose: $${yootils.commas(
 								d.close.toFixed(2)
 							)}\nHigh: $${yootils.commas(d.high.toFixed(2))}\nLow: $${yootils.commas(
