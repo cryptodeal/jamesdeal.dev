@@ -10,7 +10,7 @@
 		{ label: `5 Min`, value: 300 },
 		{ label: `15 Min`, value: 900 },
 		{ label: `1 Hour`, value: 3600 },
-		{ label: `1 Hour`, value: 21600 },
+		{ label: `6 Hours`, value: 21600 },
 		{ label: `1 Day`, value: 86400 }
 	];
 	let w;
@@ -105,8 +105,8 @@
 			{#if d && d.open && d.close && d.low && d.high && d.openTimeInMillis}
 				{#if d.open > d.close}
 					<Pancake.Box
-						x1={d.openTimeInMillis - 900000 / 2}
-						x2={d.openTimeInMillis + 900000 / 2}
+						x1={d.openTimeInMillis - (granularity * 1000) / 2}
+						x2={d.openTimeInMillis + (granularity * 1000) / 2}
 						y1={d.open}
 						y2={d.close}
 					>
@@ -122,8 +122,8 @@
 						/>
 					</Pancake.Box>
 					<Pancake.Box
-						x1={d.openTimeInMillis - 90000}
-						x2={d.openTimeInMillis + 90000}
+						x1={d.openTimeInMillis - (granularity * 1000) / 10}
+						x2={d.openTimeInMillis + (granularity * 1000) / 10}
 						y1={d.high}
 						y2={d.low}
 					>
@@ -140,8 +140,8 @@
 					</Pancake.Box>
 				{:else if d.close > d.open}
 					<Pancake.Box
-						x1={d.openTimeInMillis - 900000 / 2}
-						x2={d.openTimeInMillis + 900000 / 2}
+						x1={d.openTimeInMillis - (granularity * 1000) / 2}
+						x2={d.openTimeInMillis + (granularity * 1000) / 2}
 						y1={d.close}
 						y2={d.open}
 					>
@@ -157,8 +157,8 @@
 						/>
 					</Pancake.Box>
 					<Pancake.Box
-						x1={d.openTimeInMillis - 90000}
-						x2={d.openTimeInMillis + 90000}
+						x1={d.openTimeInMillis - (granularity * 1000) / 10}
+						x2={d.openTimeInMillis + (granularity * 1000) / 10}
 						y1={d.high}
 						y2={d.low}
 					>
@@ -175,8 +175,8 @@
 					</Pancake.Box>
 				{:else}
 					<Pancake.Box
-						x1={d.openTimeInMillis - 900000 / 2}
-						x2={d.openTimeInMillis + 900000 / 2}
+						x1={d.openTimeInMillis - (granularity * 1000) / 2}
+						x2={d.openTimeInMillis + (granularity * 1000) / 2}
 						y1={d.open}
 						y2={d.close}
 					>
@@ -192,8 +192,8 @@
 						/>
 					</Pancake.Box>
 					<Pancake.Box
-						x1={d.openTimeInMillis - 90000}
-						x2={d.openTimeInMillis + 90000}
+						x1={d.openTimeInMillis - (granularity * 1000) / 10}
+						x2={d.openTimeInMillis + (granularity * 1000) / 10}
 						y1={d.high}
 						y2={d.low}
 					>
