@@ -1,16 +1,19 @@
-import { getCandles } from '$lib/dataviz/crypto/_api';
+import { getCandles, getPairs } from '$lib/dataviz/crypto/_api';
 
 /**
  * @type {import('@sveltejs/kit').RequestHandler}
  */
-export async function get() {
-	let data = await getCandles('ETH-USD', { granularity: 900 });
+export async function get({ params, query }) {
+	let { tradingPair } = params;
+	let granularity = query.get('granularity');
+	let pairs = await getPairs();
+	let data = await getCandles(tradingPair, { granularity: granularity });
 
-	//console.log(data[0][0]);
-	if (data) {
+	if (data && pairs) {
 		return {
 			body: {
-				data
+				data,
+				pairs
 			}
 		};
 	}

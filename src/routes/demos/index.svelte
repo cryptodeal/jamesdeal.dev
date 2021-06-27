@@ -7,11 +7,11 @@
 		const url = `api/github/commits.json`;
 		const res = await fetch(url);
 		const storedCommits = await res.json();
-		const url2 = `api/coinbase-pro/ETH-USD.json`;
-		const res2 = await fetch(url2);
-		const cryptoData = await res2.json();
+		const cbUrl = `api/coinbase-pro/ETH-USD.json?granularity=900`;
+		const cbRes = await fetch(cbUrl);
+		const cryptoData = await cbRes.json();
 
-		if (res.ok && res2.ok) {
+		if (res.ok && cbRes.ok) {
 			return {
 				props: {
 					storedCommits,

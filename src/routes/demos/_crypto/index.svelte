@@ -2,10 +2,20 @@
 	import * as Pancake from '@sveltejs/pancake';
 	import * as yootils from 'yootils';
 	import { tooltip } from '$lib/dataviz/crypto/tooltip';
-	let w;
 	import dayjs from 'dayjs';
 	export let cryptoData;
-	let { data } = cryptoData;
+	let tradingPair = `ETH-USD`;
+	const candleGranularity = [
+		{ label: `1 Min`, value: 60 },
+		{ label: `5 Min`, value: 300 },
+		{ label: `15 Min`, value: 900 },
+		{ label: `1 Hour`, value: 3600 },
+		{ label: `1 Hour`, value: 21600 },
+		{ label: `1 Day`, value: 86400 }
+	];
+	let w;
+	let granularity = 900;
+	let { data, pairs } = cryptoData;
 	//const resize
 	$: console.log(w);
 	$: count = w <= 650 ? 40 : w <= 800 ? 60 : w <= 1000 ? 125 : w <= 1500 ? 150 : 175;
@@ -31,15 +41,40 @@
 		null,
 		testData.map((item) => item.high)
 	);
+	async function loadData() {
+		let res = await fetch(`api/coinbase-pro/${tradingPair}.json?granularity=${granularity}`);
+		let tempData = await res.json();
+		console.log(tempData);
+		data = tempData.data;
+	}
 </script>
 
-<div class="flex">
+<div class="flex flex-col">
 	<h3
 		class="font-extralight font-sans mx-auto my-5 text-xl text-red-800 break-words lg:text-2xl dark:text-green-400"
 	>
-		Coinbase Pro ETH-USD Candlestick Chart (In Progress):
+		Coinbase Pro {testData[0].productId} Candlestick Chart (In Progress):
 	</h3>
+	<div class="mx-auto gap-4 inline-flex">
+		<label class="block">
+			<span class="text-gray-800 dark:text-gray-200">Trading Pair:</span>
+			<select bind:value={tradingPair} on:blur={loadData} class="mt-1 w-full form-select block">
+				{#each pairs as pair}
+					<option value={pair}>{pair}</option>
+				{/each}
+			</select>
+		</label>
+		<label class="block">
+			<span class="text-gray-800 dark:text-gray-200">Candle Duration:</span>
+			<select bind:value={granularity} on:blur={loadData} class="mt-1 w-full form-select block">
+				{#each candleGranularity as period}
+					<option value={period.value}>{period.label}</option>
+				{/each}
+			</select>
+		</label>
+	</div>
 </div>
+
 <div bind:clientWidth={w} class="chart">
 	<Pancake.Chart x1={minX} x2={maxX} y1={minY} y2={maxY}>
 		<Pancake.Grid horizontal count={5} let:value let:first>

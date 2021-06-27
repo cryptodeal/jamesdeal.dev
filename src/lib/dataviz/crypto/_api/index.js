@@ -61,19 +61,35 @@ const getBucketsInISO = (bucketsInMillis) => {
 
 const getFetch = async (resource, params) => {
 	const baseUrl = 'https://api.pro.coinbase.com';
-	const res = await fetch(`${baseUrl}${resource}${stringifyPayload(params)}`, {
-		method: 'GET',
-		mode: 'cors',
-		credentials: 'same-origin',
-		headers: {
-			'User-Agent': 'coinbase-pro-node-client',
-			Accept: 'application/json',
-			'Content-Type': 'application/json'
-		},
-		redirect: 'follow',
-		referrerPolicy: 'no-referrer'
-	});
-	return res.json();
+	if (params) {
+		const res = await fetch(`${baseUrl}${resource}${stringifyPayload(params)}`, {
+			method: 'GET',
+			mode: 'cors',
+			credentials: 'same-origin',
+			headers: {
+				'User-Agent': 'coinbase-pro-node-client',
+				Accept: 'application/json',
+				'Content-Type': 'application/json'
+			},
+			redirect: 'follow',
+			referrerPolicy: 'no-referrer'
+		});
+		return res.json();
+	} else {
+		const res = await fetch(`${baseUrl}${resource}`, {
+			method: 'GET',
+			mode: 'cors',
+			credentials: 'same-origin',
+			headers: {
+				'User-Agent': 'coinbase-pro-node-client',
+				Accept: 'application/json',
+				'Content-Type': 'application/json'
+			},
+			redirect: 'follow',
+			referrerPolicy: 'no-referrer'
+		});
+		return res.json();
+	}
 };
 
 const getCandles = async (pair, params) => {
@@ -118,4 +134,10 @@ const getCandles = async (pair, params) => {
 		.sort((a, b) => a.openTimeInMillis - b.openTimeInMillis);
 };
 
-export { getCandles };
+const getPairs = async () => {
+	const resource = `/products`;
+	const res = await getFetch(resource);
+	return res.map((product) => product.id).sort();
+};
+
+export { getCandles, getPairs };
