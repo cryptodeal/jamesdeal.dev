@@ -330,13 +330,11 @@
 		left: 1px;
 		width: calc(100% - 2px);
 		height: 100%;
-		border-radius: 0.5px;
 	}
 
 	.tail {
 		position: absolute;
 		width: 100%;
 		height: 100%;
-		border-radius: 0.5px;
 	}
 </style>
