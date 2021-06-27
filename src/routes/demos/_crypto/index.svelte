@@ -17,11 +17,17 @@
 	let granularity = 900;
 	let { data, pairs } = cryptoData;
 	//const resize
+	const filterUnwanted = (arr) => {
+		const required = arr.filter((el) => {
+			return el && el.open && el.close && el.low && el.high;
+		});
+		return required;
+	};
 	$: console.log(w);
 	$: count = w <= 650 ? 40 : w <= 800 ? 60 : w <= 1000 ? 125 : w <= 1500 ? 150 : 175;
 
 	$: testData = data.slice(data.length - count, data.length - 1);
-	$: console.log(testData[0]);
+	$: testData.map((item) => console.log(item));
 
 	$: minX = Math.min.apply(
 		null,
@@ -44,8 +50,8 @@
 	async function loadData() {
 		let res = await fetch(`api/coinbase-pro/${tradingPair}.json?granularity=${granularity}`);
 		let tempData = await res.json();
-		console.log(tempData);
-		data = tempData.data;
+
+		data = await filterUnwanted(tempData.data);
 	}
 </script>
 
@@ -86,112 +92,118 @@
 			<span class="x-label">{dayjs(value).format('HH:mm')}</span>
 		</Pancake.Grid>
 
-		{#each testData as d, i}
-			{#if d.open > d.close}
-				<Pancake.Box
-					x1={d.openTimeInMillis - 900000 / 2}
-					x2={d.openTimeInMillis + 900000 / 2}
-					y1={d.open}
-					y2={d.close}
-				>
-					<div
-						class="box"
-						style="background-color:#Df3604"
-						title={`Open: $${yootils.commas(d.open.toFixed(2))}\nClose: $${yootils.commas(
-							d.close.toFixed(2)
-						)}\nHigh: $${yootils.commas(d.high.toFixed(2))}\nLow: $${yootils.commas(
-							d.low.toFixed(2)
-						)}`}
-						use:tooltip
-					/>
-				</Pancake.Box>
-				<Pancake.Box
-					x1={d.openTimeInMillis - 90000}
-					x2={d.openTimeInMillis + 90000}
-					y1={d.high}
-					y2={d.low}
-				>
-					<div
-						class="tail"
-						style="background-color:#Df3604"
-						title={`Open: $${yootils.commas(d.open.toFixed(2))}\nClose: $${yootils.commas(
-							d.close.toFixed(2)
-						)}\nHigh: $${yootils.commas(d.high.toFixed(2))}\nLow: $${yootils.commas(
-							d.low.toFixed(2)
-						)}`}
-						use:tooltip
-					/>
-				</Pancake.Box>
-			{:else if d.close > d.open}
-				<Pancake.Box
-					x1={d.openTimeInMillis - 900000 / 2}
-					x2={d.openTimeInMillis + 900000 / 2}
-					y1={d.close}
-					y2={d.open}
-				>
-					<div
-						class="box"
-						style="background-color:#04DF08"
-						title={`Open: $${yootils.commas(d.open.toFixed(2))}\nClose: $${yootils.commas(
-							d.close.toFixed(2)
-						)}\nHigh: $${yootils.commas(d.high.toFixed(2))}\nLow: $${yootils.commas(
-							d.low.toFixed(2)
-						)}`}
-						use:tooltip
-					/>
-				</Pancake.Box>
-				<Pancake.Box
-					x1={d.openTimeInMillis - 90000}
-					x2={d.openTimeInMillis + 90000}
-					y1={d.high}
-					y2={d.low}
-				>
-					<div
-						class="tail"
-						style="background-color:#04DF08"
-						title={`Open: $${yootils.commas(d.open.toFixed(2))}\nClose: $${yootils.commas(
-							d.close.toFixed(2)
-						)}\nHigh: $${yootils.commas(d.high.toFixed(2))}\nLow: $${yootils.commas(
-							d.low.toFixed(2)
-						)}`}
-						use:tooltip
-					/>
-				</Pancake.Box>
-			{:else}
-				<Pancake.Box
-					x1={d.openTimeInMillis - 900000 / 2}
-					x2={d.openTimeInMillis + 900000 / 2}
-					y1={d.open}
-					y2={d.close}
-				>
-					<div
-						class="box"
-						style="background-color:{d[i - 1].open >= d[i - 1].close ? '#Df3604' : '#04DF08'}"
-						title={`Open: $${yootils.commas(d.open.toFixed(2))}\nClose: $${yootils.commas(
-							d.close.toFixed(2)
-						)}\nHigh: $${yootils.commas(d.high.toFixed(2))}\nLow: $${yootils.commas(
-							d.low.toFixed(2)
-						)}`}
-						use:tooltip
-					/>
-				</Pancake.Box>
-				<Pancake.Box
-					x1={d.openTimeInMillis - 90000}
-					x2={d.openTimeInMillis + 90000}
-					y1={d.high}
-					y2={d.low}
-				>
-					<div
-						class="tail"
-						style="background-color:{d[i - 1].open >= d[i - 1].close ? '#Df3604' : '#04DF08'}"
-						title={`Open: $${yootils.commas(d.open.toFixed(2))}\nClose: $${yootils.commas(
-							d.close.toFixed(2)
-						)}\nHigh: $${yootils.commas(d.high.toFixed(2))}\nLow: $${yootils.commas(
-							d.low.toFixed(2)
-						)}`}
-						use:tooltip
-					/>
-				</Pancake.Box>
+		{#each testData as { open, close, low, high, openTimeInMillis }, i}
+			{#if open && close && low && high && openTimeInMillis}
+				{#if open > close}
+					<Pancake.Box
+						x1={openTimeInMillis - 900000 / 2}
+						x2={openTimeInMillis + 900000 / 2}
+						y1={open}
+						y2={close}
+					>
+						<div
+							class="box"
+							style="background-color:#Df3604"
+							title={`Open: $${yootils.commas(open.toFixed(2))}\nClose: $${yootils.commas(
+								close.toFixed(2)
+							)}\nHigh: $${yootils.commas(high.toFixed(2))}\nLow: $${yootils.commas(
+								low.toFixed(2)
+							)}`}
+							use:tooltip
+						/>
+					</Pancake.Box>
+					<Pancake.Box
+						x1={openTimeInMillis - 90000}
+						x2={openTimeInMillis + 90000}
+						y1={high}
+						y2={low}
+					>
+						<div
+							class="tail"
+							style="background-color:#Df3604"
+							title={`Open: $${yootils.commas(open.toFixed(2))}\nClose: $${yootils.commas(
+								close.toFixed(2)
+							)}\nHigh: $${yootils.commas(high.toFixed(2))}\nLow: $${yootils.commas(
+								low.toFixed(2)
+							)}`}
+							use:tooltip
+						/>
+					</Pancake.Box>
+				{:else if close > open}
+					<Pancake.Box
+						x1={openTimeInMillis - 900000 / 2}
+						x2={openTimeInMillis + 900000 / 2}
+						y1={close}
+						y2={open}
+					>
+						<div
+							class="box"
+							style="background-color:#04DF08"
+							title={`Open: $${yootils.commas(open.toFixed(2))}\nClose: $${yootils.commas(
+								close.toFixed(2)
+							)}\nHigh: $${yootils.commas(high.toFixed(2))}\nLow: $${yootils.commas(
+								low.toFixed(2)
+							)}`}
+							use:tooltip
+						/>
+					</Pancake.Box>
+					<Pancake.Box
+						x1={openTimeInMillis - 90000}
+						x2={openTimeInMillis + 90000}
+						y1={high}
+						y2={low}
+					>
+						<div
+							class="tail"
+							style="background-color:#04DF08"
+							title={`Open: $${yootils.commas(open.toFixed(2))}\nClose: $${yootils.commas(
+								close.toFixed(2)
+							)}\nHigh: $${yootils.commas(high.toFixed(2))}\nLow: $${yootils.commas(
+								low.toFixed(2)
+							)}`}
+							use:tooltip
+						/>
+					</Pancake.Box>
+				{:else}
+					<Pancake.Box
+						x1={openTimeInMillis - 900000 / 2}
+						x2={openTimeInMillis + 900000 / 2}
+						y1={open}
+						y2={close}
+					>
+						<div
+							class="box"
+							style="background-color:{testData[i - 1].open >= testData[i - 1].close
+								? '#Df3604'
+								: '#04DF08'}"
+							title={`Open: $${yootils.commas(open.toFixed(2))}\nClose: $${yootils.commas(
+								close.toFixed(2)
+							)}\nHigh: $${yootils.commas(high.toFixed(2))}\nLow: $${yootils.commas(
+								low.toFixed(2)
+							)}`}
+							use:tooltip
+						/>
+					</Pancake.Box>
+					<Pancake.Box
+						x1={openTimeInMillis - 90000}
+						x2={openTimeInMillis + 90000}
+						y1={high}
+						y2={low}
+					>
+						<div
+							class="tail"
+							style="background-color:{testData[i - 1].open >= testData[i - 1].close
+								? '#Df3604'
+								: '#04DF08'}"
+							title={`Open: $${yootils.commas(open.toFixed(2))}\nClose: $${yootils.commas(
+								close.toFixed(2)
+							)}\nHigh: $${yootils.commas(high.toFixed(2))}\nLow: $${yootils.commas(
+								low.toFixed(2)
+							)}`}
+							use:tooltip
+						/>
+					</Pancake.Box>
+				{/if}
 			{/if}
 		{/each}
 	</Pancake.Chart>
