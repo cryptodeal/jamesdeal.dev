@@ -14,6 +14,7 @@
 		{ label: `1 Day`, value: 86400 }
 	];
 	let w;
+	let tempGranularity = 900;
 	let granularity = 900;
 	let { data, pairs } = cryptoData;
 	//const resize
@@ -43,7 +44,7 @@
 		null,
 		testData.map((item) => item.openTimeInMillis)
 	);
-
+	$: console.log(testData[0]);
 	$: maxX = Math.max.apply(
 		null,
 		testData.map((item) => item.openTimeInMillis)
@@ -60,6 +61,7 @@
 	async function loadData() {
 		let res = await fetch(`api/coinbase-pro/${tradingPair}.json?granularity=${granularity}`);
 		let tempData = await res.json();
+		tempGranularity = granularity;
 		data = filterUnwanted(tempData.data);
 	}
 </script>
@@ -105,8 +107,8 @@
 			{#if d && d.open && d.close && d.low && d.high && d.openTimeInMillis}
 				{#if d.open > d.close}
 					<Pancake.Box
-						x1={d.openTimeInMillis - (granularity * 1000) / 2}
-						x2={d.openTimeInMillis + (granularity * 1000) / 2}
+						x1={d.openTimeInMillis - (tempGranularity * 1000) / 2}
+						x2={d.openTimeInMillis + (tempGranularity * 1000) / 2}
 						y1={d.open}
 						y2={d.close}
 					>
@@ -122,8 +124,8 @@
 						/>
 					</Pancake.Box>
 					<Pancake.Box
-						x1={d.openTimeInMillis - (granularity * 1000) / 10}
-						x2={d.openTimeInMillis + (granularity * 1000) / 10}
+						x1={d.openTimeInMillis - (tempGranularity * 1000) / 10}
+						x2={d.openTimeInMillis + (tempGranularity * 1000) / 10}
 						y1={d.high}
 						y2={d.low}
 					>
@@ -140,8 +142,8 @@
 					</Pancake.Box>
 				{:else if d.close > d.open}
 					<Pancake.Box
-						x1={d.openTimeInMillis - (granularity * 1000) / 2}
-						x2={d.openTimeInMillis + (granularity * 1000) / 2}
+						x1={d.openTimeInMillis - (tempGranularity * 1000) / 2}
+						x2={d.openTimeInMillis + (tempGranularity * 1000) / 2}
 						y1={d.close}
 						y2={d.open}
 					>
@@ -157,8 +159,8 @@
 						/>
 					</Pancake.Box>
 					<Pancake.Box
-						x1={d.openTimeInMillis - (granularity * 1000) / 10}
-						x2={d.openTimeInMillis + (granularity * 1000) / 10}
+						x1={d.openTimeInMillis - (tempGranularity * 1000) / 10}
+						x2={d.openTimeInMillis + (tempGranularity * 1000) / 10}
 						y1={d.high}
 						y2={d.low}
 					>
@@ -175,8 +177,8 @@
 					</Pancake.Box>
 				{:else}
 					<Pancake.Box
-						x1={d.openTimeInMillis - (granularity * 1000) / 2}
-						x2={d.openTimeInMillis + (granularity * 1000) / 2}
+						x1={d.openTimeInMillis - (tempGranularity * 1000) / 2}
+						x2={d.openTimeInMillis + (tempGranularity * 1000) / 2}
 						y1={d.open}
 						y2={d.close}
 					>
@@ -192,8 +194,8 @@
 						/>
 					</Pancake.Box>
 					<Pancake.Box
-						x1={d.openTimeInMillis - (granularity * 1000) / 10}
-						x2={d.openTimeInMillis + (granularity * 1000) / 10}
+						x1={d.openTimeInMillis - (tempGranularity * 1000) / 10}
+						x2={d.openTimeInMillis + (tempGranularity * 1000) / 10}
 						y1={d.high}
 						y2={d.low}
 					>
