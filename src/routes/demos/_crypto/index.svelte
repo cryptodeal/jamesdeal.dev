@@ -249,14 +249,24 @@
 		{/each}
 		{#if ema12Enabled}
 			<Pancake.Svg>
-				<Pancake.SvgLine data={testData} x={(d) => d.openTimeInMillis} y={(d) => d.ema12} let:d>
+				<Pancake.SvgLine
+					data={testData}
+					x={(d) => d.openTimeInMillis + d.sizeInMillis / 2}
+					y={(d) => d.ema12}
+					let:d
+				>
 					<path class="stroke-blue-700 trend dark:stroke-light-blue-300" {d} />
 				</Pancake.SvgLine>
 			</Pancake.Svg>
 		{/if}
 		{#if ema26Enabled}
 			<Pancake.Svg>
-				<Pancake.SvgLine data={testData} x={(d) => d.openTimeInMillis} y={(d) => d.ema26} let:d>
+				<Pancake.SvgLine
+					data={testData}
+					x={(d) => d.openTimeInMillis + d.sizeInMillis / 2}
+					y={(d) => d.ema26}
+					let:d
+				>
 					<path class="stroke-fuchsia-600 trend dark:stroke-fuchsia-400" {d} />
 				</Pancake.SvgLine>
 			</Pancake.Svg>
