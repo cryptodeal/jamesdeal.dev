@@ -1,11 +1,14 @@
 <script>
 	import * as Pancake from '@sveltejs/pancake';
 	import * as yootils from 'yootils';
-	import { tooltip } from '$lib/dataviz/crypto/tooltip';
 	import dayjs from 'dayjs';
 	import { Ema } from '$lib/dataviz/crypto/ema';
+	import { tooltip } from '$lib/dataviz/crypto/tooltip';
 	import { genPolygon, filterUnwanted, formatBase } from '$lib/dataviz/crypto/utils';
+	//import Tooltip from '$lib/dataviz/crypto/TooltipFromAction.svelte';
+
 	export let cryptoData;
+	//let tooltip;
 	let tradingPair = `ETH-USD`;
 	const candleGranularity = [
 		{ label: `1 Min`, value: 60 },
@@ -141,12 +144,12 @@
 			<div class="grid-line vertical" />
 			<span class="x-label">{dayjs(value).format('HH:mm')}</span>
 		</Pancake.Grid>
-
-		{#each testData as dat, i}
-			<Pancake.Svg>
+		<Pancake.Svg>
+			{#each testData as dat, i}
 				<Pancake.SvgPolygon data={genPolygon(dat)} let:d>
 					<path
 						{d}
+						class="candle"
 						style="fill:{determineColor(dat, i)}"
 						title={`Open: $${formatBase(dat.open)}\nClose: $${formatBase(
 							dat.close
@@ -154,8 +157,8 @@
 						use:tooltip
 					/>
 				</Pancake.SvgPolygon>
-			</Pancake.Svg>
-		{/each}
+			{/each}
+		</Pancake.Svg>
 		{#if ema12Enabled}
 			<div style="pointer-events:none">
 				<Pancake.Svg>
@@ -196,7 +199,6 @@
 
 	path.trend {
 		stroke-linejoin: round;
-		pointer-events: none;
 		stroke-linecap: round;
 		stroke-width: 1px;
 		fill: none;
@@ -226,6 +228,10 @@
 		font-size: 14px;
 		color: #999;
 		line-height: 1;
+	}
+
+	.candle {
+		pointer-events: all;
 	}
 
 	.x-label {
