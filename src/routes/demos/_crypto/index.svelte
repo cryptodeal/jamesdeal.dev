@@ -3,7 +3,8 @@
 	import * as yootils from 'yootils';
 	import { tooltip } from '$lib/dataviz/crypto/tooltip';
 	import dayjs from 'dayjs';
-	import { Ema } from '$lib/dataviz/crypto/utils';
+	import { Ema } from '$lib/dataviz/crypto/ema';
+	import { genPolygon, filterUnwanted, formatBase } from '$lib/dataviz/crypto/utils';
 	export let cryptoData;
 	let tradingPair = `ETH-USD`;
 	const candleGranularity = [
@@ -21,9 +22,21 @@
 	let tempGranularity = 900;
 	let granularity = 900;
 	let { data, pairs } = cryptoData;
-	//const resize
-	const determineColor = (i) => {
-		if (i == 0) {
+
+	/* Fetches new data on:blur when user selects tradingPair || granularity */
+	async function loadData() {
+		let res = await fetch(`api/coinbase-pro/${tradingPair}.json?granularity=${granularity}`);
+		let tempData = await res.json();
+		tempGranularity = granularity;
+		data = filterUnwanted(tempData.data);
+	}
+
+	const determineColor = (d, i) => {
+		if (d.close > d.open) {
+			return '#04DF08';
+		} else if (d.open > d.close) {
+			return '#DF3604';
+		} else if (i == 0) {
 			return '#04DF08';
 		} else if (testData[i - 1].close > testData[i - 1].open) {
 			return '#04DF08';
@@ -33,39 +46,37 @@
 			return determineColor(i - 1);
 		}
 	};
-	const filterUnwanted = (arr) => {
-		const required = arr.filter((el) => {
-			return el && el.open && el.close && el.low && el.high;
-		});
-		console.log(required.length);
-		return required;
-	};
 
-	//$: console.log(w);
+	/* Reactive portion of code */
 	$: count = w <= 650 ? 40 : w <= 800 ? 60 : w <= 1000 ? 125 : w <= 1500 ? 150 : 175;
+
 	$: ema12 = Ema(
 		data.map((dat) => dat.close),
 		12
 	).slice(data.length - count, data.length - 1);
+
 	$: ema26 = Ema(
 		data.map((dat) => dat.close),
 		26
 	).slice(data.length - count, data.length - 1);
+
 	$: testData = data.slice(data.length - count, data.length - 1);
+
 	$: testData.forEach((dat, i) => {
 		dat.ema12 = ema12[i];
 		dat.ema26 = ema26[i];
 	});
-	$: console.log(testData);
+
 	$: minX = Math.min.apply(
 		null,
 		testData.map((item) => item.openTimeInMillis)
 	);
-	$: console.log(testData[0]);
+
 	$: maxX = Math.max.apply(
 		null,
 		testData.map((item) => item.openTimeInMillis)
 	);
+
 	$: minY = Math.min.apply(
 		null,
 		testData.map((item) => item.low)
@@ -75,12 +86,6 @@
 		null,
 		testData.map((item) => item.high)
 	);
-	async function loadData() {
-		let res = await fetch(`api/coinbase-pro/${tradingPair}.json?granularity=${granularity}`);
-		let tempData = await res.json();
-		tempGranularity = granularity;
-		data = filterUnwanted(tempData.data);
-	}
 </script>
 
 <div class="flex flex-col">
@@ -137,139 +142,47 @@
 			<span class="x-label">{dayjs(value).format('HH:mm')}</span>
 		</Pancake.Grid>
 
-		{#each testData as d, i}
-			{#if d && d.open && d.close && d.low && d.high && d.openTimeInMillis}
-				{#if d.open > d.close}
-					<Pancake.Box
-						x1={d.openTimeInMillis}
-						x2={d.openTimeInMillis + d.sizeInMillis}
-						y1={d.open}
-						y2={d.close}
-					>
-						<div
-							class="box"
-							style="background-color:#DF3604"
-							title={`Open: $${yootils.commas(d.open.toFixed(2))}\nClose: $${yootils.commas(
-								d.close.toFixed(2)
-							)}\nHigh: $${yootils.commas(d.high.toFixed(2))}\nLow: $${yootils.commas(
-								d.low.toFixed(2)
-							)}`}
-							use:tooltip
-						/>
-					</Pancake.Box>
-					<Pancake.Box
-						x1={d.openTimeInMillis + d.sizeInMillis / 2 - 0.075 * d.sizeInMillis}
-						x2={d.openTimeInMillis + d.sizeInMillis / 2 + 0.075 * d.sizeInMillis}
-						y1={d.high}
-						y2={d.low}
-					>
-						<div
-							class="tail"
-							style="background-color:#DF3604"
-							title={`Open: $${yootils.commas(d.open.toFixed(2))}\nClose: $${yootils.commas(
-								d.close.toFixed(2)
-							)}\nHigh: $${yootils.commas(d.high.toFixed(2))}\nLow: $${yootils.commas(
-								d.low.toFixed(2)
-							)}`}
-							use:tooltip
-						/>
-					</Pancake.Box>
-				{:else if d.close > d.open}
-					<Pancake.Box
-						x1={d.openTimeInMillis}
-						x2={d.openTimeInMillis + d.sizeInMillis}
-						y1={d.close}
-						y2={d.open}
-					>
-						<div
-							class="box"
-							style="background-color:#04DF08"
-							title={`Open: $${yootils.commas(d.open.toFixed(2))}\nClose: $${yootils.commas(
-								d.close.toFixed(2)
-							)}\nHigh: $${yootils.commas(d.high.toFixed(2))}\nLow: $${yootils.commas(
-								d.low.toFixed(2)
-							)}`}
-							use:tooltip
-						/>
-					</Pancake.Box>
-					<Pancake.Box
-						x1={d.openTimeInMillis + d.sizeInMillis / 2 - 0.075 * d.sizeInMillis}
-						x2={d.openTimeInMillis + d.sizeInMillis / 2 + 0.075 * d.sizeInMillis}
-						y1={d.high}
-						y2={d.low}
-					>
-						<div
-							class="tail"
-							style="background-color:#04DF08"
-							title={`Open: $${yootils.commas(d.open.toFixed(2))}\nClose: $${yootils.commas(
-								d.close.toFixed(2)
-							)}\nHigh: $${yootils.commas(d.high.toFixed(2))}\nLow: $${yootils.commas(
-								d.low.toFixed(2)
-							)}`}
-							use:tooltip
-						/>
-					</Pancake.Box>
-				{:else}
-					<Pancake.Box
-						x1={d.openTimeInMillis}
-						x2={d.openTimeInMillis + d.sizeInMillis}
-						y1={d.open}
-						y2={d.close}
-					>
-						<div
-							class="box"
-							style="background-color:{determineColor(i)}"
-							title={`Open: $${yootils.commas(d.open.toFixed(2))}\nClose: $${yootils.commas(
-								d.close.toFixed(2)
-							)}\nHigh: $${yootils.commas(d.high.toFixed(2))}\nLow: $${yootils.commas(
-								d.low.toFixed(2)
-							)}`}
-							use:tooltip
-						/>
-					</Pancake.Box>
-					<Pancake.Box
-						x1={d.openTimeInMillis + d.sizeInMillis / 2 - 0.075 * d.sizeInMillis}
-						x2={d.openTimeInMillis + d.sizeInMillis / 2 + 0.075 * d.sizeInMillis}
-						y1={d.high}
-						y2={d.low}
-					>
-						<div
-							class="tail"
-							style="background-color:{determineColor(i)}}"
-							title={`Open: $${yootils.commas(d.open.toFixed(2))}\nClose: $${yootils.commas(
-								d.close.toFixed(2)
-							)}\nHigh: $${yootils.commas(d.high.toFixed(2))}\nLow: $${yootils.commas(
-								d.low.toFixed(2)
-							)}`}
-							use:tooltip
-						/>
-					</Pancake.Box>
-				{/if}
-			{/if}
+		{#each testData as dat, i}
+			<Pancake.Svg>
+				<Pancake.SvgPolygon data={genPolygon(dat)} let:d>
+					<path
+						{d}
+						style="fill:{determineColor(dat, i)}"
+						title={`Open: $${formatBase(dat.open)}\nClose: $${formatBase(
+							dat.close
+						)}\nHigh: $${formatBase(dat.high)}\nLow: $${formatBase(dat.low)}`}
+						use:tooltip
+					/>
+				</Pancake.SvgPolygon>
+			</Pancake.Svg>
 		{/each}
 		{#if ema12Enabled}
-			<Pancake.Svg>
-				<Pancake.SvgLine
-					data={testData}
-					x={(d) => d.openTimeInMillis + d.sizeInMillis / 2}
-					y={(d) => d.ema12}
-					let:d
-				>
-					<path class="stroke-blue-700 trend dark:stroke-light-blue-300" {d} />
-				</Pancake.SvgLine>
-			</Pancake.Svg>
+			<div style="pointer-events:none">
+				<Pancake.Svg>
+					<Pancake.SvgLine
+						data={testData}
+						x={(d) => d.openTimeInMillis + d.sizeInMillis / 2}
+						y={(d) => d.ema12}
+						let:d
+					>
+						<path class="stroke-blue-700 trend dark:stroke-light-blue-300" {d} />
+					</Pancake.SvgLine>
+				</Pancake.Svg>
+			</div>
 		{/if}
 		{#if ema26Enabled}
-			<Pancake.Svg>
-				<Pancake.SvgLine
-					data={testData}
-					x={(d) => d.openTimeInMillis + d.sizeInMillis / 2}
-					y={(d) => d.ema26}
-					let:d
-				>
-					<path class="stroke-fuchsia-600 trend dark:stroke-fuchsia-400" {d} />
-				</Pancake.SvgLine>
-			</Pancake.Svg>
+			<div style="pointer-events:none">
+				<Pancake.Svg>
+					<Pancake.SvgLine
+						data={testData}
+						x={(d) => d.openTimeInMillis + d.sizeInMillis / 2}
+						y={(d) => d.ema26}
+						let:d
+					>
+						<path class="stroke-fuchsia-600 trend dark:stroke-fuchsia-400" {d} />
+					</Pancake.SvgLine>
+				</Pancake.Svg>
+			</div>
 		{/if}
 	</Pancake.Chart>
 </div>
@@ -283,6 +196,7 @@
 
 	path.trend {
 		stroke-linejoin: round;
+		pointer-events: none;
 		stroke-linecap: round;
 		stroke-width: 1px;
 		fill: none;
@@ -295,7 +209,7 @@
 
 	.grid-line.horizontal {
 		width: calc(100% + 3em);
-		left: -1.5em;
+		left: -1em;
 		border: 1px dashed rgba(204, 204, 204, 0.5);
 	}
 
@@ -323,18 +237,5 @@
 		font-size: 14px;
 		color: #999;
 		text-align: center;
-	}
-
-	.box {
-		position: absolute;
-		left: 1px;
-		width: calc(100% - 2px);
-		height: 100%;
-	}
-
-	.tail {
-		position: absolute;
-		width: 100%;
-		height: 100%;
 	}
 </style>
