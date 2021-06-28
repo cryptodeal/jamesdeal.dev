@@ -51,7 +51,7 @@
 >
 	Demos
 </h1>
-<div class="flex mb-5">
+<div class="flex mt-20">
 	<nav class="mx-auto h-8 gap-20 inline-flex">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +84,7 @@
 		</svg>
 	</nav>
 </div>
-<section class="mx-1 px-5 lg:(mx-auto container)">
+<section class="mx-1 py-15 px-5 lg:(mx-auto container)">
 	{#if charts !== null}
 		{#each charts as { Chart }, index}
 			{#if number === index}

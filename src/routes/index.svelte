@@ -32,10 +32,10 @@
 	import proHeadshotWebP from '$images/headshot1.jpg?w=200;400;600;1000&format=webp&quality=75&srcset';
 	import proHeadshotAvif from '$images/headshot1.jpg?w=200;400;600;1000&format=avif&quality=75&srcset';
 	import proHeadshotBlur from '$images/headshot1.jpg?w=300&blur=100&quality=15';
-	import test from '$images/test.jpg?w=800&quality=75&meta';
-	import testWebP from '$images/test.jpg?w=500;1000;2000&format=webp&quality=75&srcset';
-	import testAvif from '$images/test.jpg?w=500;1000;2000&format=avif&quality=75&srcset';
-	import testBlur from '$images/test.jpg?w=300&blur=100&quality=15';
+	//import test from '$images/test.jpg?w=800&quality=75&meta';
+	//import testWebP from '$images/test.jpg?w=500;1000;2000&format=webp&quality=75&srcset';
+	//import testAvif from '$images/test.jpg?w=500;1000;2000&format=avif&quality=75&srcset';
+	//import testBlur from '$images/test.jpg?w=300&blur=100&quality=15';
 	import { nest } from 'd3-collection';
 	import CalendarMonth from '$lib/Commits/CommitMap.svelte';
 	import XAxis from '$lib/Commits/XAxis.svelte';
@@ -45,8 +45,8 @@
 	import Slider from '$lib/ux/Slider.svelte';
 	let alt = 'Professional headshot of James Deal';
 	let proHeadshotRatio = `${(1 / (proHeadshot.width / proHeadshot.height)) * 100}%`;
-	let testRatio = `${(1 / (test.width / test.height)) * 100}%`;
-	let sizes = '(min-width: 1500px) 2000px, 100vw';
+	//let testRatio = `${(1 / (test.width / test.height)) * 100}%`;
+	//let sizes = '(min-width: 1500px) 2000px, 100vw';
 	let headshotSizes = '(min-width: 1500px) 1000px, 100vw';
 	let style = 'border-radius:50%';
 	let dates = storedCommits.storedCommits.map((commit) => {
@@ -216,7 +216,7 @@
 			<Slider {interests} />
 		</div>
 	</div>
-
+	<!--
 	<div class="flex flex-wrap-reverse mb-40 items-center">
 		<div
 			class="rounded-lg mx-auto bg-opacity-80 bg-blue-300 p-5 lg:(w-4/9 p-8) dark:(bg-purple-900 bg-opacity-30)"
@@ -247,7 +247,7 @@
 			/>
 		</div>
 	</div>
-
+-->
 	<div class="flex flex-col w-full text-red-800 justify-center dark:text-green-400">
 		<h2
 			class="font-extralight font-sans text-center mb-5 text-2xl text-red-800 lg:text-4xl dark:text-green-400;"
@@ -255,7 +255,7 @@
 			Connect With Me:
 		</h2>
 		<div class="flex mx-auto inline-flex">
-			<a class="px-2 no-underline" title="email" href="mailto:me@jamesdeal.dev">
+			<a class="px-2 no-underline" title="email" href="mailto:jimmydeal@gmail.com">
 				<svg
 					class="h-10 fill-current w-auto"
 					xmlns="http://www.w3.org/2000/svg"
@@ -281,7 +281,7 @@
 					/>
 				</svg>
 			</a>
-			<!--Remove placeholder link below-->
+			<!--Remove placeholder link below
 			<a class="px-2 no-underline" title="linkedin" href="https://placeholderlink.com">
 				<svg
 					class="h-10 fill-current w-auto"
@@ -295,6 +295,7 @@
 					/>
 				</svg>
 			</a>
+      -->
 			<a class="px-2 no-underline" title="twitter" href="https://twitter.com/jamespdeal">
 				<svg
 					class="h-10 fill-current w-auto"

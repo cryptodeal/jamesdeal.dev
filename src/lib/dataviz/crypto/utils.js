@@ -6,69 +6,79 @@ const genPolygon = (d) => {
 		let x;
 		let y;
 		switch (i) {
-			case 0 /* Point 1 */:
+			/* Point 1 */
+			case 0:
 				x = d.openTimeInMillis + d.sizeInMillis * 0.1;
 				y = d.open <= d.close ? d.open : d.close;
 				points[i] = { x, y };
 				break;
-			case 1 /* Point 2 */:
+			/* Point 2 */
+			case 1:
 				x = d.openTimeInMillis + d.sizeInMillis * 0.1;
 				y = d.open <= d.close ? d.close : d.open;
 				points[i] = { x, y };
 				break;
-			case 2 /* Point 3 */:
+			/* Point 3 */
+			case 2:
 				x = d.openTimeInMillis + d.sizeInMillis * 0.4;
 				y = d.open <= d.close ? d.close : d.open;
 				points[i] = { x, y };
 				break;
-			case 3 /* Point 4 */:
+			/* Point 4 */
+			case 3:
 				x = d.openTimeInMillis + d.sizeInMillis * 0.4;
 				y = d.high;
 				points[i] = { x, y };
 				break;
-			case 4 /* Point 5 */:
+			/* Point 5 */
+			case 4:
 				x = d.openTimeInMillis + d.sizeInMillis * 0.6;
 				y = d.high;
 				points[i] = { x, y };
 				break;
-			case 5 /* Point 6 */:
+			/* Point 6 */
+			case 5:
 				x = d.openTimeInMillis + d.sizeInMillis * 0.6;
 				y = d.open <= d.close ? d.close : d.open;
 				points[i] = { x, y };
 				break;
-			case 6 /* Point 7 */:
+			/* Point 7 */
+			case 6:
 				x = d.openTimeInMillis + d.sizeInMillis * 0.9;
 				y = d.open <= d.close ? d.close : d.open;
 				points[i] = { x, y };
 				break;
-			case 7 /* Point 8 */:
+			/* Point 8 */
+			case 7:
 				x = d.openTimeInMillis + d.sizeInMillis * 0.9;
 				y = d.open <= d.close ? d.open : d.close;
 				points[i] = { x, y };
 				break;
-			case 8 /* Point 9 */:
+			/* Point 9 */
+			case 8:
 				x = d.openTimeInMillis + d.sizeInMillis * 0.6;
 				y = d.open <= d.close ? d.open : d.close;
 				points[i] = { x, y };
 				break;
-			case 9 /* Point 10 */:
+			/* Point 10 */
+			case 9:
 				x = d.openTimeInMillis + d.sizeInMillis * 0.6;
 				y = d.low;
 				points[i] = { x, y };
 				break;
-			case 10 /* Point 11 */:
+			/* Point 11 */
+			case 10:
 				x = d.openTimeInMillis + d.sizeInMillis * 0.4;
 				y = d.low;
 				points[i] = { x, y };
 				break;
+			/* Point 12 */
 			default:
-				/* Point 12 */
 				x = d.openTimeInMillis + d.sizeInMillis * 0.4;
 				y = d.open <= d.close ? d.open : d.close;
 				points[i] = { x, y };
 		}
 	}
-	//console.log(points)
 	return points;
 };
 
@@ -76,11 +86,19 @@ const filterUnwanted = (arr) => {
 	const required = arr.filter((el) => {
 		return el && el.open && el.close && el.low && el.high;
 	});
-	console.log(required.length);
 	return required;
 };
-const formatBase = (value) => {
-	return yootils.commas(value.toFixed(2));
+const formatBase = (value, counter) => {
+	switch (counter) {
+		case 'USD':
+			return `$${yootils.commas(value.toFixed(2))}`;
+		case 'EUR':
+			return `€${yootils.commas(value.toFixed(2))}`;
+		case 'GBP':
+			return `£${yootils.commas(value.toFixed(2))}`;
+		default:
+			return `${yootils.commas(value.toFixed(2))}\n${counter}`;
+	}
 };
 
 export { genPolygon, filterUnwanted, formatBase };

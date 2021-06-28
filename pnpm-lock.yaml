@@ -8,6 +8,7 @@ specifiers:
   '@sveltejs/pancake': ^0.0.17
   cookie: ^0.4.1
   d3-collection: ^1.0.7
+  d3-hexbin: ^0.2.2
   d3-hierarchy: 2.0.0
   d3-scale: ^3.3.0
   d3-time: ^2.1.1
@@ -57,6 +58,7 @@ devDependencies:
   '@sveltejs/adapter-vercel': 1.0.0-next.22
   '@sveltejs/kit': 1.0.0-next.118_svelte@3.38.3
   d3-collection: 1.0.7
+  d3-hexbin: 0.2.2
   d3-hierarchy: 2.0.0
   d3-scale: 3.3.0
   d3-time: 2.1.1
@@ -621,7 +623,7 @@ packages:
         integrity: sha512-C9JL/4/CQR1BqEwyKFr6wCyejzIjwyC0nkA73TzGllIiPHxbJ3AykYZ4Ak7DFcZj9UNz8AmNbyzkuJTz3j2qJQ==
       }
     dependencies:
-      esbuild: 0.12.9
+      esbuild: 0.12.11
     dev: true
 
   /@sveltejs/kit/1.0.0-next.118_svelte@3.38.3:
@@ -1306,6 +1308,10 @@ packages:
         integrity: sha512-Ab3S6XuE/Q+flY96HXT0jOXcM4EAClYFnRGY5zsjRGNy6qCYrQsMffs7cV5Q9xejb35zxW5hf/guKw34kvIKsA==
       }
 
+  /d3-hexbin/0.2.2:
+    resolution: { integrity: sha1-nFg32s/UcasFM3qeke8Qv8T5iDE= }
+    dev: true
+
   /d3-hierarchy/2.0.0:
     resolution:
       {
@@ -1589,10 +1595,10 @@ packages:
       is-arrayish: 0.2.1
     dev: true
 
-  /esbuild/0.12.9:
+  /esbuild/0.12.11:
     resolution:
       {
-        integrity: sha512-MWRhAbMOJ9RJygCrt778rz/qNYgA4ZVj6aXnNPxFjs7PmIpb0fuB9Gmg5uWrr6n++XKwwm/RmSz6RR5JL2Ocsw==
+        integrity: sha512-h83GwI6lYOrnSv5hSY2i2XZ191v3haj2IGDzwrkfWHhuO/kVMX3RYjhwRNG9E5VSxVLPaUjTVwrv8HWLvhk2nQ==
       }
     hasBin: true
     requiresBuild: true
@@ -3693,10 +3699,10 @@ packages:
       glob: 7.1.7
     dev: true
 
-  /rollup/2.52.2:
+  /rollup/2.52.3:
     resolution:
       {
-        integrity: sha512-4RlFC3k2BIHlUsJ9mGd8OO+9Lm2eDF5P7+6DNQOp5sx+7N/1tFM01kELfbxlMX3MxT6owvLB1ln4S3QvvQlbUA==
+        integrity: sha512-QF3Sju8Kl2z0osI4unyOLyUudyhOMK6G0AeqJWgfiyigqLAlnNrfBcDWDx+f1cqn+JU2iIYVkDrgQ6/KtwEfrg==
       }
     engines: { node: '>=10.0.0' }
     hasBin: true
@@ -4565,10 +4571,10 @@ packages:
     engines: { node: '>=12.0.0' }
     hasBin: true
     dependencies:
-      esbuild: 0.12.9
+      esbuild: 0.12.11
       postcss: 8.3.5
       resolve: 1.20.0
-      rollup: 2.52.2
+      rollup: 2.52.3
     optionalDependencies:
       fsevents: 2.3.2
     dev: true

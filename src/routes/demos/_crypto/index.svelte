@@ -1,14 +1,11 @@
 <script>
 	import * as Pancake from '@sveltejs/pancake';
-	import * as yootils from 'yootils';
 	import dayjs from 'dayjs';
 	import { Ema } from '$lib/dataviz/crypto/ema';
 	import { tooltip } from '$lib/dataviz/crypto/tooltip';
 	import { genPolygon, filterUnwanted, formatBase } from '$lib/dataviz/crypto/utils';
-	//import Tooltip from '$lib/dataviz/crypto/TooltipFromAction.svelte';
-
 	export let cryptoData;
-	//let tooltip;
+
 	let tradingPair = `ETH-USD`;
 	const candleGranularity = [
 		{ label: `1 Min`, value: 60 },
@@ -21,10 +18,19 @@
 	let w;
 	let ema12Enabled = false;
 	let ema26Enabled = false;
-	//const emaList = [];
 	let tempGranularity = 900;
 	let granularity = 900;
 	let { data, pairs } = cryptoData;
+
+	/* TODO: Allow users to pick EMA periods */
+	//const emaList = [];
+
+	/* TODO: Utilize other TA functions ported from GO's talib */
+	//1 - MACD
+	//2 - MFI
+	//3 - BB
+	//4 - SMA
+	//5 - Port additional functions?
 
 	/* Fetches new data on:blur when user selects tradingPair || granularity */
 	async function loadData() {
@@ -137,7 +143,7 @@
 <div bind:clientWidth={w} class="chart">
 	<Pancake.Chart x1={minX} x2={maxX} y1={minY} y2={maxY}>
 		<Pancake.Grid horizontal count={5} let:value let:first>
-			<div class="grid-line horizontal"><span>{`$${yootils.commas(value)}`}</span></div>
+			<div class="grid-line horizontal"><span>{formatBase(value, testData[0].counter)}</span></div>
 		</Pancake.Grid>
 
 		<Pancake.Grid vertical count={10} let:value>
@@ -151,9 +157,13 @@
 						{d}
 						class="candle"
 						style="fill:{determineColor(dat, i)}"
-						title={`Open: $${formatBase(dat.open)}\nClose: $${formatBase(
-							dat.close
-						)}\nHigh: $${formatBase(dat.high)}\nLow: $${formatBase(dat.low)}`}
+						title={`Open: ${formatBase(dat.open, dat.counter)}\nClose: ${formatBase(
+							dat.close,
+							dat.counter
+						)}\nHigh: ${formatBase(dat.high, dat.counter)}\nLow: ${formatBase(
+							dat.low,
+							dat.counter
+						)}`}
 						use:tooltip
 					/>
 				</Pancake.SvgPolygon>
@@ -222,12 +232,13 @@
 
 	.grid-line span {
 		position: absolute;
-		left: -3em;
+		left: -5em;
 		bottom: -0.5em;
 		font-family: sans-serif;
 		font-size: 14px;
 		color: #999;
 		line-height: 1;
+		white-space: pre-wrap;
 	}
 
 	.candle {
