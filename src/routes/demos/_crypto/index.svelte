@@ -152,21 +152,23 @@
 		</Pancake.Grid>
 		<Pancake.Svg>
 			{#each testData as dat, i}
-				<Pancake.SvgPolygon data={genPolygon(dat)} let:d>
-					<path
-						{d}
-						class="candle"
-						style="fill:{determineColor(dat, i)}"
-						title={`Open: ${formatBase(dat.open, dat.counter)}\nClose: ${formatBase(
-							dat.close,
-							dat.counter
-						)}\nHigh: ${formatBase(dat.high, dat.counter)}\nLow: ${formatBase(
-							dat.low,
-							dat.counter
-						)}`}
-						use:tooltip
-					/>
-				</Pancake.SvgPolygon>
+				{#if dat && dat.open && dat.close && dat.low && dat.high}
+					<Pancake.SvgPolygon data={genPolygon(dat)} let:d>
+						<path
+							{d}
+							class="candle"
+							style="fill:{determineColor(dat, i)}"
+							title={`Open: ${formatBase(dat.open, dat.counter)}\nClose: ${formatBase(
+								dat.close,
+								dat.counter
+							)}\nHigh: ${formatBase(dat.high, dat.counter)}\nLow: ${formatBase(
+								dat.low,
+								dat.counter
+							)}`}
+							use:tooltip
+						/>
+					</Pancake.SvgPolygon>
+				{/if}
 			{/each}
 		</Pancake.Svg>
 		{#if ema12Enabled}

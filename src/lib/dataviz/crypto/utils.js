@@ -88,6 +88,7 @@ const filterUnwanted = (arr) => {
 	});
 	return required;
 };
+
 const formatBase = (value, counter) => {
 	switch (counter) {
 		case 'USD':
@@ -97,7 +98,7 @@ const formatBase = (value, counter) => {
 		case 'GBP':
 			return `£${yootils.commas(value.toFixed(2))}`;
 		default:
-			return `${yootils.commas(value.toFixed(2))}\n${counter}`;
+			return `${yootils.commas(value)}\n${counter}`;
 	}
 };
 
