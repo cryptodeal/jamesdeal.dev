@@ -57,7 +57,8 @@
 	};
 
 	/* Reactive portion of code */
-	$: count = w <= 650 ? 40 : w <= 800 ? 60 : w <= 1000 ? 125 : w <= 1500 ? 150 : 175;
+	$: count =
+		w <= 400 ? 30 : w <= 650 ? 40 : w <= 800 ? 60 : w <= 1000 ? 125 : w <= 1500 ? 150 : 175;
 
 	$: ema12 = Ema(
 		data.map((dat) => dat.close),
@@ -146,7 +147,7 @@
 			<div class="grid-line horizontal"><span>{formatBase(value, testData[0].counter)}</span></div>
 		</Pancake.Grid>
 
-		<Pancake.Grid vertical count={10} let:value>
+		<Pancake.Grid vertical count={w <= 650 ? 5 : 10} let:value>
 			<div class="grid-line vertical" />
 			<span class="x-label">{dayjs(value).format('HH:mm')}</span>
 		</Pancake.Grid>
@@ -204,9 +205,9 @@
 
 <style>
 	.chart {
-		height: 500px;
+		height: 400px;
 		padding: 3em 0 2em 3em;
-		margin: 0 0 36px 0;
+		margin: 0 3em 36px 3em;
 	}
 
 	path.trend {
