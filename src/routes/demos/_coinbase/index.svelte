@@ -205,7 +205,7 @@
 
 <style>
 	.chart {
-		height: 400px;
+		height: 500px;
 		padding: 3em 0 2em 3em;
 		margin: 0 3em 36px 3em;
 	}
