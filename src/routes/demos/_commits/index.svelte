@@ -47,7 +47,7 @@
 		</Svg>
 	</LayerCake>
 </div>
-<div class="text-center md:container md:mx-auto">
+<div class="mt-10 text-center md:container md:mx-auto">
 	<p>
 		Adapted from <a
 			href="https://docs.github.com/en/github/setting-up-and-managing-your-github-profile/managing-contribution-graphs-on-your-profile/showing-an-overview-of-your-activity-on-your-profile"

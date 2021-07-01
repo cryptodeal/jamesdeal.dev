@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@lukeed/uuid': ^2.0.0
-  '@octokit/rest': ^18.6.3
+  '@octokit/rest': ^18.6.6
   '@sveltejs/adapter-vercel': next
   '@sveltejs/kit': next
   '@sveltejs/pancake': ^0.0.17
@@ -17,10 +17,10 @@ specifiers:
   eslint: ^7.29.0
   eslint-config-prettier: ^8.3.0
   eslint-plugin-svelte3: ^3.2.0
-  layercake: ^4.1.0
+  layercake: ^4.1.1
   mdsvex: ^0.9.7
   mongodb-client-encryption: 1.2.3
-  mongoose: ^5.12.15
+  mongoose: ^5.13.0
   prettier: ^2.3.2
   prettier-plugin-svelte: ^2.3.1
   rehype-autolink-headings: ^5.1.0
@@ -31,32 +31,32 @@ specifiers:
   stylelint: ^13.13.1
   stylelint-config-standard: ^22.0.0
   svelte: 3.38.3
-  svelte-particles: ^1.12.2
+  svelte-particles: ^1.13.2
   svelte-preprocess: ^4.7.3
   svelte-toggle: ^3.0.0
   svelte-typewriter: ^2.4.5
   vite-imagetools: ^3.6.8
-  vite-plugin-windicss: ^1.1.1
+  vite-plugin-windicss: ^1.2.0
   windicss: ^3.1.3
   yootils: ^0.2.1
 
 dependencies:
   '@lukeed/uuid': 2.0.0
-  '@octokit/rest': 18.6.3
+  '@octokit/rest': 18.6.6
   '@sveltejs/pancake': 0.0.17
   cookie: 0.4.1
-  layercake: 4.1.0_svelte@3.38.3
+  layercake: 4.1.1_svelte@3.38.3
   mongodb-client-encryption: 1.2.3
-  mongoose: 5.12.15_mongodb-client-encryption@1.2.3
+  mongoose: 5.13.0_mongodb-client-encryption@1.2.3
   saslprep: 1.0.3
-  svelte-particles: 1.12.2_svelte@3.38.3
+  svelte-particles: 1.13.2_svelte@3.38.3
   svelte-toggle: 3.0.0
   svelte-typewriter: 2.4.5
   yootils: 0.2.1
 
 devDependencies:
   '@sveltejs/adapter-vercel': 1.0.0-next.22
-  '@sveltejs/kit': 1.0.0-next.118_svelte@3.38.3
+  '@sveltejs/kit': 1.0.0-next.119_svelte@3.38.3
   d3-collection: 1.0.7
   d3-hexbin: 0.2.2
   d3-hierarchy: 2.0.0
@@ -79,7 +79,7 @@ devDependencies:
   svelte: 3.38.3
   svelte-preprocess: 4.7.3_svelte@3.38.3
   vite-imagetools: 3.6.8
-  vite-plugin-windicss: 1.1.1
+  vite-plugin-windicss: 1.2.0
   windicss: 3.1.3
 
 packages:
@@ -426,7 +426,7 @@ packages:
         integrity: sha512-BpGYsPgJt05M7/L/5FoE1PiAbdxXFZkX/3kDYcsvd1v6UhlnE5e96dTDr0ezX/EFwciQxf3cNV0loipsURU+WA==
       }
     dependencies:
-      '@octokit/types': 6.16.7
+      '@octokit/types': 6.17.4
     dev: false
 
   /@octokit/core/3.5.1:
@@ -439,7 +439,7 @@ packages:
       '@octokit/graphql': 4.6.2
       '@octokit/request': 5.6.0
       '@octokit/request-error': 2.1.0
-      '@octokit/types': 6.16.6
+      '@octokit/types': 6.16.7
       before-after-hook: 2.2.1
       universal-user-agent: 6.0.0
     dev: false
@@ -450,7 +450,7 @@ packages:
         integrity: sha512-fUIPpx+pZyoLW4GCs3yMnlj2LfoXTWDUVPTC4V3MUEKZm48W+XYpeWSZCv+vYF1ZABUm2CqnDVf1sFtIYrj7KQ==
       }
     dependencies:
-      '@octokit/types': 6.16.7
+      '@octokit/types': 6.17.4
       is-plain-object: 5.0.0
       universal-user-agent: 6.0.0
     dev: false
@@ -462,21 +462,21 @@ packages:
       }
     dependencies:
       '@octokit/request': 5.6.0
-      '@octokit/types': 6.16.7
+      '@octokit/types': 6.17.4
       universal-user-agent: 6.0.0
-    dev: false
-
-  /@octokit/openapi-types/7.3.4:
-    resolution:
-      {
-        integrity: sha512-binmLrMQWBG0CvUE/jS3/XXrZbX3oN/6gF7ocSsb/ZJ0xfox2isJN4ZhGeL91SDJVzFK7XuUYBm2mlIDedkxsg==
-      }
     dev: false
 
   /@octokit/openapi-types/7.3.5:
     resolution:
       {
         integrity: sha512-6bm5lzGDOeSnWHM5W8OZ86RD2KpchynU+/Qlm5hNEFjfLDhwfAY2lSe68YRUEYFGlxSHe0HmakyhvmtWoD3Zog==
+      }
+    dev: false
+
+  /@octokit/openapi-types/8.1.4:
+    resolution:
+      {
+        integrity: sha512-NnGr4NNDqO5wjSDJo5nxrGtzZUwoT23YasqK2H4Pav/6vSgeVTxuqCL9Aeh+cWfTxDomj1M4Os5BrXFsvl7qiQ==
       }
     dev: false
 
@@ -489,7 +489,7 @@ packages:
       '@octokit/core': '>=2'
     dependencies:
       '@octokit/core': 3.5.1
-      '@octokit/types': 6.16.6
+      '@octokit/types': 6.16.7
     dev: false
 
   /@octokit/plugin-request-log/1.0.3_@octokit+core@3.5.1:
@@ -503,16 +503,16 @@ packages:
       '@octokit/core': 3.5.1
     dev: false
 
-  /@octokit/plugin-rest-endpoint-methods/5.3.4_@octokit+core@3.5.1:
+  /@octokit/plugin-rest-endpoint-methods/5.3.7_@octokit+core@3.5.1:
     resolution:
       {
-        integrity: sha512-2Y2q/FYCsW5tcwIqgnLOgzZXEb3I1VoSQGyHs/Zki/Ufs5H+uT0maPVHatLKw90LQbqK7ON8NpL3Y8IyzG6pNA==
+        integrity: sha512-LAgTLOsJ86ig2wYSpcSx+UWt7aQYYsEZ/Tf/pksAVQWKNcGuTVCDl9OUiPhQ7DZelNozYVWTO9Iyjd/soe4tug==
       }
     peerDependencies:
       '@octokit/core': '>=3'
     dependencies:
       '@octokit/core': 3.5.1
-      '@octokit/types': 6.16.7
+      '@octokit/types': 6.17.4
       deprecation: 2.3.1
     dev: false
 
@@ -522,7 +522,7 @@ packages:
         integrity: sha512-1VIvgXxs9WHSjicsRwq8PlR2LR2x6DwsJAaFgzdi0JfJoGSO8mYI/cHJQ+9FbN21aa+DrgNLnwObmyeSC8Rmpg==
       }
     dependencies:
-      '@octokit/types': 6.16.7
+      '@octokit/types': 6.17.4
       deprecation: 2.3.1
       once: 1.4.0
     dev: false
@@ -535,31 +535,22 @@ packages:
     dependencies:
       '@octokit/endpoint': 6.0.11
       '@octokit/request-error': 2.1.0
-      '@octokit/types': 6.16.7
+      '@octokit/types': 6.17.4
       is-plain-object: 5.0.0
       node-fetch: 2.6.1
       universal-user-agent: 6.0.0
     dev: false
 
-  /@octokit/rest/18.6.3:
+  /@octokit/rest/18.6.6:
     resolution:
       {
-        integrity: sha512-BeV2P48RR3MVPhSBq6KXXHMVHEJg5vnFBkFN1GKPXBohXTp+eb0gJq+5iYgkjbOMG6biNvkKllPDWJchpQHHiA==
+        integrity: sha512-kCLvz8MSh+KToXySdqUp80caBom1ZQmsX3gbT3osfbJy6fD86QObUjzAOD3D3Awz3X7ng24+lB+imvSr5EnM7g==
       }
     dependencies:
       '@octokit/core': 3.5.1
       '@octokit/plugin-paginate-rest': 2.13.3_@octokit+core@3.5.1
       '@octokit/plugin-request-log': 1.0.3_@octokit+core@3.5.1
-      '@octokit/plugin-rest-endpoint-methods': 5.3.4_@octokit+core@3.5.1
-    dev: false
-
-  /@octokit/types/6.16.6:
-    resolution:
-      {
-        integrity: sha512-PrEGjMnEhLlNttsuLadEWqXdMYJX3icHHaRs/ChJebRT79VDh/cNkk8bURx05BEEwr7QvaLsRzjt3hNxUJZfXA==
-      }
-    dependencies:
-      '@octokit/openapi-types': 7.3.4
+      '@octokit/plugin-rest-endpoint-methods': 5.3.7_@octokit+core@3.5.1
     dev: false
 
   /@octokit/types/6.16.7:
@@ -569,6 +560,15 @@ packages:
       }
     dependencies:
       '@octokit/openapi-types': 7.3.5
+    dev: false
+
+  /@octokit/types/6.17.4:
+    resolution:
+      {
+        integrity: sha512-Ghk/JC4zC/1al1GwH6p8jVX6pLdypSWmbnx6h79C/yo3DeaDd6MsNsBFlHu22KbkFh+CdcAzFqdP7UdPaPPmmA==
+      }
+    dependencies:
+      '@octokit/openapi-types': 8.1.4
     dev: false
 
   /@rollup/pluginutils/4.1.0:
@@ -626,10 +626,10 @@ packages:
       esbuild: 0.12.11
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.118_svelte@3.38.3:
+  /@sveltejs/kit/1.0.0-next.119_svelte@3.38.3:
     resolution:
       {
-        integrity: sha512-z72d8p/Csamg+TLf5Vb3ewAo9WhiEgPmGUA/m5ot2qppzLo36+ys109HVsdVoFg2B7wbYB56stbocHr7gF/QuA==
+        integrity: sha512-Pp971N1m2yKQg01kUxwQAolhUb1y9NNPV7zfQLIHQdvlFwrNI5hvOMlGiHj26mM5AyQSU4pnH8X1YUPSqi57gw==
       }
     engines: { node: ^12.20 || >=14.13 }
     hasBin: true
@@ -759,10 +759,10 @@ packages:
       }
     dev: true
 
-  /@windicss/plugin-utils/1.1.1:
+  /@windicss/plugin-utils/1.2.0:
     resolution:
       {
-        integrity: sha512-niKEDyUpOfCGemFHopI9fxdWPpJQIZ/jmaU4spQXsGc1oEts164P8LUJPQmXc8C6vjKwkrH7KA+lxYNG5LmlDA==
+        integrity: sha512-6OAsyz2yI0VKNHACT35FjWWzMZlMEF7Z0pIiNUd9+R9jc73+qJcK1DRCZ3YxnjuGk0G76b542uXQEJgv2jL3vA==
       }
     dependencies:
       '@antfu/utils': 0.2.4
@@ -2532,10 +2532,10 @@ packages:
       }
     dev: true
 
-  /layercake/4.1.0_svelte@3.38.3:
+  /layercake/4.1.1_svelte@3.38.3:
     resolution:
       {
-        integrity: sha512-LSfWSGVLc6P+Ii0v3wu3UV0TuA1XSGx/fwu/5d/xJ1EYBZMNfcVEPIvDTKA81HdMrsOlXtnMMBezKLRWsoBNzg==
+        integrity: sha512-a8xOZeHEtX7DUcOQKHfMiSGeRrsVWDvz0NwhmVWAU0Hk/cnHZX4bJc0pMRuHrz9ZD6aTgvmJqwIZsM18tUi1Ew==
       }
     peerDependencies:
       svelte: ^3.16.7
@@ -2876,7 +2876,7 @@ packages:
       saslprep: 1.0.3
     dev: false
 
-  /mongoose-legacy-pluralize/1.0.2_mongoose@5.12.15:
+  /mongoose-legacy-pluralize/1.0.2_mongoose@5.13.0:
     resolution:
       {
         integrity: sha512-Yo/7qQU4/EyIS8YDFSeenIvXxZN+ld7YdV9LqFVQJzTLye8unujAWPZ4NWKfFA+RNjh+wvTWKY9Z3E5XM6ZZiQ==
@@ -2884,13 +2884,13 @@ packages:
     peerDependencies:
       mongoose: '*'
     dependencies:
-      mongoose: 5.12.15_mongodb-client-encryption@1.2.3
+      mongoose: 5.13.0_mongodb-client-encryption@1.2.3
     dev: false
 
-  /mongoose/5.12.15_mongodb-client-encryption@1.2.3:
+  /mongoose/5.13.0_mongodb-client-encryption@1.2.3:
     resolution:
       {
-        integrity: sha512-GVvxE2/mbUsxAbTtleFlehCNMFlzcgKue/olukIpoN6iw1MYXKodf+ZIRndO+2jzlgbZgiHkAZZJbcFNt1DgHA==
+        integrity: sha512-8dvu7vxmDzlupj4I9T0g33GPf4HzSZmIOKQfG9RJQ5Nxk/Ztx1b8zlYp+blvaCfWwtBpiAJuKYOBU17Wq1RVFQ==
       }
     engines: { node: '>=4.0.0' }
     dependencies:
@@ -2898,7 +2898,7 @@ packages:
       bson: 1.1.6
       kareem: 2.3.2
       mongodb: 3.6.8_mongodb-client-encryption@1.2.3
-      mongoose-legacy-pluralize: 1.0.2_mongoose@5.12.15
+      mongoose-legacy-pluralize: 1.0.2_mongoose@5.13.0
       mpath: 0.8.3
       mquery: 3.2.5
       ms: 2.1.2
@@ -4171,17 +4171,17 @@ packages:
       svelte: 3.38.3
     dev: true
 
-  /svelte-particles/1.12.2_svelte@3.38.3:
+  /svelte-particles/1.13.2_svelte@3.38.3:
     resolution:
       {
-        integrity: sha512-qLqIIp1EAZ3EeR+NS7tn7FzcfL7o4sgZwi1rl61gdxa4KlPoNvWEp7WbNMO5a/FwTUmBQvHm7/KWD3AU2UxAPA==
+        integrity: sha512-k1c80diSk1Iwnmn/98NWWGsIE9nHfAaAejb5MbewPy2ghJI6WXWhquCUs9pQSYW+lZdShB6pkURim6yethK7WA==
       }
     peerDependencies:
       svelte: '>=3'
     dependencies:
       svelte: 3.38.3
       tslib: 2.3.0
-      tsparticles: 1.29.2
+      tsparticles: 1.30.2
     dev: false
 
   /svelte-preprocess/4.7.3_svelte@3.38.3:
@@ -4349,10 +4349,10 @@ packages:
       }
     dev: false
 
-  /tsparticles/1.29.2:
+  /tsparticles/1.30.2:
     resolution:
       {
-        integrity: sha512-/oo9B9n0A8jd0uGGlYyhzcwQyoiX5Z4X3TFBzt98B8OxEen5vogLvyD7kCswFQDfiZXvcx8lgoLtJXm96flQ5w==
+        integrity: sha512-S9NXMN6MloJO/+cqh72i2hhtuxm2anVdJmcvjcYHe/jJYfsNdQ5sxpMy82d3sGk6bREzt8ZW/oPXeyPhf6q6fg==
       }
     requiresBuild: true
     optionalDependencies:
@@ -4547,15 +4547,15 @@ packages:
       - rollup
     dev: true
 
-  /vite-plugin-windicss/1.1.1:
+  /vite-plugin-windicss/1.2.0:
     resolution:
       {
-        integrity: sha512-J1n3DoSg8BkQ42HDNzh+FqPhvBgCRgQ0Nvp2HLvb5FVl8FKEPw26Frc/oLaC1g9ypSlvkSM8011gHi+c+pxsRQ==
+        integrity: sha512-3teAmQHCDDDcy7On5fOj1sYTRVo8zAwJJd4SOapeGI7EuEzO2fHy6oDS6sPXVUnstbfoPbvrng1xvc3VAqI+sg==
       }
     peerDependencies:
       vite: ^2.0.1
     dependencies:
-      '@windicss/plugin-utils': 1.1.1
+      '@windicss/plugin-utils': 1.2.0
       chalk: 4.1.1
       debug: 4.3.2
       windicss: 3.1.3

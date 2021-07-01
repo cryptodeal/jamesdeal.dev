@@ -1,5 +1,5 @@
 import { octokit } from '$lib/_api/Github';
-import { addRepo, addCommit, getCommitsByDate } from '$lib/_db/utils';
+import { addRepo, addCommit, getCommitsByDate, getLatestCommit } from '$lib/_db/utils';
 import initConnect from '$lib/_db/initConnect';
 import dayjs from 'dayjs';
 
@@ -10,6 +10,10 @@ export async function get() {
 		username: 'cryptodeal',
 		per_page: 100
 	});
+
+	let { dateLatest } = await getLatestCommit();
+	dateLatest = dayjs(dateLatest);
+
 	var now = dayjs();
 	var twoMonthsBack = now.subtract(2, 'month').date(1);
 	if (twoMonthsBack.day() !== 0) {
@@ -18,20 +22,20 @@ export async function get() {
 	}
 
 	const parsedData = data
-		.filter((action) => action.type === 'PushEvent')
+		/* Optimized by filtering on date */
+		.filter(
+			(action) => action.type === 'PushEvent' && !dayjs(action.created_at).isBefore(dateLatest)
+		)
 		.map((pushEvent) => {
 			return {
 				...pushEvent,
-				commits: pushEvent.payload.commits.filter(
-					(commits) => commits.author.email === 'jimmydeal16@gmail.com'
-				)
+				commits: pushEvent.payload.commits.filter((commit) => {
+					commit.author.email === 'jimmydeal16@gmail.com';
+				})
 			};
 		});
 
 	let repos = [...new Set(parsedData.map((item) => JSON.stringify(item.repo)))];
-	repos.forEach((repo) => {
-		addRepo(JSON.parse(repo));
-	});
 
 	let commits = [
 		...new Set(
@@ -46,8 +50,13 @@ export async function get() {
 			)
 		)
 	].flat();
-	commits.forEach((commit) => {
+
+	commits.map((commit) => {
 		addCommit(JSON.parse(commit));
+	});
+
+	repos.map((repo) => {
+		addRepo(JSON.parse(repo));
 	});
 
 	const storedCommits = await getCommitsByDate(twoMonthsBack, now).catch((err) =>
