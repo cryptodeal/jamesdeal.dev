@@ -5,15 +5,16 @@ import dayjs from 'dayjs';
 
 export async function get() {
 	await initConnect();
-	/* TODO: Optimize by fetching existing mongodb record, creating new records, and then merging existing w new records */
+
+	/* TODO: Further endpoint optimization */
 	const { data } = await octokit.request('GET /users/{username}/events', {
 		username: 'cryptodeal',
 		per_page: 100
 	});
 
-	let { dateLatest } = await getLatestCommit();
-	dateLatest = dayjs(dateLatest);
-
+	let { date } = await getLatestCommit();
+	date = dayjs.toString(date).valueOf;
+	//console.log(dayjs(date))
 	var now = dayjs();
 	var twoMonthsBack = now.subtract(2, 'month').date(1);
 	if (twoMonthsBack.day() !== 0) {
@@ -23,9 +24,9 @@ export async function get() {
 
 	const parsedData = data
 		/* Optimized by filtering on date */
-		.filter(
-			(action) => action.type === 'PushEvent' && !dayjs(action.created_at).isBefore(dateLatest)
-		)
+		.filter((action) => {
+			action.type === 'PushEvent' && dayjs(action.created_at).isAfter(dayjs(date));
+		})
 		.map((pushEvent) => {
 			return {
 				...pushEvent,
@@ -36,6 +37,7 @@ export async function get() {
 		});
 
 	let repos = [...new Set(parsedData.map((item) => JSON.stringify(item.repo)))];
+	repos.forEach((repo) => addRepo(JSON.parse(repo)));
 
 	let commits = [
 		...new Set(
@@ -51,19 +53,13 @@ export async function get() {
 		)
 	].flat();
 
-	commits.map((commit) => {
-		addCommit(JSON.parse(commit));
-	});
-
-	repos.map((repo) => {
-		addRepo(JSON.parse(repo));
-	});
+	commits.forEach((commit) => addCommit(JSON.parse(commit)));
 
 	const storedCommits = await getCommitsByDate(twoMonthsBack, now).catch((err) =>
 		console.catch(err)
 	);
 
-	if (storedCommits) {
+	if (storedCommits && repos && commits) {
 		return {
 			body: {
 				storedCommits

@@ -1,14 +1,19 @@
 import { Repo, Commit } from '$lib/_db/models';
 
 const addRepo = async (repo) => {
-	let newRepo = new Repo({
-		_id: repo.id,
-		name: repo.name,
-		url: repo.url
-	});
-	return newRepo.save().catch(function (err) {
-		console.error(err);
-	});
+	let result = await Repo.findById(repo.id);
+	if (result == null) {
+		let newRepo = new Repo({
+			_id: repo.id,
+			name: repo.name,
+			url: repo.url
+		});
+		return newRepo.save().catch(function (err) {
+			console.error(err);
+		});
+	} else {
+		return result;
+	}
 };
 
 const addCommit = async (commit) => {
@@ -33,7 +38,7 @@ const getAllCommits = () => {
 };
 
 const getLatestCommit = () => {
-	return Commit.findOne().sort({ created_at: -1 }).lean().exec();
+	return Commit.findOne().sort({ date: -1 }).lean().exec();
 };
 
 const getCommitsByDate = (start, end) => {
