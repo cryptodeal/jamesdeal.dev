@@ -161,13 +161,14 @@
 		padding: 3em 0 2em 3em;
 		margin: 0 3em 36px 3em;
 	}
-
-	path.trend {
-		stroke-linejoin: round;
-		stroke-linecap: round;
-		stroke-width: 1px;
-		fill: none;
-	}
+	/*
+    path.trend {
+      stroke-linejoin: round;
+      stroke-linecap: round;
+      stroke-width: 1px;
+      fill: none;
+    }
+  */
 
 	.grid-line {
 		position: relative;
