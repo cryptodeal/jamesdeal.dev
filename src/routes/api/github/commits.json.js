@@ -13,31 +13,29 @@ export async function get() {
 	});
 
 	let { date } = await getLatestCommit();
-	date = dayjs.toString(date).valueOf;
-	//console.log(dayjs(date))
+	const mostRecent = dayjs(date);
+
 	var now = dayjs();
 	var twoMonthsBack = now.subtract(2, 'month').date(1);
 	if (twoMonthsBack.day() !== 0) {
 		let daysTilSunday = 7 - twoMonthsBack.day();
 		twoMonthsBack = twoMonthsBack.add(daysTilSunday, 'day');
 	}
-
 	const parsedData = data
-		/* Optimized by filtering on date */
-		.filter((action) => {
-			action.type === 'PushEvent' && dayjs(action.created_at).isAfter(dayjs(date));
-		})
+		.filter((action) => action.type === 'PushEvent')
 		.map((pushEvent) => {
 			return {
 				...pushEvent,
-				commits: pushEvent.payload.commits.filter((commit) => {
-					commit.author.email === 'jimmydeal16@gmail.com';
-				})
+				commits: pushEvent.payload.commits.filter(
+					(commit) => commit.author.email === 'jimmydeal16@gmail.com'
+				)
 			};
 		});
 
 	let repos = [...new Set(parsedData.map((item) => JSON.stringify(item.repo)))];
-	repos.forEach((repo) => addRepo(JSON.parse(repo)));
+	repos.map((repo) => {
+		addRepo(JSON.parse(repo));
+	});
 
 	let commits = [
 		...new Set(
@@ -53,13 +51,14 @@ export async function get() {
 		)
 	].flat();
 
-	commits.forEach((commit) => addCommit(JSON.parse(commit)));
+	/* Optimized by filtering on date */
+	commits.map((commit) => {
+		if (mostRecent.isAfter(date)) addCommit(JSON.parse(commit));
+	});
 
-	const storedCommits = await getCommitsByDate(twoMonthsBack, now).catch((err) =>
-		console.catch(err)
-	);
+	const storedCommits = await getCommitsByDate(twoMonthsBack, now);
 
-	if (storedCommits && repos && commits) {
+	if (storedCommits) {
 		return {
 			body: {
 				storedCommits

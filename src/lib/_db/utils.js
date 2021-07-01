@@ -1,22 +1,15 @@
 import { Repo, Commit } from '$lib/_db/models';
 
-const addRepo = async (repo) => {
-	let result = await Repo.findById(repo.id);
-	if (result == null) {
-		let newRepo = new Repo({
-			_id: repo.id,
-			name: repo.name,
-			url: repo.url
-		});
-		return newRepo.save().catch(function (err) {
-			console.error(err);
-		});
-	} else {
-		return result;
-	}
+const addRepo = (repo) => {
+	let newRepo = {
+		_id: repo.id,
+		name: repo.name,
+		url: repo.url
+	};
+	return Repo.findByIdAndUpdate(repo.id, newRepo, { upsert: true }).exec();
 };
 
-const addCommit = async (commit) => {
+const addCommit = (commit) => {
 	let newCommit = new Commit({
 		_id: commit.sha,
 		author: {
@@ -28,9 +21,7 @@ const addCommit = async (commit) => {
 		repo: commit.repoId,
 		date: commit.date
 	});
-	return newCommit.save().catch(function (err) {
-		console.error(err);
-	});
+	return newCommit.save();
 };
 
 const getAllCommits = () => {
