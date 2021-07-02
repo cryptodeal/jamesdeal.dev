@@ -1,9 +1,9 @@
 <script>
 	import * as Pancake from '@sveltejs/pancake';
 	import dayjs from 'dayjs';
-	import { tooltip } from '$lib/dataviz/crypto/tooltip';
-	import { genPolygon, filterUnwanted, formatBase } from '$lib/dataviz/crypto/utils';
+	import { filterUnwanted, formatBase } from '$lib/dataviz/crypto/utils';
 	import EMALine from '$lib/Urvin/TALib/EMALine.svelte';
+	import Candles from '$lib/Urvin/General/Candles.svelte';
 	export let cryptoData;
 	/*function addEmaPeriod(periods, ) {
 		emaPeriods = [...emaPeriods, {
@@ -62,22 +62,6 @@
 		tempGranularity = granularity;
 		data = filterUnwanted(tempData.data);
 	}
-
-	const determineColor = (d, i) => {
-		if (d.close > d.open) {
-			return '#04DF08';
-		} else if (d.open > d.close) {
-			return '#DF3604';
-		} else if (i == 0) {
-			return '#04DF08';
-		} else if (testData[i - 1].close > testData[i - 1].open) {
-			return '#04DF08';
-		} else if (testData[i - 1].open > testData[i - 1].close) {
-			return '#DF3604';
-		} else {
-			return determineColor(i - 1);
-		}
-	};
 
 	/* Reactive portion of code */
 	$: count =
@@ -149,6 +133,7 @@
 	</div>
 </div>
 
+<!-- In Progress: Break All Existing Charts into Reusable Components for Urvin.Finance -->
 <div bind:clientWidth={w} class="chart">
 	<Pancake.Chart x1={minX} x2={maxX} y1={minY} y2={maxY}>
 		<Pancake.Grid horizontal count={5} let:value let:first>
@@ -159,29 +144,12 @@
 			<div class="grid-line vertical" />
 			<span class="x-label">{dayjs(value).format('HH:mm')}</span>
 		</Pancake.Grid>
-		<Pancake.Svg>
-			{#each testData as dat, i}
-				{#if dat && dat.open && dat.close && dat.low && dat.high}
-					<Pancake.SvgPolygon data={genPolygon(dat)} let:d>
-						<path
-							{d}
-							class="candle"
-							style="fill:{determineColor(dat, i)}"
-							title={`Open: ${formatBase(dat.open, dat.counter)}\nClose: ${formatBase(
-								dat.close,
-								dat.counter
-							)}\nHigh: ${formatBase(dat.high, dat.counter)}\nLow: ${formatBase(
-								dat.low,
-								dat.counter
-							)}`}
-							use:tooltip
-						/>
-					</Pancake.SvgPolygon>
-				{/if}
-			{/each}
-		</Pancake.Svg>
-		<!--First Reusable TA Chart Component for Urvin.Finance-->
+
+		<!-- Reusable EMA Trend Line Component for Urvin.Finance -->
 		<EMALine {emaPeriods} {data} {count} />
+
+		<!-- Reusable Candle Chart Component for Urvin.Finance -->
+		<Candles {data} {count} />
 	</Pancake.Chart>
 </div>
 
@@ -217,10 +185,6 @@
 		color: #999;
 		line-height: 1;
 		white-space: pre-wrap;
-	}
-
-	.candle {
-		pointer-events: all;
 	}
 
 	.x-label {

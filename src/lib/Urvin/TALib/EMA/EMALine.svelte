@@ -26,8 +26,9 @@
 	/* export data, exposing as component prop */
 	export let data;
 
-	/* export data object, exposing as component prop */
+	/* export count, exposing as component prop */
 	export let count;
+
 	$: emaPeriods.forEach((per) => {
 		let tempData = Ema(
 			data.map((dat) => dat.close),
