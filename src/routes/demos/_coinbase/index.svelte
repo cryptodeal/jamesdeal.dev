@@ -1,9 +1,9 @@
 <script>
 	import * as Pancake from '@sveltejs/pancake';
 	import dayjs from 'dayjs';
-	import { Ema } from '$lib/dataviz/crypto/ema';
 	import { tooltip } from '$lib/dataviz/crypto/tooltip';
 	import { genPolygon, filterUnwanted, formatBase } from '$lib/dataviz/crypto/utils';
+	import EMALine from '$lib/Urvin/TALib/EMALine.svelte';
 	export let cryptoData;
 
 	let tradingPair = `ETH-USD`;
@@ -16,8 +16,22 @@
 		{ label: `1 Day`, value: 86400 }
 	];
 	let w;
-	let ema12Enabled = false;
-	let ema26Enabled = false;
+	let emaPeriods = [
+		{
+			periods: 12,
+			enabled: false,
+			color: '#1d4ed8',
+			darkColor: '#7dd3fc',
+			data: []
+		},
+		{
+			periods: 26,
+			enabled: false,
+			color: '#c026d3',
+			darkColor: '#e879f9',
+			data: []
+		}
+	];
 	let tempGranularity = 900;
 	let granularity = 900;
 	let { data, pairs } = cryptoData;
@@ -60,22 +74,7 @@
 	$: count =
 		w <= 400 ? 30 : w <= 650 ? 40 : w <= 800 ? 60 : w <= 1000 ? 125 : w <= 1500 ? 150 : 175;
 
-	$: ema12 = Ema(
-		data.map((dat) => dat.close),
-		12
-	).slice(data.length - count, data.length - 1);
-
-	$: ema26 = Ema(
-		data.map((dat) => dat.close),
-		26
-	).slice(data.length - count, data.length - 1);
-
 	$: testData = data.slice(data.length - count, data.length - 1);
-
-	$: testData.forEach((dat, i) => {
-		dat.ema12 = ema12[i];
-		dat.ema26 = ema26[i];
-	});
 
 	$: minX = Math.min.apply(
 		null,
@@ -125,7 +124,7 @@
 			<input
 				type="checkbox"
 				class="text-blue-700 form-checkbox dark:text-light-blue-300"
-				bind:checked={ema12Enabled}
+				bind:checked={emaPeriods[0].enabled}
 			/>
 			<span class="mt-1 text-blue-700 dark:text-light-blue-300">EMA 12</span>
 		</label>
@@ -134,7 +133,7 @@
 			<input
 				type="checkbox"
 				class="text-fuchsia-600 form-checkbox dark:text-fuchsia-400"
-				bind:checked={ema26Enabled}
+				bind:checked={emaPeriods[1].enabled}
 			/>
 			<span class="mt-1 text-fuchsia-600 dark:text-fuchsia-400">EMA 26</span>
 		</label>
@@ -172,34 +171,8 @@
 				{/if}
 			{/each}
 		</Pancake.Svg>
-		{#if ema12Enabled}
-			<div style="pointer-events:none">
-				<Pancake.Svg>
-					<Pancake.SvgLine
-						data={testData}
-						x={(d) => d.openTimeInMillis + d.sizeInMillis / 2}
-						y={(d) => d.ema12}
-						let:d
-					>
-						<path class="stroke-blue-700 trend dark:stroke-light-blue-300" {d} />
-					</Pancake.SvgLine>
-				</Pancake.Svg>
-			</div>
-		{/if}
-		{#if ema26Enabled}
-			<div style="pointer-events:none">
-				<Pancake.Svg>
-					<Pancake.SvgLine
-						data={testData}
-						x={(d) => d.openTimeInMillis + d.sizeInMillis / 2}
-						y={(d) => d.ema26}
-						let:d
-					>
-						<path class="stroke-fuchsia-600 trend dark:stroke-fuchsia-400" {d} />
-					</Pancake.SvgLine>
-				</Pancake.Svg>
-			</div>
-		{/if}
+		<!--First Reusable TA Chart Component for Urvin.Finance-->
+		<EMALine {emaPeriods} {data} {count} />
 	</Pancake.Chart>
 </div>
 
@@ -208,13 +181,6 @@
 		height: 500px;
 		padding: 3em 0 2em 3em;
 		margin: 0 3em 36px 3em;
-	}
-
-	path.trend {
-		stroke-linejoin: round;
-		stroke-linecap: round;
-		stroke-width: 1px;
-		fill: none;
 	}
 
 	.grid-line {
