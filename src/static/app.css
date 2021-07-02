@@ -6,14 +6,6 @@ html {
 	@apply bg-yellow-50;
 }
 
-.windiColor {
-	@apply bg-red-800 dark:bg-green-400;
-}
-
-html.dark .fade {
-	background-color: rgba(0, 0, 0, 0.3);
-}
-
 html.dark {
 	@apply bg-gray-900;
 }
