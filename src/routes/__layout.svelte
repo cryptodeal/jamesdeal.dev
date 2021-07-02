@@ -1,9 +1,10 @@
 <script>
-	import { page } from '$app/stores';
+	import { page, navigating } from '$app/stores';
 	import { browser } from '$app/env';
 	import 'virtual:windi.css';
 	import '$static/app.css';
 	import Nav from '$lib/nav/Nav.svelte';
+	import PreloadingIcon from '$lib/nav/PreloadingIcon.svelte';
 	import { theme } from '$lib/stores/localStore.js';
 	import Particles from '$lib/nav/Particles.svelte';
 	if (browser) {
@@ -34,4 +35,7 @@
 	<Particles />
 </div>
 <Nav {segment} />
+{#if $navigating}
+	<PreloadingIcon />
+{/if}
 <slot />
