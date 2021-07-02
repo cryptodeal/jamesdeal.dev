@@ -2,7 +2,7 @@
 	import * as Pancake from '@sveltejs/pancake';
 	import dayjs from 'dayjs';
 	import { filterUnwanted, formatBase } from '$lib/dataviz/crypto/utils';
-	import EMALine from '$lib/Urvin/TALib/EMALine.svelte';
+	import EMALine from '$lib/Urvin/TALib/EMA/EMALine.svelte';
 	import Candles from '$lib/Urvin/General/Candles.svelte';
 	export let cryptoData;
 	/*function addEmaPeriod(periods, ) {

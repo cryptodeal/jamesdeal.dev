@@ -1,5 +1,5 @@
 <script>
-	import { Ema } from '$lib/dataviz/crypto/ema';
+	import { Ema } from '$lib/Urvin/TALib/EMA/ema';
 	import * as Pancake from '@sveltejs/pancake';
 	import { theme } from '$lib/stores/localStore.js';
 
