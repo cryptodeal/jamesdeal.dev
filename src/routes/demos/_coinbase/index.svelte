@@ -145,11 +145,11 @@
 			<span class="x-label">{dayjs(value).format('HH:mm')}</span>
 		</Pancake.Grid>
 
-		<!-- Reusable EMA Trend Line Component for Urvin.Finance -->
-		<EMALine {emaPeriods} {data} {count} />
-
 		<!-- Reusable Candle Chart Component for Urvin.Finance -->
 		<Candles {data} {count} />
+
+		<!-- Reusable EMA Trend Line Component for Urvin.Finance -->
+		<EMALine {emaPeriods} {data} {count} />
 	</Pancake.Chart>
 </div>
 
