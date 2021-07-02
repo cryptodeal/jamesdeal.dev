@@ -34,7 +34,7 @@ export async function get() {
 
 	let repos = [...new Set(parsedData.map((item) => JSON.stringify(item.repo)))];
 	repos.map((repo) => {
-		addRepo(JSON.parse(repo));
+		return addRepo(JSON.parse(repo));
 	});
 
 	let commits = [
@@ -53,7 +53,13 @@ export async function get() {
 
 	/* Optimized by filtering on date */
 	commits.map((commit) => {
-		if (mostRecent.isAfter(date)) addCommit(JSON.parse(commit));
+		let temp = JSON.parse(commit);
+		let tempDate = dayjs(temp.date);
+		if (tempDate.isAfter(mostRecent)) {
+			return addCommit(JSON.parse(commit));
+		} else {
+			return;
+		}
 	});
 
 	const storedCommits = await getCommitsByDate(twoMonthsBack, now);
