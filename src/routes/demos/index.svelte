@@ -1,17 +1,25 @@
 <script context="module">
 	const modules = import.meta.globEager(`./*/index.svelte`);
+	export const charts = Object.values(modules).map((mod) => ({ Chart: mod.default }));
 	/**
 	 * @type {import('@sveltejs/kit').Load}
 	 */
 	export async function load({ fetch }) {
-		const url = `api/github/commits.json`;
-		const res = await fetch(url);
-		const storedCommits = await res.json();
+		const gitUrl = `api/github/commits.json`;
 		const cbUrl = `api/coinbase-pro/ETH-USD.json?granularity=900`;
-		const cbRes = await fetch(cbUrl);
-		const cryptoData = await cbRes.json();
+		const [storedCommits, cryptoData] = await Promise.all([fetch(gitUrl), fetch(cbUrl)])
+			.then((response) => {
+				return Promise.all(
+					response.map((res) => {
+						return res.json();
+					})
+				);
+			})
+			.then((data) => {
+				return data;
+			});
 
-		if (res.ok && cbRes.ok) {
+		if (storedCommits && cryptoData) {
 			return {
 				props: {
 					storedCommits,
@@ -19,14 +27,14 @@
 				}
 			};
 		}
-
 		return {
-			status: res.status,
-			error: new Error(`Could not load ${url}`)
+			status: storedCommits.status !== 200 ? storedCommits.status : cryptoData.status,
+			error:
+				storedCommits.status !== 200
+					? new Error(`Could not load ${gitUrl}`)
+					: new Error(`Could not load ${cbUrl}`)
 		};
 	}
-	export const interests = Object.values(modules).map((mod) => ({ Interest: mod.default }));
-	export const charts = Object.values(modules).map((mod) => ({ Chart: mod.default }));
 </script>
 
 <script>
