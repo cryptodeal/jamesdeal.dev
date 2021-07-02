@@ -7,17 +7,8 @@
 	export async function load({ fetch }) {
 		const gitUrl = `api/github/commits.json`;
 		const cbUrl = `api/coinbase-pro/ETH-USD.json?granularity=900`;
-		const [storedCommits, cryptoData] = await Promise.all([fetch(gitUrl), fetch(cbUrl)])
-			.then((response) => {
-				return Promise.all(
-					response.map((res) => {
-						return res.json();
-					})
-				);
-			})
-			.then((data) => {
-				return data;
-			});
+		const [res, cbRes] = await Promise.all([fetch(gitUrl), fetch(cbUrl)]);
+		const [storedCommits, cryptoData] = await Promise.all([res.json(), cbRes.json()]);
 
 		if (storedCommits && cryptoData) {
 			return {
@@ -27,10 +18,11 @@
 				}
 			};
 		}
+
 		return {
-			status: storedCommits.status !== 200 ? storedCommits.status : cryptoData.status,
+			status: res.status !== 200 ? res.status : cbRes.status,
 			error:
-				storedCommits.status !== 200
+				res.status !== 200
 					? new Error(`Could not load ${gitUrl}`)
 					: new Error(`Could not load ${cbUrl}`)
 		};
