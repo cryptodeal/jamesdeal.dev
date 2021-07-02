@@ -5,7 +5,16 @@
 	import { genPolygon, filterUnwanted, formatBase } from '$lib/dataviz/crypto/utils';
 	import EMALine from '$lib/Urvin/TALib/EMALine.svelte';
 	export let cryptoData;
-
+	/*function addEmaPeriod(periods, ) {
+		emaPeriods = [...emaPeriods, {
+			periods: 12,
+			enabled: false,
+			color: '#1d4ed8',
+			darkColor: '#7dd3fc',
+			data: []
+		}];
+		newItem = '';
+	}*/
 	let tradingPair = `ETH-USD`;
 	const candleGranularity = [
 		{ label: `1 Min`, value: 60 },
@@ -74,7 +83,7 @@
 	$: count =
 		w <= 400 ? 30 : w <= 650 ? 40 : w <= 800 ? 60 : w <= 1000 ? 125 : w <= 1500 ? 150 : 175;
 
-	$: testData = data.slice(data.length - count, data.length - 1);
+	$: testData = data.slice(data.length - (count + 1), data.length - 1);
 
 	$: minX = Math.min.apply(
 		null,
