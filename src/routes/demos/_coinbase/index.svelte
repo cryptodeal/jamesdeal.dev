@@ -96,7 +96,7 @@
 	>
 		Coinbase Pro {testData[0].productId} Candlestick Chart (In Progress):
 	</h3>
-	<div class="mx-auto gap-4 inline-flex items-center">
+	<div class="mx-auto my-3 gap-4 inline-flex items-center">
 		<label class="block">
 			<span class="text-gray-800 dark:text-gray-200">Trading Pair:</span>
 			<select bind:value={tradingPair} on:blur={loadData} class="mt-1 w-full form-select block">
@@ -113,6 +113,8 @@
 				{/each}
 			</select>
 		</label>
+	</div>
+	<div class="mx-auto my-3 gap-4 inline-flex items center">
 		<label class="block">
 			<input
 				type="checkbox"
@@ -121,7 +123,6 @@
 			/>
 			<span class="mt-1 text-blue-700 dark:text-light-blue-300">EMA 12</span>
 		</label>
-
 		<label class="block">
 			<input
 				type="checkbox"

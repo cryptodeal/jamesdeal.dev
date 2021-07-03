@@ -63,7 +63,7 @@
 	path.trend {
 		stroke-linejoin: round;
 		stroke-linecap: round;
-		stroke-width: 1px;
+		stroke-width: 1.5px;
 		fill: none;
 	}
 </style>
