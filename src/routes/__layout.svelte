@@ -7,6 +7,7 @@
 	import PreloadingIcon from '$lib/nav/PreloadingIcon.svelte';
 	import { theme } from '$lib/stores/localStore.js';
 	import Particles from '$lib/nav/Particles.svelte';
+	import Notifications from 'svelte-notifications';
 	if (browser) {
 		import('virtual:windi-devtools');
 		theme.useLocalStorage();
@@ -38,4 +39,6 @@
 {#if $navigating}
 	<PreloadingIcon />
 {/if}
-<slot />
+<Notifications>
+	<slot />
+</Notifications>

@@ -18,13 +18,13 @@ async function initConnect() {
 
 	if (!cached.promise) {
 		const opts = {
-			useNewUrlParser: true,
-			useUnifiedTopology: true,
 			bufferCommands: false,
 			bufferMaxEntries: 0,
 			useFindAndModify: false,
 			useCreateIndex: true
 		};
+		mongoose.set('useNewUrlParser', true);
+		mongoose.set('useUnifiedTopology', true);
 
 		cached.promise = mongoose.connect(MONGOOSE_URI, opts).then((mongoose) => {
 			return mongoose;

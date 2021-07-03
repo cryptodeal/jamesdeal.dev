@@ -4,17 +4,64 @@
 	import { filterUnwanted, formatBase } from '$lib/dataviz/crypto/utils';
 	import EMALine from '$lib/Urvin/TALib/EMA/EMALine.svelte';
 	import Candles from '$lib/Urvin/General/Candles.svelte';
+	import { theme } from '$lib/stores/localStore.js';
+	import { getNotificationsContext } from 'svelte-notifications';
+	const { addNotification } = getNotificationsContext();
 	export let cryptoData;
-	/*function addEmaPeriod(periods, ) {
-		emaPeriods = [...emaPeriods, {
-			periods: 12,
-			enabled: false,
-			color: '#1d4ed8',
-			darkColor: '#7dd3fc',
-			data: []
-		}];
-		newItem = '';
-	}*/
+
+	/* Adds user defined EMA Trend Calc */
+	function addEmaPeriod() {
+		if (newPeriods == null) {
+			addNotification({
+				text: `ERROR: Must Specify Num. of Periods Used to Calc. EMA`,
+				position: 'top-right',
+				type: 'danger',
+				removeAfter: 4000
+			});
+		} else {
+			let alreadyExists = emaPeriods.some((el) => el.periods === parseInt(newPeriods));
+			if (!alreadyExists) {
+				emaPeriods = [
+					...emaPeriods,
+					{
+						periods: parseInt(newPeriods),
+						enabled: true,
+						color: colorLight,
+						darkColor: colorDark,
+						userDefined: true,
+						data: []
+					}
+				];
+				newPeriods = null;
+				colorLight = randomColor();
+				colorDark = randomColor();
+			} else {
+				addNotification({
+					text: `ERROR: Cannot use Num. of Periods for EMA Trend More Than Once!`,
+					position: 'top-right',
+					type: 'danger',
+					removeAfter: 4000
+				});
+			}
+		}
+	}
+
+	/* Removes user defined EMA Trend Calc */
+	function removeEmaPeriod(index) {
+		emaPeriods.splice(index, 1);
+		emaPeriods = emaPeriods;
+	}
+
+	/* Returns a randomly generated color */
+	const randomColor = () => {
+		return '#' + Math.floor(Math.random() * 16777215).toString(16);
+	};
+
+	/* Initialize variables used to add EMA Lines */
+	let newPeriods = null;
+	let colorLight = randomColor();
+	let colorDark = randomColor();
+
 	let tradingPair = `ETH-USD`;
 	const candleGranularity = [
 		{ label: `1 Min`, value: 60 },
@@ -25,22 +72,6 @@
 		{ label: `1 Day`, value: 86400 }
 	];
 	let w;
-	let emaPeriods = [
-		{
-			periods: 12,
-			enabled: false,
-			color: '#1d4ed8',
-			darkColor: '#7dd3fc',
-			data: []
-		},
-		{
-			periods: 26,
-			enabled: false,
-			color: '#c026d3',
-			darkColor: '#e879f9',
-			data: []
-		}
-	];
 	let tempGranularity = 900;
 	let granularity = 900;
 	let { data, pairs } = cryptoData;
@@ -64,6 +95,24 @@
 	}
 
 	/* Reactive portion of code */
+	$: emaPeriods = [
+		{
+			periods: 12,
+			enabled: false,
+			color: '#1d4ed8',
+			darkColor: '#7dd3fc',
+			userDefined: false,
+			data: []
+		},
+		{
+			periods: 26,
+			enabled: false,
+			color: '#c026d3',
+			darkColor: '#e879f9',
+			userDefined: false,
+			data: []
+		}
+	];
 	$: count =
 		w <= 400 ? 30 : w <= 650 ? 40 : w <= 800 ? 60 : w <= 1000 ? 125 : w <= 1500 ? 150 : 175;
 
@@ -98,39 +147,61 @@
 	</h3>
 	<div class="mx-auto my-3 gap-4 inline-flex items-center">
 		<label class="block">
-			<span class="text-gray-800 dark:text-gray-200">Trading Pair:</span>
-			<select bind:value={tradingPair} on:blur={loadData} class="mt-1 w-full form-select block">
+			<span class="text-red-800 block dark:text-green-400">Trading Pair:</span>
+			<select bind:value={tradingPair} on:blur={loadData}>
 				{#each pairs as pair}
 					<option value={pair}>{pair}</option>
 				{/each}
 			</select>
 		</label>
 		<label class="block">
-			<span class="text-gray-800 dark:text-gray-200">Candle Duration:</span>
-			<select bind:value={granularity} on:blur={loadData} class="mt-1 w-full form-select block">
+			<span class="text-red-800 block dark:text-green-400">Candle Duration:</span>
+			<select bind:value={granularity} on:blur={loadData}>
 				{#each candleGranularity as period}
 					<option value={period.value}>{period.label}</option>
 				{/each}
 			</select>
 		</label>
 	</div>
-	<div class="mx-auto my-3 gap-4 inline-flex items center">
-		<label class="block">
-			<input
-				type="checkbox"
-				class="text-blue-700 form-checkbox dark:text-light-blue-300"
-				bind:checked={emaPeriods[0].enabled}
-			/>
-			<span class="mt-1 text-blue-700 dark:text-light-blue-300">EMA 12</span>
+	<!-- EMA Config -->
+	<div class="flex-wrap mx-auto gap-4 inline-flex items-center">
+		<label class="mx-auto block">
+			<span class="text-red-800 block dark:text-green-400">Num Periods:</span>
+			<input bind:value={newPeriods} type="number" min="1" placeholder="EMA Periods" />
 		</label>
-		<label class="block">
-			<input
-				type="checkbox"
-				class="text-fuchsia-600 form-checkbox dark:text-fuchsia-400"
-				bind:checked={emaPeriods[1].enabled}
-			/>
-			<span class="mt-1 text-fuchsia-600 dark:text-fuchsia-400">EMA 26</span>
+		<label class="mx-auto block">
+			<span class="text-red-800 block dark:text-green-400">Light Theme Color:</span>
+			<input bind:value={colorLight} type="color" />
 		</label>
+		<label class="mx-auto block">
+			<span class="mx-auto text-red-800 block dark:text-green-400">Dark Theme Color:</span>
+			<input bind:value={colorDark} type="color" />
+		</label>
+		<div class="mx-auto block">
+			<button
+				on:click={addEmaPeriod}
+				class="border rounded font-semibold bg-blue-300 border-blue-600 shadow py-2 px-4 text-red-800 block dark:(bg-purple-900 text-green-400 border-purple-500) hover:bg-blue-400 dark:hover:bg-purple-700"
+			>
+				Add EMA
+			</button>
+		</div>
+	</div>
+	<div class="flex-wrap mx-auto my-3 gap-4 inline-flex items-center">
+		{#each emaPeriods as ema, index}
+			<label class="block">
+				<input
+					type="checkbox"
+					style="color:{$theme === 'dark' ? ema.darkColor : ema.color}"
+					bind:checked={emaPeriods[index].enabled}
+				/>
+				<span class="mt-1" style="color:{$theme === 'dark' ? ema.darkColor : ema.color}"
+					>EMA{ema.periods}</span
+				>
+				{#if ema.userDefined == true}
+					<span on:click={() => removeEmaPeriod(index)}>❌</span>
+				{/if}
+			</label>
+		{/each}
 	</div>
 </div>
 
