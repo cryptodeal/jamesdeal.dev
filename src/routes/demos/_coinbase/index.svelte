@@ -171,11 +171,11 @@
 		</label>
 		<label class="mx-auto block">
 			<span class="text-red-800 block dark:text-green-400">Light Theme Color:</span>
-			<input bind:value={colorLight} type="color" />
+			<input bind:value={colorLight} class="w-full" type="color" />
 		</label>
 		<label class="mx-auto block">
 			<span class="mx-auto text-red-800 block dark:text-green-400">Dark Theme Color:</span>
-			<input bind:value={colorDark} type="color" />
+			<input bind:value={colorDark} class="w-full" type="color" />
 		</label>
 		<div class="mx-auto block">
 			<button
