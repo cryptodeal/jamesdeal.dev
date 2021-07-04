@@ -1,12 +1,17 @@
 import { Repo, Commit } from '$lib/_db/models';
 
 const addRepo = (repo) => {
-	let newRepo = {
-		_id: repo.id,
-		name: repo.name,
-		url: repo.url
-	};
-	return Repo.findByIdAndUpdate(repo.id, newRepo, { upsert: true }).exec();
+	let exists = Repo.findOne({ _id: repo.id }).exec();
+	if (!exists) {
+		let newRepo = {
+			_id: repo.id,
+			name: repo.name,
+			url: repo.url
+		};
+		return Repo.findByIdAndUpdate(repo.id, newRepo, { upsert: true }).exec();
+	} else {
+		return;
+	}
 };
 
 const addCommit = (commit) => {

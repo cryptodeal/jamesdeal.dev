@@ -30,9 +30,6 @@ export async function get() {
 		});
 
 	let repos = [...new Set(parsedData.map((item) => JSON.stringify(item.repo)))];
-	repos.map((repo) => {
-		return addRepo(JSON.parse(repo));
-	});
 
 	let commits = [
 		...new Set(
@@ -48,17 +45,23 @@ export async function get() {
 		)
 	].flat();
 
+	const existingRepos = [];
+
 	/* Optimized by filtering on date */
 	commits.map((commit) => {
 		let temp = JSON.parse(commit);
 		let tempDate = dayjs(temp.date);
 		if (tempDate.isAfter(mostRecent)) {
-			return addCommit(JSON.parse(commit));
+			return addCommit(temp);
 		} else {
+			existingRepos.push(temp.repoId);
 			return;
 		}
 	});
 
+	repos.map((repo) => {
+		if (!existingRepos.some((item) => item == repo['repoId'])) return addRepo(JSON.parse(repo));
+	});
 	const storedCommits = await getCommitsByDate(twoMonthsBack, now);
 
 	if (storedCommits) {

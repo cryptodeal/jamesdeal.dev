@@ -198,7 +198,7 @@
 					>EMA{ema.periods}</span
 				>
 				{#if ema.userDefined == true}
-					<span on:click={() => removeEmaPeriod(index)}>❌</span>
+					<button on:click={() => removeEmaPeriod(index)}>❌</button>
 				{/if}
 			</label>
 		{/each}
