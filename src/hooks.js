@@ -1,9 +1,10 @@
 import cookie from 'cookie';
 import { v4 as uuid } from '@lukeed/uuid';
-//import initConnection from '$lib/_db/initConnect';
+import initConnect from '$lib/_db/initConnect';
 
 /** @type {import('@sveltejs/kit').Handle} */
 export const handle = async ({ request, resolve }) => {
+	await initConnect();
 	const cookies = cookie.parse(request.headers.cookie || '');
 	request.locals.userid = cookies.userid || uuid();
 

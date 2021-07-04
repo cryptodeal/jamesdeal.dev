@@ -24,7 +24,7 @@ const config = {
 				}
 			},
 			optimizeDeps: {
-				include: ['layercake', 'saslprep']
+				include: ['layercake']
 			},
 			plugins: [WindiCSS.default(), imagetools()]
 		}
