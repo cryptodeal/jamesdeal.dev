@@ -1,5 +1,5 @@
 <script>
-	import { Ema } from '$lib/Urvin/TALib/EMA/ema';
+	import { Ema } from '$lib/Urvin/TALib/EMA/Viz/ema';
 	import * as Pancake from '@sveltejs/pancake';
 	import { theme } from '$lib/stores/localStore.js';
 

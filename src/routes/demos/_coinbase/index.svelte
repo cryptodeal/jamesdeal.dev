@@ -2,7 +2,7 @@
 	import * as Pancake from '@sveltejs/pancake';
 	import dayjs from 'dayjs';
 	import { filterUnwanted, formatBase } from '$lib/dataviz/crypto/utils';
-	import EMALine from '$lib/Urvin/TALib/EMA/EMALine.svelte';
+	import EMALine from '$lib/Urvin/TALib/EMA/Viz/EMALine.svelte';
 	import Candles from '$lib/Urvin/General/Candles.svelte';
 	import { theme } from '$lib/stores/localStore.js';
 	import { getNotificationsContext } from 'svelte-notifications';
@@ -54,7 +54,12 @@
 
 	/* Returns a randomly generated color */
 	const randomColor = () => {
-		return '#' + Math.floor(Math.random() * 16777215).toString(16);
+		return (
+			'#' +
+			Math.floor(Math.random() * 16777215)
+				.toString(16)
+				.padStart(6, '0')
+		);
 	};
 
 	/* Initialize variables used to add EMA Lines */
@@ -71,6 +76,9 @@
 		{ label: `6 Hours`, value: 21600 },
 		{ label: `1 Day`, value: 86400 }
 	];
+
+	/* Define w (binds to width of chart)
+  used to calc # of visible candlesticks */
 	let w;
 	let tempGranularity = 900;
 	let granularity = 900;
@@ -113,26 +121,31 @@
 			data: []
 		}
 	];
+
 	$: count =
 		w <= 400 ? 30 : w <= 650 ? 40 : w <= 800 ? 60 : w <= 1000 ? 125 : w <= 1500 ? 150 : 175;
 
 	$: testData = data.slice(data.length - (count + 1), data.length - 1);
 
+	/* Calc min X value for chart scale */
 	$: minX = Math.min.apply(
 		null,
 		testData.map((item) => item.openTimeInMillis)
 	);
 
+	/* Calc max X value for chart scale */
 	$: maxX = Math.max.apply(
 		null,
 		testData.map((item) => item.openTimeInMillis)
 	);
 
+	/* Calc min Y value for chart scale */
 	$: minY = Math.min.apply(
 		null,
 		testData.map((item) => item.low)
 	);
 
+	/* Calc max Y value for chart scale */
 	$: maxY = Math.max.apply(
 		null,
 		testData.map((item) => item.high)
@@ -170,12 +183,12 @@
 			<input bind:value={newPeriods} type="number" min="1" placeholder="EMA Periods" />
 		</label>
 		<label class="mx-auto block">
-			<span class="text-red-800 block dark:text-green-400">Light Theme Color:</span>
-			<input bind:value={colorLight} class="w-full" type="color" />
+			<span class="text-red-800 block dark:text-green-400">Light Mode:</span>
+			<input bind:value={colorLight} class="ml-5" type="color" />
 		</label>
 		<label class="mx-auto block">
-			<span class="mx-auto text-red-800 block dark:text-green-400">Dark Theme Color:</span>
-			<input bind:value={colorDark} class="w-full" type="color" />
+			<span class="mx-auto text-red-800 block dark:text-green-400">Dark Mode:</span>
+			<input bind:value={colorDark} class="ml-5" type="color" />
 		</label>
 		<div class="mx-auto block">
 			<button
@@ -268,5 +281,20 @@
 		font-size: 14px;
 		color: #999;
 		text-align: center;
+	}
+
+	input[type='color'] {
+		width: 40px;
+		height: 40px;
+		border: none;
+		border-radius: 40px;
+		background: none;
+	}
+	input[type='color']::-webkit-color-swatch-wrapper {
+		padding: 0;
+	}
+	input[type='color']::-webkit-color-swatch {
+		border: solid 1px #000; /*change color of the swatch border here*/
+		border-radius: 40px;
 	}
 </style>

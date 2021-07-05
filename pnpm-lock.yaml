@@ -30,6 +30,7 @@ specifiers:
   stylelint: ^13.13.1
   stylelint-config-standard: ^22.0.0
   svelte: 3.38.3
+  svelte-loading-spinners: ^0.1.5
   svelte-notifications: ^0.9.91
   svelte-particles: ^1.13.2
   svelte-preprocess: ^4.7.3
@@ -76,6 +77,7 @@ devDependencies:
   stylelint: 13.13.1
   stylelint-config-standard: 22.0.0_stylelint@13.13.1
   svelte: 3.38.3
+  svelte-loading-spinners: 0.1.5
   svelte-notifications: 0.9.91
   svelte-preprocess: 4.7.3_svelte@3.38.3
   vite-imagetools: 3.6.8
@@ -4170,6 +4172,13 @@ packages:
       svelte: '>=3.19.0'
     dependencies:
       svelte: 3.38.3
+    dev: true
+
+  /svelte-loading-spinners/0.1.5:
+    resolution:
+      {
+        integrity: sha512-HpNwNd0jfZAQ2DDMwe5yF8hSUeSSTI5LpkNFhmBDmS/G5r/GdWEP4o6V79sXFC6B1ts+e799aM5FqIC3TyosKw==
+      }
     dev: true
 
   /svelte-notifications/0.9.91:
