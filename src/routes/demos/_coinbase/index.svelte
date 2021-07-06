@@ -3,6 +3,7 @@
 	import dayjs from 'dayjs';
 	import { filterUnwanted, formatBase } from '$lib/dataviz/crypto/utils';
 	import EMALine from '$lib/Urvin/TALib/EMA/Viz/EMALine.svelte';
+	import MFILine from '$lib/Urvin/TALib/MFI/Viz/MFILine.svelte';
 	import Candles from '$lib/Urvin/General/Candles.svelte';
 	import { theme } from '$lib/stores/localStore.js';
 	import { getNotificationsContext } from 'svelte-notifications';
@@ -156,7 +157,7 @@
 	<h3
 		class="font-extralight font-sans mx-auto my-5 text-xl text-red-800 break-words lg:text-2xl dark:text-green-400"
 	>
-		Coinbase Pro {testData[0].productId} Candlestick Chart (In Progress):
+		Coinbase Pro {testData[0].productId} Candlestick Chart:
 	</h3>
 	<div class="mx-auto my-3 gap-4 inline-flex items-center">
 		<label class="block">
@@ -238,9 +239,36 @@
 	</Pancake.Chart>
 </div>
 
+<h3
+	class="font-extralight font-sans mx-auto my-5 text-center text-xl text-red-800 break-words lg:text-2xl dark:text-green-400"
+>
+	MFI14: Money Flow Index (Lookback Periods = 14)
+</h3>
+<div bind:clientWidth={w} class="mfiChart">
+	<Pancake.Chart x1={minX} x2={maxX} y1={0} y2={100}>
+		<Pancake.Grid horizontal count={4} let:value let:first>
+			<div class="grid-line horizontal"><span>{value}</span></div>
+		</Pancake.Grid>
+
+		<Pancake.Grid vertical count={w <= 650 ? 5 : 10} let:value>
+			<div class="grid-line vertical" />
+			<span class="x-label">{dayjs(value).format('HH:mm')}</span>
+		</Pancake.Grid>
+
+		<!-- Reusable MFI Chart Component for Urvin.Finance -->
+		<MFILine {data} {count} />
+	</Pancake.Chart>
+</div>
+
 <style>
 	.chart {
 		height: 500px;
+		padding: 3em 0 2em 3em;
+		margin: 0 3em 36px 3em;
+	}
+
+	.mfiChart {
+		height: 250px;
 		padding: 3em 0 2em 3em;
 		margin: 0 3em 36px 3em;
 	}
