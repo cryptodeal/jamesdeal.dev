@@ -188,7 +188,9 @@
 	</div>
 </div>
 <div class="flex">
-	<h4 class="font-extralight font-sans text-lg text-red-800 lg:text-2xl dark:text-green-400">
+	<h4
+		class="mx-auto font-extralight font-sans text-lg text-red-800 lg:text-2xl dark:text-green-400"
+	>
 		Technical Analysis Lib Controls
 	</h4>
 </div>
