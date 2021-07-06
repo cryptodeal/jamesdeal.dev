@@ -187,7 +187,11 @@
 		</label>
 	</div>
 </div>
-
+<div class="flex">
+	<h4 class="font-extralight font-sans text-lg text-red-800 lg:text-2xl dark:text-green-400">
+		Technical Analysis Lib Controls
+	</h4>
+</div>
 <Tabs>
 	<TabList>
 		<Tab>EMA</Tab>
@@ -197,11 +201,11 @@
 	<TabPanel>
 		<!-- EMA Config -->
 		<div class="flex flex-col h-55">
-			<h4
+			<h5
 				class="font-extralight font-sans mx-auto text-lg pb-2 text-red-800 lg:text-2xl dark:text-green-400"
 			>
 				Exponential Moving Average (EMA) Controls
-			</h4>
+			</h5>
 			<div class="flex-wrap mx-auto gap-4 inline-flex items-center">
 				<label class="mx-auto block">
 					<span class="text-red-800 block dark:text-green-400">Num Periods:</span>
@@ -246,11 +250,11 @@
 
 	<TabPanel>
 		<div class="flex flex-col h-55">
-			<h4
+			<h5
 				class="font-extralight font-sans mx-auto text-lg pb-2 text-red-800 lg:text-2xl dark:text-green-400"
 			>
 				Bollinger Bands (BBands) Controls
-			</h4>
+			</h5>
 			<div class="flex-wrap mx-auto my-3 gap-4 inline-flex items-center">
 				{#each bBandPeriods as bBand, index}
 					<label class="block">
