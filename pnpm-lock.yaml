@@ -30,7 +30,6 @@ specifiers:
   stylelint: ^13.13.1
   stylelint-config-standard: ^22.0.0
   svelte: 3.38.3
-  svelte-loading-spinners: ^0.1.5
   svelte-notifications: ^0.9.91
   svelte-particles: ^1.13.4
   svelte-preprocess: ^4.7.3
@@ -77,7 +76,6 @@ devDependencies:
   stylelint: 13.13.1
   stylelint-config-standard: 22.0.0_stylelint@13.13.1
   svelte: 3.38.3
-  svelte-loading-spinners: 0.1.5
   svelte-notifications: 0.9.91
   svelte-preprocess: 4.7.3_svelte@3.38.3
   vite-imagetools: 3.6.8
@@ -646,7 +644,7 @@ packages:
         integrity: sha512-GzHUnYwyunLkM4UFxQTHolBfxHjLC5A4E5O/P8MMjum5nlGu+qcLtnjQevFjNoabZ0ge64G/s6GlLbIHrYNbcA==
       }
     dependencies:
-      esbuild: 0.12.14
+      esbuild: 0.12.15
     dev: true
 
   /@sveltejs/kit/1.0.0-next.120_svelte@3.38.3:
@@ -659,11 +657,11 @@ packages:
     peerDependencies:
       svelte: ^3.34.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 1.0.0-next.11_svelte@3.38.3+vite@2.3.8
+      '@sveltejs/vite-plugin-svelte': 1.0.0-next.11_svelte@3.38.3+vite@2.4.0
       cheap-watch: 1.0.3
       sade: 1.7.4
       svelte: 3.38.3
-      vite: 2.3.8
+      vite: 2.4.0
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -678,7 +676,7 @@ packages:
       yootils: 0.0.16
     dev: false
 
-  /@sveltejs/vite-plugin-svelte/1.0.0-next.11_svelte@3.38.3+vite@2.3.8:
+  /@sveltejs/vite-plugin-svelte/1.0.0-next.11_svelte@3.38.3+vite@2.4.0:
     resolution:
       {
         integrity: sha512-EYR1I145k5rflVqhPwk3442m3bkYimTKSHM9uO5KdomXzt+GS9ZSBJQE3/wy1Di9V8OnGa3oKpckI3OZsHkTIA==
@@ -694,7 +692,7 @@ packages:
       require-relative: 0.8.7
       svelte: 3.38.3
       svelte-hmr: 0.14.4_svelte@3.38.3
-      vite: 2.3.8
+      vite: 2.4.0
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -1631,10 +1629,10 @@ packages:
       is-arrayish: 0.2.1
     dev: true
 
-  /esbuild/0.12.14:
+  /esbuild/0.12.15:
     resolution:
       {
-        integrity: sha512-z8p+6FGiplR7a3pPonXREbm+8IeXjBGvDpVidZmGB/AJMsJSfGCU+n7KOMCazA9AwvagadRWBhiKorC0w9WJvw==
+        integrity: sha512-72V4JNd2+48eOVCXx49xoSWHgC3/cCy96e7mbXKY+WOWghN00cCmlGnwVLRhRHorvv0dgCyuMYBZlM2xDM5OQw==
       }
     hasBin: true
     requiresBuild: true
@@ -4179,13 +4177,6 @@ packages:
       svelte: 3.38.3
     dev: true
 
-  /svelte-loading-spinners/0.1.5:
-    resolution:
-      {
-        integrity: sha512-HpNwNd0jfZAQ2DDMwe5yF8hSUeSSTI5LpkNFhmBDmS/G5r/GdWEP4o6V79sXFC6B1ts+e799aM5FqIC3TyosKw==
-      }
-    dev: true
-
   /svelte-notifications/0.9.91:
     resolution:
       {
@@ -4575,15 +4566,15 @@ packages:
       - supports-color
     dev: true
 
-  /vite/2.3.8:
+  /vite/2.4.0:
     resolution:
       {
-        integrity: sha512-QiEx+iqNnJntSgSF2fWRQvRey9pORIrtNJzNyBJXwc+BdzWs83FQolX84cTBo393cfhObrtWa6180dAa4NLDiQ==
+        integrity: sha512-FR+1hCyGt8i+ijMe9z4tIfUQ7BQThxGevp3IlmdXDBSJEPjbeDznbuJa/QVzXw2Mpxh7KCmveVI082h8nzcCNw==
       }
     engines: { node: '>=12.0.0' }
     hasBin: true
     dependencies:
-      esbuild: 0.12.14
+      esbuild: 0.12.15
       postcss: 8.3.5
       resolve: 1.20.0
       rollup: 2.52.7
