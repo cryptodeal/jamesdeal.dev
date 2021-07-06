@@ -281,7 +281,7 @@
 <!-- In Progress: Break All Existing Charts into Reusable Components for Urvin.Finance -->
 <div bind:clientWidth={w} class="chart">
 	<Pancake.Chart x1={minX} x2={maxX} y1={minY} y2={maxY}>
-		<Pancake.Grid horizontal count={5} let:value let:first>
+		<Pancake.Grid horizontal count={5} let:value>
 			<div class="grid-line horizontal"><span>{formatBase(value, testData[0].counter)}</span></div>
 		</Pancake.Grid>
 
