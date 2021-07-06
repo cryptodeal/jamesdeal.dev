@@ -6,6 +6,7 @@
 	import MFILine from '$lib/Urvin/TALib/MFI/Viz/MFILine.svelte';
 	import BBands from '$lib/Urvin/TALib/BBands/Viz/BBands.svelte';
 	import Candles from '$lib/Urvin/General/Candles.svelte';
+	import { Tabs, TabList, TabPanel, Tab } from '$lib/Urvin/General/UX/TabControls/tabs.js';
 	import { theme } from '$lib/stores/localStore.js';
 	import { getNotificationsContext } from 'svelte-notifications';
 	const { addNotification } = getNotificationsContext();
@@ -86,15 +87,10 @@
 	let granularity = 900;
 	let { data, pairs } = cryptoData;
 
-	/* TODO: Allow users to pick EMA periods */
-	//const emaList = [];
-
 	/* TODO: Utilize other TA functions ported from GO's talib */
 	//1 - MACD
-	//2 - MFI
-	//3 - BB
-	//4 - SMA
-	//5 - Port additional functions?
+	//2 - SMA
+	//3 - Port additional functions?
 
 	/* Fetches new data on:blur when user selects tradingPair || granularity */
 	async function loadData() {
@@ -105,6 +101,8 @@
 	}
 
 	/* Reactive portion of code */
+
+	/* Enable User Defined EMA Trends */
 	$: emaPeriods = [
 		{
 			periods: 12,
@@ -128,8 +126,8 @@
 		{
 			periods: 20,
 			enabled: false,
-			color: '#1d4ed8',
-			darkColor: '#7dd3fc',
+			color: '#F66A13',
+			darkColor: '#EBFF52',
 			data: []
 		}
 	];
@@ -188,64 +186,91 @@
 			</select>
 		</label>
 	</div>
-	<!-- EMA Config -->
-	<div class="flex-wrap mx-auto gap-4 inline-flex items-center">
-		<label class="mx-auto block">
-			<span class="text-red-800 block dark:text-green-400">Num Periods:</span>
-			<input bind:value={newPeriods} type="number" min="1" placeholder="EMA Periods" />
-		</label>
-		<label class="mx-auto block">
-			<span class="text-red-800 block dark:text-green-400">Light Mode:</span>
-			<input bind:value={colorLight} class="ml-5" type="color" />
-		</label>
-		<label class="mx-auto block">
-			<span class="mx-auto text-red-800 block dark:text-green-400">Dark Mode:</span>
-			<input bind:value={colorDark} class="ml-5" type="color" />
-		</label>
-		<div class="mx-auto block">
-			<button
-				on:click={addEmaPeriod}
-				class="border rounded font-semibold bg-blue-300 border-blue-600 shadow py-2 px-4 text-red-800 block dark:(bg-purple-900 text-green-400 border-purple-500) hover:bg-blue-400 dark:hover:bg-purple-700"
-			>
-				Add EMA
-			</button>
-		</div>
-	</div>
-	<div class="flex-wrap mx-auto my-3 gap-4 inline-flex items-center">
-		{#each emaPeriods as ema, index}
-			<label class="block">
-				<input
-					type="checkbox"
-					style="color:{$theme === 'dark' ? ema.darkColor : ema.color}"
-					bind:checked={emaPeriods[index].enabled}
-				/>
-				<span class="mt-1" style="color:{$theme === 'dark' ? ema.darkColor : ema.color}"
-					>EMA{ema.periods}</span
-				>
-				{#if ema.userDefined == true}
-					<button on:click={() => removeEmaPeriod(index)}>❌</button>
-				{/if}
-			</label>
-		{/each}
-	</div>
-	<div class="flex-wrap mx-auto my-3 gap-4 inline-flex items-center">
-		{#each bBandPeriods as bBand, index}
-			<label class="block">
-				<input
-					type="checkbox"
-					style="color:{$theme === 'dark' ? bBand.darkColor : bBand.color}"
-					bind:checked={bBandPeriods[index].enabled}
-				/>
-				<span class="mt-1" style="color:{$theme === 'dark' ? bBand.darkColor : bBand.color}"
-					>BBands{bBand.periods}</span
-				>
-				{#if bBand.userDefined == true}
-					<button on:click={() => removeEmaPeriod(index)}>❌</button>
-				{/if}
-			</label>
-		{/each}
-	</div>
 </div>
+
+<Tabs>
+	<TabList>
+		<Tab>EMA</Tab>
+		<Tab>BBands</Tab>
+	</TabList>
+
+	<TabPanel>
+		<!-- EMA Config -->
+		<div class="flex flex-col h-55">
+			<h4
+				class="font-extralight font-sans mx-auto text-lg pb-2 text-red-800 lg:text-2xl dark:text-green-400"
+			>
+				Exponential Moving Average (EMA) Controls
+			</h4>
+			<div class="flex-wrap mx-auto gap-4 inline-flex items-center">
+				<label class="mx-auto block">
+					<span class="text-red-800 block dark:text-green-400">Num Periods:</span>
+					<input bind:value={newPeriods} type="number" min="1" placeholder="EMA Periods" />
+				</label>
+				<label class="mx-auto block">
+					<span class="text-red-800 block dark:text-green-400">Light Mode:</span>
+					<input bind:value={colorLight} class="ml-5" type="color" />
+				</label>
+				<label class="mx-auto block">
+					<span class="mx-auto text-red-800 block dark:text-green-400">Dark Mode:</span>
+					<input bind:value={colorDark} class="ml-5" type="color" />
+				</label>
+				<div class="mx-auto block">
+					<button
+						on:click={addEmaPeriod}
+						class="border rounded font-semibold bg-blue-300 border-blue-600 shadow py-2 px-4 text-red-800 block dark:(bg-purple-900 text-green-400 border-purple-500) hover:bg-blue-400 dark:hover:bg-purple-700"
+					>
+						Add EMA
+					</button>
+				</div>
+			</div>
+			<div class="flex-wrap mx-auto my-3 gap-4 inline-flex items-center">
+				{#each emaPeriods as ema, index}
+					<label class="block">
+						<input
+							type="checkbox"
+							style="color:{$theme === 'dark' ? ema.darkColor : ema.color}"
+							bind:checked={emaPeriods[index].enabled}
+						/>
+						<span class="mt-1" style="color:{$theme === 'dark' ? ema.darkColor : ema.color}"
+							>EMA{ema.periods}</span
+						>
+						{#if ema.userDefined == true}
+							<button on:click={() => removeEmaPeriod(index)}>❌</button>
+						{/if}
+					</label>
+				{/each}
+			</div>
+		</div>
+	</TabPanel>
+
+	<TabPanel>
+		<div class="flex flex-col h-55">
+			<h4
+				class="font-extralight font-sans mx-auto text-lg pb-2 text-red-800 lg:text-2xl dark:text-green-400"
+			>
+				Bollinger Bands (BBands) Controls
+			</h4>
+			<div class="flex-wrap mx-auto my-3 gap-4 inline-flex items-center">
+				{#each bBandPeriods as bBand, index}
+					<label class="block">
+						<input
+							type="checkbox"
+							style="color:{$theme === 'dark' ? bBand.darkColor : bBand.color}"
+							bind:checked={bBandPeriods[index].enabled}
+						/>
+						<span class="mt-1" style="color:{$theme === 'dark' ? bBand.darkColor : bBand.color}"
+							>BBands{bBand.periods}</span
+						>
+						{#if bBand.userDefined == true}
+							<button on:click={() => removeEmaPeriod(index)}>❌</button>
+						{/if}
+					</label>
+				{/each}
+			</div>
+		</div>
+	</TabPanel>
+</Tabs>
 
 <!-- In Progress: Break All Existing Charts into Reusable Components for Urvin.Finance -->
 <div bind:clientWidth={w} class="chart">

@@ -10,8 +10,8 @@
 		{
 			periods: 20,
 			enabled: true,
-			color: '#1d4ed8',
-			darkColor: '#7dd3fc',
+			color: '#F66A13',
+			darkColor: '#EBFF52',
 			data: []
 		}
 	];
