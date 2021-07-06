@@ -306,9 +306,9 @@
 >
 	MFI14: Money Flow Index (Lookback Periods = 14)
 </h3>
-<div bind:clientWidth={w} class="mfiChart">
+<div class="mfiChart">
 	<Pancake.Chart x1={minX} x2={maxX} y1={0} y2={100}>
-		<Pancake.Grid horizontal count={4} let:value let:first>
+		<Pancake.Grid horizontal count={4} let:value>
 			<div class="grid-line horizontal"><span>{value}</span></div>
 		</Pancake.Grid>
 
