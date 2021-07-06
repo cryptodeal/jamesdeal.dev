@@ -38,4 +38,5 @@ const Ma = (inReal, inTimePeriod, inMAType) => {
 	}
 	return outReal;
 };
-module.exports = { Ma };
+
+export { Ma };

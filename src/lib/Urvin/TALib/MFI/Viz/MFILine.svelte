@@ -3,9 +3,10 @@
 	import * as Pancake from '@sveltejs/pancake';
 	import { theme } from '$lib/stores/localStore.js';
 
-	/* export object with keys equal to EMA Period Value */
-	/* defaults 12 & 26 false, but can pass in custom values as prop */
-	/* enabling EMA 12 & 26 w checkboxes & custom EMA periods */
+	/* export object with keys equal to MFI Num Lookback Periods */
+	/* defaults 14, but can pass in custom values as prop */
+
+	/* TODO: Add UX Controls, allowing user to specify their desired Num. lookback periods */
 	export let mfiPeriods = [
 		{
 			periods: 14,

@@ -1,5 +1,5 @@
 import { Ma } from '$lib/Urvin/TALib/Utils/ma';
-import { StdDev } from './stddev';
+import { StdDev } from '$lib/Urvin/TALib/Utils/stddev';
 
 const BBands = (inReal, inTimePeriod, inNbDevUp, inNbDevDn, inMaType) => {
 	var outRealUpperBand = new Array(inReal.length).fill(0.0);

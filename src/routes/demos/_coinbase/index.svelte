@@ -4,6 +4,7 @@
 	import { filterUnwanted, formatBase } from '$lib/dataviz/crypto/utils';
 	import EMALine from '$lib/Urvin/TALib/EMA/Viz/EMALine.svelte';
 	import MFILine from '$lib/Urvin/TALib/MFI/Viz/MFILine.svelte';
+	import BBands from '$lib/Urvin/TALib/BBands/Viz/BBands.svelte';
 	import Candles from '$lib/Urvin/General/Candles.svelte';
 	import { theme } from '$lib/stores/localStore.js';
 	import { getNotificationsContext } from 'svelte-notifications';
@@ -123,6 +124,16 @@
 		}
 	];
 
+	$: bBandPeriods = [
+		{
+			periods: 20,
+			enabled: false,
+			color: '#1d4ed8',
+			darkColor: '#7dd3fc',
+			data: []
+		}
+	];
+
 	$: count =
 		w <= 400 ? 30 : w <= 650 ? 40 : w <= 800 ? 60 : w <= 1000 ? 125 : w <= 1500 ? 150 : 175;
 
@@ -217,6 +228,23 @@
 			</label>
 		{/each}
 	</div>
+	<div class="flex-wrap mx-auto my-3 gap-4 inline-flex items-center">
+		{#each bBandPeriods as bBand, index}
+			<label class="block">
+				<input
+					type="checkbox"
+					style="color:{$theme === 'dark' ? bBand.darkColor : bBand.color}"
+					bind:checked={bBandPeriods[index].enabled}
+				/>
+				<span class="mt-1" style="color:{$theme === 'dark' ? bBand.darkColor : bBand.color}"
+					>BBands{bBand.periods}</span
+				>
+				{#if bBand.userDefined == true}
+					<button on:click={() => removeEmaPeriod(index)}>❌</button>
+				{/if}
+			</label>
+		{/each}
+	</div>
 </div>
 
 <!-- In Progress: Break All Existing Charts into Reusable Components for Urvin.Finance -->
@@ -236,6 +264,9 @@
 
 		<!-- Reusable EMA Trend Line Component for Urvin.Finance -->
 		<EMALine {emaPeriods} {data} {count} />
+
+		<!-- Reusable BBands Component for Urvin.Finance -->
+		<BBands {bBandPeriods} {data} {count} />
 	</Pancake.Chart>
 </div>
 

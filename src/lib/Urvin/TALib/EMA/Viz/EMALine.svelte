@@ -3,7 +3,7 @@
 	import * as Pancake from '@sveltejs/pancake';
 	import { theme } from '$lib/stores/localStore.js';
 
-	/* export object with keys equal to EMA Period Value */
+	/* export object with keys equal to EMA Num Lookback Periods */
 	/* defaults 12 & 26 false, but can pass in custom values as prop */
 	/* enabling EMA 12 & 26 w checkboxes & custom EMA periods */
 	export let emaPeriods = [
