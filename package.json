@@ -18,7 +18,7 @@
 		"d3-time": "^2.1.1",
 		"d3-time-format": "^3.0.0",
 		"dayjs": "^1.10.6",
-		"eslint": "^7.30.0",
+		"eslint": "^7.32.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^3.2.0",
 		"mdsvex": "^0.9.8",
@@ -30,25 +30,23 @@
 		"remark-github": "^10.1.0",
 		"stylelint": "^13.13.1",
 		"stylelint-config-standard": "^22.0.0",
-		"svelte": "3.38.3",
+		"svelte": "3.42.1",
 		"svelte-notifications": "^0.9.91",
-		"svelte-preprocess": "^4.7.4",
 		"vite-imagetools": "^3.6.8",
-		"vite-plugin-windicss": "^1.2.4",
-		"windicss": "^3.1.4"
+		"vite-plugin-windicss": "^1.2.7",
+		"windicss": "^3.1.6"
 	},
 	"type": "module",
 	"dependencies": {
 		"@lukeed/uuid": "^2.0.0",
-		"@octokit/rest": "^18.6.7",
+		"@octokit/rest": "^18.9.0",
 		"@sveltejs/pancake": "^0.0.17",
 		"cookie": "^0.4.1",
 		"layercake": "^4.1.1",
-		"mongodb-client-encryption": "^1.2.6",
-		"mongoose": "^5.13.2",
-		"svelte-particles": "^1.13.4",
-		"svelte-toggle": "^3.0.0",
+		"mongoose": "^5.13.5",
+		"svelte-particles": "^1.16.2",
+		"svelte-toggle": "^3.0.1",
 		"svelte-typewriter": "^2.4.5",
-		"yootils": "^0.2.1"
+		"yootils": "^0.3.1"
 	}
 }

@@ -8,9 +8,15 @@ export async function get() {
 		username: 'cryptodeal',
 		per_page: 100
 	});
+	let mostRecent;
 
-	let { date } = await getLatestCommit();
-	const mostRecent = dayjs(date);
+	const recentCommit = await getLatestCommit();
+	if (!recentCommit) {
+		mostRecent = dayjs('12-25-1995', 'MM-DD-YYYY');
+	} else {
+		let { date } = recentCommit;
+		mostRecent = dayjs(date);
+	}
 
 	var now = dayjs();
 	var twoMonthsBack = now.subtract(2, 'month').date(1);
