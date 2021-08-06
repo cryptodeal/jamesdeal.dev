@@ -22,6 +22,9 @@ const config = {
 					$images: path.resolve('src/images')
 				}
 			},
+			build: {
+				commonjsOptions: { ignore: ['mongodb-client-encryption'] }
+			},
 			optimizeDeps: {
 				include: ['layercake']
 			},
