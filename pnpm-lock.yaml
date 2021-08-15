@@ -17,7 +17,7 @@ specifiers:
   eslint: ^7.32.0
   eslint-config-prettier: ^8.3.0
   eslint-plugin-svelte3: ^3.2.0
-  layercake: ^4.1.1
+  layercake: ^5.0.0
   mdsvex: ^0.9.8
   mongoose: ^5.13.5
   prettier: ^2.3.2
@@ -43,7 +43,7 @@ dependencies:
   '@octokit/rest': 18.9.0
   '@sveltejs/pancake': 0.0.17
   cookie: 0.4.1
-  layercake: 4.1.1_svelte@3.42.1
+  layercake: 5.0.0_svelte@3.42.1
   mongoose: 5.13.5
   svelte-particles: 1.16.2_svelte@3.42.1
   svelte-toggle: 3.0.1
@@ -2586,10 +2586,10 @@ packages:
       }
     dev: true
 
-  /layercake/4.1.1_svelte@3.42.1:
+  /layercake/5.0.0_svelte@3.42.1:
     resolution:
       {
-        integrity: sha512-a8xOZeHEtX7DUcOQKHfMiSGeRrsVWDvz0NwhmVWAU0Hk/cnHZX4bJc0pMRuHrz9ZD6aTgvmJqwIZsM18tUi1Ew==
+        integrity: sha512-eQy96e9BFslROxU4ntriXwn1CA17b5khySNshgEjF+qGxMWQGM2Tl4jLH1qvlBvfvzssQXTMgIb5awyHTk/9Yw==
       }
     peerDependencies:
       svelte: ^3.16.7
