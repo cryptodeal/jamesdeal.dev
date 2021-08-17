@@ -2,10 +2,10 @@ lockfileVersion: 5.3
 
 specifiers:
   '@lukeed/uuid': ^2.0.0
-  '@octokit/rest': ^18.9.0
+  '@octokit/rest': ^18.9.1
   '@sveltejs/adapter-vercel': next
   '@sveltejs/kit': next
-  '@sveltejs/pancake': ^0.0.17
+  '@sveltejs/pancake': ^0.0.18
   cookie: ^0.4.1
   d3-collection: ^1.0.7
   d3-hexbin: ^0.2.2
@@ -19,7 +19,7 @@ specifiers:
   eslint-plugin-svelte3: ^3.2.0
   layercake: ^5.0.0
   mdsvex: ^0.9.8
-  mongoose: ^5.13.5
+  mongoose: ^5.13.7
   prettier: ^2.3.2
   prettier-plugin-svelte: ^2.3.1
   rehype-autolink-headings: ^5.1.0
@@ -30,29 +30,29 @@ specifiers:
   stylelint-config-standard: ^22.0.0
   svelte: 3.42.1
   svelte-notifications: ^0.9.91
-  svelte-particles: ^1.16.2
+  svelte-particles: ^1.16.3
   svelte-toggle: ^3.0.1
   svelte-typewriter: ^2.4.5
   vite-imagetools: ^3.6.8
   vite-plugin-windicss: ^1.2.7
-  windicss: ^3.1.6
+  windicss: ^3.1.7
   yootils: ^0.3.1
 
 dependencies:
   '@lukeed/uuid': 2.0.0
-  '@octokit/rest': 18.9.0
-  '@sveltejs/pancake': 0.0.17
+  '@octokit/rest': 18.9.1
+  '@sveltejs/pancake': 0.0.18
   cookie: 0.4.1
   layercake: 5.0.0_svelte@3.42.1
-  mongoose: 5.13.5
-  svelte-particles: 1.16.2_svelte@3.42.1
+  mongoose: 5.13.7
+  svelte-particles: 1.16.3_svelte@3.42.1
   svelte-toggle: 3.0.1
   svelte-typewriter: 2.4.5
   yootils: 0.3.1
 
 devDependencies:
   '@sveltejs/adapter-vercel': 1.0.0-next.27
-  '@sveltejs/kit': 1.0.0-next.142_svelte@3.42.1
+  '@sveltejs/kit': 1.0.0-next.153_svelte@3.42.1
   d3-collection: 1.0.7
   d3-hexbin: 0.2.2
   d3-hierarchy: 2.0.0
@@ -76,7 +76,7 @@ devDependencies:
   svelte-notifications: 0.9.91
   vite-imagetools: 3.6.8
   vite-plugin-windicss: 1.2.7
-  windicss: 3.1.6
+  windicss: 3.1.7
 
 packages:
   /@antfu/utils/0.2.4:
@@ -443,7 +443,7 @@ packages:
         integrity: sha512-BpGYsPgJt05M7/L/5FoE1PiAbdxXFZkX/3kDYcsvd1v6UhlnE5e96dTDr0ezX/EFwciQxf3cNV0loipsURU+WA==
       }
     dependencies:
-      '@octokit/types': 6.18.1
+      '@octokit/types': 6.25.0
     dev: false
 
   /@octokit/core/3.5.1:
@@ -456,7 +456,7 @@ packages:
       '@octokit/graphql': 4.6.2
       '@octokit/request': 5.6.0
       '@octokit/request-error': 2.1.0
-      '@octokit/types': 6.18.1
+      '@octokit/types': 6.24.0
       before-after-hook: 2.2.1
       universal-user-agent: 6.0.0
     dev: false
@@ -467,7 +467,7 @@ packages:
         integrity: sha512-fUIPpx+pZyoLW4GCs3yMnlj2LfoXTWDUVPTC4V3MUEKZm48W+XYpeWSZCv+vYF1ZABUm2CqnDVf1sFtIYrj7KQ==
       }
     dependencies:
-      '@octokit/types': 6.24.0
+      '@octokit/types': 6.25.0
       is-plain-object: 5.0.0
       universal-user-agent: 6.0.0
     dev: false
@@ -479,21 +479,21 @@ packages:
       }
     dependencies:
       '@octokit/request': 5.6.0
-      '@octokit/types': 6.18.1
+      '@octokit/types': 6.25.0
       universal-user-agent: 6.0.0
-    dev: false
-
-  /@octokit/openapi-types/8.2.1:
-    resolution:
-      {
-        integrity: sha512-BJz6kWuL3n+y+qM8Pv+UGbSxH6wxKf/SBs5yzGufMHwDefsa+Iq7ZGy1BINMD2z9SkXlIzk1qiu988rMuGXEMg==
-      }
     dev: false
 
   /@octokit/openapi-types/9.4.0:
     resolution:
       {
         integrity: sha512-rKRkXikOJgDNImPl49IJuECLVXjj+t4qOXHhl8SBjMQCGGp1w4m5Ud/0kfdUx+zCpTvBN8vaOUDF4nnboZoOtQ==
+      }
+    dev: false
+
+  /@octokit/openapi-types/9.7.0:
+    resolution:
+      {
+        integrity: sha512-TUJ16DJU8mekne6+KVcMV5g6g/rJlrnIKn7aALG9QrNpnEipFc1xjoarh0PKaAWf2Hf+HwthRKYt+9mCm5RsRg==
       }
     dev: false
 
@@ -506,7 +506,7 @@ packages:
       '@octokit/core': '>=2'
     dependencies:
       '@octokit/core': 3.5.1
-      '@octokit/types': 6.18.1
+      '@octokit/types': 6.24.0
     dev: false
 
   /@octokit/plugin-request-log/1.0.3_@octokit+core@3.5.1:
@@ -520,16 +520,16 @@ packages:
       '@octokit/core': 3.5.1
     dev: false
 
-  /@octokit/plugin-rest-endpoint-methods/5.7.0_@octokit+core@3.5.1:
+  /@octokit/plugin-rest-endpoint-methods/5.8.0_@octokit+core@3.5.1:
     resolution:
       {
-        integrity: sha512-G7sgccWRYQMwcHJXkDY/sDxbXeKiZkFQqUtzBCwmrzCNj2GQf3VygQ4T/BFL2crLVpIbenkE/c0ErhYOte2MPw==
+        integrity: sha512-qeLZZLotNkoq+it6F+xahydkkbnvSK0iDjlXFo3jNTB+Ss0qIbYQb9V/soKLMkgGw8Q2sHjY5YEXiA47IVPp4A==
       }
     peerDependencies:
       '@octokit/core': '>=3'
     dependencies:
       '@octokit/core': 3.5.1
-      '@octokit/types': 6.24.0
+      '@octokit/types': 6.25.0
       deprecation: 2.3.1
     dev: false
 
@@ -539,7 +539,7 @@ packages:
         integrity: sha512-1VIvgXxs9WHSjicsRwq8PlR2LR2x6DwsJAaFgzdi0JfJoGSO8mYI/cHJQ+9FbN21aa+DrgNLnwObmyeSC8Rmpg==
       }
     dependencies:
-      '@octokit/types': 6.18.1
+      '@octokit/types': 6.25.0
       deprecation: 2.3.1
       once: 1.4.0
     dev: false
@@ -552,31 +552,22 @@ packages:
     dependencies:
       '@octokit/endpoint': 6.0.11
       '@octokit/request-error': 2.1.0
-      '@octokit/types': 6.18.1
+      '@octokit/types': 6.25.0
       is-plain-object: 5.0.0
       node-fetch: 2.6.1
       universal-user-agent: 6.0.0
     dev: false
 
-  /@octokit/rest/18.9.0:
+  /@octokit/rest/18.9.1:
     resolution:
       {
-        integrity: sha512-VrmrE8gjpuOoDAGjrQq2j9ZhOE6LxaqxaQg0yMrrEnnQZy2ZcAnr5qbVfKsMF0up/48PRV/VFS/2GSMhA7nTdA==
+        integrity: sha512-idZ3e5PqXVWOhtZYUa546IDHTHjkGZbj3tcJsN0uhCy984KD865e8GB2WbYDc2ZxFuJRiyd0AftpL2uPNhF+UA==
       }
     dependencies:
       '@octokit/core': 3.5.1
       '@octokit/plugin-paginate-rest': 2.13.3_@octokit+core@3.5.1
       '@octokit/plugin-request-log': 1.0.3_@octokit+core@3.5.1
-      '@octokit/plugin-rest-endpoint-methods': 5.7.0_@octokit+core@3.5.1
-    dev: false
-
-  /@octokit/types/6.18.1:
-    resolution:
-      {
-        integrity: sha512-5YsddjO1U+xC8ZYKV8yZYebW55PCc7qiEEeZ+wZRr6qyclynzfyD65KZ5FdtIeP0/cANyFaD7hV69qElf1nMsQ==
-      }
-    dependencies:
-      '@octokit/openapi-types': 8.2.1
+      '@octokit/plugin-rest-endpoint-methods': 5.8.0_@octokit+core@3.5.1
     dev: false
 
   /@octokit/types/6.24.0:
@@ -586,6 +577,15 @@ packages:
       }
     dependencies:
       '@octokit/openapi-types': 9.4.0
+    dev: false
+
+  /@octokit/types/6.25.0:
+    resolution:
+      {
+        integrity: sha512-bNvyQKfngvAd/08COlYIN54nRgxskmejgywodizQNyiKoXmWRAjKup2/LYwm+T9V0gsKH6tuld1gM0PzmOiB4Q==
+      }
+    dependencies:
+      '@octokit/openapi-types': 9.7.0
     dev: false
 
   /@rollup/pluginutils/4.1.0:
@@ -654,17 +654,17 @@ packages:
       esbuild: 0.12.17
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.142_svelte@3.42.1:
+  /@sveltejs/kit/1.0.0-next.153_svelte@3.42.1:
     resolution:
       {
-        integrity: sha512-MxoQz/kxlYOXVHETlxh8+wIvfZ4N2EScDqyuaWwFHqWg6fj6FHADJfZ7JCniqvAe8ME2jA9Om/gVR8e1oY04+w==
+        integrity: sha512-WeWxMXjKvVlpNkiCX5Of6Y1C0ngUxNE2i7CutWX5pfVbGHd1ecyY4ntMlSCHCfFcdObAf9UniFc7OY7NR2tRhQ==
       }
     engines: { node: ^12.20 || >=14.13 }
     hasBin: true
     peerDependencies:
-      svelte: ^3.34.0
+      svelte: ^3.39.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 1.0.0-next.15_svelte@3.42.1+vite@2.4.4
+      '@sveltejs/vite-plugin-svelte': 1.0.0-next.17_svelte@3.42.1+vite@2.4.4
       cheap-watch: 1.0.3
       sade: 1.7.4
       svelte: 3.42.1
@@ -674,19 +674,19 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/pancake/0.0.17:
+  /@sveltejs/pancake/0.0.18:
     resolution:
       {
-        integrity: sha512-8YpV/PXSmlw3ypTlhwp5r6mnZUCVwQPloQTGTb0QBdDZyGdAgybF9NWkmDe516PkLx84MfZhWw56ztcqxd3X0Q==
+        integrity: sha512-vnpKn+sHE0yvw/6x4juF9EoDS8iYC5JNIVtRgclA37rfxdnIpvbVxStiZ5/gWncjERN4jtSpTAplS1zCARCBXA==
       }
     dependencies:
       yootils: 0.0.16
     dev: false
 
-  /@sveltejs/vite-plugin-svelte/1.0.0-next.15_svelte@3.42.1+vite@2.4.4:
+  /@sveltejs/vite-plugin-svelte/1.0.0-next.17_svelte@3.42.1+vite@2.4.4:
     resolution:
       {
-        integrity: sha512-8yGX7PxaqtvWw+GHiO2DV7lZ4M7DwIrFq+PgZGZ9X09PuoSeaWszm76GWQXJMKHoPPhdA9084662en9qbv4aRw==
+        integrity: sha512-Xh/YYqBMDJnDheutnGHk/I5TO6w9gZ2GMgvG+qQm/gpIRkaTLts6Mw5xDe6cac/nH/aVPPVPibhq2pf26d44fA==
       }
     engines: { node: ^12.20 || ^14.13.1 || >= 16 }
     peerDependencies:
@@ -2882,10 +2882,10 @@ packages:
       }
     dev: true
 
-  /mongodb/3.6.10:
+  /mongodb/3.6.11:
     resolution:
       {
-        integrity: sha512-fvIBQBF7KwCJnDZUnFFy4WqEFP8ibdXeFANnylW19+vOwdjOAvqIzPdsNCEMT6VKTHnYu4K64AWRih0mkFms6Q==
+        integrity: sha512-4Y4lTFHDHZZdgMaHmojtNAlqkvddX2QQBEN0K//GzxhGwlI9tZ9R0vhbjr1Decw+TF7qK0ZLjQT292XgHRRQgw==
       }
     engines: { node: '>=4' }
     peerDependencies:
@@ -2918,7 +2918,7 @@ packages:
       saslprep: 1.0.3
     dev: false
 
-  /mongoose-legacy-pluralize/1.0.2_mongoose@5.13.5:
+  /mongoose-legacy-pluralize/1.0.2_mongoose@5.13.7:
     resolution:
       {
         integrity: sha512-Yo/7qQU4/EyIS8YDFSeenIvXxZN+ld7YdV9LqFVQJzTLye8unujAWPZ4NWKfFA+RNjh+wvTWKY9Z3E5XM6ZZiQ==
@@ -2926,21 +2926,21 @@ packages:
     peerDependencies:
       mongoose: '*'
     dependencies:
-      mongoose: 5.13.5
+      mongoose: 5.13.7
     dev: false
 
-  /mongoose/5.13.5:
+  /mongoose/5.13.7:
     resolution:
       {
-        integrity: sha512-sSUAk9GWgA8r3w3nVNrNjBaDem86aevwXO8ltDMKzCf+rjnteMMQkXHQdn1ePkt7alROEPZYCAjiRjptWRSPiQ==
+        integrity: sha512-ADIvftZ+KfoTALMZ0n8HvBlezFhcUd73hQaHQDwQ+3X+JZlqE47fUy9yhFZ2SjT+qzmuaCcIXCfhewIc38t2fQ==
       }
     engines: { node: '>=4.0.0' }
     dependencies:
       '@types/mongodb': 3.6.20
       bson: 1.1.6
       kareem: 2.3.2
-      mongodb: 3.6.10
-      mongoose-legacy-pluralize: 1.0.2_mongoose@5.13.5
+      mongodb: 3.6.11
+      mongoose-legacy-pluralize: 1.0.2_mongoose@5.13.7
       mpath: 0.8.3
       mquery: 3.2.5
       ms: 2.1.2
@@ -4209,17 +4209,17 @@ packages:
       }
     dev: true
 
-  /svelte-particles/1.16.2_svelte@3.42.1:
+  /svelte-particles/1.16.3_svelte@3.42.1:
     resolution:
       {
-        integrity: sha512-OsSH3h3j2sAUib6T9pLCu6EtYFPcPjRLnbyS5n/epUNHeHG9/DBXyeTrkNv7GO024YwYJBoz42zWEYc+SJQfZg==
+        integrity: sha512-W1JZv8hMDb9Zp6pLkNjQRHgA5Ti9oASsND0pN0I7Sne8RGNDL4CoMYQy5Zwoz6P/sp8DUmA0VP/aXz1PK5rzHQ==
       }
     peerDependencies:
       svelte: '>=3'
     dependencies:
       svelte: 3.42.1
       tslib: 2.3.0
-      tsparticles: 1.33.2
+      tsparticles: 1.33.3
     dev: false
 
   /svelte-toggle/3.0.1:
@@ -4338,10 +4338,10 @@ packages:
       }
     dev: false
 
-  /tsparticles/1.33.2:
+  /tsparticles/1.33.3:
     resolution:
       {
-        integrity: sha512-/oLQWdwyaz9GXTl9j/xckdcIerVlbSlGVd6jT8h8QKPkkkMaqcLlVtVBMLF3542FaH2RUevceTIS7O2JncVdUA==
+        integrity: sha512-3pK9dNa0TCZC29sWXg4rU/sx6jXKPfDPmWfwGphfBPx9HDrKmP8ZJ1QTesZ7WBm3g6vCxBNOsb8yaCAofDwzIg==
       }
     requiresBuild: true
     optionalDependencies:
@@ -4603,6 +4603,15 @@ packages:
     resolution:
       {
         integrity: sha512-9/ShTPRs2pg/AJo4PtbgDv9p7BUgR52WqL7Gpr8VSO6LH8z4I/oKamUAlSXqyLsWD6yKS+xtxF3FRiHVJwYcuQ==
+      }
+    engines: { node: '>= 12' }
+    hasBin: true
+    dev: true
+
+  /windicss/3.1.7:
+    resolution:
+      {
+        integrity: sha512-Q/HQ9j+r2R0fdt85zAjccdo11kHWzQmpkuwIUQIO6PSypyDmBTfN14aAy4szLrpgo2woyuHM7Y+kir4IG4qnKQ==
       }
     engines: { node: '>= 12' }
     hasBin: true

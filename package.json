@@ -34,18 +34,18 @@
 		"svelte-notifications": "^0.9.91",
 		"vite-imagetools": "^3.6.8",
 		"vite-plugin-windicss": "^1.2.7",
-		"windicss": "^3.1.6"
+		"windicss": "^3.1.7"
 	},
 	"type": "module",
 	"dependencies": {
 		"@lukeed/uuid": "^2.0.0",
-		"@octokit/rest": "^18.9.0",
-		"@sveltejs/pancake": "^0.0.17",
+		"@octokit/rest": "^18.9.1",
+		"@sveltejs/pancake": "^0.0.18",
 		"cookie": "^0.4.1",
 		"layercake": "^5.0.0",
 		"mongodb-client-encryption": "^1.2.6",
-		"mongoose": "^5.13.5",
-		"svelte-particles": "^1.16.2",
+		"mongoose": "^5.13.7",
+		"svelte-particles": "^1.16.3",
 		"svelte-toggle": "^3.0.1",
 		"svelte-typewriter": "^2.4.5",
 		"yootils": "^0.3.1"
