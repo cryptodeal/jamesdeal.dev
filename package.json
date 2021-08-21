@@ -30,7 +30,7 @@
 		"remark-github": "^10.1.0",
 		"stylelint": "^13.13.1",
 		"stylelint-config-standard": "^22.0.0",
-		"svelte": "3.42.1",
+		"svelte": "3.42.2",
 		"svelte-notifications": "^0.9.91",
 		"vite-imagetools": "^3.6.8",
 		"vite-plugin-windicss": "^1.2.7",
