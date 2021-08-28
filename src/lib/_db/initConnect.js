@@ -22,9 +22,9 @@ async function initConnect() {
 			bufferMaxEntries: 0,
 			useFindAndModify: false,
 			useCreateIndex: true,
-			useNewUrlParser: true
+			useNewUrlParser: true,
+			useUnifiedTopology: true
 		};
-		mongoose.set('useUnifiedTopology', true);
 
 		cached.promise = mongoose.connect(MONGOOSE_URI, opts).then((mongoose) => {
 			return mongoose;
