@@ -17,10 +17,7 @@ async function initConnect() {
 	}
 
 	if (!cached.promise) {
-		const opts = {
-			bufferCommands: false,
-			bufferMaxEntries: 0
-		};
+		const opts = {};
 
 		cached.promise = mongoose.connect(MONGOOSE_URI, opts).then((mongoose) => {
 			return mongoose;
