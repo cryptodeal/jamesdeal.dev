@@ -19,11 +19,7 @@ async function initConnect() {
 	if (!cached.promise) {
 		const opts = {
 			bufferCommands: false,
-			bufferMaxEntries: 0,
-			useFindAndModify: false,
-			useCreateIndex: true,
-			useUnifiedTopology: true,
-			useNewUrlParser: true
+			bufferMaxEntries: 0
 		};
 
 		cached.promise = mongoose.connect(MONGOOSE_URI, opts).then((mongoose) => {
