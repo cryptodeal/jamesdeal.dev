@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@lukeed/uuid': ^2.0.0
-  '@octokit/rest': ^18.9.1
+  '@octokit/rest': ^18.10.0
   '@sveltejs/adapter-vercel': next
   '@sveltejs/kit': next
   '@sveltejs/pancake': ^0.0.18
@@ -19,7 +19,7 @@ specifiers:
   eslint-plugin-svelte3: ^3.2.0
   layercake: ^5.0.0
   mdsvex: ^0.9.8
-  mongoose: ^6.0.2
+  mongoose: ^6.0.3
   prettier: ^2.3.2
   prettier-plugin-svelte: ^2.4.0
   rehype-autolink-headings: ^5.1.0
@@ -40,11 +40,11 @@ specifiers:
 
 dependencies:
   '@lukeed/uuid': 2.0.0
-  '@octokit/rest': 18.9.1
+  '@octokit/rest': 18.10.0
   '@sveltejs/pancake': 0.0.18
   cookie: 0.4.1
   layercake: 5.0.0_svelte@3.42.4
-  mongoose: 6.0.2
+  mongoose: 6.0.3
   svelte-particles: 1.17.0_svelte@3.42.4
   svelte-toggle: 3.0.2
   svelte-typewriter: 2.4.5
@@ -52,7 +52,7 @@ dependencies:
 
 devDependencies:
   '@sveltejs/adapter-vercel': 1.0.0-next.27
-  '@sveltejs/kit': 1.0.0-next.158_svelte@3.42.4
+  '@sveltejs/kit': 1.0.0-next.161_svelte@3.42.4
   d3-collection: 1.0.7
   d3-hexbin: 0.2.2
   d3-hierarchy: 2.0.0
@@ -443,7 +443,7 @@ packages:
         integrity: sha512-BpGYsPgJt05M7/L/5FoE1PiAbdxXFZkX/3kDYcsvd1v6UhlnE5e96dTDr0ezX/EFwciQxf3cNV0loipsURU+WA==
       }
     dependencies:
-      '@octokit/types': 6.25.0
+      '@octokit/types': 6.26.0
     dev: false
 
   /@octokit/core/3.5.1:
@@ -456,7 +456,7 @@ packages:
       '@octokit/graphql': 4.6.2
       '@octokit/request': 5.6.0
       '@octokit/request-error': 2.1.0
-      '@octokit/types': 6.24.0
+      '@octokit/types': 6.25.0
       before-after-hook: 2.2.1
       universal-user-agent: 6.0.0
     dev: false
@@ -467,7 +467,7 @@ packages:
         integrity: sha512-fUIPpx+pZyoLW4GCs3yMnlj2LfoXTWDUVPTC4V3MUEKZm48W+XYpeWSZCv+vYF1ZABUm2CqnDVf1sFtIYrj7KQ==
       }
     dependencies:
-      '@octokit/types': 6.25.0
+      '@octokit/types': 6.26.0
       is-plain-object: 5.0.0
       universal-user-agent: 6.0.0
     dev: false
@@ -479,14 +479,14 @@ packages:
       }
     dependencies:
       '@octokit/request': 5.6.0
-      '@octokit/types': 6.25.0
+      '@octokit/types': 6.26.0
       universal-user-agent: 6.0.0
     dev: false
 
-  /@octokit/openapi-types/9.4.0:
+  /@octokit/openapi-types/10.0.0:
     resolution:
       {
-        integrity: sha512-rKRkXikOJgDNImPl49IJuECLVXjj+t4qOXHhl8SBjMQCGGp1w4m5Ud/0kfdUx+zCpTvBN8vaOUDF4nnboZoOtQ==
+        integrity: sha512-k1iO2zKuEjjRS1EJb4FwSLk+iF6EGp+ZV0OMRViQoWhQ1fZTk9hg1xccZII5uyYoiqcbC73MRBmT45y1vp2PPg==
       }
     dev: false
 
@@ -497,22 +497,22 @@ packages:
       }
     dev: false
 
-  /@octokit/plugin-paginate-rest/2.13.3_@octokit+core@3.5.1:
+  /@octokit/plugin-paginate-rest/2.16.0_@octokit+core@3.5.1:
     resolution:
       {
-        integrity: sha512-46lptzM9lTeSmIBt/sVP/FLSTPGx6DCzAdSX3PfeJ3mTf4h9sGC26WpaQzMEq/Z44cOcmx8VsOhO+uEgE3cjYg==
+        integrity: sha512-8YYzALPMvEZ35kgy5pdYvQ22Roz+BIuEaedO575GwE2vb/ACDqQn0xQrTJR4tnZCJn7pi8+AWPVjrFDaERIyXQ==
       }
     peerDependencies:
       '@octokit/core': '>=2'
     dependencies:
       '@octokit/core': 3.5.1
-      '@octokit/types': 6.24.0
+      '@octokit/types': 6.26.0
     dev: false
 
-  /@octokit/plugin-request-log/1.0.3_@octokit+core@3.5.1:
+  /@octokit/plugin-request-log/1.0.4_@octokit+core@3.5.1:
     resolution:
       {
-        integrity: sha512-4RFU4li238jMJAzLgAwkBAw+4Loile5haQMQr+uhFq27BmyJXcXSKvoQKqh0agsZEiUlW6iSv3FAgvmGkur7OQ==
+        integrity: sha512-mLUsMkgP7K/cnFEw07kWqXGF5LKrOkD+lhCrKvPHXWDywAwuDUeDwWBpc69XK3pNX0uKiVt8g5z96PJ6z9xCFA==
       }
     peerDependencies:
       '@octokit/core': '>=3'
@@ -520,16 +520,16 @@ packages:
       '@octokit/core': 3.5.1
     dev: false
 
-  /@octokit/plugin-rest-endpoint-methods/5.8.0_@octokit+core@3.5.1:
+  /@octokit/plugin-rest-endpoint-methods/5.9.0_@octokit+core@3.5.1:
     resolution:
       {
-        integrity: sha512-qeLZZLotNkoq+it6F+xahydkkbnvSK0iDjlXFo3jNTB+Ss0qIbYQb9V/soKLMkgGw8Q2sHjY5YEXiA47IVPp4A==
+        integrity: sha512-Rz67pg+rEJq2Qn/qfHsMiBoP7GL5NDn8Gg0ezGznZ745Ixn1gPusZYZqCXNhICYrIZaVXmusNP0iwPdphJneqQ==
       }
     peerDependencies:
       '@octokit/core': '>=3'
     dependencies:
       '@octokit/core': 3.5.1
-      '@octokit/types': 6.25.0
+      '@octokit/types': 6.26.0
       deprecation: 2.3.1
     dev: false
 
@@ -539,7 +539,7 @@ packages:
         integrity: sha512-1VIvgXxs9WHSjicsRwq8PlR2LR2x6DwsJAaFgzdi0JfJoGSO8mYI/cHJQ+9FbN21aa+DrgNLnwObmyeSC8Rmpg==
       }
     dependencies:
-      '@octokit/types': 6.25.0
+      '@octokit/types': 6.26.0
       deprecation: 2.3.1
       once: 1.4.0
     dev: false
@@ -552,31 +552,22 @@ packages:
     dependencies:
       '@octokit/endpoint': 6.0.11
       '@octokit/request-error': 2.1.0
-      '@octokit/types': 6.25.0
+      '@octokit/types': 6.26.0
       is-plain-object: 5.0.0
       node-fetch: 2.6.1
       universal-user-agent: 6.0.0
     dev: false
 
-  /@octokit/rest/18.9.1:
+  /@octokit/rest/18.10.0:
     resolution:
       {
-        integrity: sha512-idZ3e5PqXVWOhtZYUa546IDHTHjkGZbj3tcJsN0uhCy984KD865e8GB2WbYDc2ZxFuJRiyd0AftpL2uPNhF+UA==
+        integrity: sha512-esHR5OKy38bccL/sajHqZudZCvmv4yjovMJzyXlphaUo7xykmtOdILGJ3aAm0mFHmMLmPFmDMJXf39cAjNJsrw==
       }
     dependencies:
       '@octokit/core': 3.5.1
-      '@octokit/plugin-paginate-rest': 2.13.3_@octokit+core@3.5.1
-      '@octokit/plugin-request-log': 1.0.3_@octokit+core@3.5.1
-      '@octokit/plugin-rest-endpoint-methods': 5.8.0_@octokit+core@3.5.1
-    dev: false
-
-  /@octokit/types/6.24.0:
-    resolution:
-      {
-        integrity: sha512-MfEimJeQ8AV1T2nI5kOfHqsqPHaAnG0Dw3MVoHSEsEq6iLKx2N91o+k2uAgXhPYeSE76LVBqjgTShnFFgNwe0A==
-      }
-    dependencies:
-      '@octokit/openapi-types': 9.4.0
+      '@octokit/plugin-paginate-rest': 2.16.0_@octokit+core@3.5.1
+      '@octokit/plugin-request-log': 1.0.4_@octokit+core@3.5.1
+      '@octokit/plugin-rest-endpoint-methods': 5.9.0_@octokit+core@3.5.1
     dev: false
 
   /@octokit/types/6.25.0:
@@ -586,6 +577,15 @@ packages:
       }
     dependencies:
       '@octokit/openapi-types': 9.7.0
+    dev: false
+
+  /@octokit/types/6.26.0:
+    resolution:
+      {
+        integrity: sha512-RDxZBAFMtqs1ZPnbUu1e7ohPNfoNhTiep4fErY7tZs995BeHu369Vsh5woMIaFbllRWEZBfvTCS4hvDnMPiHrA==
+      }
+    dependencies:
+      '@octokit/openapi-types': 10.0.0
     dev: false
 
   /@rollup/pluginutils/4.1.0:
@@ -654,21 +654,21 @@ packages:
       esbuild: 0.12.17
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.158_svelte@3.42.4:
+  /@sveltejs/kit/1.0.0-next.161_svelte@3.42.4:
     resolution:
       {
-        integrity: sha512-jVpVeAFOVNOGDRDVvbWjHxco5s78OYsrCJhnEAKoOe690gkWA5Qc8FqPXo8HHiaIHKHmTP1vbrEhQ5jkX7fBAw==
+        integrity: sha512-19yrQjfskZXh5TboZI0HGAO8lq5H+JUw/JHnZZ85IGnetqJWr/sYxDmOkXAK9b97UDYAVZ/jy3Ztx5J8Nj4fkQ==
       }
     engines: { node: ^12.20 || >=14.13 }
     hasBin: true
     peerDependencies:
       svelte: ^3.39.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 1.0.0-next.17_svelte@3.42.4+vite@2.5.0
+      '@sveltejs/vite-plugin-svelte': 1.0.0-next.17_svelte@3.42.4+vite@2.5.3
       cheap-watch: 1.0.3
       sade: 1.7.4
       svelte: 3.42.4
-      vite: 2.5.0
+      vite: 2.5.3
     transitivePeerDependencies:
       - diff-match-patch
       - supports-color
@@ -683,7 +683,7 @@ packages:
       yootils: 0.0.16
     dev: false
 
-  /@sveltejs/vite-plugin-svelte/1.0.0-next.17_svelte@3.42.4+vite@2.5.0:
+  /@sveltejs/vite-plugin-svelte/1.0.0-next.17_svelte@3.42.4+vite@2.5.3:
     resolution:
       {
         integrity: sha512-Xh/YYqBMDJnDheutnGHk/I5TO6w9gZ2GMgvG+qQm/gpIRkaTLts6Mw5xDe6cac/nH/aVPPVPibhq2pf26d44fA==
@@ -704,7 +704,7 @@ packages:
       require-relative: 0.8.7
       svelte: 3.42.4
       svelte-hmr: 0.14.7_svelte@3.42.4
-      vite: 2.5.0
+      vite: 2.5.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3069,10 +3069,10 @@ packages:
       saslprep: 1.0.3
     dev: false
 
-  /mongoose/6.0.2:
+  /mongoose/6.0.3:
     resolution:
       {
-        integrity: sha512-4zrCcScAItE9aefaPMeG9+IPLaJJ2c8sFLXlLvTVPdArZija10rto61qkzIxmhf6zkDmW2W9bh3DS59KuTPCfQ==
+        integrity: sha512-0gu3Z34j3VdvGnqcs0lZdRnE0agiuERvXKkSrKjGqXsZS+ym5v9Oq1dQUuhtOYPQGtlpHpeVYjHHY+2sn5CMrg==
       }
     engines: { node: '>=12.0.0' }
     dependencies:
@@ -3918,17 +3918,6 @@ packages:
     hasBin: true
     dependencies:
       glob: 7.1.7
-    dev: true
-
-  /rollup/2.55.1:
-    resolution:
-      {
-        integrity: sha512-1P9w5fpb6b4qroePh8vHKGIvPNxwoCQhjJpIqfZGHLKpZ0xcU2/XBmFxFbc9697/6bmHpmFTLk5R1dAQhFSo0g==
-      }
-    engines: { node: '>=10.0.0' }
-    hasBin: true
-    optionalDependencies:
-      fsevents: 2.3.2
     dev: true
 
   /rollup/2.56.3:
@@ -4866,10 +4855,10 @@ packages:
       - typescript
     dev: true
 
-  /vite/2.5.0:
+  /vite/2.5.3:
     resolution:
       {
-        integrity: sha512-Dn4B+g54PJsMG5WCc4QeFy1ygMXRdTtFrUPegqfk4+vzVQcbF/DqqmI/1bxezArzbujBJg/67QeT5wz8edfJVQ==
+        integrity: sha512-1wMDnjflvtTTkMov8O/Xb5+w1/VW/Gw8oCf8f6dqgHn8lMOEqq0SaPtFEQeikFcOKCfSbiU0nEi0LDIx6DNsaQ==
       }
     engines: { node: '>=12.2.0' }
     hasBin: true
@@ -4877,7 +4866,7 @@ packages:
       esbuild: 0.12.17
       postcss: 8.3.6
       resolve: 1.20.0
-      rollup: 2.55.1
+      rollup: 2.56.3
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
