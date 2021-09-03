@@ -1,5 +1,5 @@
 import { mdsvex } from 'mdsvex';
-import { mdsvexConfig } from './mdsvex.config.js';
+import mdsvexConfig from './mdsvex.config.js';
 import vercel from '@sveltejs/adapter-vercel';
 import { imagetools } from 'vite-imagetools';
 import path from 'path';
