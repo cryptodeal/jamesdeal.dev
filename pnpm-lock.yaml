@@ -9,17 +9,17 @@ specifiers:
   cookie: ^0.4.1
   d3-collection: ^1.0.7
   d3-hexbin: ^0.2.2
-  d3-hierarchy: 2.0.0
-  d3-scale: ^3.3.0
-  d3-time: ^2.1.1
-  d3-time-format: ^3.0.0
+  d3-hierarchy: 3.0.1
+  d3-scale: ^4.0.0
+  d3-time: ^3.0.0
+  d3-time-format: ^4.0.0
   dayjs: ^1.10.6
   eslint: ^7.32.0
   eslint-config-prettier: ^8.3.0
   eslint-plugin-svelte3: ^3.2.0
   layercake: ^5.0.0
   mdsvex: ^0.9.8
-  mongoose: ^6.0.3
+  mongoose: ^6.0.4
   prettier: ^2.3.2
   prettier-plugin-svelte: ^2.4.0
   rehype-autolink-headings: ^5.1.0
@@ -44,21 +44,21 @@ dependencies:
   '@sveltejs/pancake': 0.0.18
   cookie: 0.4.1
   layercake: 5.0.0_svelte@3.42.4
-  mongoose: 6.0.3
+  mongoose: 6.0.4
   svelte-particles: 1.17.0_svelte@3.42.4
   svelte-toggle: 3.0.2
   svelte-typewriter: 2.4.5
   yootils: 0.3.1
 
 devDependencies:
-  '@sveltejs/adapter-vercel': 1.0.0-next.27
-  '@sveltejs/kit': 1.0.0-next.161_svelte@3.42.4
+  '@sveltejs/adapter-vercel': 1.0.0-next.28
+  '@sveltejs/kit': 1.0.0-next.162_svelte@3.42.4
   d3-collection: 1.0.7
   d3-hexbin: 0.2.2
-  d3-hierarchy: 2.0.0
-  d3-scale: 3.3.0
-  d3-time: 2.1.1
-  d3-time-format: 3.0.0
+  d3-hierarchy: 3.0.1
+  d3-scale: 4.0.0
+  d3-time: 3.0.0
+  d3-time-format: 4.0.0
   dayjs: 1.10.6
   eslint: 7.32.0
   eslint-config-prettier: 8.3.0_eslint@7.32.0
@@ -645,26 +645,26 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/adapter-vercel/1.0.0-next.27:
+  /@sveltejs/adapter-vercel/1.0.0-next.28:
     resolution:
       {
-        integrity: sha512-KiGDJXgjkj3MJvmQLXpE7pfQnN7dVx8pPgqcrFp8yziFrLMrvluklKmNqNei6JivQn5JVYxLojRgHpik1fdIOw==
+        integrity: sha512-a2n4UCuTu5LhUoS5KiI5xasgvIXW8qKnSSKOnTTLYlZhpJ5VnSKWyT9hUOoVsAEGkeZw+2SYxxI3Vckw6ZhSng==
       }
     dependencies:
       esbuild: 0.12.17
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.161_svelte@3.42.4:
+  /@sveltejs/kit/1.0.0-next.162_svelte@3.42.4:
     resolution:
       {
-        integrity: sha512-19yrQjfskZXh5TboZI0HGAO8lq5H+JUw/JHnZZ85IGnetqJWr/sYxDmOkXAK9b97UDYAVZ/jy3Ztx5J8Nj4fkQ==
+        integrity: sha512-fLJNGXeTFtwy1p91mWh+Sr+wgi0vEPgXN0uIUvofzQSNp7MDwxw2noDCogyHgxHhU3uDf2+Osz3aJC2fCsbIbw==
       }
     engines: { node: ^12.20 || >=14.13 }
     hasBin: true
     peerDependencies:
       svelte: ^3.39.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 1.0.0-next.17_svelte@3.42.4+vite@2.5.3
+      '@sveltejs/vite-plugin-svelte': 1.0.0-next.21_svelte@3.42.4+vite@2.5.3
       cheap-watch: 1.0.3
       sade: 1.7.4
       svelte: 3.42.4
@@ -683,16 +683,16 @@ packages:
       yootils: 0.0.16
     dev: false
 
-  /@sveltejs/vite-plugin-svelte/1.0.0-next.17_svelte@3.42.4+vite@2.5.3:
+  /@sveltejs/vite-plugin-svelte/1.0.0-next.21_svelte@3.42.4+vite@2.5.3:
     resolution:
       {
-        integrity: sha512-Xh/YYqBMDJnDheutnGHk/I5TO6w9gZ2GMgvG+qQm/gpIRkaTLts6Mw5xDe6cac/nH/aVPPVPibhq2pf26d44fA==
+        integrity: sha512-JjPnoQoI1+VXHjguE1bWyFYdZvPN6VTZ5RsFRpju45zICas1N5jAuOqKTbhQ1G+eEMCbhhB6zjZgQQRtaXPhNQ==
       }
     engines: { node: ^12.20 || ^14.13.1 || >= 16 }
     peerDependencies:
       diff-match-patch: ^1.0.5
       svelte: ^3.34.0
-      vite: ^2.3.7
+      vite: ^2.5.3
     peerDependenciesMeta:
       diff-match-patch:
         optional: true
@@ -1400,11 +1400,12 @@ packages:
     resolution: { integrity: sha1-nFg32s/UcasFM3qeke8Qv8T5iDE= }
     dev: true
 
-  /d3-hierarchy/2.0.0:
+  /d3-hierarchy/3.0.1:
     resolution:
       {
-        integrity: sha512-SwIdqM3HxQX2214EG9GTjgmCc/mbSx4mQBn+DuEETubhOw6/U3fmnji4uCVrmzOydMHSO1nZle5gh6HB/wdOzw==
+        integrity: sha512-RlLTaofEoOrMK1JoXYIGhKTkJFI/6rFrYPgxy6QlZo2BcVc4HGTqEU0rPpzuMq5T/5XcMtAzv1XiLA3zRTfygw==
       }
+    engines: { node: '>=12' }
     dev: true
 
   /d3-interpolate/2.0.1:
@@ -1426,6 +1427,21 @@ packages:
       d3-interpolate: 2.0.1
       d3-time: 2.1.1
       d3-time-format: 3.0.0
+    dev: false
+
+  /d3-scale/4.0.0:
+    resolution:
+      {
+        integrity: sha512-foHQYKpWQcyndH1CGoHdUC4PECxTxonzwwBXGT8qu+Drb1FIc6ON6dG2P5f4hRRMkLiIKeWK7iFtdznDUrnuPQ==
+      }
+    engines: { node: '>=12' }
+    dependencies:
+      d3-array: 2.12.1
+      d3-format: 2.0.0
+      d3-interpolate: 2.0.1
+      d3-time: 3.0.0
+      d3-time-format: 4.0.0
+    dev: true
 
   /d3-time-format/3.0.0:
     resolution:
@@ -1434,6 +1450,17 @@ packages:
       }
     dependencies:
       d3-time: 2.1.1
+    dev: false
+
+  /d3-time-format/4.0.0:
+    resolution:
+      {
+        integrity: sha512-nzaCwlj+ZVBIlFuVOT1RmU+6xb/7D5IcnhHzHQcBgS/aTa5K9fWZNN5LCXA27LgF5WxoSNJqKBbLcGMtM6Ca6A==
+      }
+    engines: { node: '>=12' }
+    dependencies:
+      d3-time: 3.0.0
+    dev: true
 
   /d3-time/2.1.1:
     resolution:
@@ -1442,6 +1469,17 @@ packages:
       }
     dependencies:
       d3-array: 2.12.1
+    dev: false
+
+  /d3-time/3.0.0:
+    resolution:
+      {
+        integrity: sha512-zmV3lRnlaLI08y9IMRXSDshQb5Nj77smnfpnd2LrBa/2K281Jijactokeak14QacHs/kKq0AQ121nidNYlarbQ==
+      }
+    engines: { node: '>=12' }
+    dependencies:
+      d3-array: 2.12.1
+    dev: true
 
   /dayjs/1.10.6:
     resolution:
@@ -3069,17 +3107,17 @@ packages:
       saslprep: 1.0.3
     dev: false
 
-  /mongoose/6.0.3:
+  /mongoose/6.0.4:
     resolution:
       {
-        integrity: sha512-0gu3Z34j3VdvGnqcs0lZdRnE0agiuERvXKkSrKjGqXsZS+ym5v9Oq1dQUuhtOYPQGtlpHpeVYjHHY+2sn5CMrg==
+        integrity: sha512-tkbyaGXj1gtIpsIBfp5fqWPzqL36nHfS0x4ykk0H9vHgSWXPvhzabtrs7c94li6Iqv13hTKXXQ4Q09o+mxIONw==
       }
     engines: { node: '>=12.0.0' }
     dependencies:
       bson: 4.5.1
       kareem: 2.3.2
       mongodb: 4.1.1
-      mpath: 0.8.3
+      mpath: 0.8.4
       mquery: 4.0.0
       ms: 2.1.2
       regexp-clone: 1.0.0
@@ -3089,10 +3127,10 @@ packages:
       - supports-color
     dev: false
 
-  /mpath/0.8.3:
+  /mpath/0.8.4:
     resolution:
       {
-        integrity: sha512-eb9rRvhDltXVNL6Fxd2zM9D4vKBxjVVQNLNijlj7uoXUy19zNDsIif5zR+pWmPCWNKwAtqyo4JveQm4nfD5+eA==
+        integrity: sha512-DTxNZomBcTWlrMW76jy1wvV37X/cNNxPW1y2Jzd4DZkAaC5ZGsm8bfGfNOthcDuRJujXLqiuS6o3Tpy0JEoh7g==
       }
     engines: { node: '>=4.0.0' }
     dev: false
