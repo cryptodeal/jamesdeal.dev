@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 const MONGOOSE_URI = import.meta.env.VITE_MONGOOSE_URI;
 
 if (!MONGOOSE_URI) {
-	throw new Error('Please define the MONGODB_URI environment variable inside .env.local');
+	throw new Error('Please define the VITE_MONGOOSE_URI environment variable inside .env.local');
 }
 
 let cached = global.mongoose;

@@ -25,9 +25,6 @@ const config = {
 			optimizeDeps: {
 				include: ['layercake']
 			},
-			ssr: {
-				external: ['mongodb-client-encryption']
-			},
 			plugins: [WindiCSS.default(), imagetools()]
 		}
 	}

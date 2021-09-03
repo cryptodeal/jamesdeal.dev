@@ -43,7 +43,6 @@
 		"@sveltejs/pancake": "^0.0.18",
 		"cookie": "^0.4.1",
 		"layercake": "^5.0.0",
-		"mongodb-client-encryption": "^1.2.6",
 		"mongoose": "^6.0.4",
 		"svelte-particles": "^1.17.0",
 		"svelte-toggle": "^3.0.2",
