@@ -25,7 +25,7 @@ const config = {
 			optimizeDeps: {
 				include: ['layercake']
 			},
-			plugins: [WindiCSS.default(), imagetools()]
+			plugins: [WindiCSS(), imagetools()]
 		}
 	}
 };
