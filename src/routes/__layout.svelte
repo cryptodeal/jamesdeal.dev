@@ -9,7 +9,6 @@
 	import Particles from '$lib/nav/Particles.svelte';
 	import Notifications from 'svelte-notifications';
 	if (browser) {
-		import('virtual:windi-devtools');
 		theme.useLocalStorage();
 	}
 	$: segment = $page.path.split('/')[1];
